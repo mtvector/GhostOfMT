@@ -1,11 +1,8 @@
----
-title: "QueryingGO"
-output: html_document
----
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+# Querying GO
 
 ## GO terms to gene list
 Sometimes you want to get a list of all the genes that are associated with a specific GO term (or multiple GO terms).
@@ -65,3 +62,14 @@ write.table(GeneData,"~/Desktop/GO_Output.txt",sep = "\t",row.names = F,col.name
 ```
 
 That's all you have to do to get a list of genes from a list of GO terms!
+
+You can even change species by querying a different database (the mart object) and looking for the mouse symbols:
+```{r mouse}
+termList <- c("GO:0007399","GO:0097458","GO:0045202")
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "mmusculus_gene_ensembl", host="www.ensembl.org")
+GeneData <- getBM(attributes=c('mgi_symbol'),
+                   filters = 'go', values = termList, mart = mart)
+
+print(GeneData)
+```
+
