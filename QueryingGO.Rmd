@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Sometimes you want to get a list of all the genes that are associated with a specific GO term (or multiple GO terms).
 This is super easy. Just copy and paste the code snippits into RStudio
 
-The first few lines just make sure you have the proper software installed. (You can comment out )
+The first few lines just make sure you have the proper software installed. (You can comment out once the biomaRt package is installed)
 
 ```{r biomart, eval=F}
 source("http://bioconductor.org/biocLite.R")
