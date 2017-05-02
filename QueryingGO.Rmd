@@ -56,11 +56,12 @@ filters is the data type that you're sending to the database, in this case the G
 
 values is the list of items you're querying
 
-###Now save the list to a file on your desktop
+### Now save the list to a file on your desktop
+
 This will write the data stored as "GeneData" to a file on your desktop
 
 ```{r saves}
-write.table(GeneData,"~/Desktop/GO_Output.txt",sep = "\t",row.names = F,col.names = F)
+write.table(GeneData,"~/Desktop/GO_Output.txt",sep = "\t",row.names = F,col.names = F, quote=F)
 ```
 
 That's all you have to do to get a list of genes from a list of GO terms!
