@@ -7,25 +7,25 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-##GO terms to gene list
+## GO terms to gene list
 Sometimes you want to get a list of all the genes that are associated with a specific GO term (or multiple GO terms).
 This is super easy. Just copy and paste the code snippits into RStudio
 
-The first few lines just make sure you have the proper software installed.
+The first few lines just make sure you have the proper software installed. (You can comment out )
 
-```{r biomart, echo=F}
+```{r biomart, eval=F}
 source("http://bioconductor.org/biocLite.R")
 #install package if not already installed
 biocLite("biomaRt")
-#load the package
-library(biomaRt)
-
 ```
 Hopefully everything is k after that.
 
 Now a good way to find GO terms of interest is to mess around on http://www.ebi.ac.uk/QuickGO
 Let's say we have a dope term GO:0030182, Neuron Differentiation. We can make a list of all the genes that are associated with this GO term
 ```{r one}
+#load the package
+library(biomaRt)
+#This is your list of terms
 termList <- c("GO:0030182")
 mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host="www.ensembl.org")
 
