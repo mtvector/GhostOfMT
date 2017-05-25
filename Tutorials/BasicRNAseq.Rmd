@@ -65,7 +65,7 @@ library(ggplot2)
 ```
 
 ```{r LoadFile}
-pathToFile <- "~/code/GhostOfMT/Data/GSE90053_H1_EC.txt"
+pathToFile <- "~/Data/GSE90053_H1_EC.txt"
 #NOTE THE PARAMETERS
 counts <- read.csv2(file=pathToFile,header = T,row.names = 1,sep = "\t")
 #counts <- counts[,-ncol(counts)] #uncomment this line if the last column is gene name description text
