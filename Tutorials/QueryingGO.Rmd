@@ -1,0 +1,77 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Querying GO
+
+## GO terms to gene list
+Sometimes you want to get a list of all the genes that are associated with a specific GO term (or multiple GO terms).
+This is super easy. Just copy and paste the code snippits into RStudio
+
+The first few lines just make sure you have the proper software installed. (You can comment out once the biomaRt package is installed)
+
+```{r biomart, eval=F}
+source("http://bioconductor.org/biocLite.R")
+#install package if not already installed
+biocLite("biomaRt")
+```
+Hopefully everything is k after that.
+
+Now a good way to find GO terms of interest is to mess around on http://www.ebi.ac.uk/QuickGO
+
+Let's say we have a dope term GO:0030182, Neuron Differentiation. We can make a list of all the genes that are associated with this GO term
+```{r one}
+#load the package
+library(biomaRt)
+#This is your list of terms
+termList <- c("GO:0030182")
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host="www.ensembl.org")
+
+GeneData <- getBM(attributes=c('hgnc_symbol',"name_1006"),
+                   filters = c('go'), values = termList, mart = mart)
+
+print(head(GeneData))
+
+``` 
+
+
+We could also do this with a list of terms:
+
+```{r many}
+termList <- c("GO:0007399","GO:0097458","GO:0045202")
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host="www.ensembl.org")
+
+GeneData <- getBM(attributes=c('hgnc_symbol'),
+                   filters = c('go'), values = termList, mart = mart)
+
+print(head(GeneData))
+
+``` 
+attributes is the list of things you want back from the database, in this case the gene symbol 'hgnc_symbol' . You can string multiple together by separating them with commas (You might want to include 'name_1006' for the names of all the terms associated with the genes as well)
+
+filters is the data type that you're sending to the database, in this case the GO ID, 'go'.
+
+values is the list of items you're querying
+
+### Now save the list to a file on your desktop
+
+This will write the data stored as "GeneData" to a file on your desktop
+
+```{r saves}
+write.table(GeneData,"~/Desktop/GO_Output.txt",sep = "\t",row.names = F,col.names = F, quote=F)
+```
+
+That's all you have to do to get a list of genes from a list of GO terms!
+
+## Other Species
+
+You can even change species by querying a different database (the mart object) and looking for the mouse symbols:
+```{r mouse}
+termList <- c("GO:0007399","GO:0097458","GO:0045202")
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "mmusculus_gene_ensembl", host="www.ensembl.org")
+GeneData <- getBM(attributes=c('mgi_symbol'),
+                   filters = 'go', values = termList, mart = mart)
+
+print(GeneData)
+```
+

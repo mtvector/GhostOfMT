@@ -2,24 +2,22 @@
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-# Querying GO
+# Basic RNAseq Exploratory Data Analysis
 
-## GO terms to gene list
-Sometimes you want to get a list of all the genes that are associated with a specific GO term (or multiple GO terms).
-This is super easy. Just copy and paste the code snippits into RStudio
+Quick basic computer vocab beforehand:
+**directory** means folder in computer lingo
+**command line** the terminal app on mac, a basic guide can be found here: https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html
 
-The first few lines just make sure you have the proper software installed. (You can comment out once the biomaRt package is installed)
+## Loading a File
 
-```{r biomart, eval=F}
-source("http://bioconductor.org/biocLite.R")
-#install package if not already installed
-biocLite("biomaRt")
-```
-Hopefully everything is k after that.
+Most of data you will be dealing with will probably be RSEM outputs. These outputs are usually structured as a directory with a name like "Sub_0146_Developmental_Clock_Human_hg19__890bf46a388bf6b4". Inside will be a mess of files, the most likely ones you will be working with are genes.no_mt.**ec**.tab for counts data (NOT NORMALIZED) or TPMs genes.no_mt.**tpm**.renorm.tab. 
 
-Now a good way to find GO terms of interest is to mess around on http://www.ebi.ac.uk/QuickGO
 
-Let's say we have a dope term GO:0030182, Neuron Differentiation. We can make a list of all the genes that are associated with this GO term
+**QUICK NOTE:** If you have opened your files in Excel, always check the genes "MARCH1" and "SEPT1" to make sure that these gene names haven't been transformed into dates. If they have and you share/publish this data, people will instantly know you are a noob and discount any analysis you do!s
+
+
+You can type "pwd ~" (pwd stands for print working directory) on the command line and it will tell you what your home directory is.
+
 ```{r one}
 #load the package
 library(biomaRt)
@@ -63,6 +61,8 @@ write.table(GeneData,"~/Desktop/GO_Output.txt",sep = "\t",row.names = F,col.name
 
 That's all you have to do to get a list of genes from a list of GO terms!
 
+## Other Species
+
 You can even change species by querying a different database (the mart object) and looking for the mouse symbols:
 ```{r mouse}
 termList <- c("GO:0007399","GO:0097458","GO:0045202")
@@ -72,4 +72,12 @@ GeneData <- getBM(attributes=c('mgi_symbol'),
 
 print(GeneData)
 ```
+
+
+```{r biomart, eval=F}
+source("http://bioconductor.org/biocLite.R")
+#install package if not already installed
+biocLite("biomaRt")
+```
+
 
