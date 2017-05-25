@@ -2,11 +2,23 @@
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-# Basic RNAseq Exploratory Data Analysis
+# Basic RNAseq Analysis
+###Loading Files and Exploratory Data Analysis
 
-Quick basic computer vocab beforehand:
+#####Quick basic computer tips and vocab beforehand:
+
 **directory** means folder in computer lingo
-**command line** the terminal app on mac, a basic guide can be found here: https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html
+
+**command line**: the terminal app on mac, a basic guide can be found here: https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html
+
+**library**: An R package, a bunch of code and functions wrapped up which can be loaded together with library()
+
+**array** What you get when you string things together using c() 
+
+**list**: A data structure like an array, get a single element using double brackets [[]] instead of single brackets []
+
+If the computer can't find a function, you probably haven't loaded the library you need!
+Paste error messages into google. You can solve 99.999% of your problems by copying and pasting to and from google or stackOverflow
 
 ## Loading a File
 
@@ -16,68 +28,143 @@ Most of data you will be dealing with will probably be RSEM outputs. These outpu
 **QUICK NOTE:** If you have opened your files in Excel, always check the genes "MARCH1" and "SEPT1" to make sure that these gene names haven't been transformed into dates. If they have and you share/publish this data, people will instantly know you are a noob and discount any analysis you do!s
 
 
-You can type "pwd ~" (pwd stands for print working directory) on the command line and it will tell you what your home directory is.
+You can type "pwd ~" (pwd stands for print working directory) on the command line and it will tell you what your home directory is. Then you can do paths like ~/GhostOfMT/Data/FILENAME.txt
 
-```{r one}
-#load the package
-library(biomaRt)
-#This is your list of terms
-termList <- c("GO:0030182")
-mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host="www.ensembl.org")
+We will start by installing the packages we need:
 
-GeneData <- getBM(attributes=c('hgnc_symbol',"name_1006"),
-                   filters = c('go'), values = termList, mart = mart)
-
-print(head(GeneData))
-
-``` 
-
-
-We could also do this with a list of terms:
-
-```{r many}
-termList <- c("GO:0007399","GO:0097458","GO:0045202")
-mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host="www.ensembl.org")
-
-GeneData <- getBM(attributes=c('hgnc_symbol'),
-                   filters = c('go'), values = termList, mart = mart)
-
-print(head(GeneData))
-
-``` 
-attributes is the list of things you want back from the database, in this case the gene symbol 'hgnc_symbol' . You can string multiple together by separating them with commas (You might want to include 'name_1006' for the names of all the terms associated with the genes as well)
-
-filters is the data type that you're sending to the database, in this case the GO ID, 'go'.
-
-values is the list of items you're querying
-
-### Now save the list to a file on your desktop
-
-This will write the data stored as "GeneData" to a file on your desktop
-
-```{r saves}
-write.table(GeneData,"~/Desktop/GO_Output.txt",sep = "\t",row.names = F,col.names = F, quote=F)
-```
-
-That's all you have to do to get a list of genes from a list of GO terms!
-
-## Other Species
-
-You can even change species by querying a different database (the mart object) and looking for the mouse symbols:
-```{r mouse}
-termList <- c("GO:0007399","GO:0097458","GO:0045202")
-mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "mmusculus_gene_ensembl", host="www.ensembl.org")
-GeneData <- getBM(attributes=c('mgi_symbol'),
-                   filters = 'go', values = termList, mart = mart)
-
-print(GeneData)
-```
-
-
-```{r biomart, eval=F}
+```{r install packages, eval=F}
 source("http://bioconductor.org/biocLite.R")
-#install package if not already installed
-biocLite("biomaRt")
+#install packages if not already installed
+biocLite("EBSeq")
+biocLite("rafalib")
+biocLite("RColorBrewer")
+biocLite("ggplot2")
+```
+
+Once we have those, we can load up the RNAseq file, which you can download from the Data folder in this Github Repo
+
+read.csv2 is a versatile function that you can use to read data files that are delineated with a bunch of stuff. It's not magic though, and if your files are irregular or tampered with, it won't save you.
+
+The parameters of this function are very important. header is a T/F parameter stating whether or not the first line of the file is the column names. row.names is a numeric parameter asking which column should be rownames (enter 0 if none, or you have duplicated gene names). The sep value is what the separator is for this file type. "\t" is code for tab. You can do " " for space, or "," for comma-separated variable (csv) files. RSEM outputs tab-separated variable files (.tab or .tsv) and this line should work on RSEM output files out of the box. 
+
+type ?read.csv2 into the prompt in RStudio and it will give you more info!
+
+You should change the path to the file (pathToFile) within the quotes to the path on your computer.
+```{r LoadPackages,warning=F,message=F}
+
+#load the packages you'll need:
+#for normalizing
+library(EBSeq)
+#for changing view layout
+library(rafalib)
+#for the color palette
+library(RColorBrewer)
+#for fancy plots
+library(gplots)
+library(ggplot2)
+```
+
+```{r LoadFile}
+pathToFile <- "~/code/GhostOfMT/Data/GSE90053_H1_EC.txt"
+#NOTE THE PARAMETERS
+counts <- read.csv2(file=pathToFile,header = T,row.names = 1,sep = "\t")
+#counts <- counts[,-ncol(counts)] #uncomment this line if the last column is gene name description text
+#It removes the last column of the data from the data set
+counts <- as.matrix(counts)
+storage.mode(counts) <- "numeric"
+
+``` 
+
+You can get the number of reads in each sample by getting the sum of the count numbers for each column (Genes are rows, Samples are columns)
+
+```{r CheckUp}
+colSums(counts)
+``` 
+
+If everything looks good, now we have to normalize the counts data, because the data is Expected Counts. TPMs are already normalized, so you should skip this step if you're working with TPMs. **YOU HAVE TO NORMALIZE COUNTS OR LIFE IS MEANINGLESS** (sample comparisons will be confounded by read depth)
+
+```{r Normalizing}
+normCounts <- GetNormalizedMat(counts, MedianNorm(counts))
+#show plots in 1 row 2 columns
+mypar(1,2)
+plot(counts["PAX6",],main = "PAX6 Unnormalized Reads")
+plot(normCounts["PAX6",],main = "PAX6 Normalized Reads",ylab="Normalized counts")
+``` 
+
+It also might be helpful to parse the timepoints from the sample names. (Quite helpful.) The split parameter is a short bit of text that divides the different parts of longer strings of characters (sample names). This is why smart, standard naming of samples in the database is paramount! 
+
+```{r tps}
+splitList <- strsplit(x = colnames(normCounts),split = "_d")
+head(splitList)
+``` 
+This gives us something tricky to use. First we use sapply to change the list to a matrix, where the first row is the cell type and the second row is the time point:
+
+```{r ListToMatrix}
+splitMatrix <- sapply(splitList, "[", 1:max(sapply(splitList,length)) )
+print(dim(splitMatrix))
+print(splitMatrix)
+``` 
+
+That was a bit complicated. In plain english, this is what happened. Assign the following to the variable "splitMatrix": loop through the objects stored in splitList, for each one, take elements number 1 through the minimum number of elements in the whole splitlist. It should work for any strsplit output, as long as your sample namings are consistent!
+
+Lastly, we'll take the second row of this matrix, which should be the day at which each sample was taken, and convert it to a numeric (it is currently characters ("9") instead of numbers (9) )
+
+```{r tpsToNum}
+tps <- as.numeric(splitMatrix[2,])
+colnames(normCounts) <- tps
+``` 
+
+We have the timepoints (in days) captured as "tps"" and also have renamed the column names of normCounts to the timepoints, so we're ready for some plotting!
+
+##Now for some exploratory data analysis!!!
+
+To make a heatmap of the spearman (rank) correlations of the samples with each other:
+**note:** Spearman rank correlation doesn't need to be normalized counts. Be careful though, pearson correlations do need to be normalized. Also, TPM values are scaled by the length of each specific gene, which changes the order. Therefore **you CAN'T compare TPMs to Counts**
+
+
+```{r Spearman,warning=FALSE}
+cols <-  colorRampPalette(rev(brewer.pal(11,"RdBu")))(50)
+spearmanCorrelations <- cor(normCounts,method = "spearman")
+#col is the color scheme, trace is dumb so set it to none, cexRow/Col is the size of the text (<1 smaller, >1 larger)
+heatmap.2( spearmanCorrelations ,trace = "none",col = cols,cexRow = .7, cexCol = .7)
+```
+
+
+Or the pearson correlations (with samples not clustered in the heatmap, which you do with Rowv and Colv = F parameters)
+
+
+```{r Pearson,warning=FALSE}
+cols <-  colorRampPalette(rev(brewer.pal(11,"RdBu")))(50)
+pearsonCorrelations <- cor(normCounts,method = "pearson")
+heatmap.2( pearsonCorrelations ,trace = "none",col = cols,Rowv = F, Colv = F,cexRow = .7, cexCol = .7)
+```
+
+###Plot a list of genes
+
+Now we take an array of genes
+
+```{r ListOGenes,warning=FALSE}
+  listOfGenes <- c("PAX6","ASCL1", "TUBB3", "DCX", "POU5F1","NANOG", "GAPDH")
+  #Make plots 2 per row, 2 per column
+  mypar(2,2)
+  for(g in listOfGenes){
+    plot(tps,normCounts[g,], main = g,xlab="Day",ylab = "Normalized counts" )
+  }
+```
+
+###Save Scatterplots to a PDF
+
+We can also save this output as a multipage PDF by wrapping the code that creates a plot for each gene inside of the pdf(), which opens a pdf writer as the place your plots will be outputted to, and dev.off() which finalizes and saves the pdf.
+
+```{r ListOGenesPDF,warning=FALSE,eval=F}
+  listOfGenes <- c("PAX6","ASCL1", "TUBB3", "DCX", "POU5F1","NANOG", "GAPDH")
+  #Make plots 2 per row, 2 per column
+  pdf(file = "~/Desktop/FavoriteGeneScatterplots.pdf", width = 10,height = 10)
+  mypar(2,2)
+  for(g in listOfGenes){
+    plot(tps,normCounts[g,], main = g,xlab="Day",ylab = "Normalized counts" )
+  }
+  dev.off()
 ```
 
 
