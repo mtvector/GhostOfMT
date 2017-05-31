@@ -1,5 +1,5 @@
 # GhostOfMT
-#####A set of tools that I commonly use to help out the scientists in Thomson Lab
+**A set of tools that I commonly use to help out the scientists in Thomson Lab**
 
 To get started: install R (You might have to install newer or older versions, depending on your operating system) and Rstudio on your computer.
 
@@ -19,8 +19,9 @@ swirl()
 
 
 
+Tutorials can be accessed by opening the .md files in the Tutorials folder in your browser
 
-####Pages found here:
+Or HTML pages found here:
 
 GO Terms: 
 http://htmlpreview.github.com/?https://github.com/mtvector/GhostOfMT/blob/master/Tutorials/htmlFiles/QueryingGO.html
