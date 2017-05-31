@@ -38,7 +38,7 @@
     
 * SegRegPar
 
-    * A parallelized and version of Ning Leng's Segmented Regression implementation, modified to fix problems with endpoints
+    * A parallelized version of Ning Leng's Segmented Regression implementation, modified to fix problems with endpoints
     
 * Data
 
