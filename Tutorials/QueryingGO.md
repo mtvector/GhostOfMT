@@ -1,0 +1,887 @@
+QueryingGO
+================
+MTSchmitz
+
+Querying GO
+===========
+
+GO terms to gene list
+---------------------
+
+Sometimes you want to get a list of all the genes that are associated with a specific GO term (or multiple GO terms). Just copy and paste the code snippits into RStudio
+
+The first few lines just make sure you have the proper software installed. (You can comment out once the biomaRt package is installed)
+
+``` r
+source("http://bioconductor.org/biocLite.R")
+#install package if not already installed
+biocLite("biomaRt")
+```
+
+Hopefully everything is k after that.
+
+Now a good way to find GO terms of interest is to mess around on <http://www.ebi.ac.uk/QuickGO>
+
+Let's say we have a dope term <GO:0030182>, Neuron Differentiation. We can make a list of all the genes that are associated with this GO term
+
+``` r
+#load the package
+library(biomaRt)
+#This is your list of terms
+termList <- c("GO:0030182")
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host="www.ensembl.org")
+
+GeneData <- getBM(attributes=c('hgnc_symbol',"name_1006"),
+                   filters = c('go'), values = termList, mart = mart)
+
+print(head(GeneData))
+```
+
+    ##   hgnc_symbol              name_1006
+    ## 1        SNPH     neuronal cell body
+    ## 2        SNPH      neuron projection
+    ## 3        SNPH   presynaptic membrane
+    ## 4        SNPH mitochondrial membrane
+    ## 5        SNPH        plasma membrane
+    ## 6        SNPH          mitochondrion
+
+We could also do this with multiple terms by making an array of them inside c(), separated by commas:
+
+``` r
+termList <- c("GO:0007399","GO:0097458","GO:0045202")
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host="www.ensembl.org")
+
+GeneData <- getBM(attributes=c('hgnc_symbol'),
+                   filters = c('go'), values = termList, mart = mart)
+
+print(head(GeneData))
+```
+
+    ##   hgnc_symbol
+    ## 1        SMN2
+    ## 2      SERF1B
+    ## 3      DPYSL5
+    ## 4      SEMA7A
+    ## 5      SERF1A
+    ## 6        SMN1
+
+attributes is the list of things you want back from the database, in this case the gene symbol 'hgnc\_symbol' . You can string multiple together by separating them with commas (You might want to include 'name\_1006' for the names of all the terms associated with the genes as well)
+
+filters is the data type that you're sending to the database, in this case the GO ID, 'go'.
+
+values is the list of items you're querying
+
+### Now save the list to a file on your desktop
+
+This will write the data stored as "GeneData" to a file on your desktop
+
+``` r
+write.table(GeneData,"~/Desktop/GO_Output.txt",sep = "\t",row.names = F,col.names = F, quote=F)
+```
+
+That's all you have to do to get a list of genes from a list of GO terms!
+
+Other Species
+-------------
+
+You can even change species by querying a different database (the mart object) and looking for the mouse symbols:
+
+``` r
+termList <- c("GO:0007399","GO:0097458","GO:0045202")
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "mmusculus_gene_ensembl", host="www.ensembl.org")
+GeneData <- getBM(attributes=c('mgi_symbol'),
+                   filters = 'go', values = termList, mart = mart)
+
+print(GeneData)
+```
+
+    ##        mgi_symbol
+    ## 1             Crx
+    ## 2          Plxna4
+    ## 3          Zbtb45
+    ## 4             Mag
+    ## 5           Ascl1
+    ## 6            Setx
+    ## 7           Map1s
+    ## 8          Sema3e
+    ## 9           Ntrk1
+    ## 10          Fgf14
+    ## 11          Itga8
+    ## 12           Chd5
+    ## 13        Pcdha11
+    ## 14        Pcdhgb2
+    ## 15         Tubb2b
+    ## 16         Pcdha2
+    ## 17         Pcdha9
+    ## 18        Gm42416
+    ## 19        Pcdhac2
+    ## 20        Pcdhgb1
+    ## 21           Igf1
+    ## 22  D130043K22Rik
+    ## 23       Pcdhga12
+    ## 24        Gm37013
+    ## 25          Nodal
+    ## 26        Pcdha12
+    ## 27         Pcdha7
+    ## 28       Pcdhga11
+    ## 29        Pcdhgc3
+    ## 30         Pcdha3
+    ## 31         Pcdha8
+    ## 32         Pcdha1
+    ## 33         Pcdha4
+    ## 34         Adgrv1
+    ## 35        Pcdhga7
+    ## 36          Epm2a
+    ## 37        Pcdhga3
+    ## 38         Pcdha6
+    ## 39         Camk2b
+    ## 40        Pcdhgb5
+    ## 41        Smarcb1
+    ## 42        Pcdhac1
+    ## 43        Pcdhgc5
+    ## 44        Pcdhga6
+    ## 45        Pcdhgb4
+    ## 46        Pcdhga4
+    ## 47         Pcdha5
+    ## 48        Pcdhga9
+    ## 49       Pcdhga10
+    ## 50           Nrp1
+    ## 51          Ntng2
+    ## 52          Deaf1
+    ## 53         Sema3c
+    ## 54          Rita1
+    ## 55         Kctd11
+    ## 56         Dpysl3
+    ## 57          Atoh1
+    ## 58           Dlg2
+    ## 59          Utp11
+    ## 60          Ptf1a
+    ## 61         Pcdh19
+    ## 62         Sema4b
+    ## 63            Arx
+    ## 64          Mef2a
+    ## 65           Dpf3
+    ## 66           Nde1
+    ## 67        Neurod4
+    ## 68           Tbcb
+    ## 69        Ppp1r9b
+    ## 70         Slc7a5
+    ## 71         Dpysl5
+    ## 72          Epha5
+    ## 73          Disc1
+    ## 74          Wdpcp
+    ## 75           Glrb
+    ## 76           Dbn1
+    ## 77          Fezf1
+    ## 78           Chn1
+    ## 79          Rap1a
+    ## 80           Fzd3
+    ## 81        Eif2ak4
+    ## 82         Anapc2
+    ## 83          Cdh16
+    ## 84         Dcdc2a
+    ## 85           Ndnf
+    ## 86           Zic3
+    ## 87           Pten
+    ## 88         Sema4g
+    ## 89          Pcdh8
+    ## 90           Ngrn
+    ## 91          Nrsn1
+    ## 92          Nr4a2
+    ## 93        Sigmar1
+    ## 94          Scn3b
+    ## 95          Fgf13
+    ## 96        Neurod1
+    ## 97           Dpf1
+    ## 98           Lbx1
+    ## 99           Helt
+    ## 100      Pafah1b1
+    ## 101        Pou3f3
+    ## 102          Cln8
+    ## 103         Brsk1
+    ## 104          Mbd5
+    ## 105         Magi2
+    ## 106         Mark4
+    ## 107        Elavl3
+    ## 108         Stmn1
+    ## 109        Bmpr1a
+    ## 110       Zc3h12a
+    ## 111         Gata3
+    ## 112         Cntn1
+    ## 113          Fut9
+    ## 114         Atcay
+    ## 115       Neurog3
+    ## 116          Arf6
+    ## 117         Mylip
+    ## 118         Numbl
+    ## 119         Brsk2
+    ## 120        Ambra1
+    ## 121         Dact1
+    ## 122        Srgap2
+    ## 123        Sema6a
+    ## 124          Tcf3
+    ## 125           Nes
+    ## 126          Dab1
+    ## 127         Ephb2
+    ## 128        Sema4f
+    ## 129        Camk2d
+    ## 130         Sirt2
+    ## 131         Mef2c
+    ## 132          Numb
+    ## 133        Sema6c
+    ## 134          Sdc2
+    ## 135         Efna5
+    ## 136         Gpsm1
+    ## 137         Epha7
+    ## 138        Amigo1
+    ## 139        Pofut1
+    ## 140        Sema4d
+    ## 141         Dclk1
+    ## 142         Gsk3b
+    ## 143          Akt1
+    ## 144          Ctf1
+    ## 145          Bex1
+    ## 146         Epha8
+    ## 147          Lhx2
+    ## 148         Prps1
+    ## 149        Brinp3
+    ## 150       Dynlt1c
+    ## 151         Efnb3
+    ## 152         Sox11
+    ## 153          Sim1
+    ## 154       Smarca4
+    ## 155         Gdpd5
+    ## 156         Gfra1
+    ## 157        Pcdh10
+    ## 158         Kif2a
+    ## 159         Epha4
+    ## 160        Sema6d
+    ## 161          Cdk5
+    ## 162          Zeb1
+    ## 163          Dll1
+    ## 164         Sarm1
+    ## 165         Cdc42
+    ## 166          Nrn1
+    ## 167          Tnik
+    ## 168          Pura
+    ## 169          Nptn
+    ## 170         Glis2
+    ## 171         Trnp1
+    ## 172        Plppr1
+    ## 173        Ndufv2
+    ## 174       Smarcc2
+    ## 175        Actl6b
+    ## 176          Nrg1
+    ## 177         Insm1
+    ## 178          Neo1
+    ## 179         Gper1
+    ## 180         Slit2
+    ## 181          Dok4
+    ## 182           Dcc
+    ## 183          Gng8
+    ## 184       Rapgef2
+    ## 185         Dscam
+    ## 186          Gldn
+    ## 187         Btbd3
+    ## 188         Igsf9
+    ## 189         Ntng1
+    ## 190        Sema4c
+    ## 191         Chodl
+    ## 192        Chrdl1
+    ## 193         Gsk3a
+    ## 194        Actl6a
+    ## 195           Bax
+    ## 196        Camk1d
+    ## 197          Uncx
+    ## 198        Sema5b
+    ## 199         Cplx2
+    ## 200        Sema3d
+    ## 201         Olfm1
+    ## 202         Scn2a
+    ## 203         Ephb3
+    ## 204         Nlgn1
+    ## 205         Gap43
+    ## 206        Sema3a
+    ## 207        Plxnb3
+    ## 208          Pax3
+    ## 209         Rbm45
+    ## 210         Frmd7
+    ## 211         Camk1
+    ## 212         Erbb4
+    ## 213         Slit1
+    ## 214           Ina
+    ## 215        Arid1a
+    ## 216        Adgrg1
+    ## 217         Rufy3
+    ## 218           Dcx
+    ## 219         Cdc20
+    ## 220        Pcdh12
+    ## 221        Zfp423
+    ## 222          Ank2
+    ## 223        Bicdl1
+    ## 224         Hdac7
+    ## 225        Chrna3
+    ## 226       Ccdc88a
+    ## 227       Neurod6
+    ## 228         Mef2d
+    ## 229        Nkx2-2
+    ## 230          Apob
+    ## 231        Barhl2
+    ## 232           Fev
+    ## 233          Nav2
+    ## 234         Ndel1
+    ## 235        Pcdh18
+    ## 236          Ppt1
+    ## 237         Kdm7a
+    ## 238         Atoh8
+    ## 239          Vax1
+    ## 240          Nbl1
+    ## 241         Cntn3
+    ## 242         Slit3
+    ## 243          Ect2
+    ## 244        Prrxl1
+    ## 245          Mafk
+    ## 246         Zc4h2
+    ## 247          Tcf4
+    ## 248         Olig2
+    ## 249         Prkd1
+    ## 250          Chl1
+    ## 251          Lhx6
+    ## 252          Sspo
+    ## 253         Pcsk2
+    ## 254          Lhx1
+    ## 255       Smarcd3
+    ## 256         Nr2f1
+    ## 257       Arhgap4
+    ## 258         Bend6
+    ## 259       Smarce1
+    ## 260        Cyfip1
+    ## 261         Nrn1l
+    ## 262          Hes5
+    ## 263        Pou4f1
+    ## 264         Mbnl1
+    ## 265           Ret
+    ## 266         Cntn6
+    ## 267          Nme1
+    ## 268          Cer1
+    ## 269          Rtn4
+    ## 270          Dok5
+    ## 271          Enah
+    ## 272         Lmtk2
+    ## 273           Otp
+    ## 274          Tsc1
+    ## 275          Nav1
+    ## 276        Dpysl2
+    ## 277          Smn1
+    ## 278          Pax5
+    ## 279          Tpp1
+    ## 280         Cntn4
+    ## 281         Ntrk3
+    ## 282        Shank1
+    ## 283        Rbfox3
+    ## 284          Intu
+    ## 285         Gpm6a
+    ## 286          Dll4
+    ## 287         Cdhr4
+    ## 288         Efnb2
+    ## 289          Bzw2
+    ## 290         Ophn1
+    ## 291      Serpine2
+    ## 292        C77370
+    ## 293         Chac1
+    ## 294          Hes6
+    ## 295       Arhgef7
+    ## 296        Fbxo45
+    ## 297         Efnb1
+    ## 298          Zic1
+    ## 299          Ulk2
+    ## 300          Hmx2
+    ## 301         Ascl2
+    ## 302          Dll3
+    ## 303         Cntn2
+    ## 304         Atoh7
+    ## 305          Hmx3
+    ## 306        Kif1bp
+    ## 307          Cntf
+    ## 308         Srrm4
+    ## 309         Kat2a
+    ## 310         Foxn4
+    ## 311        Sema4a
+    ## 312          Sox1
+    ## 313          Sdha
+    ## 314        Sema7a
+    ## 315          Nrp2
+    ## 316          Dlg3
+    ## 317          Rgs9
+    ## 318         Scn2b
+    ## 319         Ephb1
+    ## 320       Smarcc1
+    ## 321       Phactr4
+    ## 322         Cspg5
+    ## 323         Islr2
+    ## 324         Crmp1
+    ## 325        Igsf9b
+    ## 326       Neurod2
+    ## 327        Slc1a2
+    ## 328         Sh2b2
+    ## 329       Tmem41b
+    ## 330        Cyb5d2
+    ## 331           Fos
+    ## 332         Erbb2
+    ## 333          Rfng
+    ## 334         Tcf12
+    ## 335          Ngef
+    ## 336         Nedd4
+    ## 337          Mobp
+    ## 338        Dyx1c1
+    ## 339        Ctnnb1
+    ## 340          Myt1
+    ## 341       Cables1
+    ## 342       Dynlt1a
+    ## 343        Camk2g
+    ## 344         Ndrg2
+    ## 345          Elp3
+    ## 346        Vps13a
+    ## 347           Alk
+    ## 348          Fzd6
+    ## 349        Rbfox1
+    ## 350       Dynlt1f
+    ## 351         Gfra2
+    ## 352          Enc1
+    ## 353       Neurog1
+    ## 354         Fezf2
+    ## 355        Impact
+    ## 356        Sema6b
+    ## 357         Map1b
+    ## 358         Metrn
+    ## 359           App
+    ## 360         Spast
+    ## 361       Dynlt1b
+    ## 362         Ntrk2
+    ## 363        Atxn10
+    ## 364          Sim2
+    ## 365       Smarcd1
+    ## 366          Gdnf
+    ## 367       Slitrk1
+    ## 368       Adcyap1
+    ## 369           Gal
+    ## 370         Npas4
+    ## 371         Nlgn2
+    ## 372         Grid2
+    ## 373         Stx4a
+    ## 374       Syndig1
+    ## 375           Bcr
+    ## 376          Eps8
+    ## 377          Syn3
+    ## 378        Shank3
+    ## 379         Gria1
+    ## 380         Lin7c
+    ## 381          Colq
+    ## 382         Asic2
+    ## 383          Dvl1
+    ## 384          Nbea
+    ## 385          Sv2c
+    ## 386         Prrt1
+    ## 387         Cdh23
+    ## 388       Pcdhb16
+    ## 389        Clstn1
+    ## 390          Dlg4
+    ## 391          Chn2
+    ## 392          Pclo
+    ## 393          Ccl2
+    ## 394       Pacsin1
+    ## 395        Lrrtm3
+    ## 396         Nrxn3
+    ## 397       Slc32a1
+    ## 398        Snapin
+    ## 399         Rgs14
+    ## 400         Rapsn
+    ## 401         Kctd8
+    ## 402         Psma3
+    ## 403          Dok7
+    ## 404         Syt13
+    ## 405         Itgb1
+    ## 406        Kcnab2
+    ## 407         Samd4
+    ## 408        Rimbp2
+    ## 409          Utrn
+    ## 410        Grin2d
+    ## 411           Nf1
+    ## 412        Lrrtm1
+    ## 413         Srpx2
+    ## 414         Neto2
+    ## 415         Doc2b
+    ## 416         Sytl4
+    ## 417        Grin2a
+    ## 418         Chrm1
+    ## 419          Dnm2
+    ## 420        Ptprn2
+    ## 421        Chrna1
+    ## 422           Mff
+    ## 423         Gria2
+    ## 424         Nrcam
+    ## 425          Erc1
+    ## 426         Prkcg
+    ## 427        Grin2b
+    ## 428        Frrs1l
+    ## 429          Lrp6
+    ## 430         Cpeb4
+    ## 431         Cplx1
+    ## 432          Dtna
+    ## 433         Sept2
+    ## 434           C4b
+    ## 435        Shisa6
+    ## 436         Stx1a
+    ## 437          Tc2n
+    ## 438         Kcnd2
+    ## 439           Dmd
+    ## 440          Syt5
+    ## 441          Egfr
+    ## 442         Lrrk2
+    ## 443         Usp14
+    ## 444         Itga3
+    ## 445        Dlgap2
+    ## 446        Gabrg1
+    ## 447         Lrfn1
+    ## 448         Itga5
+    ## 449        Lrrtm4
+    ## 450         Ptprn
+    ## 451        Nmnat2
+    ## 452          Syt9
+    ## 453          Drp2
+    ## 454        Gabra2
+    ## 455         Znrf2
+    ## 456          Snph
+    ## 457        Gabbr1
+    ## 458          Psd3
+    ## 459        Bcl2l1
+    ## 460         Lin7b
+    ## 461         Kcnc2
+    ## 462        Gabbr2
+    ## 463         Doc2a
+    ## 464         Grin1
+    ## 465         Glra4
+    ## 466        Gabrb1
+    ## 467        Chrna2
+    ## 468        Gabra4
+    ## 469       Col13a1
+    ## 470        Rabac1
+    ## 471        Cadps2
+    ## 472          Lgi1
+    ## 473       Camk2n1
+    ## 474         Cadm1
+    ## 475         Sumo1
+    ## 476       Zmynd19
+    ## 477         Kcnk1
+    ## 478      Arhgap44
+    ## 479       Tmem163
+    ## 480         Gria4
+    ## 481        Dtnbp1
+    ## 482         Exoc4
+    ## 483        Egflam
+    ## 484         Rph3a
+    ## 485         Chrm3
+    ## 486         Chrm2
+    ## 487          Mpp2
+    ## 488        Atp1a3
+    ## 489         Grik3
+    ## 490         Grik2
+    ## 491         Lrfn3
+    ## 492         Spg20
+    ## 493         Rims4
+    ## 494        Cacnb4
+    ## 495       Slc17a7
+    ## 496         Cryab
+    ## 497          Sez6
+    ## 498         Grip1
+    ## 499         Nrxn1
+    ## 500         Ston2
+    ## 501         Cpt1c
+    ## 502         Grik4
+    ## 503         Wasf1
+    ## 504          Scgn
+    ## 505        Chrnb2
+    ## 506          Nck2
+    ## 507         Grik5
+    ## 508         Cbln1
+    ## 509       Tmem240
+    ## 510         Synpo
+    ## 511        Homer1
+    ## 512          Dgki
+    ## 513        Dnajc6
+    ## 514         Trpv1
+    ## 515         Chrm4
+    ## 516         Sntb1
+    ## 517       Grid2ip
+    ## 518        Adgrl1
+    ## 519       Dennd1a
+    ## 520         Cript
+    ## 521        Shisa7
+    ## 522          Gphn
+    ## 523        Slc9a6
+    ## 524         Scrib
+    ## 525          Pja2
+    ## 526        Unc13b
+    ## 527         Tulp1
+    ## 528         Apbb1
+    ## 529       Ppp1r9a
+    ## 530         Wnt7a
+    ## 531         Myo7a
+    ## 532        Dnaja3
+    ## 533          Mgll
+    ## 534         Calb2
+    ## 535          Ank3
+    ## 536         Cadm2
+    ## 537          Musk
+    ## 538         Grid1
+    ## 539          Ache
+    ## 540          Cask
+    ## 541       Cacna1b
+    ## 542         Rusc1
+    ## 543         Arpc2
+    ## 544         Cpeb3
+    ## 545         P2rx7
+    ## 546         Tprgl
+    ## 547         Unc5c
+    ## 548          Syt1
+    ## 549          Sdk1
+    ## 550        Gabrg3
+    ## 551         Flrt2
+    ## 552         Prrt2
+    ## 553        Snap25
+    ## 554         Cops5
+    ## 555         Htr2b
+    ## 556         Sytl3
+    ## 557          Mdm2
+    ## 558        Grin3a
+    ## 559        Gabra5
+    ## 560        Gabrb3
+    ## 561          Nsmf
+    ## 562         Gria3
+    ## 563          Hcn3
+    ## 564          Amph
+    ## 565       Syngap1
+    ## 566        Grin3b
+    ## 567         Calb1
+    ## 568        Tmem57
+    ## 569        Gabrr2
+    ## 570        Camk2a
+    ## 571        Cacng2
+    ## 572         P2rx4
+    ## 573         Glra1
+    ## 574        Gabrr1
+    ## 575         Rgs17
+    ## 576         Lzts1
+    ## 577         Vamp2
+    ## 578          Gad2
+    ## 579          Erc2
+    ## 580        Shisa9
+    ## 581        Rab11b
+    ## 582         Rims3
+    ## 583          Dnm3
+    ## 584          Nrgn
+    ## 585         Spg11
+    ## 586          Nos1
+    ## 587         Cbarp
+    ## 588         Prr12
+    ## 589         Lypd6
+    ## 590       Sh3kbp1
+    ## 591         Gabrp
+    ## 592        Chrna9
+    ## 593        Cyfip2
+    ## 594        Syngr3
+    ## 595         Dmxl2
+    ## 596          Mpdz
+    ## 597          Abi1
+    ## 598          Agrn
+    ## 599         Lrrc4
+    ## 600       Tmem230
+    ## 601        Slc9b2
+    ## 602        Pdlim5
+    ## 603         Ntsr1
+    ## 604         Synpr
+    ## 605        Atp2b2
+    ## 606       Sharpin
+    ## 607        Gabra6
+    ## 608         Oprk1
+    ## 609         Vamp1
+    ## 610         Gsg1l
+    ## 611          Sv2b
+    ## 612        Pcdh15
+    ## 613        Sh3gl2
+    ## 614          Vwc2
+    ## 615         Olfm2
+    ## 616        Gabrb2
+    ## 617      Rab3gap1
+    ## 618        Sept11
+    ## 619          Arf1
+    ## 620       Arfgef2
+    ## 621      Arhgap32
+    ## 622       Slc17a8
+    ## 623        Chrna5
+    ## 624          Otof
+    ## 625       Nectin3
+    ## 626        Slc6a9
+    ## 627          Sdk2
+    ## 628         Lrfn2
+    ## 629       Plekhn1
+    ## 630         Tmub1
+    ## 631        Dlgap1
+    ## 632       Zdhhc17
+    ## 633       Nectin1
+    ## 634       Cacna1a
+    ## 635        Chrnb4
+    ## 636          Cdh2
+    ## 637         Lzts3
+    ## 638           Arc
+    ## 639       Rasgrp2
+    ## 640        Scamp1
+    ## 641         Syt12
+    ## 642         Tanc1
+    ## 643       Phactr1
+    ## 644         Vamp3
+    ## 645          Grm2
+    ## 646       Slc30a3
+    ## 647          Ica1
+    ## 648          Napb
+    ## 649        Snap23
+    ## 650         Cnih3
+    ## 651         Vwc2l
+    ## 652         Cops4
+    ## 653          Svop
+    ## 654       Arfgap1
+    ## 655         Kcnb1
+    ## 656          Sv2a
+    ## 657          Shc4
+    ## 658        Unc13a
+    ## 659         Cdkl5
+    ## 660        Chrnb3
+    ## 661         Park2
+    ## 662          Dbnl
+    ## 663          Dlg1
+    ## 664        Chrna6
+    ## 665        Chrna4
+    ## 666          Gad1
+    ## 667        Prss12
+    ## 668        Adora1
+    ## 669        Chrna7
+    ## 670        Grin2c
+    ## 671         Ptprs
+    ## 672         Mthfr
+    ## 673          Ncs1
+    ## 674        Ppfia4
+    ## 675         Cbln4
+    ## 676          Gopc
+    ## 677        Scamp5
+    ## 678           Emb
+    ## 679         Kcna2
+    ## 680         Psmc4
+    ## 681         Cd24a
+    ## 682         Tor1a
+    ## 683          Hap1
+    ## 684       Sipa1l1
+    ## 685         Glra3
+    ## 686         Rgs12
+    ## 687         Chrm5
+    ## 688        Srcin1
+    ## 689         Kcna1
+    ## 690         Cplx3
+    ## 691         Chrnd
+    ## 692         Kcnh1
+    ## 693         Trim9
+    ## 694           Bsn
+    ## 695          Dag1
+    ## 696        Lrrc4c
+    ## 697        Chrnb1
+    ## 698         Lamb2
+    ## 699      Mapk8ip1
+    ## 700         Olfm3
+    ## 701         Chrng
+    ## 702        Dlgap3
+    ## 703        Ppfia2
+    ## 704         Cdk16
+    ## 705       Chrna10
+    ## 706           Mme
+    ## 707       Slc6a17
+    ## 708         Ctbp2
+    ## 709         Farp1
+    ## 710         Syt15
+    ## 711        Lrrc4b
+    ## 712         Znrf1
+    ## 713          Dtnb
+    ## 714         Grik1
+    ## 715          Xrn1
+    ## 716          Syt6
+    ## 717          Arr3
+    ## 718        Gabrg2
+    ## 719        Dlgap4
+    ## 720        Pdzd11
+    ## 721          Hcrt
+    ## 722        Cacng5
+    ## 723         Itsn1
+    ## 724          Syn2
+    ## 725         Tiam1
+    ## 726        Syngr1
+    ## 727         Mink1
+    ## 728         Pias3
+    ## 729          Syn1
+    ## 730        Gabra1
+    ## 731         Syt11
+    ## 732         Gabre
+    ## 733        Gabra3
+    ## 734         Lin7a
+    ## 735         Gabrq
+    ## 736        Atp2b1
+    ## 737          Snca
+    ## 738        Homer3
+    ## 739         Gabrd
+    ## 740         Chrne
+    ## 741          Sncb
+    ## 742       Tmem108
+    ## 743         Sytl5
+    ## 744         Glra2
+    ## 745         Sntb2
+    ## 746       Cntnap4
+    ## 747         Cpeb1
+    ## 748          Pfn1
+    ## 749         Nlgn3
+    ## 750       Rps6kb1
+    ## 751           Syp
+    ## 752        Atp1a2
+    ## 753        Shank2
+    ## 754         Crtc1
+    ## 755        Homer2
+    ## 756         Syt17
+    ## 757       Trappc4
+    ## 758         Myrip
+    ## 759        Unc13c
+    ## 760       Slc17a5
+    ## 761          Syt4
+    ## 762          Prr7
+    ## 763         Baalc
+    ## 764         Cadps
+    ## 765         Sept5
+    ## 766       Neurl1a
+    ## 767          Syt7
+    ## 768         Asic1
+    ## 769         Faim2
+    ## 770        Lrrtm2
+    ## 771        Gabrr3
+    ## 772         Sept3
+    ## 773         Dnm1l
+    ## 774        Pi4k2a
+    ## 775         Rims2
+    ## 776         Cplx4
+    ## 777         Cbln3
+    ## 778        Sh3gl1
+    ## 779        Shisa8
+    ## 780         Vamp7
+    ## 781        Ndfip1
+    ## 782        Kctd16
+    ## 783         Cnih2
+    ## 784        Slc5a7
+    ## 785          Lgi3
+    ## 786         Atad1
+    ## 787        Slc4a7
+    ## 788        Il31ra
+    ## 789         Neto1

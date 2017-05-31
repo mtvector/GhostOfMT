@@ -1,7 +1,12 @@
+--- 
+title: "BasicRNAseq"
+author: "MTSchmitz"
+output: github_document 
+--- 
+
 ```{r setup, include=FALSE}
 library(knitr)
-knitr::opts_chunk$set(echo = TRUE)
-opts_chunk$set(fig.path=paste0("figure/", sub("(.*).Rmd","\\1",basename(knitr:::knit_concord$get('infile'))), "-"))
+knitr::opts_chunk$set(echo = FALSE)
 ```
 # Basic RNAseq Analysis
 ###Loading Files and Exploratory Data Analysis
@@ -10,7 +15,7 @@ opts_chunk$set(fig.path=paste0("figure/", sub("(.*).Rmd","\\1",basename(knitr:::
 
 **directory** means folder in computer lingo
 
-**command line**: the terminal app on mac, a basic guide can be found here: https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html
+**command line**: the terminal app on mac (in utilities directory within Applications), a basic guide can be found here: https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html . You don't need this unless you want to go deeper.
 
 **library**: An R package, a bunch of code and functions wrapped up which can be loaded together with library()
 
@@ -82,7 +87,7 @@ You can get the number of reads in each sample by getting the sum of the count n
 colSums(counts)
 ``` 
 
-If everything looks good, now we have to normalize the counts data, because the data is Expected Counts. TPMs are already normalized, so you should skip this step if you're working with TPMs. **YOU HAVE TO NORMALIZE COUNTS OR LIFE IS MEANINGLESS** (sample comparisons will be confounded by read depth)
+If everything looks good, now we have to normalize the counts data, because the data is Expected Counts. TPMs are already normalized, so you should skip this step if you're working with TPMs. **YOU HAVE TO NORMALIZE COUNTS OR ALL LIFE IS MEANINGLESS** (sample comparisons will be confounded by read depth)
 
 ```{r Normalizing}
 normCounts <- GetNormalizedMat(counts, MedianNorm(counts))
