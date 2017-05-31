@@ -1,30 +1,52 @@
 # GhostOfMT
 **A set of tools that I commonly use to help out the scientists in Thomson Lab**
 
-To get started: install R (You might have to install newer or older versions, depending on your operating system) and Rstudio on your computer.
+#### Includes:
 
-To use: Paste blocks of code into Rstudio and execute them. It also might help to paste them into a new ".R" file and then you can highlight and run specific blocks of code with the "Run" button or cmd+Enter keys.
+* Tutorials
 
-Base R information can be found here https://cran.r-project.org/doc/contrib/Short-refcard.pdf
-or by entering the following into an R console:
+    * Making gene lists from GO
+  
+    * Basic RNAseq EDA
+    
+    * Plotting Favorite Genes
 
-install.packages("swirl")
+    * PeakFinder
 
-library(swirl)
+    * ScaledBox & Overlay Heatmaps
 
-swirl()
+    * Double-Color-Scheme Expression Heatmaps
+    
+    * SegReg and output analysis
+    
+    * ExpressionAtlas comparisons
+    
+    * Seahorse Data Processing
+    
+    * WGCNA (Maybe) 
 
-**Some assembly may be required.**
 
+* Tracking
 
+    * Jython scripts for preprocessing images
+    
+    * Jython scripts for ImageJ cell tracking
+    
+    * Python scripts for processing tracking output
+    
+* SegRegPar
 
+    *A parallelized and version of Ning Leng's Segmented Regression implementation, modified to fix problems with endpoints
+    
+* Data
 
-Tutorials can be accessed by opening the .md files in the Tutorials folder in your browser
+    * Mouse and Human RNAseq Time Series from Barry, Schmitz et al (2017)
+    
+    * Carnegie Stage Comparisons
+    
+    * Gene lists
+    
+* MiscR
 
-Or HTML pages found here:
+    * Dumping ground for R code I can't organize
 
-GO Terms: 
-http://htmlpreview.github.com/?https://github.com/mtvector/GhostOfMT/blob/master/Tutorials/htmlFiles/QueryingGO.html
-
-Basic RNA Seq Analyisis: 
-http://htmlpreview.github.com/?https://github.com/mtvector/GhostOfMT/blob/master/Tutorials/htmlFiles/BasicRNAseq.html
