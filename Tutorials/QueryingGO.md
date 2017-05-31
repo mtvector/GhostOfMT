@@ -1,5 +1,3 @@
-QueryingGO
-================
 MTSchmitz
 
 Querying GO

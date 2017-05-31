@@ -5,7 +5,7 @@ To get started: install R (You might have to install newer or older versions, de
 
 To use: Paste blocks of code into Rstudio and execute them. It also might help to paste them into a new ".R" file and then you can highlight and run specific blocks of code with the "Run" button or cmd+Enter keys.
 
-Base R tutorials can be found here https://cran.r-project.org/doc/contrib/Short-refcard.pdf
+Base R information can be found here https://cran.r-project.org/doc/contrib/Short-refcard.pdf
 or by entering the following into an R console:
 
 install.packages("swirl")

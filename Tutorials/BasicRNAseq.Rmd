@@ -1,12 +1,11 @@
 --- 
-title: "BasicRNAseq"
 author: "MTSchmitz"
 output: github_document 
 --- 
 
 ```{r setup, include=FALSE}
 library(knitr)
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 # Basic RNAseq Analysis
 ###Loading Files and Exploratory Data Analysis

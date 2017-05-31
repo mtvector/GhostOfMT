@@ -1,5 +1,4 @@
 --- 
-title: "QueryingGO"
 author: "MTSchmitz"
 output: github_document 
 --- 

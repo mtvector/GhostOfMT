@@ -1,5 +1,3 @@
-BasicRNAseq
-================
 MTSchmitz
 
 Basic RNAseq Analysis
@@ -11,7 +9,7 @@ Basic RNAseq Analysis
 
 **directory** means folder in computer lingo
 
-**command line**: the terminal app on mac, a basic guide can be found here: <https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html>
+**command line**: the terminal app on mac (in utilities directory within Applications), a basic guide can be found here: <https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html> . You don't need this unless you want to go deeper.
 
 **library**: An R package, a bunch of code and functions wrapped up which can be loaded together with library()
 
@@ -32,6 +30,15 @@ You can type "pwd ~" (pwd stands for print working directory) on the command lin
 
 We will start by installing the packages we need:
 
+``` r
+source("http://bioconductor.org/biocLite.R")
+#install packages if not already installed
+biocLite("EBSeq")
+biocLite("rafalib")
+biocLite("RColorBrewer")
+biocLite("ggplot2")
+```
+
 Once we have those, we can load up the RNAseq file, which you can download from the Data folder in this Github Repo
 
 read.csv2 is a versatile function that you can use to read data files that are delineated with a bunch of stuff. It's not magic though, and if your files are irregular or tampered with, it won't save you.
@@ -42,7 +49,34 @@ type ?read.csv2 into the prompt in RStudio and it will give you more info!
 
 You should change the path to the file (pathToFile) within the quotes to the path on your computer.
 
+``` r
+#load the packages you'll need:
+#for normalizing
+library(EBSeq)
+#for changing view layout
+library(rafalib)
+#for the color palette
+library(RColorBrewer)
+#for fancy plots
+library(gplots)
+library(ggplot2)
+```
+
+``` r
+pathToFile <- "~/code/GhostOfMT/Data/GSE90053_H1_EC.txt"
+#NOTE THE PARAMETERS
+counts <- read.csv2(file=pathToFile,header = T,row.names = 1,sep = "\t")
+#counts <- counts[,-ncol(counts)] #uncomment this line if the last column is gene name description text
+#It removes the last column of the data from the data set
+counts <- as.matrix(counts)
+storage.mode(counts) <- "numeric"
+```
+
 You can get the number of reads in each sample by getting the sum of the count numbers for each column (Genes are rows, Samples are columns)
+
+``` r
+colSums(counts)
+```
 
     ##  H1Rosa7_d0  H1Rosa7_d1  H1Rosa7_d2  H1Rosa7_d3  H1Rosa7_d4  H1Rosa7_d5 
     ##   2535843.2   2395744.7   3123291.4   2277212.7   2140561.8   1821945.8 
@@ -55,11 +89,24 @@ You can get the number of reads in each sample by getting the sum of the count n
     ## H1Rosa7_d40 H1Rosa7_d42 
     ##   1529980.2    908853.4
 
-If everything looks good, now we have to normalize the counts data, because the data is Expected Counts. TPMs are already normalized, so you should skip this step if you're working with TPMs. **YOU HAVE TO NORMALIZE COUNTS OR LIFE IS MEANINGLESS** (sample comparisons will be confounded by read depth)
+If everything looks good, now we have to normalize the counts data, because the data is Expected Counts. TPMs are already normalized, so you should skip this step if you're working with TPMs. **YOU HAVE TO NORMALIZE COUNTS OR ALL LIFE IS MEANINGLESS** (sample comparisons will be confounded by read depth)
+
+``` r
+normCounts <- GetNormalizedMat(counts, MedianNorm(counts))
+#show plots in 1 row 2 columns
+mypar(1,2)
+plot(counts["PAX6",],main = "PAX6 Unnormalized Reads")
+plot(normCounts["PAX6",],main = "PAX6 Normalized Reads",ylab="Normalized counts")
+```
 
 ![](BasicRNAseq_files/figure-markdown_github/Normalizing-1.png)
 
 It also might be helpful to parse the timepoints from the sample names. (Quite helpful.) The split parameter is a short bit of text that divides the different parts of longer strings of characters (sample names). This is why smart, standard naming of samples in the database is paramount!
+
+``` r
+splitList <- strsplit(x = colnames(normCounts),split = "_d")
+head(splitList)
+```
 
     ## [[1]]
     ## [1] "H1Rosa7" "0"      
@@ -81,7 +128,16 @@ It also might be helpful to parse the timepoints from the sample names. (Quite h
 
 This gives us something tricky to use. First we use sapply to change the list to a matrix, where the first row is the cell type and the second row is the time point:
 
+``` r
+splitMatrix <- sapply(splitList, "[", 1:max(sapply(splitList,length)) )
+print(dim(splitMatrix))
+```
+
     ## [1]  2 26
+
+``` r
+print(splitMatrix)
+```
 
     ##      [,1]      [,2]      [,3]      [,4]      [,5]      [,6]      [,7]     
     ## [1,] "H1Rosa7" "H1Rosa7" "H1Rosa7" "H1Rosa7" "H1Rosa7" "H1Rosa7" "H1Rosa7"
@@ -100,6 +156,11 @@ That was a bit complicated. In plain english, this is what happened. Assign the 
 
 Lastly, we'll take the second row of this matrix, which should be the day at which each sample was taken, and convert it to a numeric (it is currently characters ("9") instead of numbers (9) )
 
+``` r
+tps <- as.numeric(splitMatrix[2,])
+colnames(normCounts) <- tps
+```
+
 We have the timepoints (in days) captured as "tps"" and also have renamed the column names of normCounts to the timepoints, so we're ready for some plotting!
 
 Now for some exploratory data analysis!!!
@@ -107,9 +168,22 @@ Now for some exploratory data analysis!!!
 
 To make a heatmap of the spearman (rank) correlations of the samples with each other: **note:** Spearman rank correlation doesn't need to be normalized counts. Be careful though, pearson correlations do need to be normalized. Also, TPM values are scaled by the length of each specific gene, which changes the order. Therefore **you CAN'T compare TPMs to Counts**
 
+``` r
+cols <-  colorRampPalette(rev(brewer.pal(11,"RdBu")))(50)
+spearmanCorrelations <- cor(normCounts,method = "spearman")
+#col is the color scheme, trace is dumb so set it to none, cexRow/Col is the size of the text (<1 smaller, >1 larger)
+heatmap.2( spearmanCorrelations ,trace = "none",col = cols,cexRow = .7, cexCol = .7)
+```
+
 ![](BasicRNAseq_files/figure-markdown_github/Spearman-1.png)
 
 Or the pearson correlations (with samples not clustered in the heatmap, which you do with Rowv and Colv = F parameters)
+
+``` r
+cols <-  colorRampPalette(rev(brewer.pal(11,"RdBu")))(50)
+pearsonCorrelations <- cor(normCounts,method = "pearson")
+heatmap.2( pearsonCorrelations ,trace = "none",col = cols,Rowv = F, Colv = F,cexRow = .7, cexCol = .7)
+```
 
 ![](BasicRNAseq_files/figure-markdown_github/Pearson-1.png)
 
@@ -117,8 +191,28 @@ Or the pearson correlations (with samples not clustered in the heatmap, which yo
 
 Now we take an array of genes
 
+``` r
+  listOfGenes <- c("PAX6","ASCL1", "TUBB3", "DCX", "POU5F1","NANOG", "GAPDH")
+  #Make plots 2 per row, 2 per column
+  mypar(2,2)
+  for(g in listOfGenes){
+    plot(tps,normCounts[g,], main = g,xlab="Day",ylab = "Normalized counts" )
+  }
+```
+
 ![](BasicRNAseq_files/figure-markdown_github/ListOGenes-1.png)![](BasicRNAseq_files/figure-markdown_github/ListOGenes-2.png)
 
 ### Save Scatterplots to a PDF
 
 We can also save this output as a multipage PDF by wrapping the code that creates a plot for each gene inside of the pdf(), which opens a pdf writer as the place your plots will be outputted to, and dev.off() which finalizes and saves the pdf.
+
+``` r
+  listOfGenes <- c("PAX6","ASCL1", "TUBB3", "DCX", "POU5F1","NANOG", "GAPDH")
+  #Make plots 2 per row, 2 per column
+  pdf(file = "~/Desktop/FavoriteGeneScatterplots.pdf", width = 10,height = 10)
+  mypar(2,2)
+  for(g in listOfGenes){
+    plot(tps,normCounts[g,], main = g,xlab="Day",ylab = "Normalized counts" )
+  }
+  dev.off()
+```
