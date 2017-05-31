@@ -23,6 +23,8 @@
     
     * Seahorse Data Processing
     
+    * Mouse and Human Orthologs
+    
     * WGCNA (Maybe) 
 
 
@@ -36,7 +38,7 @@
     
 * SegRegPar
 
-    *A parallelized and version of Ning Leng's Segmented Regression implementation, modified to fix problems with endpoints
+    * A parallelized and version of Ning Leng's Segmented Regression implementation, modified to fix problems with endpoints
     
 * Data
 

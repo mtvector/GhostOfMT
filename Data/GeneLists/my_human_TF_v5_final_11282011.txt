@@ -1,0 +1,2261 @@
+symbol	function description	source	confidence code	Previous.Symbols	Synonyms
+AATF	apoptosis antagonizing transcription factor	based on GO term	CC:1		DED, CHE-1, CHE1
+ADNP	activity-dependent neuroprotector homeobox	based on GO term	CC:1		KIAA0784, ADNP1
+ADNP2	ADNP homeobox 2	based on GO term	CC:1	ZNF508	KIAA0863
+AEBP1	AE binding protein 1	based on GO term	CC:1		ACLP
+AFF1	AF4/FMR2 family, member 1	based on GO term	CC:1	PBM1, MLLT2	AF-4, AF4
+AFF4	AF4/FMR2 family, member 4	based on GO term	CC:1		AF5Q31, MCEF
+AHR	aryl hydrocarbon receptor	based on GO term	CC:1		bHLHe76
+ALS2CR8	amyotrophic lateral sclerosis 2 (juvenile) chromosome region, candidate 8	based on GO term	CC:1		FLJ21579, CaRF, NYD-SP24
+ALX1	ALX homeobox 1	based on GO term	CC:1	CART1	
+ALX3	ALX homeobox 3	based on GO term	CC:1		
+ALX4	ALX homeobox 4	based on GO term	CC:1	PFM2	FPP, PFM, KIAA1788
+ANKRD30A	ankyrin repeat domain 30A	based on GO term	CC:1		NY-BR-1
+AR	androgen receptor	based on GO term	CC:1	DHTR, SBMA	AIS, NR3C4, SMAX1, HUMARA
+ARGFX	arginine-fifty homeobox	based on GO term	CC:1		
+ARID3A	AT rich interactive domain 3A (BRIGHT-like)	based on GO term	CC:1	DRIL1	BRIGHT
+ARID4A	AT rich interactive domain 4A (RBP1-like)	based on GO term	CC:1	RBBP1	RBP1, RBP-1
+ARNT	aryl hydrocarbon receptor nuclear translocator	based on GO term	CC:1		HIF-1beta, bHLHe2
+ARNT2	aryl-hydrocarbon receptor nuclear translocator 2	based on GO term	CC:1		KIAA0307, bHLHe1
+ARNTL	aryl hydrocarbon receptor nuclear translocator-like	based on GO term	CC:1		MOP3, JAP3, BMAL1, PASD3, bHLHe5
+ARNTL2	aryl hydrocarbon receptor nuclear translocator-like 2	based on GO term	CC:1		BMAL2, MOP9, CLIF, PASD9, bHLHe6
+ARX	aristaless related homeobox	based on GO term	CC:1	MRXS1, PRTS, MRX76, MRX54, MRX43, MRX36, MRX29, MRX32, MRX33, MRX38, MRX87	ISSX, CT121, EIEE1
+ASCL1	achaete-scute complex homolog 1 (Drosophila)	based on GO term	CC:1		ASH1, HASH1, bHLHa46
+ASCL2	achaete-scute complex homolog 2 (Drosophila)	based on GO term	CC:1		ASH2, HASH2, bHLHa45
+ASH1L	ash1 (absent, small, or homeotic)-like (Drosophila)	based on GO term	CC:1		huASH1, ASH1, ASH1L1, KMT2H
+ATF1	activating transcription factor 1	based on GO term	CC:1		TREB36
+ATF2	activating transcription factor 2	based on GO term	CC:1	CREB2	TREB7, CRE-BP1, HB16
+ATF3	activating transcription factor 3	based on GO term	CC:1		
+ATF4	activating transcription factor 4 (tax-responsive enhancer element B67)	based on GO term	CC:1	TXREB	TAXREB67, CREB-2
+ATF5	activating transcription factor 5	based on GO term	CC:1		
+ATF6	activating transcription factor 6	based on GO term	CC:1		ATF6A
+ATF6B	activating transcription factor 6 beta	based on GO term	CC:1	CREBL1	G13
+ATF7	activating transcription factor 7	based on GO term	CC:1		ATFA
+ATOH1	atonal homolog 1 (Drosophila)	based on GO term	CC:1		HATH1, MATH-1, Math1, bHLHa14
+BACH1	BTB and CNC homology 1, basic leucine zipper transcription factor 1	based on GO term	CC:1		BACH-1
+BACH2	BTB and CNC homology 1, basic leucine zipper transcription factor 2	based on GO term	CC:1		
+BARHL1	BarH-like homeobox 1	based on GO term	CC:1		
+BARHL2	BarH-like homeobox 2	based on GO term	CC:1		
+BARX1	BARX homeobox 1	based on GO term	CC:1		
+BARX2	BARX homeobox 2	based on GO term	CC:1		
+BATF	basic leucine zipper transcription factor, ATF-like	based on GO term	CC:1		B-ATF, SFA-2, BATF1
+BATF2	basic leucine zipper transcription factor, ATF-like 2	based on GO term	CC:1		MGC20410
+BATF3	basic leucine zipper transcription factor, ATF-like 3	based on GO term	CC:1		JUNDM1, SNFT, JDP1
+BAZ1B	bromodomain adjacent to zinc finger domain, 1B	based on GO term	CC:1	WBSCR9, WBSCR10	WSTF
+BCL3	B-cell CLL/lymphoma 3	based on GO term	CC:1	D19S37, BCL4	
+BCL6	B-cell CLL/lymphoma 6	based on GO term	CC:1	ZNF51	ZBTB27, LAZ3, BCL5, BCL6A
+BHLHE40	basic helix-loop-helix family, member e40	based on GO term	CC:1	STRA13, BHLHB2	DEC1, bHLHe40
+BHLHE41	basic helix-loop-helix family, member e41	based on GO term	CC:1	BHLHB3	DEC2, SHARP-1, SHARP1, bHLHe41
+BLZF1	basic leucine zipper nuclear factor 1	based on GO term	CC:1		JEM-1
+BNC1	basonuclin 1	based on GO term	CC:1	BNC	HsT19447
+BRD8	bromodomain containing 8	based on GO term	CC:1		SMAP, p120
+BRF1	BRF1 homolog, subunit of RNA polymerase III transcription initiation factor IIIB (S. cerevisiae)	based on GO term	CC:1	TAF3B2, TAF3C, GTF3B	TFIIIB90, BRF, hBRF
+BSX	brain-specific homeobox	based on GO term	CC:1		BSX1
+BTAF1	BTAF1 RNA polymerase II, B-TFIID transcription factor-associated, 170kDa (Mot1 homolog, S. cerevisiae)	based on GO term	CC:1		TAFII170, TAF172, MOT1, TAF-172, TAF(II)170
+BTF3	basic transcription factor 3	based on GO term	CC:1	NACB	BTF3a, BTF3b
+BTF3L2	basic transcription factor 3, like 2	based on GO term	CC:1	NA	NA
+BTF3L3	basic transcription factor 3, like 3	based on GO term	CC:1	NA	NA
+BUD31	BUD31 homolog (S. cerevisiae)	based on GO term	CC:1		YCR063W, EDG-2, EDG2, G10, fSAP17
+C11orf9	chromosome 11 open reading frame 9	based on GO term	CC:1		Ndt80
+C21orf66	chromosome 21 open reading frame 66	based on GO term	CC:1	NA	NA
+C2orf3	chromosome 2 open reading frame 3	based on GO term	CC:1	TCF9	DNABF, GCF
+C5orf41	chromosome 5 open reading frame 41	based on GO term	CC:1		
+CBFA2T2	core-binding factor, runt domain, alpha subunit 2; translocated to, 2	based on GO term	CC:1		MTGR1, ZMYND3
+CBFA2T3	core-binding factor, runt domain, alpha subunit 2; translocated to, 3	based on GO term	CC:1		MTGR2, ZMYND4, MTG16
+CBFB	core-binding factor, beta subunit	based on GO term	CC:1		PEBP2B
+CBL	Cas-Br-M (murine) ecotropic retroviral transforming sequence	based on GO term	CC:1	CBL2	RNF55, c-Cbl
+CCRN4L	CCR4 carbon catabolite repression 4-like (S. cerevisiae)	based on GO term	CC:1		CCR4L, CCR4
+CDK12	cyclin-dependent kinase 12	based on GO term	CC:1	CRKRS	CRK7, CRKR, KIAA0904
+CDKN2A	cyclin-dependent kinase inhibitor 2A (melanoma, p16, inhibits CDK4)	based on GO term	CC:1	CDKN2, MLM	CDK4I, p16, INK4a, MTS1, CMM2, ARF, p19, p14, INK4, p16INK4a, p19Arf
+CDX1	caudal type homeobox 1	based on GO term	CC:1		
+CDX2	caudal type homeobox 2	based on GO term	CC:1	CDX3	
+CDX4	caudal type homeobox 4	based on GO term	CC:1		
+CEBPA	CCAAT/enhancer binding protein (C/EBP), alpha	based on GO term	CC:1	CEBP	C/EBP-alpha
+CEBPB	CCAAT/enhancer binding protein (C/EBP), beta	based on GO term	CC:1	TCF5	LAP, CRP2, NFIL6, IL6DBP, C/EBP-beta
+CEBPD	CCAAT/enhancer binding protein (C/EBP), delta	based on GO term	CC:1		CRP3, CELF, C/EBP-delta, NF-IL6-beta
+CEBPE	CCAAT/enhancer binding protein (C/EBP), epsilon	based on GO term	CC:1		CRP1
+CEBPG	CCAAT/enhancer binding protein (C/EBP), gamma	based on GO term	CC:1		GPE1BP, IG/EBP-1
+CIITA	class II, major histocompatibility complex, transactivator	based on GO term	CC:1	MHC2TA	C2TA, NLRA
+CIR1	corepressor interacting with RBPJ, 1	based on GO term	CC:1		CIR
+CITED1	Cbp/p300-interacting transactivator, with Glu/Asp-rich carboxy-terminal domain, 1	based on GO term	CC:1	MSG1	
+CITED2	Cbp/p300-interacting transactivator, with Glu/Asp-rich carboxy-terminal domain, 2	based on GO term	CC:1		MRG1
+CLOCK	clock homolog (mouse)	based on GO term	CC:1		KIAA0334, KAT13D, bHLHe8
+CNBP	CCHC-type zinc finger, nucleic acid binding protein	based on GO term	CC:1	DM2, ZNF9	RNF163, ZCCHC22, CNBP1
+CNOT7	CCR4-NOT transcription complex, subunit 7	based on GO term	CC:1	CAF1	
+CNOT8	CCR4-NOT transcription complex, subunit 8	based on GO term	CC:1	POP2	CAF1, hCAF1, CALIF
+CREB1	cAMP responsive element binding protein 1	based on GO term	CC:1		
+CREB3	cAMP responsive element binding protein 3	based on GO term	CC:1		LZIP, Luman
+CREB3L1	cAMP responsive element binding protein 3-like 1	based on GO term	CC:1		OASIS
+CREB3L2	cAMP responsive element binding protein 3-like 2	based on GO term	CC:1		BBF2H7, TCAG_1951439
+CREB3L3	cAMP responsive element binding protein 3-like 3	based on GO term	CC:1		CREB-H
+CREB3L4	cAMP responsive element binding protein 3-like 4	based on GO term	CC:1		AIbZIP, CREB4, CREB3, hJAL, ATCE1
+CREB5	cAMP responsive element binding protein 5	based on GO term	CC:1		H_GS165L15.1, CRE-BPA
+CREBBP	CREB binding protein	based on GO term	CC:1	RSTS	RTS, CBP, KAT3A
+CREBL2	cAMP responsive element binding protein-like 2	based on GO term	CC:1		
+CREBZF	CREB/ATF bZIP transcription factor	based on GO term	CC:1		ZF
+CREG1	cellular repressor of E1A-stimulated genes 1	based on GO term	CC:1	CREG	
+CREM	cAMP responsive element modulator	based on GO term	CC:1		hCREM-2
+CRX	cone-rod homeobox	based on GO term	CC:1	CORD2	CRD, LCA7, OTX3
+CSDA	cold shock domain protein A	based on GO term	CC:1		dbpA, ZONAB, CSDA1
+CSRNP1	cysteine-serine-rich nuclear protein 1	based on GO term	CC:1	AXUD1	URAX1, DKFZp566F164, FAM130B, TAIP-3
+CSRNP2	cysteine-serine-rich nuclear protein 2	based on GO term	CC:1	C12orf22, FAM130A1	C12ORF2, TAIP-12, PPP1R72
+CSRNP3	cysteine-serine-rich nuclear protein 3	based on GO term	CC:1	FAM130A2	FLJ32093, TAIP-2, PPP1R73
+CTBP1	C-terminal binding protein 1	based on GO term	CC:1		BARS
+CTCF	CCCTC-binding factor (zinc finger protein)	based on GO term	CC:1		
+CTNNB1	catenin (cadherin-associated protein), beta 1, 88kDa	based on GO term	CC:1	CTNNB	beta-catenin
+CUX1	cut-like homeobox 1	based on GO term	CC:1	CUTL1	CDP, CDP1, CUX, CUT, Clox, CDP/Cut, CDP/Cux, Cux/CDP, CASP, GOLIM6
+CUX2	cut-like homeobox 2	based on GO term	CC:1	CUTL2	KIAA0293, CDP2
+DACH1	dachshund homolog 1 (Drosophila)	based on GO term	CC:1	DACH	
+DBP	D site of albumin promoter (albumin D-box) binding protein	based on GO term	CC:1		DABP
+DBX1	developing brain homeobox 1	based on GO term	CC:1		
+DBX2	developing brain homeobox 2	based on GO term	CC:1		FLJ16139
+DDIT3	DNA-damage-inducible transcript 3	based on GO term	CC:1		CHOP10, GADD153, CHOP
+DEAF1	deformed epidermal autoregulatory factor 1 (Drosophila)	based on GO term	CC:1		NUDR, SPN, ZMYND5
+DLX1	distal-less homeobox 1	based on GO term	CC:1		
+DLX2	distal-less homeobox 2	based on GO term	CC:1		TES-1
+DLX3	distal-less homeobox 3	based on GO term	CC:1		
+DLX4	distal-less homeobox 4	based on GO term	CC:1	DLX7, DLX9	DLX8, BP1
+DLX5	distal-less homeobox 5	based on GO term	CC:1		
+DLX6	distal-less homeobox 6	based on GO term	CC:1		
+DMBX1	diencephalon/mesencephalon homeobox 1	based on GO term	CC:1	OTX3	PAXB
+DMRT1	doublesex and mab-3 related transcription factor 1	based on GO term	CC:1		DMT1
+DMRT2	doublesex and mab-3 related transcription factor 2	based on GO term	CC:1		
+DMRT3	doublesex and mab-3 related transcription factor 3	based on GO term	CC:1	DMRTA3	
+DMRTA1	DMRT-like family A1	based on GO term	CC:1		
+DMRTA2	DMRT-like family A2	based on GO term	CC:1		
+DMRTB1	DMRT-like family B with proline-rich C-terminal, 1	based on GO term	CC:1		
+DMRTC2	DMRT-like family C2	based on GO term	CC:1		
+DMTF1	cyclin D binding myb-like transcription factor 1	based on GO term	CC:1		DMP1, DMTF, hDMP1
+DPRX	divergent-paired related homeobox	based on GO term	CC:1		
+DRAP1	DR1-associated protein 1 (negative cofactor 2 alpha)	based on GO term	CC:1		NC2-alpha
+DRGX	dorsal root ganglia homeobox	based on GO term	CC:1	PRRXL1	DRG11
+DUX1	double homeobox, 1	based on GO term	CC:1		
+DUX2	double homeobox, 2	based on GO term	CC:1		
+DUX3	double homeobox, 3	based on GO term	CC:1		
+DUX4	double homeobox, 4	based on GO term	CC:1		
+DUX5	double homeobox, 5	based on GO term	CC:1		
+DUXA	double homeobox A	based on GO term	CC:1		
+E2F1	E2F transcription factor 1	based on GO term	CC:1	RBBP3	RBP3
+E2F2	E2F transcription factor 2	based on GO term	CC:1		E2F-2
+E2F3	E2F transcription factor 3	based on GO term	CC:1		
+E2F4	E2F transcription factor 4, p107/p130-binding	based on GO term	CC:1		E2F-4
+E2F5	E2F transcription factor 5, p130-binding	based on GO term	CC:1		
+E2F6	E2F transcription factor 6	based on GO term	CC:1		E2F-6
+E2F7	E2F transcription factor 7	based on GO term	CC:1		
+E2F8	E2F transcription factor 8	based on GO term	CC:1		FLJ23311
+E4F1	E4F transcription factor 1	based on GO term	CC:1		E4F
+EBF1	early B-cell factor 1	based on GO term	CC:1	EBF	OLF1
+ECSIT	ECSIT homolog (Drosophila)	based on GO term	CC:1		SITPEC
+EDF1	endothelial differentiation-related factor 1	based on GO term	CC:1		EDF-1
+EGR1	early growth response 1	based on GO term	CC:1		TIS8, G0S30, NGFI-A, KROX-24, ZIF-268, AT225, ZNF225
+EGR2	early growth response 2	based on GO term	CC:1	KROX20	
+EGR3	early growth response 3	based on GO term	CC:1		PILOT
+EGR4	early growth response 4	based on GO term	CC:1		NGFI-C, PAT133
+EHF	ets homologous factor	based on GO term	CC:1		ESE3, ESEJ
+ELF1	E74-like factor 1 (ets domain transcription factor)	based on GO term	CC:1		
+ELF2	E74-like factor 2 (ets domain transcription factor)	based on GO term	CC:1		EU32, NERF, NERF-2, NERF-1A, NERF-1B
+ELF3	E74-like factor 3 (ets domain transcription factor, epithelial-specific )	based on GO term	CC:1	ESX	EPR-1, ESE-1, ERT
+ELF4	E74-like factor 4 (ets domain transcription factor)	based on GO term	CC:1		MEF, ELFR
+ELF5	E74-like factor 5 (ets domain transcription factor)	based on GO term	CC:1		
+ELK1	ELK1, member of ETS oncogene family	based on GO term	CC:1		
+ELK3	ELK3, ETS-domain protein (SRF accessory protein 2)	based on GO term	CC:1		ERP, NET, SAP2
+ELK4	ELK4, ETS-domain protein (SRF accessory protein 1)	based on GO term	CC:1		SAP1
+ELL2	elongation factor, RNA polymerase II, 2	based on GO term	CC:1		
+EMX1	empty spiracles homeobox 1	based on GO term	CC:1		
+EMX2	empty spiracles homeobox 2	based on GO term	CC:1		
+EN1	engrailed homeobox 1	based on GO term	CC:1		
+EN2	engrailed homeobox 2	based on GO term	CC:1		
+ENO1	enolase 1, (alpha)	based on GO term	CC:1	ENO1L1, MPB1	PPH, MBP-1
+EOMES	eomesodermin homolog (Xenopus laevis)	based on GO term	CC:1		TBR2
+EP300	E1A binding protein p300	based on GO term	CC:1		p300, KAT3B
+EPAS1	endothelial PAS domain protein 1	based on GO term	CC:1		MOP2, PASD2, HIF2A, HLF, bHLHe73
+ERF	Ets2 repressor factor	based on GO term	CC:1		PE-2, PE2
+ERG	v-ets erythroblastosis virus E26 oncogene homolog (avian)	based on GO term	CC:1		erg-3, p55
+ESR1	estrogen receptor 1	based on GO term	CC:1	ESR	NR3A1, Era
+ESR2	estrogen receptor 2 (ER beta)	based on GO term	CC:1		NR3A2, Erb
+ESRRA	estrogen-related receptor alpha	based on GO term	CC:1	ESRL1	ERR1, ERRalpha, NR3B1, ERRa
+ESRRB	estrogen-related receptor beta	based on GO term	CC:1	ESRL2, DFNB35	ERR2, ERRbeta, NR3B2, ERRb
+ESRRG	estrogen-related receptor gamma	based on GO term	CC:1		
+ESX1	ESX homeobox 1	based on GO term	CC:1	ESX1L	ESXR1
+ETS1	v-ets erythroblastosis virus E26 oncogene homolog 1 (avian)	based on GO term	CC:1	EWSR2	FLJ10768, ETS-1
+ETS2	v-ets erythroblastosis virus E26 oncogene homolog 2 (avian)	based on GO term	CC:1		
+ETV1	ets variant 1	based on GO term	CC:1		ER81
+ETV2	ets variant 2	based on GO term	CC:1		ER71
+ETV3	ets variant 3	based on GO term	CC:1		PE-1
+ETV3L	ets variant 3-like	based on GO term	CC:1		FLJ16478
+ETV4	ets variant 4	based on GO term	CC:1		E1A-F, E1AF
+ETV5	ets variant 5	based on GO term	CC:1		ERM
+ETV6	ets variant 6	based on GO term	CC:1		TEL
+ETV7	ets variant 7	based on GO term	CC:1		TEL2, TEL-2
+EVX1	even-skipped homeobox 1	based on GO term	CC:1		
+EVX2	even-skipped homeobox 2	based on GO term	CC:1		
+FEV	FEV (ETS oncogene family)	based on GO term	CC:1		Pet-1
+FLI1	Friend leukemia virus integration 1	based on GO term	CC:1		SIC-1, EWSR2
+FOS	FBJ murine osteosarcoma viral oncogene homolog	based on GO term	CC:1		c-fos, AP-1
+FOSB	FBJ murine osteosarcoma viral oncogene homolog B	based on GO term	CC:1		G0S3, GOSB, GOS3, AP-1, MGC42291, DKFZp686C0818
+FOSL1	FOS-like antigen 1	based on GO term	CC:1		fra-1
+FOSL2	FOS-like antigen 2	based on GO term	CC:1		FRA2, FLJ23306
+FOXA1	forkhead box A1	based on GO term	CC:1	HNF3A	
+FOXA2	forkhead box A2	based on GO term	CC:1	HNF3B	
+FOXA3	forkhead box A3	based on GO term	CC:1	HNF3G	
+FOXB1	forkhead box B1	based on GO term	CC:1		HFKH-5, FKH5
+FOXB2	forkhead box B2	based on GO term	CC:1		bA159H20.4
+FOXC1	forkhead box C1	based on GO term	CC:1	FKHL7, IRID1	FREAC3, ARA, IGDA, IHG1
+FOXC2	forkhead box C2 (MFH-1, mesenchyme forkhead 1)	based on GO term	CC:1	FKHL14	MFH-1
+FOXD1	forkhead box D1	based on GO term	CC:1	FKHL8	FREAC4
+FOXD2	forkhead box D2	based on GO term	CC:1	FKHL17	FREAC9
+FOXD3	forkhead box D3	based on GO term	CC:1		Genesis, HFH2
+FOXD4	forkhead box D4	based on GO term	CC:1	FKHL9	FREAC5, FOXD4a
+FOXD4L1	forkhead box D4-like 1	based on GO term	CC:1		FOXD5
+FOXD4L3	forkhead box D4-like 3	based on GO term	CC:1		OTTHUMG00000019959, FOXD6
+FOXD4L4	forkhead box D4-like 4	based on GO term	CC:1		bA460E7.2, OTTHUMG00000013337
+FOXD4L5	forkhead box D4-like 5	based on GO term	CC:1		bA15J10.2, OTTHUMG00000013332
+FOXD4L6	forkhead box D4-like 6	based on GO term	CC:1		OTTHUMG00000066822
+FOXE1	forkhead box E1 (thyroid transcription factor 2)	based on GO term	CC:1	FKHL15, TITF2, FOXE2	TTF-2, HFKH4
+FOXE3	forkhead box E3	based on GO term	CC:1	FKHL12	FREAC8
+FOXF1	forkhead box F1	based on GO term	CC:1	FKHL5	FREAC1
+FOXF2	forkhead box F2	based on GO term	CC:1	FKHL6	FREAC2
+FOXG1	forkhead box G1	based on GO term	CC:1	FKHL2, FOXG1B, FKHL4, FKH2, FKHL1, FOXG1C, FKHL3, FOXG1A	HFK2, QIN, BF1, HFK1, HFK3, HBF-3
+FOXH1	forkhead box H1	based on GO term	CC:1		FAST1
+FOXI1	forkhead box I1	based on GO term	CC:1	FKHL10	FREAC6
+FOXI2	forkhead box I2	based on GO term	CC:1		FLJ46831
+FOXI3	forkhead box I3	based on GO term	CC:1		
+FOXJ1	forkhead box J1	based on GO term	CC:1	FKHL13	HFH-4, HFH4
+FOXJ2	forkhead box J2	based on GO term	CC:1		FHX
+FOXJ3	forkhead box J3	based on GO term	CC:1		KIAA1041
+FOXK1	forkhead box K1	based on GO term	CC:1		IMAGE:5164497
+FOXK2	forkhead box K2	based on GO term	CC:1	ILF, ILF1	
+FOXL1	forkhead box L1	based on GO term	CC:1	FKHL11	FREAC7, FKH6
+FOXL2	forkhead box L2	based on GO term	CC:1	BPES	BPES1
+FOXM1	forkhead box M1	based on GO term	CC:1	FKHL16	HFH-11, trident, HNF-3, INS-1, MPP2, MPHOSPH2, TGT3
+FOXN1	forkhead box N1	based on GO term	CC:1	WHN, RONU	FKHL20
+FOXN2	forkhead box N2	based on GO term	CC:1	HTLF	
+FOXN3	forkhead box N3	based on GO term	CC:1	C14orf116, CHES1	
+FOXN4	forkhead box N4	based on GO term	CC:1		
+FOXO1	forkhead box O1	based on GO term	CC:1	FKHR, FOXO1A	FKH1
+FOXO3	forkhead box O3	based on GO term	CC:1	FKHRL1, FOXO3A	AF6q21, FOXO2
+FOXO4	forkhead box O4	based on GO term	CC:1	MLLT7	AFX1
+FOXO6	forkhead box O6	based on GO term	CC:1		
+FOXP1	forkhead box P1	based on GO term	CC:1		QRF1, 12CC4, HSPC215, hFKH1B
+FOXP2	forkhead box P2	based on GO term	CC:1	TNRC10, SPCH1	CAGH44
+FOXP3	forkhead box P3	based on GO term	CC:1	IPEX	JM2, XPID, AIID, PIDX, DIETER, SCURFIN
+FOXP4	forkhead box P4	based on GO term	CC:1		FLJ40908
+FOXQ1	forkhead box Q1	based on GO term	CC:1		HFH1
+FOXR1	forkhead box R1	based on GO term	CC:1		DLNB13, FOXN5
+FOXR2	forkhead box R2	based on GO term	CC:1		MGC21658, FOXN6
+FOXS1	forkhead box S1	based on GO term	CC:1	FKHL18	FREAC10
+FUBP1	far upstream element (FUSE) binding protein 1	based on GO term	CC:1	FUBP	FBP
+GABPA	GA binding protein transcription factor, alpha subunit 60kDa	based on GO term	CC:1		E4TF1A, NFT2, NRF2, E4TF1-60, NRF2A
+GABPB1	GA binding protein transcription factor, beta subunit 1	based on GO term	CC:1	GABPB2	E4TF1-47, GABPB
+GAS7	growth arrest-specific 7	based on GO term	CC:1		KIAA0394, MGC1348
+GATA1	GATA binding protein 1 (globin transcription factor 1)	based on GO term	CC:1	GF1	ERYF1, NFE1, GATA-1
+GATA2	GATA binding protein 2	based on GO term	CC:1		NFE1B
+GATA3	GATA binding protein 3	based on GO term	CC:1		HDR
+GATA4	GATA binding protein 4	based on GO term	CC:1		
+GATA5	GATA binding protein 5	based on GO term	CC:1		bB379O24.1
+GATA6	GATA binding protein 6	based on GO term	CC:1		
+GATAD1	GATA zinc finger domain containing 1	based on GO term	CC:1		ODAG, RG083M05.2, FLJ22489
+GATAD2A	GATA zinc finger domain containing 2A	based on GO term	CC:1		p66alpha
+GATAD2B	GATA zinc finger domain containing 2B	based on GO term	CC:1		P66beta
+GBX1	gastrulation brain homeobox 1	based on GO term	CC:1		
+GBX2	gastrulation brain homeobox 2	based on GO term	CC:1		
+GCM1	glial cells missing homolog 1 (Drosophila)	based on GO term	CC:1	GCMA	hGCMa
+GLI1	GLI family zinc finger 1	based on GO term	CC:1	GLI	
+GLI2	GLI family zinc finger 2	based on GO term	CC:1		THP2, HPE9, THP1
+GLI3	GLI family zinc finger 3	based on GO term	CC:1	GCPS, PHS	PAP-A, PAPA, PAPA1, PAPB, ACLS, PPDIV
+GLIS3	GLIS family zinc finger 3	based on GO term	CC:1	ZNF515	MGC33662
+GMEB1	glucocorticoid modulatory element binding protein 1	based on GO term	CC:1		P96PIF, PIF96
+GMEB2	glucocorticoid modulatory element binding protein 2	based on GO term	CC:1		P79PIF, KIAA1269, PIF79
+GSC	goosecoid homeobox	based on GO term	CC:1		
+GSC2	goosecoid homeobox 2	based on GO term	CC:1	GSCL	
+GSX1	GS homeobox 1	based on GO term	CC:1	GSH1	Gsh-1
+GSX2	GS homeobox 2	based on GO term	CC:1		Gsh2
+GTF2A1L	general transcription factor IIA, 1-like	based on GO term	CC:1		ALF
+GTF2E1	general transcription factor IIE, polypeptide 1, alpha 56kDa	based on GO term	CC:1		TFIIE-A, FE
+GTF2E2	general transcription factor IIE, polypeptide 2, beta 34kDa	based on GO term	CC:1		TFIIE-B, FE, TF2E2
+GTF2H2	general transcription factor IIH, polypeptide 2, 44kDa	based on GO term	CC:1		BTF2, TFIIH, BTF2P44, T-BTF2P44
+GTF2H3	general transcription factor IIH, polypeptide 3, 34kDa	based on GO term	CC:1		BTF2, TFIIH
+GTF2H4	general transcription factor IIH, polypeptide 4, 52kDa	based on GO term	CC:1		TFB2, TFIIH
+GTF2I	general transcription factor IIi	based on GO term	CC:1	WBSCR6	TFII-I, BAP-135, SPIN, BTKAP1, DIWS, IB291
+GTF2IRD1	GTF2I repeat domain containing 1	based on GO term	CC:1	WBSCR11	MusTRD1, RBAP2, GTF3, WBSCR12, BEN, Cream1
+GTF3A	general transcription factor IIIA	based on GO term	CC:1		TFIIIA, AP2
+GTF3C1	general transcription factor IIIC, polypeptide 1, alpha 220kDa	based on GO term	CC:1		TFIIIC220
+GTF3C2	general transcription factor IIIC, polypeptide 2, beta 110kDa	based on GO term	CC:1		KIAA0011, TFIIIC110
+GTF3C3	general transcription factor IIIC, polypeptide 3, 102kDa	based on GO term	CC:1		TFiiiC2-102, TFIIIC102
+GTF3C4	general transcription factor IIIC, polypeptide 4, 90kDa	based on GO term	CC:1		TFIIIC90, KAT12
+GTF3C5	general transcription factor IIIC, polypeptide 5, 63kDa	based on GO term	CC:1		TFiiiC2-63, TFIIIC63, TFIIICepsilon
+GTF3C6	general transcription factor IIIC, polypeptide 6, alpha 35kDa	based on GO term	CC:1	C6orf51	bA397G5.3, TFIIIC35
+HAND1	heart and neural crest derivatives expressed 1	based on GO term	CC:1		eHand, Thing1, Hxt, bHLHa27
+HAND2	heart and neural crest derivatives expressed 2	based on GO term	CC:1		dHand, Thing2, Hed, bHLHa26
+HCFC1	host cell factor C1 (VP16-accessory protein)	based on GO term	CC:1	HFC1	HCF-1, HCF1, CFF, VCAF, MGC70925
+HCFC2	host cell factor C2	based on GO term	CC:1		HCF-2
+HCLS1	hematopoietic cell-specific Lyn substrate 1	based on GO term	CC:1		HS1, CTTNL
+HDAC1	histone deacetylase 1	based on GO term	CC:1	RPD3L1	HD1, GON-10
+HDAC2	histone deacetylase 2	based on GO term	CC:1		RPD3, YAF1
+HDX	highly divergent homeobox	based on GO term	CC:1	CXorf43	FLJ30678
+HELT	HES/HEY-like transcription factor	based on GO term	CC:1		HESL, HCM1228, Mgn, bHLHb44, MEGANE
+HES6	hairy and enhancer of split 6 (Drosophila)	based on GO term	CC:1		bHLHb41
+HESX1	HESX homeobox 1	based on GO term	CC:1		RPX, ANF
+HEY1	hairy/enhancer-of-split related with YRPW motif 1	based on GO term	CC:1		HESR-1, CHF2, HESR1, HRT-1, CHF-2, HERP2, BHLHb31
+HEY2	hairy/enhancer-of-split related with YRPW motif 2	based on GO term	CC:1		bHLHb32, HERP1
+HEYL	hairy/enhancer-of-split related with YRPW motif-like	based on GO term	CC:1		bHLHb33, HEY3
+HHEX	hematopoietically expressed homeobox	based on GO term	CC:1	PRHX	HEX, HOX11L-PEN
+HIC1	hypermethylated in cancer 1	based on GO term	CC:1		ZBTB29, ZNF901
+HIF1A	hypoxia inducible factor 1, alpha subunit (basic helix-loop-helix transcription factor)	based on GO term	CC:1		MOP1, HIF-1alpha, PASD8, HIF1, bHLHe78
+HIF3A	hypoxia inducible factor 3, alpha subunit	based on GO term	CC:1		IPAS, MOP7, PASD7, bHLHe17
+HINFP	histone H4 transcription factor	based on GO term	CC:1	MIZF	DKFZP434F162, HiNF-P, ZNF743
+HIRA	HIR histone cell cycle regulation defective homolog A (S. cerevisiae)	based on GO term	CC:1	TUPLE1	DGCR1, TUP1
+HLF	hepatic leukemia factor	based on GO term	CC:1		MGC33822
+HLTF	helicase-like transcription factor	based on GO term	CC:1	SNF2L3, SMARCA3	HIP116A, HLTF1, RNF80
+HLX	H2.0-like homeobox	based on GO term	CC:1	HLX1	HB24
+HMBOX1	homeobox containing 1	based on GO term	CC:1		HNF1LA, PBHNF, FLJ21616
+HMG20A	high-mobility group 20A	based on GO term	CC:1		HMGX1, FLJ10739, HMGXB1
+HMG20B	high-mobility group 20B	based on GO term	CC:1		SOXL, HMGX2, BRAF35, SMARCE1r, BRAF25, HMGXB2
+HMGA1	high mobility group AT-hook 1	based on GO term	CC:1	HMGIY	
+HMGB2	high-mobility group box 2	based on GO term	CC:1	HMG2	
+HMGN1	high-mobility group nucleosome binding domain 1	based on GO term	CC:1	HMG14	FLJ27265, FLJ31471, MGC104230, MGC117425
+HMX1	H6 family homeobox 1	based on GO term	CC:1		H6, NKX5-3
+HMX2	H6 family homeobox 2	based on GO term	CC:1		NKX5-2
+HMX3	H6 family homeobox 3	based on GO term	CC:1		NKX5-1
+HNF1A	HNF1 homeobox A	based on GO term	CC:1	MODY3, TCF1	HNF1, LFB1
+HNF1B	HNF1 homeobox B	based on GO term	CC:1	TCF2	LFB3, VHNF1, HNF1beta, MODY5
+HNF4A	hepatocyte nuclear factor 4, alpha	based on GO term	CC:1	TCF14, MODY, MODY1	NR2A1, HNF4
+HNF4G	hepatocyte nuclear factor 4, gamma	based on GO term	CC:1		NR2A2
+HNRNPAB	heterogeneous nuclear ribonucleoprotein A/B	based on GO term	CC:1	HNRPAB	ABBP1, FLJ40338
+HOMEZ	homeobox and leucine zipper encoding	based on GO term	CC:1	KIAA1443	
+HOPX	HOP homeobox	based on GO term	CC:1		LAGY, HOP, OB1, NECC1, SMAP31
+HOXA1	homeobox A1	based on GO term	CC:1	HOX1F, HOX1	
+HOXA10	homeobox A10	based on GO term	CC:1	HOX1H, HOX1	
+HOXA11	homeobox A11	based on GO term	CC:1	HOX1I, HOX1	
+HOXA13	homeobox A13	based on GO term	CC:1	HOX1J, HOX1	
+HOXA2	homeobox A2	based on GO term	CC:1	HOX1K	
+HOXA3	homeobox A3	based on GO term	CC:1	HOX1E, HOX1	
+HOXA4	homeobox A4	based on GO term	CC:1	HOX1D, HOX1	
+HOXA5	homeobox A5	based on GO term	CC:1	HOX1C, HOX1	
+HOXA6	homeobox A6	based on GO term	CC:1	HOX1B, HOX1	
+HOXA7	homeobox A7	based on GO term	CC:1	HOX1A, HOX1	
+HOXA9	homeobox A9	based on GO term	CC:1	HOX1G, HOX1	
+HOXB1	homeobox B1	based on GO term	CC:1	HOX2, HOX2I	
+HOXB13	homeobox B13	based on GO term	CC:1		
+HOXB2	homeobox B2	based on GO term	CC:1	HOX2, HOX2H	
+HOXB3	homeobox B3	based on GO term	CC:1	HOX2, HOX2G	
+HOXB4	homeobox B4	based on GO term	CC:1	HOX2, HOX2F	
+HOXB5	homeobox B5	based on GO term	CC:1	HOX2, HOX2A	
+HOXB6	homeobox B6	based on GO term	CC:1	HOX2, HOX2B	
+HOXB7	homeobox B7	based on GO term	CC:1	HOX2, HOX2C	
+HOXB8	homeobox B8	based on GO term	CC:1	HOX2, HOX2D	
+HOXB9	homeobox B9	based on GO term	CC:1	HOX2E, HOX2	
+HOXC10	homeobox C10	based on GO term	CC:1	HOX3I	
+HOXC11	homeobox C11	based on GO term	CC:1	HOX3H	
+HOXC12	homeobox C12	based on GO term	CC:1	HOX3, HOX3F, HOC3F	
+HOXC13	homeobox C13	based on GO term	CC:1	HOX3, HOX3G	
+HOXC4	homeobox C4	based on GO term	CC:1	HOX3, HOX3E	
+HOXC5	homeobox C5	based on GO term	CC:1	HOX3D, HOX3	
+HOXC6	homeobox C6	based on GO term	CC:1	HOX3C, HOX3	
+HOXC8	homeobox C8	based on GO term	CC:1	HOX3, HOX3A	
+HOXC9	homeobox C9	based on GO term	CC:1	HOX3, HOX3B	
+HOXD1	homeobox D1	based on GO term	CC:1	HOX4, HOX4G	
+HOXD10	homeobox D10	based on GO term	CC:1	HOX4, HOX4D	
+HOXD11	homeobox D11	based on GO term	CC:1	HOX4, HOX4F	
+HOXD12	homeobox D12	based on GO term	CC:1	HOX4H	
+HOXD13	homeobox D13	based on GO term	CC:1	HOX4I, SPD	
+HOXD3	homeobox D3	based on GO term	CC:1	HOX4A, HOX4, HOX1D	
+HOXD4	homeobox D4	based on GO term	CC:1	HOX4B, HOX4	
+HOXD8	homeobox D8	based on GO term	CC:1	HOX4, HOX4E	
+HOXD9	homeobox D9	based on GO term	CC:1	HOX4C, HOX4	
+HR	hairless homolog (mouse)	based on GO term	CC:1	ALUNC	AU
+HSF1	heat shock transcription factor 1	based on GO term	CC:1		HSTF1
+HSF2	heat shock transcription factor 2	based on GO term	CC:1		
+HSF4	heat shock transcription factor 4	based on GO term	CC:1	CTM	
+HSF5	heat shock transcription factor family member 5	based on GO term	CC:1		FLJ40311
+HSFX2	heat shock transcription factor family, X linked 2	based on GO term	CC:1		
+HSFY2	heat shock transcription factor, Y linked 2	based on GO term	CC:1		FLJ25453
+HTATIP2	HIV-1 Tat interactive protein 2, 30kDa	based on GO term	CC:1		TIP30, CC3, FLJ26963, SDR44U1
+HTATSF1	HIV-1 Tat specific factor 1	based on GO term	CC:1		TAT-SF1
+IGHMBP2	immunoglobulin mu binding protein 2	based on GO term	CC:1		SMUBP2, CATF1, SMARD1, HCSA, HMN6
+IKZF1	IKAROS family zinc finger 1 (Ikaros)	based on GO term	CC:1	ZNFN1A1	hIk-1, LyF-1, Hs.54452, IKAROS
+IKZF3	IKAROS family zinc finger 3 (Aiolos)	based on GO term	CC:1	ZNFN1A3	Aiolos
+IKZF4	IKAROS family zinc finger 4 (Eos)	based on GO term	CC:1	ZNFN1A4	Eos
+ILF2	interleukin enhancer binding factor 2, 45kDa	based on GO term	CC:1		NF45
+IRF1	interferon regulatory factor 1	based on GO term	CC:1		MAR
+IRF2	interferon regulatory factor 2	based on GO term	CC:1		
+IRF3	interferon regulatory factor 3	based on GO term	CC:1		
+IRF4	interferon regulatory factor 4	based on GO term	CC:1	MUM1	LSIRF
+IRF5	interferon regulatory factor 5	based on GO term	CC:1		
+IRF6	interferon regulatory factor 6	based on GO term	CC:1	VWS, LPS	OFC6, VWS1
+IRF7	interferon regulatory factor 7	based on GO term	CC:1		
+IRF8	interferon regulatory factor 8	based on GO term	CC:1	ICSBP1	IRF-8, ICSBP
+IRF9	interferon regulatory factor 9	based on GO term	CC:1	ISGF3G	
+IRX1	iroquois homeobox 1	based on GO term	CC:1		IRX-5
+IRX2	iroquois homeobox 2	based on GO term	CC:1		
+IRX3	iroquois homeobox 3	based on GO term	CC:1		IRX-1
+IRX4	iroquois homeobox 4	based on GO term	CC:1		
+IRX5	iroquois homeobox 5	based on GO term	CC:1		IRX-2a
+IRX6	iroquois homeobox 6	based on GO term	CC:1	IRX7	IRX-3
+ISL1	ISL LIM homeobox 1	based on GO term	CC:1		Isl-1, ISLET1
+ISL2	ISL LIM homeobox 2	based on GO term	CC:1		FLJ10160
+ISX	intestine-specific homeobox	based on GO term	CC:1		RAXLX
+JDP2	Jun dimerization protein 2	based on GO term	CC:1		JUNDM2
+JUN	jun oncogene	based on GO term	CC:1		c-Jun, AP-1
+JUNB	jun B proto-oncogene	based on GO term	CC:1		
+JUND	jun D proto-oncogene	based on GO term	CC:1		AP-1
+KCNH8	potassium voltage-gated channel, subfamily H (eag-related), member 8	based on GO term	CC:1		Kv12.1, elk3
+KDM5A	lysine (K)-specific demethylase 5A	based on GO term	CC:1	RBBP2, JARID1A	
+KDM5B	lysine (K)-specific demethylase 5B	based on GO term	CC:1	JARID1B	RBBP2H1A, PLU-1, CT31
+KLF1	Kruppel-like factor 1 (erythroid)	based on GO term	CC:1		EKLF
+KLF10	Kruppel-like factor 10	based on GO term	CC:1	TIEG	EGRA, TIEG1
+KLF11	Kruppel-like factor 11	based on GO term	CC:1	TIEG2	Tieg3, MODY7
+KLF12	Kruppel-like factor 12	based on GO term	CC:1		AP-2rep, HSPC122, AP2REP
+KLF13	Kruppel-like factor 13	based on GO term	CC:1		RFLAT-1, BTEB3, NSLP1, FKLF-2
+KLF15	Kruppel-like factor 15	based on GO term	CC:1		KKLF
+KLF16	Kruppel-like factor 16	based on GO term	CC:1		NSLP2, BTEB4, DRRF
+KLF17	Kruppel-like factor 17	based on GO term	CC:1	ZNF393	Zfp393, FLJ40160
+KLF2	Kruppel-like factor 2 (lung)	based on GO term	CC:1		LKLF
+KLF3	Kruppel-like factor 3 (basic)	based on GO term	CC:1		BKLF
+KLF4	Kruppel-like factor 4 (gut)	based on GO term	CC:1		EZF, GKLF
+KLF5	Kruppel-like factor 5 (intestinal)	based on GO term	CC:1	BTEB2	IKLF, CKLF
+KLF6	Kruppel-like factor 6	based on GO term	CC:1	BCD1, ST12, COPEB	CPBP, GBF, Zf9, PAC1
+KLF7	Kruppel-like factor 7 (ubiquitous)	based on GO term	CC:1		UKLF
+KLF9	Kruppel-like factor 9	based on GO term	CC:1	BTEB1	
+L3MBTL	l(3)mbt-like (Drosophila)	based on GO term	CC:1	NA	NA
+L3MBTL4	l(3)mbt-like 4 (Drosophila)	based on GO term	CC:1		FLJ35936, HsT1031
+LASS2	LAG1 homolog, ceramide synthase 2	based on GO term	CC:1	NA	NA
+LASS3	LAG1 homolog, ceramide synthase 3	based on GO term	CC:1	NA	NA
+LASS4	LAG1 homolog, ceramide synthase 4	based on GO term	CC:1	NA	NA
+LASS5	LAG1 homolog, ceramide synthase 5	based on GO term	CC:1	NA	NA
+LASS6	LAG1 homolog, ceramide synthase 6	based on GO term	CC:1	NA	NA
+LBX1	ladybird homeobox 1	based on GO term	CC:1		LBX1H, HPX6
+LBX2	ladybird homeobox 2	based on GO term	CC:1		
+LCOR	ligand dependent nuclear receptor corepressor	based on GO term	CC:1		MLR2, FLJ38026, KIAA1795
+LCORL	ligand dependent nuclear receptor corepressor-like	based on GO term	CC:1		MLR1, FLJ30696
+LEF1	lymphoid enhancer-binding factor 1	based on GO term	CC:1		TCF1ALPHA, TCF10, TCF7L3
+LEUTX	leucine twenty homeobox	based on GO term	CC:1		
+LHX1	LIM homeobox 1	based on GO term	CC:1		LIM-1, LIM1
+LHX2	LIM homeobox 2	based on GO term	CC:1		LH-2, hLhx2
+LHX3	LIM homeobox 3	based on GO term	CC:1		
+LHX4	LIM homeobox 4	based on GO term	CC:1		Gsh4
+LHX5	LIM homeobox 5	based on GO term	CC:1		
+LHX6	LIM homeobox 6	based on GO term	CC:1		LHX6.1
+LHX8	LIM homeobox 8	based on GO term	CC:1		Lhx7
+LHX9	LIM homeobox 9	based on GO term	CC:1		
+LITAF	lipopolysaccharide-induced TNF factor	based on GO term	CC:1		PIG7, SIMPLE, FLJ38636, TP53I7
+LMO1	LIM domain only 1 (rhombotin 1)	based on GO term	CC:1	RBTN1	TTG1, RHOM1
+LMO4	LIM domain only 4	based on GO term	CC:1		
+LMX1A	LIM homeobox transcription factor 1, alpha	based on GO term	CC:1	LMX1	LMX1.1
+LMX1B	LIM homeobox transcription factor 1, beta	based on GO term	CC:1	NPS1	
+LOC360030	homeobox C14	based on GO term	CC:1	NA	NA
+LOC391742	TBP-associated factor 11 pseudogene	based on GO term	CC:1	NA	NA
+LZTR1	leucine-zipper-like transcription regulator 1	based on GO term	CC:1		LZTR-1
+LZTS1	leucine zipper, putative tumor suppressor 1	based on GO term	CC:1		FEZ1
+MAF	v-maf musculoaponeurotic fibrosarcoma oncogene homolog (avian)	based on GO term	CC:1		c-MAF
+MAFA	v-maf musculoaponeurotic fibrosarcoma oncogene homolog A (avian)	based on GO term	CC:1		RIPE3b1, hMafA
+MAFB	v-maf musculoaponeurotic fibrosarcoma oncogene homolog B (avian)	based on GO term	CC:1	KRML	
+MAFF	v-maf musculoaponeurotic fibrosarcoma oncogene homolog F (avian)	based on GO term	CC:1		hMafF
+MAFG	v-maf musculoaponeurotic fibrosarcoma oncogene homolog G (avian)	based on GO term	CC:1		MGC13090, MGC20149
+MAFK	v-maf musculoaponeurotic fibrosarcoma oncogene homolog K (avian)	based on GO term	CC:1		P18, NFE2U
+MAX	MYC associated factor X	based on GO term	CC:1		bHLHd4, bHLHd5, bHLHd6, bHLHd7, bHLHd8
+MBD1	methyl-CpG binding domain protein 1	based on GO term	CC:1		PCM1, CXXC3
+MECOM	MDS1 and EVI1 complex locus	based on GO term	CC:1	MDS1, EVI1	MDS1-EVI1, PRDM3
+MED21	mediator complex subunit 21	based on GO term	CC:1	SURB7	SRB7
+MED6	mediator complex subunit 6	based on GO term	CC:1		NY-REN-28
+MEF2A	myocyte enhancer factor 2A	based on GO term	CC:1		RSRFC4, RSRFC9
+MEF2B	myocyte enhancer factor 2B	based on GO term	CC:1		RSRFR2
+MEF2C	myocyte enhancer factor 2C	based on GO term	CC:1		
+MEF2D	myocyte enhancer factor 2D	based on GO term	CC:1		
+MEIS1	Meis homeobox 1	based on GO term	CC:1		
+MEIS2	Meis homeobox 2	based on GO term	CC:1		MRG1, HsT18361
+MEIS3	Meis homeobox 3	based on GO term	CC:1		MRG2, DKFZp547H236
+MEIS3P1	Meis homeobox 3 pseudogene 1	based on GO term	CC:1	MEIS3, MEIS4	MRG2
+MEIS3P2	Meis homeobox 3 pseudogene 2	based on GO term	CC:1		
+MEOX1	mesenchyme homeobox 1	based on GO term	CC:1		MOX1
+MEOX2	mesenchyme homeobox 2	based on GO term	CC:1	GAX	MOX2
+MESP1	mesoderm posterior 1 homolog (mouse)	based on GO term	CC:1		MGC10676, bHLHc5
+MESP2	mesoderm posterior 2 homolog (mouse)	based on GO term	CC:1		SCDO2, bHLHc6
+MGA	MAX gene associated	based on GO term	CC:1		KIAA0518, MAD5, MXD5, FLJ12634
+MITF	microphthalmia-associated transcription factor	based on GO term	CC:1	WS2A, WS2	MI, bHLHe32
+MIXL1	Mix1 homeobox-like 1 (Xenopus laevis)	based on GO term	CC:1		MILD1, MIXL
+MKX	mohawk homeobox	based on GO term	CC:1	C10orf48, IRXL1	MGC39616
+MLL	myeloid/lymphoid or mixed-lineage leukemia (trithorax homolog, Drosophila)	based on GO term	CC:1		TRX1, HRX, ALL-1, HTRX1, CXXC7, MLL1A, KMT2A
+MLL4	myeloid/lymphoid or mixed-lineage leukemia 4	based on GO term	CC:1	NA	NA
+MLLT1	myeloid/lymphoid or mixed-lineage leukemia (trithorax homolog, Drosophila); translocated to, 1	based on GO term	CC:1		ENL, LTG19, YEATS1
+MLLT10	myeloid/lymphoid or mixed-lineage leukemia (trithorax homolog, Drosophila); translocated to, 10	based on GO term	CC:1		AF10
+MLX	MAX-like protein X	based on GO term	CC:1	TCFL4	MAD7, MXD7, bHLHd13
+MLXIPL	MLX interacting protein-like	based on GO term	CC:1	WBSCR14	WS-bHLH, MIO, CHREBP, MONDOB, bHLHd14
+MNT	MAX binding protein	based on GO term	CC:1		ROX, MXD6, MAD6, bHLHd3
+MNX1	motor neuron and pancreas homeobox 1	based on GO term	CC:1	HLXB9	HB9, HOXHB9, SCRA1
+MRPL28	mitochondrial ribosomal protein L28	based on GO term	CC:1	MAAT1	p15
+MSC	musculin (activated B-cell factor-1)	based on GO term	CC:1		ABF-1, bHLHa22
+MSL3	male-specific lethal 3 homolog (Drosophila)	based on GO term	CC:1	MSL3L1	
+MSRB2	methionine sulfoxide reductase B2	based on GO term	CC:1	MSRB	PILB, CGI-131, CBS1, CBS-1
+MSX1	msh homeobox 1	based on GO term	CC:1	HOX7	HYD1, OFC5
+MSX2	msh homeobox 2	based on GO term	CC:1	PFM1	CRS2, FPP, HOX8, MSH, PFM
+MTA1	metastasis associated 1	based on GO term	CC:1		
+MTA2	metastasis associated 1 family, member 2	based on GO term	CC:1	MTA1L1	MTA1-L1
+MTA3	metastasis associated 1 family, member 3	based on GO term	CC:1		KIAA1266
+MTF1	metal-regulatory transcription factor 1	based on GO term	CC:1		
+MXD1	MAX dimerization protein 1	based on GO term	CC:1	MAD	MAD1, bHLHc58
+MYBL2	v-myb myeloblastosis viral oncogene homolog (avian)-like 2	based on GO term	CC:1		BMYB, B-MYB
+MYC	v-myc myelocytomatosis viral oncogene homolog (avian)	based on GO term	CC:1		c-Myc, bHLHe39
+MYCL1	v-myc myelocytomatosis viral oncogene homolog 1, lung carcinoma derived (avian)	based on GO term	CC:1	MYCL	LMYC, bHLHe38
+MYCN	v-myc myelocytomatosis viral related oncogene, neuroblastoma derived (avian)	based on GO term	CC:1	NMYC	bHLHe37, N-myc
+MYF5	myogenic factor 5	based on GO term	CC:1		bHLHc2
+MYF6	myogenic factor 6 (herculin)	based on GO term	CC:1		MRF4, bHLHc4
+MYNN	myoneurin	based on GO term	CC:1		SBBIZ1, ZBTB31, ZNF902
+MYOD1	myogenic differentiation 1	based on GO term	CC:1	MYF3	PUM, MYOD, bHLHc1
+MYOG	myogenin (myogenic factor 4)	based on GO term	CC:1	MYF4	bHLHc3
+MYPOP	Myb-related transcription factor, partner of profilin	based on GO term	CC:1		P42pop
+MYST2	MYST histone acetyltransferase 2	based on GO term	CC:1	NA	NA
+MYT1	myelin transcription factor 1	based on GO term	CC:1	PLPB1	MTF1, MYTI
+MYT1L	myelin transcription factor 1-like	based on GO term	CC:1		KIAA1106, NZF1
+MZF1	myeloid zinc finger 1	based on GO term	CC:1	ZNF42	MZF1B, ZSCAN6, MZF-1, Zfp98
+NANOG	Nanog homeobox	based on GO term	CC:1		FLJ12581, FLJ40451
+NANOGP1	Nanog homeobox pseudogene 1	based on GO term	CC:1		NANOG2
+NANOGP8	Nanog homeobox pseudogene 8	based on GO term	CC:1		
+NEUROD1	neurogenic differentiation 1	based on GO term	CC:1	NEUROD	BETA2, BHF-1, NeuroD, bHLHa3, MODY6
+NEUROD2	neurogenic differentiation 2	based on GO term	CC:1		NDRF, bHLHa1
+NEUROG1	neurogenin 1	based on GO term	CC:1	NEUROD3	AKA, Math4C, ngn1, bHLHa6
+NEUROG3	neurogenin 3	based on GO term	CC:1		Atoh5, Math4B, ngn3, bHLHa7
+NFAT5	nuclear factor of activated T-cells 5, tonicity-responsive	based on GO term	CC:1		TONEBP, KIAA0827, NFATL1, OREBP, NFATZ, NF-AT5
+NFATC1	nuclear factor of activated T-cells, cytoplasmic, calcineurin-dependent 1	based on GO term	CC:1		NF-ATC, NFATc, NFAT2
+NFATC2	nuclear factor of activated T-cells, cytoplasmic, calcineurin-dependent 2	based on GO term	CC:1		NF-ATP, NFATp, NFAT1
+NFATC3	nuclear factor of activated T-cells, cytoplasmic, calcineurin-dependent 3	based on GO term	CC:1		NFAT4, NFATX
+NFATC4	nuclear factor of activated T-cells, cytoplasmic, calcineurin-dependent 4	based on GO term	CC:1		NFAT3
+NFE2	nuclear factor (erythroid-derived 2), 45kDa	based on GO term	CC:1		NF-E2
+NFE2L1	nuclear factor (erythroid-derived 2)-like 1	based on GO term	CC:1	TCF11	NRF1, LCR-F1, FLJ00380
+NFE2L2	nuclear factor (erythroid-derived 2)-like 2	based on GO term	CC:1		NRF2
+NFE2L3	nuclear factor (erythroid-derived 2)-like 3	based on GO term	CC:1		Nrf3
+NFIA	nuclear factor I/A	based on GO term	CC:1		NFI-L, KIAA1439
+NFIB	nuclear factor I/B	based on GO term	CC:1		NFI-RED, NFIB2, NFIB3
+NFIC	nuclear factor I/C (CCAAT-binding transcription factor)	based on GO term	CC:1	NFI	CTF, NF-I, CTF5
+NFIL3	nuclear factor, interleukin 3 regulated	based on GO term	CC:1	IL3BP1	E4BP4, NFIL3A, NF-IL3A
+NFIX	nuclear factor I/X (CCAAT-binding transcription factor)	based on GO term	CC:1		NF1A
+NFKB1	nuclear factor of kappa light polypeptide gene enhancer in B-cells 1	based on GO term	CC:1		KBF1, p105, NFKB-p50, p50, NF-kappaB, NFkappaB
+NFKB2	nuclear factor of kappa light polypeptide gene enhancer in B-cells 2 (p49/p100)	based on GO term	CC:1		LYT-10, p52
+NFX1	nuclear transcription factor, X-box binding 1	based on GO term	CC:1		NFX2, MGC20369
+NFXL1	nuclear transcription factor, X-box binding-like 1	based on GO term	CC:1		HOZFP
+NFYA	nuclear transcription factor Y, alpha	based on GO term	CC:1		HAP2, CBF-B, NF-YA
+NFYB	nuclear transcription factor Y, beta	based on GO term	CC:1		CBF-A, HAP3, NF-YB
+NFYC	nuclear transcription factor Y, gamma	based on GO term	CC:1		CBF-C, NF-YC
+NKX1-1	NK1 homeobox 1	based on GO term	CC:1		HSPX153, SAX2
+NKX1-2	NK1 homeobox 2	based on GO term	CC:1	C10orf121	bB238F13.2
+NKX2-1	NK2 homeobox 1	based on GO term	CC:1	NKX2A, BCH, TITF1	TTF-1, TTF1
+NKX2-2	NK2 homeobox 2	based on GO term	CC:1	NKX2B	NKX2.2
+NKX2-3	NK2 transcription factor related, locus 3 (Drosophila)	based on GO term	CC:1	NKX2C	NKX2.3, CSX3, NKX4-3
+NKX2-4	NK2 homeobox 4	based on GO term	CC:1	NKX2D	NKX2.4
+NKX2-5	NK2 transcription factor related, locus 5 (Drosophila)	based on GO term	CC:1	CSX, NKX2E	CSX1, NKX2.5, NKX4-1
+NKX2-6	NK2 transcription factor related, locus 6 (Drosophila)	based on GO term	CC:1		CSX2, NKX4-2
+NKX2-8	NK2 homeobox 8	based on GO term	CC:1	NKX2H	NKX2.8, Nkx2-9
+NKX3-1	NK3 homeobox 1	based on GO term	CC:1	NKX3A	NKX3.1, BAPX2
+NKX3-2	NK3 homeobox 2	based on GO term	CC:1	BAPX1	NKX3B, NKX3.2
+NKX6-1	NK6 homeobox 1	based on GO term	CC:1	NKX6A	Nkx6.1
+NKX6-2	NK6 homeobox 2	based on GO term	CC:1		NKX6B, GTX, NKX6.1
+NKX6-3	NK6 homeobox 3	based on GO term	CC:1		FLJ25169
+NME1-NME2	NME1-NME2 readthrough	based on GO term	CC:1		NM23-LV, NMELV
+NOBOX	NOBOX oogenesis homeobox	based on GO term	CC:1		OG2, Og2x
+NOTCH1	Notch homolog 1, translocation-associated (Drosophila)	based on GO term	CC:1	TAN1	
+NOTO	notochord homeobox	based on GO term	CC:1		
+NPAS1	neuronal PAS domain protein 1	based on GO term	CC:1		MOP5, PASD5, bHLHe11
+NPAS2	neuronal PAS domain protein 2	based on GO term	CC:1		MOP4, PASD4, bHLHe9
+NPAT	nuclear protein, ataxia-telangiectasia locus	based on GO term	CC:1		E14
+NR0B1	nuclear receptor subfamily 0, group B, member 1	based on GO term	CC:1	AHC, DSS	DAX1, AHCH
+NR0B2	nuclear receptor subfamily 0, group B, member 2	based on GO term	CC:1		SHP
+NR1D1	nuclear receptor subfamily 1, group D, member 1	based on GO term	CC:1	THRAL	ear-1, hRev, Rev-ErbAalpha, THRA1
+NR1D2	nuclear receptor subfamily 1, group D, member 2	based on GO term	CC:1		BD73, RVR, EAR-1r, HZF2, Hs.37288
+NR1H2	nuclear receptor subfamily 1, group H, member 2	based on GO term	CC:1	UNR	NER, NER-I, RIP15, LXR-b
+NR1H3	nuclear receptor subfamily 1, group H, member 3	based on GO term	CC:1		LXR-a, RLD-1
+NR1H4	nuclear receptor subfamily 1, group H, member 4	based on GO term	CC:1		FXR, RIP14, HRR1, HRR-1
+NR1I2	nuclear receptor subfamily 1, group I, member 2	based on GO term	CC:1		ONR1, PXR, BXR, SXR, PAR2
+NR1I3	nuclear receptor subfamily 1, group I, member 3	based on GO term	CC:1		MB67, CAR1, CAR
+NR2C1	nuclear receptor subfamily 2, group C, member 1	based on GO term	CC:1	TR2	TR2-11
+NR2C2	nuclear receptor subfamily 2, group C, member 2	based on GO term	CC:1	TR4	TAK1, TR2R1, hTAK1
+NR2E1	nuclear receptor subfamily 2, group E, member 1	based on GO term	CC:1	TLX	TLL, XTLL
+NR2E3	nuclear receptor subfamily 2, group E, member 3	based on GO term	CC:1		PNR, rd7, RP37
+NR2F1	nuclear receptor subfamily 2, group F, member 1	based on GO term	CC:1	ERBAL3, TFCOUP1	EAR-3, COUP-TFI, TCFCOUP1, SVP44
+NR2F2	nuclear receptor subfamily 2, group F, member 2	based on GO term	CC:1	ARP1, TFCOUP2	COUP-TFII, COUPTFB, SVP40, NF-E3
+NR2F6	nuclear receptor subfamily 2, group F, member 6	based on GO term	CC:1	ERBAL2	EAR-2
+NR3C1	nuclear receptor subfamily 3, group C, member 1 (glucocorticoid receptor)	based on GO term	CC:1	GRL	GR
+NR3C2	nuclear receptor subfamily 3, group C, member 2	based on GO term	CC:1	MLR	MR
+NR4A1	nuclear receptor subfamily 4, group A, member 1	based on GO term	CC:1	HMR, GFRP1	TR3, N10, NAK-1, NGFIB, NUR77
+NR4A2	nuclear receptor subfamily 4, group A, member 2	based on GO term	CC:1	NURR1	TINUR, NOT, RNR1, HZF-3
+NR4A3	nuclear receptor subfamily 4, group A, member 3	based on GO term	CC:1		CSMF, CHN, NOR1, MINOR
+NR5A1	nuclear receptor subfamily 5, group A, member 1	based on GO term	CC:1	FTZF1	FTZ1, SF-1, ELP, AD4BP
+NR5A2	nuclear receptor subfamily 5, group A, member 2	based on GO term	CC:1	FTF	FTZ-F1beta, hB1F, LRH-1, FTZ-F1, hB1F-2, B1F2
+NR6A1	nuclear receptor subfamily 6, group A, member 1	based on GO term	CC:1	GCNF	GCNF1, RTR
+NRK	Nik related kinase	based on GO term	CC:1		DKFZp686A17109
+NRL	neural retina leucine zipper	based on GO term	CC:1		D14S46E, RP27, NRL-MAF
+OLIG2	oligodendrocyte lineage transcription factor 2	based on GO term	CC:1	PRKCBP2, BHLHB1	RACK17, OLIGO2, bHLHe19
+ONECUT1	one cut homeobox 1	based on GO term	CC:1	HNF6, HNF6A	HNF-6
+ONECUT2	one cut homeobox 2	based on GO term	CC:1		OC-2
+ONECUT3	one cut homeobox 3	based on GO term	CC:1		
+OTP	orthopedia homeobox	based on GO term	CC:1		
+OTX1	orthodenticle homeobox 1	based on GO term	CC:1		
+OTX2	orthodenticle homeobox 2	based on GO term	CC:1		
+PA2G4	proliferation-associated 2G4, 38kDa	based on GO term	CC:1		
+PAX3	paired box 3	based on GO term	CC:1	WS1	HUP2
+PAX4	paired box 4	based on GO term	CC:1		MODY9
+PAX5	paired box 5	based on GO term	CC:1		BSAP
+PAX6	paired box 6	based on GO term	CC:1	AN2	D11S812E, AN, WAGR
+PAX7	paired box 7	based on GO term	CC:1		Hup1
+PAX8	paired box 8	based on GO term	CC:1		
+PBX1	pre-B-cell leukemia homeobox 1	based on GO term	CC:1		
+PBX2	pre-B-cell leukemia homeobox 2	based on GO term	CC:1		G17, HOX12, PBX2MHC
+PBX3	pre-B-cell leukemia homeobox 3	based on GO term	CC:1		
+PBX4	pre-B-cell leukemia homeobox 4	based on GO term	CC:1		
+PCGF2	polycomb group ring finger 2	based on GO term	CC:1	ZNF144, RNF110	MEL-18
+PCGF6	polycomb group ring finger 6	based on GO term	CC:1	RNF134	MBLR
+PDX1	pancreatic and duodenal homeobox 1	based on GO term	CC:1	IPF1	IDX-1, STF-1, PDX-1, MODY4
+PEG3	paternally expressed 3	based on GO term	CC:1		KIAA0287, ZSCAN24, ZNF904
+PFDN1	prefoldin subunit 1	based on GO term	CC:1		PFD1
+PGBD1	piggyBac transposable element derived 1	based on GO term	CC:1		HUCEP-4, dJ874C20.4, SCAND4
+PGR	progesterone receptor	based on GO term	CC:1		PR, NR3C3
+PHF1	PHD finger protein 1	based on GO term	CC:1		MTF2L2
+PHF5A	PHD finger protein 5A	based on GO term	CC:1		MGC1346, SF3b14b, INI, bK223H9.2, Rds3, SAP14b
+PHOX2A	paired-like homeobox 2a	based on GO term	CC:1	ARIX, FEOM2	PMX2A, CFEOM2
+PHOX2B	paired-like homeobox 2b	based on GO term	CC:1	PMX2B	Phox2b, NBPhox
+PHTF1	putative homeodomain transcription factor 1	based on GO term	CC:1	PHTF	
+PITX1	paired-like homeodomain 1	based on GO term	CC:1	BFT	PTX1, POTX
+PITX2	paired-like homeodomain 2	based on GO term	CC:1	IRID2, IHG2, RIEG, RIEG1, RGS	IGDS, RS, Brx1, Otlx2, ARP1
+PITX3	paired-like homeodomain 3	based on GO term	CC:1		
+PKNOX1	PBX/knotted 1 homeobox 1	based on GO term	CC:1		PREP1
+PKNOX2	PBX/knotted 1 homeobox 2	based on GO term	CC:1		
+PLAG1	pleiomorphic adenoma gene 1	based on GO term	CC:1		ZNF912
+PLAGL2	pleiomorphic adenoma gene-like 2	based on GO term	CC:1		ZNF900
+POU1F1	POU class 1 homeobox 1	based on GO term	CC:1	PIT1	GHF-1, POU1F1a
+POU2F1	POU class 2 homeobox 1	based on GO term	CC:1	OTF1	OCT1
+POU2F2	POU class 2 homeobox 2	based on GO term	CC:1	OTF2	OCT2
+POU2F3	POU class 2 homeobox 3	based on GO term	CC:1		OCT11, PLA-1, Skn-1a, Epoc-1
+POU3F1	POU class 3 homeobox 1	based on GO term	CC:1	OTF6	OCT6, SCIP
+POU3F2	POU class 3 homeobox 2	based on GO term	CC:1	OTF7	POUF3, BRN2, OCT7
+POU3F3	POU class 3 homeobox 3	based on GO term	CC:1		BRN1, OTF8
+POU3F4	POU class 3 homeobox 4	based on GO term	CC:1	DFN3	BRN4, OTF9, DFNX2
+POU4F1	POU class 4 homeobox 1	based on GO term	CC:1	BRN3A	RDC-1
+POU4F2	POU class 4 homeobox 2	based on GO term	CC:1	BRN3B	Brn-3b
+POU4F3	POU class 4 homeobox 3	based on GO term	CC:1	DFNA15	BRN3C
+POU5F1	POU class 5 homeobox 1	based on GO term	CC:1	OTF3	OCT3, Oct4, MGC22487
+POU5F1B	POU class 5 homeobox 1B	based on GO term	CC:1	OTF3P1, POU5F1P1	OTF3C
+POU5F2	POU domain class 5, transcription factor 2	based on GO term	CC:1		SPRM-1, FLJ25680
+POU6F1	POU class 6 homeobox 1	based on GO term	CC:1		BRN5, MPOU, TCFB1
+POU6F2	POU class 6 homeobox 2	based on GO term	CC:1		RPF-1
+PPARA	peroxisome proliferator-activated receptor alpha	based on GO term	CC:1	PPAR	hPPAR, NR1C1
+PPARD	peroxisome proliferator-activated receptor delta	based on GO term	CC:1		NUC1, NUCII, FAAR, NR1C2
+PPARG	peroxisome proliferator-activated receptor gamma	based on GO term	CC:1		PPARG1, PPARG2, NR1C3, PPARgamma
+PRDM1	PR domain containing 1, with ZNF domain	based on GO term	CC:1	BLIMP1	PRDI-BF1
+PRDM2	PR domain containing 2, with ZNF domain	based on GO term	CC:1		RIZ, RIZ1, RIZ2, KMT8, MTB-ZF, HUMHOXY1
+PRDM4	PR domain containing 4	based on GO term	CC:1		PFM1
+PROP1	PROP paired-like homeobox 1	based on GO term	CC:1		
+PROX1	prospero homeobox 1	based on GO term	CC:1		
+PRRX1	paired related homeobox 1	based on GO term	CC:1	PMX1	PHOX1
+PRRX2	paired related homeobox 2	based on GO term	CC:1		PRX2, PMX2
+PTTG1	pituitary tumor-transforming 1	based on GO term	CC:1	TUTR1	PTTG, HPTTG, EAP1, securin
+PURA	purine-rich element binding protein A	based on GO term	CC:1		PURALPHA, PUR1, PUR-ALPHA
+PURB	purine-rich element binding protein B	based on GO term	CC:1		PURBETA
+RARA	retinoic acid receptor, alpha	based on GO term	CC:1		RAR, NR1B1
+RARB	retinoic acid receptor, beta	based on GO term	CC:1		HAP, NR1B2, RRB2
+RARG	retinoic acid receptor, gamma	based on GO term	CC:1		RARC, NR1B3
+RAX	retina and anterior neural fold homeobox	based on GO term	CC:1		RX
+RAX2	retina and anterior neural fold homeobox 2	based on GO term	CC:1	RAXL1	MGC15631
+RB1	retinoblastoma 1	based on GO term	CC:1	OSRC	RB
+RBPJ	recombination signal binding protein for immunoglobulin kappa J region	based on GO term	CC:1	IGKJRB1, RBPSUH	SUH, IGKJRB, RBPJK, KBF2, RBP-J, CBF1
+RBPJL	recombination signal binding protein for immunoglobulin kappa J region-like	based on GO term	CC:1	RBPSUHL	RBP-L, SUH, SUHL
+RCAN1	regulator of calcineurin 1	based on GO term	CC:1	DSCR1	
+RCOR2	REST corepressor 2	based on GO term	CC:1		
+REL	v-rel reticuloendotheliosis viral oncogene homolog (avian)	based on GO term	CC:1		I-Rel, c-Rel
+RELA	v-rel reticuloendotheliosis viral oncogene homolog A (avian)	based on GO term	CC:1	NFKB3	p65
+RELB	v-rel reticuloendotheliosis viral oncogene homolog B	based on GO term	CC:1		REL-B
+RERE	arginine-glutamic acid dipeptide (RE) repeats	based on GO term	CC:1	ATN1L	KIAA0458, ARP, ARG, DNB1
+REXO4	REX4, RNA exonuclease 4 homolog (S. cerevisiae)	based on GO term	CC:1	XPMC2H	
+RFX1	regulatory factor X, 1 (influences HLA class II expression)	based on GO term	CC:1		EF-C
+RFX3	regulatory factor X, 3 (influences HLA class II expression)	based on GO term	CC:1		
+RFX5	regulatory factor X, 5 (influences HLA class II expression)	based on GO term	CC:1		
+RFXANK	regulatory factor X-associated ankyrin-containing protein	based on GO term	CC:1		BLS, RFX-B, ANKRA1, F14150_1, MGC138628
+RFXAP	regulatory factor X-associated protein	based on GO term	CC:1		
+RHOXF1	Rhox homeobox family, member 1	based on GO term	CC:1		OTEX, PEPP1
+RHOXF2	Rhox homeobox family, member 2	based on GO term	CC:1		THG1, PEPP-2, PEPP2, CT107
+RHOXF2B	Rhox homeobox family, member 2B	based on GO term	CC:1		
+RLF	rearranged L-myc fusion	based on GO term	CC:1		ZNF292L, Zn-15L
+RNF4	ring finger protein 4	based on GO term	CC:1		RES4-26, SNURF, SLX5
+RORA	RAR-related orphan receptor A	based on GO term	CC:1		RZRA, ROR1, ROR2, ROR3, NR1F1
+RORB	RAR-related orphan receptor B	based on GO term	CC:1		RZRB, NR1F2, ROR-BETA
+RORC	RAR-related orphan receptor C	based on GO term	CC:1		RZRG, RORG, NR1F3, TOR
+RUNX1	runt-related transcription factor 1	based on GO term	CC:1	AML1, CBFA2	PEBP2A2, AMLCR1
+RUNX1T1	runt-related transcription factor 1; translocated to, 1 (cyclin D-related)	based on GO term	CC:1	AML1T1, CBFA2T1	CDR, ETO, MTG8, ZMYND2
+RUNX2	runt-related transcription factor 2	based on GO term	CC:1	CCD, CBFA1, CCD1	AML3, PEBP2A1, PEBP2aA1
+RUNX3	runt-related transcription factor 3	based on GO term	CC:1	CBFA3	AML2, PEBP2A3
+RXRA	retinoid X receptor, alpha	based on GO term	CC:1		NR2B1
+RXRB	retinoid X receptor, beta	based on GO term	CC:1		NR2B2, H-2RIIBP, RCoR-1
+RXRG	retinoid X receptor, gamma	based on GO term	CC:1		NR2B3
+SALL1	sal-like 1 (Drosophila)	based on GO term	CC:1	TBS	Hsal1, ZNF794
+SALL2	sal-like 2 (Drosophila)	based on GO term	CC:1		KIAA0360, Hsal2, ZNF795
+SATB1	SATB homeobox 1	based on GO term	CC:1		
+SATB2	SATB homeobox 2	based on GO term	CC:1		KIAA1034, FLJ21474
+SCAND1	SCAN domain containing 1	based on GO term	CC:1		SDP1, RAZ1
+SCAND2	SCAN domain containing 2 pseudogene	based on GO term	CC:1		
+SCAND3	SCAN domain containing 3	based on GO term	CC:1	ZNF305P2, ZNF452	ZFP38-L, KIAA1925, FLJ31087
+SCMH1	sex comb on midleg homolog 1 (Drosophila)	based on GO term	CC:1		Scml3
+SCML1	sex comb on midleg-like 1 (Drosophila)	based on GO term	CC:1		
+SCML2	sex comb on midleg-like 2 (Drosophila)	based on GO term	CC:1		
+SCRT1	scratch homolog 1, zinc finger protein (Drosophila)	based on GO term	CC:1		DKFZp547F072, ZNF898
+SEBOX	SEBOX homeobox	based on GO term	CC:1		OG9, OG9X
+SF1	splicing factor 1	based on GO term	CC:1	ZNF162	ZFM1
+SHOX	short stature homeobox	based on GO term	CC:1		PHOG, GCFX, SS, SHOXY
+SHOX2	short stature homeobox 2	based on GO term	CC:1		SHOT, OG12X, OG12
+SIM1	single-minded homolog 1 (Drosophila)	based on GO term	CC:1		bHLHe14
+SIM2	single-minded homolog 2 (Drosophila)	based on GO term	CC:1	SIM	MGC119447, bHLHe15
+SIX1	SIX homeobox 1	based on GO term	CC:1	DFNA23	
+SIX2	SIX homeobox 2	based on GO term	CC:1		
+SIX3	SIX homeobox 3	based on GO term	CC:1	HPE2	
+SIX4	SIX homeobox 4	based on GO term	CC:1		AREC3
+SIX5	SIX homeobox 5	based on GO term	CC:1	DMAHP	
+SIX6	SIX homeobox 6	based on GO term	CC:1	OPTX2	Six9
+SLC26A3	solute carrier family 26, member 3	based on GO term	CC:1	DRA, CLD	
+SLC2A4RG	SLC2A4 regulator	based on GO term	CC:1		GEF, HDBP1, Si-1-2, Si-1-2-19
+SLC30A9	solute carrier family 30 (zinc transporter), member 9	based on GO term	CC:1	C4orf1	HUEL, ZNT9, GAC63
+SMAD1	SMAD family member 1	based on GO term	CC:1	MADH1	MADR1, JV4-1
+SMAD2	SMAD family member 2	based on GO term	CC:1	MADH2	MADR2, JV18-1
+SMAD3	SMAD family member 3	based on GO term	CC:1	MADH3	JV15-2, HsT17436
+SMAD4	SMAD family member 4	based on GO term	CC:1	MADH4	DPC4
+SMAD5	SMAD family member 5	based on GO term	CC:1	MADH5	Dwfc, JV5-1
+SMAD6	SMAD family member 6	based on GO term	CC:1	MADH7, MADH6	HsT17432
+SMAD7	SMAD family member 7	based on GO term	CC:1	MADH8, MADH7	
+SMAD9	SMAD family member 9	based on GO term	CC:1	MADH6, MADH9	
+SMARCA5	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily a, member 5	based on GO term	CC:1		hSNF2H, hISWI, ISWI
+SNAI3	snail homolog 3 (Drosophila)	based on GO term	CC:1	ZNF293	SMUC, Zfp293
+SNAPC2	small nuclear RNA activating complex, polypeptide 2, 45kDa	based on GO term	CC:1		SNAP45, PTFdelta
+SNAPC4	small nuclear RNA activating complex, polypeptide 4, 190kDa	based on GO term	CC:1		SNAP190, PTFalpha, FLJ13451
+SNAPC5	small nuclear RNA activating complex, polypeptide 5, 19kDa	based on GO term	CC:1		SNAP19
+SNF8	SNF8, ESCRT-II complex subunit, homolog (S. cerevisiae)	based on GO term	CC:1		EAP30, VPS22, Dot3
+SOLH	small optic lobes homolog (Drosophila)	based on GO term	CC:1		CAPN15
+SOX1	SRY (sex determining region Y)-box 1	based on GO term	CC:1		
+SOX10	SRY (sex determining region Y)-box 10	based on GO term	CC:1		DOM, WS4, WS2E
+SOX11	SRY (sex determining region Y)-box 11	based on GO term	CC:1		
+SOX12	SRY (sex determining region Y)-box 12	based on GO term	CC:1	SOX22	
+SOX13	SRY (sex determining region Y)-box 13	based on GO term	CC:1		Sox-13, ICA12, MGC117216
+SOX15	SRY (sex determining region Y)-box 15	based on GO term	CC:1	SOX20	SOX27, SOX26
+SOX18	SRY (sex determining region Y)-box 18	based on GO term	CC:1		
+SOX2	SRY (sex determining region Y)-box 2	based on GO term	CC:1		
+SOX21	SRY (sex determining region Y)-box 21	based on GO term	CC:1		SOX25
+SOX30	SRY (sex determining region Y)-box 30	based on GO term	CC:1		
+SOX4	SRY (sex determining region Y)-box 4	based on GO term	CC:1		
+SOX5	SRY (sex determining region Y)-box 5	based on GO term	CC:1		L-SOX5, MGC35153
+SOX6	SRY (sex determining region Y)-box 6	based on GO term	CC:1		
+SOX7	SRY (sex determining region Y)-box 7	based on GO term	CC:1		
+SOX8	SRY (sex determining region Y)-box 8	based on GO term	CC:1		
+SOX9	SRY (sex determining region Y)-box 9	based on GO term	CC:1	CMD1, CMPD1	SRA1
+SP1	Sp1 transcription factor	based on GO term	CC:1		
+SP140	SP140 nuclear body protein	based on GO term	CC:1		LYSP100-B, LYSP100-A
+SP2	Sp2 transcription factor	based on GO term	CC:1		KIAA0048
+SP4	Sp4 transcription factor	based on GO term	CC:1		SPR-1, HF1B, MGC130008, MGC130009
+SPDEF	SAM pointed domain containing ets transcription factor	based on GO term	CC:1		PDEF, bA375E1.3
+SPI1	spleen focus forming virus (SFFV) proviral integration oncogene spi1	based on GO term	CC:1		PU.1, SPI-A, OF, SFPI1, SPI-1
+SPIB	Spi-B transcription factor (Spi-1/PU.1 related)	based on GO term	CC:1		SPI-B
+SPIC	Spi-C transcription factor (Spi-1/PU.1 related)	based on GO term	CC:1		MGC40611, SPI-C
+SREBF1	sterol regulatory element binding transcription factor 1	based on GO term	CC:1		SREBP1, bHLHd1, SREBP-1c
+SREBF2	sterol regulatory element binding transcription factor 2	based on GO term	CC:1		SREBP2, bHLHd2
+SRF	serum response factor (c-fos serum response element-binding transcription factor)	based on GO term	CC:1		MCM1
+SRY	sex determining region Y	based on GO term	CC:1		TDF
+ST18	suppression of tumorigenicity 18 (breast carcinoma) (zinc finger protein)	based on GO term	CC:1	ZNF387	KIAA0535
+STAT1	signal transducer and activator of transcription 1, 91kDa	based on GO term	CC:1		STAT91, ISGF-3
+STAT2	signal transducer and activator of transcription 2, 113kDa	based on GO term	CC:1		STAT113
+STAT3	signal transducer and activator of transcription 3 (acute-phase response factor)	based on GO term	CC:1		APRF
+STAT4	signal transducer and activator of transcription 4	based on GO term	CC:1		
+STAT5A	signal transducer and activator of transcription 5A	based on GO term	CC:1	STAT5	MGF
+STAT5B	signal transducer and activator of transcription 5B	based on GO term	CC:1		
+STAT6	signal transducer and activator of transcription 6, interleukin-4 induced	based on GO term	CC:1		D12S1644, IL-4-STAT
+SUPT3H	suppressor of Ty 3 homolog (S. cerevisiae)	based on GO term	CC:1		SPT3, SPT3L
+SUPT4H1	suppressor of Ty 4 homolog 1 (S. cerevisiae)	based on GO term	CC:1	SUPT4H	SPT4H
+SUPT6H	suppressor of Ty 6 homolog (S. cerevisiae)	based on GO term	CC:1		KIAA0162, SPT6H
+T	T, brachyury homolog (mouse)	based on GO term	CC:1		
+TADA2A	transcriptional adaptor 2A	based on GO term	CC:1	TADA2L	ADA2, hADA2, ADA2A
+TADA3	transcriptional adaptor 3	based on GO term	CC:1	TADA3L	FLJ20221, FLJ21329, ADA3, hADA3, NGG1
+TAF10	TAF10 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 30kDa	based on GO term	CC:1	TAF2H, TAF2A	TAFII30
+TAF12	TAF12 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 20kDa	based on GO term	CC:1	TAF2J	TAFII20
+TAF13	TAF13 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 18kDa	based on GO term	CC:1	TAF2K	TAFII18
+TAF1A	TATA box binding protein (TBP)-associated factor, RNA polymerase I, A, 48kDa	based on GO term	CC:1		TAFI48, SL1
+TAF1B	TATA box binding protein (TBP)-associated factor, RNA polymerase I, B, 63kDa	based on GO term	CC:1		TAFI63, SL1, RAF1B, RAFI63
+TAF1C	TATA box binding protein (TBP)-associated factor, RNA polymerase I, C, 110kDa	based on GO term	CC:1		TAFI110, TAFI95, SL1, MGC:39976
+TAF4	TAF4 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 135kDa	based on GO term	CC:1	TAF4A, TAF2C1, TAF2C	TAFII130, TAFII135
+TAF4B	TAF4b RNA polymerase II, TATA box binding protein (TBP)-associated factor, 105kDa	based on GO term	CC:1	TAF2C2	TAFII105
+TAF5	TAF5 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 100kDa	based on GO term	CC:1	TAF2D	TAFII100
+TAF5L	TAF5-like RNA polymerase II, p300/CBP-associated factor (PCAF)-associated factor, 65kDa	based on GO term	CC:1		PAF65B
+TAF6	TAF6 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 80kDa	based on GO term	CC:1	TAF2E	TAFII70, TAFII80, MGC:8964, TAFII85
+TAF6L	TAF6-like RNA polymerase II, p300/CBP-associated factor (PCAF)-associated factor, 65kDa	based on GO term	CC:1		PAF65A
+TAF7	TAF7 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 55kDa	based on GO term	CC:1	TAF2F	TAFII55
+TAL1	T-cell acute lymphocytic leukemia 1	based on GO term	CC:1	TCL5	SCL, bHLHa17
+TARDBP	TAR DNA binding protein	based on GO term	CC:1		TDP-43, ALS10
+TBP	TATA box binding protein	based on GO term	CC:1	GTF2D1, SCA17	TFIID
+TBPL1	TBP-like 1	based on GO term	CC:1		TLP, STUD, TRF2, TLF
+TBPL2	TATA box binding protein like 2	based on GO term	CC:1		TRF3, TBP2
+TBR1	T-box, brain, 1	based on GO term	CC:1		
+TBX1	T-box 1	based on GO term	CC:1		
+TBX10	T-box 10	based on GO term	CC:1	TBX7	TBX13
+TBX15	T-box 15	based on GO term	CC:1	TBX14	
+TBX18	T-box 18	based on GO term	CC:1		
+TBX19	T-box 19	based on GO term	CC:1		dj747L4.1, TPIT
+TBX2	T-box 2	based on GO term	CC:1		
+TBX20	T-box 20	based on GO term	CC:1		
+TBX21	T-box 21	based on GO term	CC:1		TBLYM, T-bet
+TBX22	T-box 22	based on GO term	CC:1	CPX, CLPA	
+TBX3	T-box 3	based on GO term	CC:1	UMS	TBX3-ISO, XHL
+TBX4	T-box 4	based on GO term	CC:1		
+TBX5	T-box 5	based on GO term	CC:1	HOS	
+TBX6	T-box 6	based on GO term	CC:1		
+TCEA2	transcription elongation factor A (SII), 2	based on GO term	CC:1		TFIIS
+TCEA3	transcription elongation factor A (SII), 3	based on GO term	CC:1		TFIIS.H
+TCEAL1	transcription elongation factor A (SII)-like 1	based on GO term	CC:1		p21, pp21, SIIR, P21
+TCEB1	transcription elongation factor B (SIII), polypeptide 1 (15kDa, elongin C)	based on GO term	CC:1		SIII
+TCERG1	transcription elongation regulator 1	based on GO term	CC:1	TAF2S	CA150, Urn1
+TCF12	transcription factor 12	based on GO term	CC:1		HEB, HTF4, HsT17266, bHLHb20
+TCF15	transcription factor 15 (basic helix-loop-helix)	based on GO term	CC:1		EC2, PARAXIS, bHLHa40
+TCF19	transcription factor 19	based on GO term	CC:1		SC1
+TCF21	transcription factor 21	based on GO term	CC:1		POD1, bHLHa23
+TCF25	transcription factor 25 (basic helix-loop-helix)	based on GO term	CC:1		Nulp1, KIAA1049
+TCF3	transcription factor 3 (E2A immunoglobulin enhancer binding factors E12/E47)	based on GO term	CC:1		E2A, ITF1, MGC129647, MGC129648, bHLHb21, VDIR, E47
+TCF4	transcription factor 4	based on GO term	CC:1		SEF2-1B, ITF2, bHLHb19, E2-2
+TCF7	transcription factor 7 (T-cell specific, HMG-box)	based on GO term	CC:1		TCF-1
+TCF7L1	transcription factor 7-like 1 (T-cell specific, HMG-box)	based on GO term	CC:1	TCF3	
+TCF7L2	transcription factor 7-like 2 (T-cell specific, HMG-box)	based on GO term	CC:1	TCF4	TCF-4
+TCFL5	transcription factor-like 5 (basic helix-loop-helix)	based on GO term	CC:1		Figlb, E2BP-1, CHA, bHLHe82
+TEAD1	TEA domain family member 1 (SV40 transcriptional enhancer factor)	based on GO term	CC:1	TCF13, AA	TEF-1
+TEAD2	TEA domain family member 2	based on GO term	CC:1		TEF-4, ETF, TEF4
+TEAD3	TEA domain family member 3	based on GO term	CC:1	TEAD5	TEF-5, ETFR-1
+TEAD4	TEA domain family member 4	based on GO term	CC:1	TCF13L1	TEF-3, TEFR-1, EFTR-2, RTEF-1
+TEF	thyrotrophic embryonic factor	based on GO term	CC:1		KIAA1655
+TFAM	transcription factor A, mitochondrial	based on GO term	CC:1	TCF6, TCF6L2	
+TFAP2A	transcription factor AP-2 alpha (activating enhancer binding protein 2 alpha)	based on GO term	CC:1	TFAP2, AP2TF	AP-2
+TFAP2B	transcription factor AP-2 beta (activating enhancer binding protein 2 beta)	based on GO term	CC:1		AP2-B
+TFAP2C	transcription factor AP-2 gamma (activating enhancer binding protein 2 gamma)	based on GO term	CC:1		AP2-GAMMA, ERF1, TFAP2G, hAP-2g
+TFAP2D	transcription factor AP-2 delta (activating enhancer binding protein 2 delta)	based on GO term	CC:1	TFAP2BL1	
+TFAP2E	transcription factor AP-2 epsilon (activating enhancer binding protein 2 epsilon)	based on GO term	CC:1		AP2E
+TFAP4	transcription factor AP-4 (activating enhancer binding protein 4)	based on GO term	CC:1		AP-4, bHLHc41
+TFCP2	transcription factor CP2	based on GO term	CC:1		CP2, LSF, LBP-1C, TFCP2C
+TFCP2L1	transcription factor CP2-like 1	based on GO term	CC:1		LBP-9, CRTR1
+TFDP1	transcription factor Dp-1	based on GO term	CC:1		Dp-1, DRTF1, DP1
+TFDP2	transcription factor Dp-2 (E2F dimerization partner 2)	based on GO term	CC:1		Dp-2
+TFDP3	transcription factor Dp family, member 3	based on GO term	CC:1		HCA661, E2F-like, CT30
+TFE3	transcription factor binding to IGHM enhancer 3	based on GO term	CC:1		TFEA, bHLHe33
+TFEB	transcription factor EB	based on GO term	CC:1		TCFEB, bHLHe35
+TFEC	transcription factor EC	based on GO term	CC:1		TCFEC, TFECL, bHLHe34
+TGIF1	TGFB-induced factor homeobox 1	based on GO term	CC:1	HPE4, TGIF	
+TGIF2	TGFB-induced factor homeobox 2	based on GO term	CC:1		
+TGIF2LX	TGFB-induced factor homeobox 2-like, X-linked	based on GO term	CC:1		
+TGIF2LY	TGFB-induced factor homeobox 2-like, Y-linked	based on GO term	CC:1		
+THRA	thyroid hormone receptor, alpha (erythroblastic leukemia viral (v-erb-a) oncogene homolog, avian)	based on GO term	CC:1	THRA1, THRA2, ERBA1	EAR-7.1/EAR-7.2, THRA3, AR7, ERBA, NR1A1
+THRB	thyroid hormone receptor, beta (erythroblastic leukemia viral (v-erb-a) oncogene homolog 2, avian)	based on GO term	CC:1	ERBA2, PRTH	THRB1, THRB2, NR1A2, THR1, ERBA-BETA, GRTH
+TIAL1	TIA1 cytotoxic granule-associated RNA binding protein-like 1	based on GO term	CC:1		TIAR
+TLX1	T-cell leukemia homeobox 1	based on GO term	CC:1	TCL3, HOX11	
+TLX2	T-cell leukemia homeobox 2	based on GO term	CC:1	HOX11L1	Enx, Tlx2, NCX
+TLX3	T-cell leukemia homeobox 3	based on GO term	CC:1	HOX11L2	RNX
+TMF1	TATA element modulatory factor 1	based on GO term	CC:1		ARA160, TMF
+TP53	tumor protein p53	based on GO term	CC:1		p53, LFS1
+TP63	tumor protein p63	based on GO term	CC:1	TP73L, TP53L, TP53CP	p51, SHFM4, EEC3, p63, p73L, OFC8, KET, p73H, NBP, p53CP
+TP73	tumor protein p73	based on GO term	CC:1		P73
+TPRX1	tetra-peptide repeat homeobox 1	based on GO term	CC:1		FLJ40321
+TRERF1	transcriptional regulating factor 1	based on GO term	CC:1	BCAR2	TReP-132, HSA277276, RAPA, dJ139D8.5
+TRIM22	tripartite motif-containing 22	based on GO term	CC:1		STAF50, GPSTAF50, RNF94
+TRIM25	tripartite motif-containing 25	based on GO term	CC:1	ZNF147	EFP, RNF147
+TRIM28	tripartite motif-containing 28	based on GO term	CC:1		TIF1B, KAP1, TF1B, RNF96
+TRIM29	tripartite motif-containing 29	based on GO term	CC:1		ATDC, FLJ36085
+TRPS1	trichorhinophalangeal syndrome I	based on GO term	CC:1		LGCR
+TSC22D1	TSC22 domain family, member 1	based on GO term	CC:1	TGFB1I4	TSC22, MGC17597
+TSC22D2	TSC22 domain family, member 2	based on GO term	CC:1		KIAA0669, TILZ4a, TILZ4b, TILZ4c
+TSC22D3	TSC22 domain family, member 3	based on GO term	CC:1	DSIPI	DIP, GILZ, TSC-22R, hDIP
+TSC22D4	TSC22 domain family, member 4	based on GO term	CC:1		THG-1, TILZ2
+TSHZ1	teashirt zinc finger homeobox 1	based on GO term	CC:1	SDCCAG33	NY-CO-33, TSH1
+TSHZ2	teashirt zinc finger homeobox 2	based on GO term	CC:1	C20orf17, ZNF218	ZABC2, OVC10-2, TSH2
+TSHZ3	teashirt zinc finger homeobox 3	based on GO term	CC:1	ZNF537	KIAA1474, TSH3
+TULP4	tubby like protein 4	based on GO term	CC:1		TUSP, KIAA1397
+TWIST2	twist homolog 2 (Drosophila)	based on GO term	CC:1		DERMO1, Dermo-1, bHLHa39
+UBN1	ubinuclein 1	based on GO term	CC:1		
+UBP1	upstream binding protein 1 (LBP-1a)	based on GO term	CC:1		LBP-1a
+UBTF	upstream binding transcription factor, RNA polymerase I	based on GO term	CC:1		UBF, NOR-90
+UHRF1	ubiquitin-like with PHD and ring finger domains 1	based on GO term	CC:1		ICBP90, Np95, FLJ21925, RNF106
+UNCX	UNC homeobox	based on GO term	CC:1		Uncx4.1
+USF1	upstream transcription factor 1	based on GO term	CC:1		UEF, MLTFI, bHLHb11
+USF2	upstream transcription factor 2, c-fos interacting	based on GO term	CC:1		FIP, bHLHb12
+UTF1	undifferentiated embryonic cell transcription factor 1	based on GO term	CC:1		
+VAV1	vav 1 guanine nucleotide exchange factor	based on GO term	CC:1	VAV	
+VAX1	ventral anterior homeobox 1	based on GO term	CC:1		
+VAX2	ventral anterior homeobox 2	based on GO term	CC:1		DRES93
+VDR	vitamin D (1,25- dihydroxyvitamin D3) receptor	based on GO term	CC:1		NR1I1
+VENTX	VENT homeobox homolog (Xenopus laevis)	based on GO term	CC:1	VENTX2	HPX42B
+VPS72	vacuolar protein sorting 72 homolog (S. cerevisiae)	based on GO term	CC:1	TCFL1	YL-1, YL1, Swc2
+VSX1	visual system homeobox 1	based on GO term	CC:1	PPCD	PPD
+VSX2	visual system homeobox 2	based on GO term	CC:1	HOX10, CHX10	RET1
+WT1	Wilms tumor 1	based on GO term	CC:1	GUD	WAGR, WIT-2, AWT1
+XBP1	X-box binding protein 1	based on GO term	CC:1	XBP2	
+YBX1	Y box binding protein 1	based on GO term	CC:1	NSEP1	YB-1, YB1, DBPB, NSEP-1, MDR-NF1, BP-8, CSDB, CSDA2
+YEATS4	YEATS domain containing 4	based on GO term	CC:1		NuBI-1, GAS41, YAF9
+YY1	YY1 transcription factor	based on GO term	CC:1		NF-E1, DELTA, UCRBP, YIN-YANG-1, INO80S
+ZBTB16	zinc finger and BTB domain containing 16	based on GO term	CC:1	ZNF145	PLZF
+ZBTB17	zinc finger and BTB domain containing 17	based on GO term	CC:1	ZNF151, ZNF60	MIZ1, pHZ-67
+ZBTB25	zinc finger and BTB domain containing 25	based on GO term	CC:1	ZNF46, C14orf51	KUP
+ZBTB38	zinc finger and BTB domain containing 38	based on GO term	CC:1		FLJ35036, CIBZ, ZNF921
+ZBTB48	zinc finger and BTB domain containing 48	based on GO term	CC:1	HKR3	ZNF855
+ZBTB7B	zinc finger and BTB domain containing 7B	based on GO term	CC:1	ZFP67	ZBTB15, c-Krox, hcKrox, ZNF857B
+ZC3H8	zinc finger CCCH-type containing 8	based on GO term	CC:1	ZC3HDC8	Fliz1
+ZEB1	zinc finger E-box binding homeobox 1	based on GO term	CC:1	TCF8, PPCD3	BZP, ZEB, AREB6, NIL-2-A, Zfhep, Zfhx1a
+ZEB2	zinc finger E-box binding homeobox 2	based on GO term	CC:1	ZFHX1B	KIAA0569, SIP-1, SIP1
+ZFHX2	zinc finger homeobox 2	based on GO term	CC:1	ZNF409	KIAA1762, KIAA1056, ZFH-5
+ZFHX3	zinc finger homeobox 3	based on GO term	CC:1	ATBF1	ZNF927
+ZFHX4	zinc finger homeobox 4	based on GO term	CC:1		ZFH4, FLJ20980
+ZFP36L1	zinc finger protein 36, C3H type-like 1	based on GO term	CC:1	BRF1	RNF162B, Berg36, ERF1, TIS11B, cMG1
+ZFP36L2	zinc finger protein 36, C3H type-like 2	based on GO term	CC:1	BRF2	ERF2, RNF162C, TIS11D
+ZFP37	zinc finger protein 37 homolog (mouse)	based on GO term	CC:1		ZNF906
+ZFP42	zinc finger protein 42 homolog (mouse)	based on GO term	CC:1		REX1, ZNF754
+ZFPM2	zinc finger protein, multitype 2	based on GO term	CC:1		FOG2, hFOG-2, ZNF89B
+ZGLP1	zinc finger, GATA-like protein 1	based on GO term	CC:1		GLP1, GLP-1
+ZGPAT	zinc finger, CCCH-type with G patch domain	based on GO term	CC:1	KIAA1847	dJ583P15.3, MGC44880, FLJ14972, ZC3HDC9, ZC3H9, GPATC6, GPATCH6, ZIP
+ZHX1	zinc fingers and homeoboxes 1	based on GO term	CC:1		
+ZHX2	zinc fingers and homeoboxes 2	based on GO term	CC:1		KIAA0854
+ZHX3	zinc fingers and homeoboxes 3	based on GO term	CC:1	TIX1	KIAA0395
+ZIC1	Zic family member 1 (odd-paired homolog, Drosophila)	based on GO term	CC:1		ZIC, ZNF201
+ZIC3	Zic family member 3 (odd-paired homolog, Drosophila)	based on GO term	CC:1	HTX1	HTX, ZNF203
+ZKSCAN1	zinc finger with KRAB and SCAN domains 1	based on GO term	CC:1	ZNF139, ZNF36	KOX18, PHZ-37
+ZKSCAN2	zinc finger with KRAB and SCAN domains 2	based on GO term	CC:1	ZNF694	FLJ23199
+ZKSCAN3	zinc finger with KRAB and SCAN domains 3	based on GO term	CC:1	ZNF306, ZNF309	Zfp47, ZF47, dJ874C20.1
+ZKSCAN4	zinc finger with KRAB and SCAN domains 4	based on GO term	CC:1	ZNF307, ZNF427	p373c6.1, P1P373C6, FLJ32136
+ZKSCAN5	zinc finger with KRAB and SCAN domains 5	based on GO term	CC:1	ZFP95	ZNF914
+ZNF117	zinc finger protein 117	based on GO term	CC:1		HPF9, H-plk
+ZNF131	zinc finger protein 131	based on GO term	CC:1		pHZ-10
+ZNF132	zinc finger protein 132	based on GO term	CC:1		pHZ-12
+ZNF133	zinc finger protein 133	based on GO term	CC:1	ZNF150	pHZ-13, pHZ-66
+ZNF134	zinc finger protein 134	based on GO term	CC:1		pHZ-15
+ZNF135	zinc finger protein 135	based on GO term	CC:1	ZNF61, ZNF78L1	pHZ-17
+ZNF138	zinc finger protein 138	based on GO term	CC:1		pHZ-32
+ZNF140	zinc finger protein 140	based on GO term	CC:1		pHZ-39
+ZNF142	zinc finger protein 142	based on GO term	CC:1		KIAA0236, pHZ-49
+ZNF143	zinc finger protein 143	based on GO term	CC:1		SBF, pHZ-1, STAF
+ZNF148	zinc finger protein 148	based on GO term	CC:1		BERF-1, ZBP-89, BFCOL1, HT-BETA, ZFP148, pHZ-52
+ZNF154	zinc finger protein 154	based on GO term	CC:1		pHZ-92
+ZNF155	zinc finger protein 155	based on GO term	CC:1		pHZ-96
+ZNF157	zinc finger protein 157	based on GO term	CC:1		HZF22
+ZNF165	zinc finger protein 165	based on GO term	CC:1		ZSCAN7, CT53
+ZNF167	zinc finger protein 167	based on GO term	CC:1	ZNF64, ZNF448	FLJ12738, ZFP, ZKSCAN7
+ZNF169	zinc finger protein 169	based on GO term	CC:1		MGC51961
+ZNF174	zinc finger protein 174	based on GO term	CC:1		ZSCAN8
+ZNF175	zinc finger protein 175	based on GO term	CC:1		OTK18
+ZNF18	zinc finger protein 18	based on GO term	CC:1		KOX11, HDSG1, Zfp535, ZNF535, ZKSCAN6
+ZNF187	zinc finger protein 187	based on GO term	CC:1		SRE-ZBP, ZSCAN26
+ZNF189	zinc finger protein 189	based on GO term	CC:1		
+ZNF19	zinc finger protein 19	based on GO term	CC:1		KOX12, MGC51021
+ZNF192	zinc finger protein 192	based on GO term	CC:1		LD5-1, ZKSCAN8
+ZNF193	zinc finger protein 193	based on GO term	CC:1		PRD51, ZSCAN9
+ZNF197	zinc finger protein 197	based on GO term	CC:1	ZNF166	P18, D3S1363E, ZKSCAN9
+ZNF202	zinc finger protein 202	based on GO term	CC:1		ZKSCAN10
+ZNF207	zinc finger protein 207	based on GO term	CC:1		
+ZNF211	zinc finger protein 211	based on GO term	CC:1		ZNF-25, CH2H2-25
+ZNF213	zinc finger protein 213	based on GO term	CC:1		CR53, ZKSCAN21
+ZNF215	zinc finger protein 215	based on GO term	CC:1		ZKSCAN11
+ZNF217	zinc finger protein 217	based on GO term	CC:1		ZABC1
+ZNF219	zinc finger protein 219	based on GO term	CC:1		
+ZNF232	zinc finger protein 232	based on GO term	CC:1		ZSCAN11
+ZNF236	zinc finger protein 236	based on GO term	CC:1		
+ZNF238	zinc finger protein 238	based on GO term	CC:1		C2H2-171, TAZ-1, RP58, ZBTB18
+ZNF24	zinc finger protein 24	based on GO term	CC:1	ZNF191	KOX17, ZSCAN3, Zfp191
+ZNF256	zinc finger protein 256	based on GO term	CC:1		BMZF-3
+ZNF263	zinc finger protein 263	based on GO term	CC:1		FPM315, ZKSCAN12
+ZNF268	zinc finger protein 268	based on GO term	CC:1		HZF3
+ZNF274	zinc finger protein 274	based on GO term	CC:1		ZKSCAN19
+ZNF277	zinc finger protein 277	based on GO term	CC:1	ZNF277P	NRIF4
+ZNF281	zinc finger protein 281	based on GO term	CC:1		ZBP-99
+ZNF287	zinc finger protein 287	based on GO term	CC:1		ZKSCAN13
+ZNF3	zinc finger protein 3	based on GO term	CC:1		A8-51, KOX25, PP838, FLJ20216, HF.12, Zfp113
+ZNF323	zinc finger protein 323	based on GO term	CC:1	ZNF310P	
+ZNF33A	zinc finger protein 33A	based on GO term	CC:1	ZNF33, ZNF11A	KOX5, KOX31, KIAA0065, FLJ23404, ZZAPK
+ZNF33B	zinc finger protein 33B	based on GO term	CC:1	ZNF11B	KOX31, KOX2
+ZNF345	zinc finger protein 345	based on GO term	CC:1		HZF10
+ZNF35	zinc finger protein 35	based on GO term	CC:1		HF.10, HF10, Zfp105
+ZNF354A	zinc finger protein 354A	based on GO term	CC:1	TCF17	KID-1, EZNF, HKL1, KID1
+ZNF367	zinc finger protein 367	based on GO term	CC:1		FLJ33970
+ZNF37A	zinc finger protein 37A	based on GO term	CC:1	ZNF37	KOX21
+ZNF394	zinc finger protein 394	based on GO term	CC:1		FLJ12298, ZKSCAN14
+ZNF396	zinc finger protein 396	based on GO term	CC:1		FLJ31213, ZSCAN14
+ZNF397	zinc finger protein 397	based on GO term	CC:1	ZNF47	MGC13250, ZSCAN15
+ZNF397OS	zinc finger protein 397 opposite strand	based on GO term	CC:1	NA	NA
+ZNF41	zinc finger protein 41	based on GO term	CC:1		MGC8941, MRX89
+ZNF423	zinc finger protein 423	based on GO term	CC:1		KIAA0760, OAZ, Roaz, Ebfaz, Zfp104
+ZNF444	zinc finger protein 444	based on GO term	CC:1		FLJ11137, EZF2, ZSCAN17
+ZNF445	zinc finger protein 445	based on GO term	CC:1	ZNF168	ZKSCAN15
+ZNF446	zinc finger protein 446	based on GO term	CC:1		FLJ20626, ZKSCAN20
+ZNF449	zinc finger protein 449	based on GO term	CC:1		FLJ23614, ZSCAN19
+ZNF45	zinc finger protein 45	based on GO term	CC:1	ZNF13	
+ZNF483	zinc finger protein 483	based on GO term	CC:1		KIAA1962, ZKSCAN16
+ZNF496	zinc finger protein 496	based on GO term	CC:1		MGC15548, ZKSCAN17
+ZNF498	zinc finger protein 498	based on GO term	CC:1	ZSCAN25	FLJ32468
+ZNF500	zinc finger protein 500	based on GO term	CC:1		KIAA0557, ZKSCAN18
+ZNF628	zinc finger protein 628	based on GO term	CC:1		ZEC, Zfp628
+ZNF639	zinc finger protein 639	based on GO term	CC:1		ANC-2H01, ZASC1
+ZNF69	zinc finger protein 69	based on GO term	CC:1		Cos5
+ZNF70	zinc finger protein 70	based on GO term	CC:1		Cos17, MGC48959
+ZNF71	zinc finger protein 71	based on GO term	CC:1		Cos26, EZFIT
+ZNF73	zinc finger protein 73	based on GO term	CC:1	ZNF186	hZNF2, Cos12
+ZNF75C	zinc finger protein 75C (pseudogene)	based on GO term	CC:1	NA	NA
+ZNF75D	zinc finger protein 75D	based on GO term	CC:1	ZNF82, ZNF75	D8C6
+ZNF80	zinc finger protein 80	based on GO term	CC:1		pT17
+ZNF81	zinc finger protein 81	based on GO term	CC:1	MRX45	HFZ20
+ZNF83	zinc finger protein 83	based on GO term	CC:1	ZNF816B	FLJ11015, HPF1
+ZNF85	zinc finger protein 85	based on GO term	CC:1		HPF4, HTF1
+ZNF90	zinc finger protein 90	based on GO term	CC:1		HTF9
+ZNF91	zinc finger protein 91	based on GO term	CC:1		HPF7, HTF10
+ZNF92	zinc finger protein 92	based on GO term	CC:1		HPF12, TF12
+ZNF93	zinc finger protein 93	based on GO term	CC:1	ZNF505	HPF34, TF34, FLJ12488
+ZRANB2	zinc finger, RAN-binding domain containing 2	based on GO term	CC:1	ZNF265	ZIS, ZIS1, ZIS2
+ZSCAN1	zinc finger and SCAN domain containing 1	based on GO term	CC:1		FLJ33779, ZNF915
+ZSCAN10	zinc finger and SCAN domain containing 10	based on GO term	CC:1	ZNF206	
+ZSCAN12	zinc finger and SCAN domain containing 12	based on GO term	CC:1	ZNF305, ZNF96	KIAA0426, ZNF29K1, ZFP96, dJ29K1.2
+ZSCAN16	zinc finger and SCAN domain containing 16	based on GO term	CC:1	ZNF392, ZNF435	FLJ22191, dJ265C24.3
+ZSCAN18	zinc finger and SCAN domain containing 18	based on GO term	CC:1	ZNF447	FLJ12895
+ZSCAN2	zinc finger and SCAN domain containing 2	based on GO term	CC:1	ZFP29	FLJ20595, ZNF854
+ZSCAN20	zinc finger and SCAN domain containing 20	based on GO term	CC:1	ZNF360, ZNF31	KOX29
+ZSCAN21	zinc finger and SCAN domain containing 21	based on GO term	CC:1	ZNF38	DKFZp434L134, NY-REN-21, Zipro1
+ZSCAN22	zinc finger and SCAN domain containing 22	based on GO term	CC:1	ZNF50, HKR2	
+ZSCAN23	zinc finger and SCAN domain containing 23	based on GO term	CC:1	ZNF453, ZNF390	dJ29K1.3.1
+ZSCAN29	zinc finger and SCAN domain containing 29	based on GO term	CC:1	ZNF690	FLJ35867, Zfp690
+ZSCAN4	zinc finger and SCAN domain containing 4	based on GO term	CC:1	ZNF494	FLJ35105
+ZSCAN5A	zinc finger and SCAN domain containing 5A	based on GO term	CC:1	ZNF495, ZSCAN5	MGC4161
+ZSCAN5B	zinc finger and SCAN domain containing 5B	based on GO term	CC:1		ZNF495B
+ZSCAN5C	zinc finger and SCAN domain containing 5C	based on GO term	CC:1		ZNF495C
+ZXDA	zinc finger, X-linked, duplicated A	based on GO term	CC:1		ZNF896
+ZXDC	ZXD family zinc finger C	based on GO term	CC:1		MGC11349, FLJ13861
+AHCTF1	AT hook containing transcription factor 1	based on function description	CC:2		ELYS
+AHCTF1P1	AT hook containing transcription factor 1 pseudogene 1	based on function description	CC:2	AHCTF1P	ELYS-like
+AKNA	AT-hook transcription factor	based on function description	CC:2		KIAA1968
+ATF1P1	activating transcription factor 1 pseudogene 1	based on function description	CC:2		
+ATF4B	activating transcription factor 4B	based on function description	CC:2	NA	NA
+ATF4C	activating transcription factor 4C	based on function description	CC:2	NA	NA
+ATF4P1	activating transcription factor 4 pseudogene 1	based on function description	CC:2	TXREBP, ATF4P	TAXREB67P
+ATF4P2	activating transcription factor 4 pseudogene 2	based on function description	CC:2		
+ATF7IP	activating transcription factor 7 interacting protein	based on function description	CC:2		FLJ10688, p621
+ATF7IP2	activating transcription factor 7 interacting protein 2	based on function description	CC:2		FLJ12668
+BCLAF1	BCL2-associated transcription factor 1	based on function description	CC:2		KIAA0164, BTF
+BPTF	bromodomain PHD finger transcription factor	based on function description	CC:2	FALZ	FAC1, NURF301
+BTF3L1	basic transcription factor 3, like 1 pseudogene	based on function description	CC:2	NA	NA
+BTF3L4	basic transcription factor 3-like 4	based on function description	CC:2		MGC23908
+BTF3L4P	basic transcription factor 3-like 4 pseudogene	based on function description	CC:2	NA	NA
+BTF3P1	basic transcription factor 3, pseudogene 1	based on function description	CC:2		HUMBTFA
+BTF3P2	basic transcription factor 3, pseudogene 2	based on function description	CC:2		
+BTF3P3	basic transcription factor 3, pseudogene 3	based on function description	CC:2		
+CTD-2090I13.4	basic transcription factor 3, pseudogene 9	based on function description	CC:2	NA	NA
+E2F3P1	E2F transcription factor 3 pseudogene 1	based on function description	CC:2		
+E2F3P2	E2F transcription factor 3 pseudogene 2	based on function description	CC:2		
+GABPAP	GA binding protein transcription factor, alpha subunit pseudogene	based on function description	CC:2	GABPB1	E4TF1, E4TF1B
+GABPB2	GA binding protein transcription factor, beta subunit 2	based on function description	CC:2		MGC29891
+GTF2A1	general transcription factor IIA, 1, 19/37kDa	based on function description	CC:2		TFIIA
+GTF2A2	general transcription factor IIA, 2, 12kDa	based on function description	CC:2		TFIIA, HsT18745
+GTF2B	general transcription factor IIB	based on function description	CC:2		TFIIB
+GTF2F1	general transcription factor IIF, polypeptide 1, 74kDa	based on function description	CC:2		TFIIF, BTF4, RAP74, TF2F1
+GTF2F2	general transcription factor IIF, polypeptide 2, 30kDa	based on function description	CC:2		TFIIF, BTF4, RAP30
+GTF2F2L	general transcription factor IIF, polypeptide 2-like	based on function description	CC:2	NA	NA
+GTF2H1	general transcription factor IIH, polypeptide 1, 62kDa	based on function description	CC:2		BTF2
+GTF2H2B	general transcription factor IIH, polypeptide 2B	based on function description	CC:2		DKFZP686M0199
+GTF2H2C	general transcription factor IIH, polypeptide 2C	based on function description	CC:2		
+GTF2H2D	general transcription factor IIH, polypeptide 2D	based on function description	CC:2		LOC730394
+GTF2H5	general transcription factor IIH, polypeptide 5	based on function description	CC:2	C6orf175, TTD	FLJ30544, bA120J8.2, TTD-A, TFB5, TFIIH
+GTF2IP1	general transcription factor IIi, pseudogene 1	based on function description	CC:2	WBSCR7	
+GTF2IP2	general transcription factor IIi, pseudogene 2	based on function description	CC:2		
+GTF3BAP1	general transcription factor IIIB, associated protein 1	based on function description	CC:2	NA	NA
+GTF3BAP2	general transcription factor IIIB, associated protein 2	based on function description	CC:2	NA	NA
+GTF3BAP3	general transcription factor IIIB, associated protein 3	based on function description	CC:2	NA	NA
+HBP1	HMG-box transcription factor 1	based on function description	CC:2		
+hCG_1982709	transcription factor Dp-1-like pseudogene	based on function description	CC:2	NA	NA
+HSF2BP	heat shock transcription factor 2 binding protein	based on function description	CC:2		
+HSFX1	heat shock transcription factor family, X linked 1	based on function description	CC:2		LW-1
+HSFY1	heat shock transcription factor, Y-linked 1	based on function description	CC:2	HSFY	HSF2L
+HSFY3P	heat shock transcription factor, Y-linked 3, pseudogene	based on function description	CC:2		
+HSFY4P	heat shock transcription factor, Y-linked 4, pseudogene	based on function description	CC:2		
+HSFYL1	heat shock transcription factor, Y-linked-like 1, pseudogene	based on function description	CC:2	NA	NA
+LOC100093631	general transcription factor II, i, pseudogene	based on function description	CC:2	NA	NA
+LOC100127952	similar to activating transcription factor 4	based on function description	CC:2	NA	NA
+LOC100128007	similar to Spi-C transcription factor (Spi-1/PU.1 related)	based on function description	CC:2	NA	NA
+LOC100128217	similar to general transcription factor IIIA	based on function description	CC:2	NA	NA
+LOC100128345	similar to nuclear transcription factor Y, gamma	based on function description	CC:2	NA	NA
+LOC100128427	upstream binding transcription factor, RNA polymerase I pseudogene	based on function description	CC:2	NA	NA
+LOC100128441	similar to general transcription factor IIA, 2	based on function description	CC:2	NA	NA
+LOC100128659	similar to transcription factor T	based on function description	CC:2	NA	NA
+LOC100128769	similar to nuclear transcription factor-Y beta	based on function description	CC:2	NA	NA
+LOC100128803	similar to Spi-C transcription factor (Spi-1/PU.1 related)	based on function description	CC:2	NA	NA
+LOC100129001	similar to general transcription factor IIIC, polypeptide 6, alpha 35kDa	based on function description	CC:2	NA	NA
+LOC100129107	transcription factor 3 (E2A immunoglobulin enhancer binding factors E12/E47) pseudogene	based on function description	CC:2	NA	NA
+LOC100129512	similar to octamer-binding transcription factor-3A	based on function description	CC:2	NA	NA
+LOC100129654	similar to transcription factor 23	based on function description	CC:2	NA	NA
+LOC100130114	similar to Spi-C transcription factor (Spi-1/PU.1 related)	based on function description	CC:2	NA	NA
+LOC100130409	similar to basic transcription factor 3	based on function description	CC:2	NA	NA
+LOC100131899	similar to E2F transcription factor 4, p107/p130-binding	based on function description	CC:2	NA	NA
+LOC100132460	similar to heat shock transcription factor family, X linked 1	based on function description	CC:2	NA	NA
+LOC100132641	similar to basic transcription factor 3	based on function description	CC:2	NA	NA
+LOC100133153	similar to heat shock transcription factor family, X linked 1	based on function description	CC:2	NA	NA
+LOC100133252	similar to putative transcription factor ZNF131	based on function description	CC:2	NA	NA
+LOC100135063	general transcription factor IIIA pseudogene	based on function description	CC:2	NA	NA
+LOC100135064	general transcription factor IIIA pseudogene	based on function description	CC:2	NA	NA
+LOC100290519	similar to transcription factor MEL1	based on function description	CC:2	NA	NA
+LOC100291104	similar to GA binding protein transcription factor, beta subunit 1 isoform gamma 2	based on function description	CC:2	NA	NA
+LOC100292489	similar to POU domain, class 3, transcription factor 4	based on function description	CC:2	NA	NA
+LOC100293394	similar to RNA polymerase II transcription factor SIII subunit A3	based on function description	CC:2	NA	NA
+LOC342784	similar to general transcription factor IIH, polypeptide 1, 62kDa	based on function description	CC:2	NA	NA
+LOC376818	E2F transcription factor 6 pseudogene	based on function description	CC:2	NA	NA
+LOC386610	E2F transcription factor 6 pseudogene	based on function description	CC:2	NA	NA
+LOC390617	transcription factor Dp-1 pseudogene	based on function description	CC:2	NA	NA
+LOC440973	similar to nuclear transcription factor Y, beta	based on function description	CC:2	NA	NA
+LOC442155	similar to transcription factor B2, mitochondrial	based on function description	CC:2	NA	NA
+LOC442446	upstream binding transcription factor, RNA polymerase I pseudogene	based on function description	CC:2	NA	NA
+LOC642929	general transcription factor II, i pseudogene	based on function description	CC:2	NA	NA
+LOC643182	upstream binding transcription factor, RNA polymerase I pseudogene	based on function description	CC:2	NA	NA
+LOC643412	basic transcription factor 3 pseudogene	based on function description	CC:2	NA	NA
+LOC644383	similar to heat shock transcription factor 2	based on function description	CC:2	NA	NA
+LOC644563	similar to general transcription factor IIIC, polypeptide 6, alpha 35kDa	based on function description	CC:2	NA	NA
+LOC646120	similar to Spi-C transcription factor (Spi-1/PU.1 related)	based on function description	CC:2	NA	NA
+LOC646745	similar to general transcription factor IIIC, polypeptide 6, alpha 35kDa	based on function description	CC:2	NA	NA
+LOC647012	similar to YY1 transcription factor	based on function description	CC:2	NA	NA
+LOC651986	similar to Forkhead box protein L1 (Forkhead-related protein FKHL11) (Forkhead-related transcription factor 7) (FREAC-7)	based on function description	CC:2	NA	NA
+LOC652959	basic transcription factor 3, pseudogene 5	based on function description	CC:2	NA	NA
+LOC652964	basic transcription factor 3 pseudogene	based on function description	CC:2	NA	NA
+LOC728366	BCL2-associated transcription factor 1 pseudogene	based on function description	CC:2	NA	NA
+LOC728633	similar to general transcription factor IIF, polypeptide 2, 30kDa	based on function description	CC:2	NA	NA
+LOC731605	similar to Bcl-2-associated transcription factor 1 (Btf)	based on function description	CC:2	NA	NA
+LZTFL1	leucine zipper transcription factor-like 1	based on function description	CC:2		
+MAZ	MYC-associated zinc finger protein (purine-binding transcription factor)	based on function description	CC:2		ZF87, Pur-1, Zif87, ZNF801
+MBTPS1	membrane-bound transcription factor peptidase, site 1	based on function description	CC:2		S1P, KIAA0091, SKI-1, PCSK8
+MBTPS2	membrane-bound transcription factor peptidase, site 2	based on function description	CC:2		S2P
+MTF2	metal response element binding transcription factor 2	based on function description	CC:2		M96, PCL2
+NF-E4	transcription factor NF-E4	based on function description	CC:2	NA	NA
+NFYAP1	nuclear transcription factor Y, alpha pseudogene 1	based on function description	CC:2	NFYAP	
+OLIG1	oligodendrocyte transcription factor 1	based on function description	CC:2		BHLHB6, bHLHe21
+OLIG3	oligodendrocyte transcription factor 3	based on function description	CC:2		Bhlhb7, bHLHe20
+PHTF2	putative homeodomain transcription factor 2	based on function description	CC:2		DKFZp434D166
+PTF1A	pancreas specific transcription factor, 1a	based on function description	CC:2		PTF1-p48, bHLHa29
+REST	RE1-silencing transcription factor	based on function description	CC:2		NRSF, XBR
+RP11-151A2.2	basic transcription factor 3, pseudogene 8	based on function description	CC:2	NA	NA
+RP11-301J16.2	general transcription factor II, i pseudogene	based on function description	CC:2	NA	NA
+RP11-320C15.1	basic transcription factor 3, pseudogene 7	based on function description	CC:2	NA	NA
+RP11-61E5.1	basic transcription factor 3, pseudogene 4	based on function description	CC:2	NA	NA
+RRN3	RRN3 RNA polymerase I transcription factor homolog (S. cerevisiae)	based on function description	CC:2		DKFZp566E104
+RRN3P1	RNA polymerase I transcription factor homolog (S. cerevisiae) pseudogene 1	based on function description	CC:2		
+RRN3P2	RNA polymerase I transcription factor homolog (S. cerevisiae) pseudogene 2	based on function description	CC:2		
+RRN3P3	RNA polymerase I transcription factor homolog (S. cerevisiae) pseudogene 3	based on function description	CC:2		
+SP3	Sp3 transcription factor	based on function description	CC:2		SPR-2
+SP3P	Sp3 transcription factor pseudogene	based on function description	CC:2		
+SP5	Sp5 transcription factor	based on function description	CC:2		
+SP6	Sp6 transcription factor	based on function description	CC:2		KLF14, Epfn
+SP7	Sp7 transcription factor	based on function description	CC:2		osterix, OSX
+SP8	Sp8 transcription factor	based on function description	CC:2		
+SP9	Sp9 transcription factor homolog (mouse)	based on function description	CC:2		ZNF990
+TCF20	transcription factor 20 (AR1)	based on function description	CC:2		AR1, SPBP
+TCF23	transcription factor 23	based on function description	CC:2		OUT, bHLHa24
+TCF24	transcription factor 24	based on function description	CC:2		bHLHa25
+TFAMP1	transcription factor A, mitochondrial pseudogene 1	based on function description	CC:2	TCF6L1	MTTF1
+TFAMP2	transcription factor A, mitochondrial pseudogene 2	based on function description	CC:2	TCF6L3	MTTF1
+TFB1M	transcription factor B1, mitochondrial	based on function description	CC:2		mtTFB, CGI-75
+TFB2M	transcription factor B2, mitochondrial	based on function description	CC:2		FLJ23182, FLJ22661, Hkp1
+TFDP1P	transcription factor Dp-1 pseudogene	based on function description	CC:2		
+UBTFL1	upstream binding transcription factor, RNA polymerase I-like 1	based on function description	CC:2	C11orf27	
+UBTFL2	upstream binding transcription factor, RNA polymerase I-like 2	based on function description	CC:2		
+UBTFL3	upstream binding transcription factor, RNA polymerase I-like 3	based on function description	CC:2		
+UBTFL5	upstream binding transcription factor, RNA polymerase I-like 5	based on function description	CC:2		
+UBTFL6	upstream binding transcription factor, RNA polymerase I-like 6	based on function description	CC:2		
+UBTFL7	upstream binding transcription factor, RNA polymerase I-like 7	based on function description	CC:2		
+USF1P1	upstream transcription factor 1 pseudogene 1	based on function description	CC:2	USF1P	
+YY2	YY2 transcription factor	based on function description	CC:2		ZNF631
+ABP1	amiloride binding protein 1 (amine oxidase (copper-containing))	v4 only	CC:3		AOC1, DAO
+ABT1	activator of basal transcription 1	v4 only	CC:3		
+ACVR2A	activin A receptor, type IIA	v4 only	CC:3	ACVR2	ACTRII
+ADPGK	ADP-dependent glucokinase	v4 only	CC:3		DKFZp434B195, ADP-GK
+AEBP2	AE binding protein 2	v4 only	CC:3		MGC17922
+AFF2	AF4/FMR2 family, member 2	v4 only	CC:3	FMR2	FRAXE
+AFF3	AF4/FMR2 family, member 3	v4 only	CC:3	LAF4	MLLT2-like
+AIP	aryl hydrocarbon receptor interacting protein	v4 only	CC:3		XAP2, ARA9, FKBP16
+AIRE	autoimmune regulator	v4 only	CC:3	APECED	PGA1, APS1
+AKAP9	A kinase (PRKA) anchor protein (yotiao) 9	v4 only	CC:3		KIAA0803, AKAP350, AKAP450, CG-NAP, YOTIAO, HYPERION, PRKA9, MU-RMS-40.16A, PPP1R45
+AMOT	angiomotin	v4 only	CC:3		KIAA1071
+ANP32A	acidic (leucine-rich) nuclear phosphoprotein 32 family, member A	v4 only	CC:3	C15orf1	LANP, PP32, I1PP2A, PHAPI, MAPM, mapmodulin
+APEX1	APEX nuclease (multifunctional DNA repair enzyme) 1	v4 only	CC:3	APEX	APE, REF1, HAP1, APX, APEN, REF-1, APE-1
+ARC	activity-regulated cytoskeleton-associated protein	v4 only	CC:3		KIAA0278, Arg3.1
+ARID1A	AT rich interactive domain 1A (SWI-like)	v4 only	CC:3	C1orf4, SMARCF1	B120, P270, C10rf4, BAF250, BAF250a
+ARID1B	AT rich interactive domain 1B (SWI1-like)	v4 only	CC:3		KIAA1235, ELD/OSA1, p250R, BAF250b, DAN15, 6A3-5
+ARID3B	AT rich interactive domain 3B (BRIGHT-like)	v4 only	CC:3		BDP, DRIL2
+ARID5A	AT rich interactive domain 5A (MRF1-like)	v4 only	CC:3		MRF-1, RP11-363D14
+ARID5B	AT rich interactive domain 5B (MRF1-like)	v4 only	CC:3		FLJ21150, MRF2
+ARIH2	ariadne homolog 2 (Drosophila)	v4 only	CC:3		TRIAD1
+ASCL3	achaete-scute complex homolog 3 (Drosophila)	v4 only	CC:3		bHLHa42, HASH3, Sgn1
+ASH2L	ash2 (absent, small, or homeotic)-like (Drosophila)	v4 only	CC:3	ASH2L1	ASH2L2, ASH2, Bre2
+ASPH	aspartate beta-hydroxylase	v4 only	CC:3		CASQ2BP1, BAH, JCTN, HAAH
+ATG4B	ATG4 autophagy related 4 homolog B (S. cerevisiae)	v4 only	CC:3	APG4B	Apg4B, KIAA0943, DKFZp586D1822, AUTL1
+ATM	ataxia telangiectasia mutated	v4 only	CC:3	ATA, ATDC, ATC, ATD	TEL1, TELO1
+ATN1	atrophin 1	v4 only	CC:3	D12S755E, DRPLA	B37
+ATOH7	atonal homolog 7 (Drosophila)	v4 only	CC:3		Math5, bHLHa13
+ATOH8	atonal homolog 8 (Drosophila)	v4 only	CC:3		HATH6, FLJ14708, bHLHa21
+ATRX	alpha thalassemia/mental retardation syndrome X-linked (RAD54 homolog, S. cerevisiae)	v4 only	CC:3	RAD54, JMS	XH2, XNP
+ATXN1	ataxin 1	v4 only	CC:3	SCA1	D6S504E, ATX1
+ATXN2	ataxin 2	v4 only	CC:3	SCA2, TNRC13	ATX2
+BAGE	B melanoma antigen	v4 only	CC:3		CT2.1
+BANP	BTG3 associated nuclear protein	v4 only	CC:3		SMARBP1, SMAR1, FLJ20538, DKFZp761H172, FLJ10177, BEND1
+BAZ1A	bromodomain adjacent to zinc finger domain, 1A	v4 only	CC:3		hACF1, ACF1, WALp1, WCRF180
+BAZ2A	bromodomain adjacent to zinc finger domain, 2A	v4 only	CC:3		KIAA0314, TIP5, WALp3
+BAZ2B	bromodomain adjacent to zinc finger domain, 2B	v4 only	CC:3		WALp4
+BCL11A	B-cell CLL/lymphoma 11A (zinc finger protein)	v4 only	CC:3	EVI9	BCL11A-XL, BCL11A-L, BCL11A-S, CTIP1, HBFQTL5, ZNF856
+BCL11B	B-cell CLL/lymphoma 11B (zinc finger protein)	v4 only	CC:3	ZNF856B	CTIP-2, CTIP2, hRIT1-alpha
+BCL6B	B-cell CLL/lymphoma 6, member B (zinc finger protein)	v4 only	CC:3	ZNF62	ZBTB28, BAZF
+BHLHE22	basic helix-loop-helix family, member e22	v4 only	CC:3	TNRC20, BHLHB5	CAGL85, Beta3, bHLHe22
+BHLHE23	basic helix-loop-helix family, member e23	v4 only	CC:3	BHLHB4	bA305P22.3, Beta4, bHLHe23
+BLOC1S1	biogenesis of lysosomal organelles complex-1, subunit 1	v4 only	CC:3	GCN5L1	BLOS1
+BMI1	BMI1 polycomb ring finger oncogene	v4 only	CC:3	PCGF4	RNF51
+BNC2	basonuclin 2	v4 only	CC:3		BSN2, FLJ20043
+BRCA1	breast cancer 1, early onset	v4 only	CC:3		RNF53, BRCC1, PPP1R53
+BRCA2	breast cancer 2, early onset	v4 only	CC:3	FANCD1, FACD, FANCD	FAD, FAD1, BRCC2
+BRD1	bromodomain containing 1	v4 only	CC:3		BRL, BRPF2
+BRD2	bromodomain containing 2	v4 only	CC:3		KIAA9001, RING3, D6S113E, NAT, FSRG1
+BRD3	bromodomain containing 3	v4 only	CC:3		RING3L, ORFX, KIAA0043
+BRD4	bromodomain containing 4	v4 only	CC:3		HUNKI, MCAP, CAP, HUNK1
+BRD7	bromodomain containing 7	v4 only	CC:3		CELTIX1, BP75
+BRD9	bromodomain containing 9	v4 only	CC:3		FLJ13441
+BRDT	bromodomain, testis-specific	v4 only	CC:3		BRD6, CT9
+BRPF1	bromodomain and PHD finger containing, 1	v4 only	CC:3		BR140
+BRPF3	bromodomain and PHD finger containing, 3	v4 only	CC:3		KIAA1286
+BTBD1	BTB (POZ) domain containing 1	v4 only	CC:3		
+BTBD2	BTB (POZ) domain containing 2	v4 only	CC:3		
+BTBD3	BTB (POZ) domain containing 3	v4 only	CC:3		KIAA0952, dJ742J24.1
+BTBD6	BTB (POZ) domain containing 6	v4 only	CC:3		BDPL
+BTG1	B-cell translocation gene 1, anti-proliferative	v4 only	CC:3		
+BTG2	BTG family, member 2	v4 only	CC:3		PC3, TIS21, MGC126063, MGC126064
+C12orf32	chromosome 12 open reading frame 32	v4 only	CC:3		HKMT1188, MGC13204, RHINO
+C14orf101	chromosome 14 open reading frame 101	v4 only	CC:3		FLJ20392
+C14orf106	chromosome 14 open reading frame 106	v4 only	CC:3	NA	NA
+C14orf166	chromosome 14 open reading frame 166	v4 only	CC:3		CGI-99, RLLM1
+C15orf42	chromosome 15 open reading frame 42	v4 only	CC:3		MGC45866, FLJ41618, treslin, TICRR
+C19orf25	chromosome 19 open reading frame 25	v4 only	CC:3		FLJ36666
+C19orf6	chromosome 19 open reading frame 6	v4 only	CC:3		MGC4022, ASBABP1, MBRL
+C1orf61	chromosome 1 open reading frame 61	v4 only	CC:3		CROC4
+CAMK4	calcium/calmodulin-dependent protein kinase IV	v4 only	CC:3		CaMK-GR
+CAND1	cullin-associated and neddylation-dissociated 1	v4 only	CC:3		TIP120A, DKFZp434M1414, KIAA0829, TIP120
+CAND2	cullin-associated and neddylation-dissociated 2 (putative)	v4 only	CC:3		TIP120B, KIAA0667, Tp120b
+CARM1	coactivator-associated arginine methyltransferase 1	v4 only	CC:3		PRMT4
+CASZ1	castor zinc finger 1	v4 only	CC:3		FLJ20321, ZNF693, castor, cst, SRG
+CBX1	chromobox homolog 1 (HP1 beta homolog Drosophila )	v4 only	CC:3		HP1Hs-beta, M31, MOD1, CBX, HP1-BETA
+CBX2	chromobox homolog 2 (Pc class homolog, Drosophila)	v4 only	CC:3	CDCA6	MGC10561
+CBX3	chromobox homolog 3 (HP1 gamma homolog, Drosophila)	v4 only	CC:3		HP1Hs-gamma
+CBX4	chromobox homolog 4 (Pc class homolog, Drosophila)	v4 only	CC:3		hPC2, PC2, NBP16
+CBX5	chromobox homolog 5 (HP1 alpha homolog, Drosophila)	v4 only	CC:3		HP1Hs-alpha, HP1, HP1-ALPHA
+CBX6	chromobox homolog 6	v4 only	CC:3		
+CBX7	chromobox homolog 7	v4 only	CC:3		
+CBX8	chromobox homolog 8 (Pc class homolog, Drosophila)	v4 only	CC:3		RC1, HPC3, PC3
+CCDC102B	coiled-coil domain containing 102B	v4 only	CC:3	C18orf14, ACY1L	FLJ23594, HsT1731, AN
+CCNE1	cyclin E1	v4 only	CC:3	CCNE	
+CCR4	chemokine (C-C motif) receptor 4	v4 only	CC:3		CC-CKR-4, CMKBR4, CKR4, k5-5, ChemR13, CD194
+CCT4	chaperonin containing TCP1, subunit 4 (delta)	v4 only	CC:3		Cctd
+CD80	CD80 molecule	v4 only	CC:3	CD28LG, CD28LG1	B7.1, B7-1
+CD86	CD86 molecule	v4 only	CC:3	CD28LG2	B7.2, B7-2
+CDH1	cadherin 1, type 1, E-cadherin (epithelial)	v4 only	CC:3	UVO	uvomorulin, CD324
+CDH6	cadherin 6, type 2, K-cadherin (fetal kidney)	v4 only	CC:3		
+CDK7	cyclin-dependent kinase 7	v4 only	CC:3		CAK1, CDKN7, MO15, STK1, CAK
+CDK8	cyclin-dependent kinase 8	v4 only	CC:3		K35
+CDR2	cerebellar degeneration-related protein 2, 62kDa	v4 only	CC:3		CDR62, Yo
+CDR2L	cerebellar degeneration-related protein 2-like	v4 only	CC:3		HUMPPA
+CEBPZ	CCAAT/enhancer binding protein (C/EBP), zeta	v4 only	CC:3		CBF2, CTF2
+CECR6	cat eye syndrome chromosome region, candidate 6	v4 only	CC:3		
+CEP110	centrosomal protein 110kDa	v4 only	CC:3	NA	NA
+CEP290	centrosomal protein 290kDa	v4 only	CC:3		KIAA0373, FLJ13615, 3H11Ag, rd16, NPHP6, JBTS5, SLSN6, LCA10, MKS4, BBS14, CT87, POC3
+CHD1	chromodomain helicase DNA binding protein 1	v4 only	CC:3		
+CHD2	chromodomain helicase DNA binding protein 2	v4 only	CC:3		FLJ38614, DKFZp547I1315, DKFZp781D1727, DKFZp686E01200
+CHD4	chromodomain helicase DNA binding protein 4	v4 only	CC:3		Mi-2b, Mi2-BETA
+CHD5	Coronary heart disease, susceptibility to, 5	v4 only	CC:3		
+CHD5	chromodomain helicase DNA binding protein 5	v4 only	CC:3		
+CHD6	chromodomain helicase DNA binding protein 6	v4 only	CC:3		KIAA1335, FLJ22369, dJ620E11.1, CHD5, RIGB
+CHURC1	churchill domain containing 1	v4 only	CC:3	C14orf52	My015, FLJ33064
+CIC	capicua homolog (Drosophila)	v4 only	CC:3		KIAA0306
+CIZ1	CDKN1A interacting zinc finger protein 1	v4 only	CC:3		LSFR1, ZNF356
+CNOT2	CCR4-NOT transcription complex, subunit 2	v4 only	CC:3	NOT2	CDC36, NOT2H
+CNOT3	CCR4-NOT transcription complex, subunit 3	v4 only	CC:3	NOT3	NOT3H, KIAA0691, LENG2
+CNOT4	CCR4-NOT transcription complex, subunit 4	v4 only	CC:3	NOT4	CLONE243, NOT4H
+COLQ	collagen-like tail subunit (single strand of homotrimer) of asymmetric acetylcholinesterase	v4 only	CC:3		EAD
+COPS2	COP9 constitutive photomorphogenic homolog subunit 2 (Arabidopsis)	v4 only	CC:3		TRIP15, ALIEN, CSN2
+COPS5	COP9 constitutive photomorphogenic homolog subunit 5 (Arabidopsis)	v4 only	CC:3		JAB1, SGN5, MOV-34, CSN5
+CORO1A	coronin, actin binding protein, 1A	v4 only	CC:3		HCORO1, p57, coronin-1
+CRIP1	cysteine-rich protein 1 (intestinal)	v4 only	CC:3		CRIP
+CRIP2	cysteine-rich protein 2	v4 only	CC:3		CRP2, ESP1
+CROCC	ciliary rootlet coiled-coil, rootletin	v4 only	CC:3		rootletin, ROLT
+CSRP1	cysteine and glycine-rich protein 1	v4 only	CC:3	CYRP	CSRP, D1S181E
+CSRP2	cysteine and glycine-rich protein 2	v4 only	CC:3		SmLIM, CRP2, LMO5
+CSRP3	cysteine and glycine-rich protein 3 (cardiac LIM protein)	v4 only	CC:3		CLP, MLP, CMD1M
+CTCFL	CCCTC-binding factor (zinc finger protein)-like	v4 only	CC:3		dJ579F20.2, BORIS, CT27
+CXXC1	CXXC finger 1 (PHD domain)	v4 only	CC:3		HsT2645, PCCX1, hCGBP, PHF18, CGBP, SPP1, CFP1, ZCGPC1
+DAXX	death-domain associated protein	v4 only	CC:3		DAP6
+DCP1A	DCP1 decapping enzyme homolog A (S. cerevisiae)	v4 only	CC:3		HSA275986, SMIF, SMAD4IP1
+DDX20	DEAD (Asp-Glu-Ala-Asp) box polypeptide 20	v4 only	CC:3		DP103, GEMIN3
+DDX54	DEAD (Asp-Glu-Ala-Asp) box polypeptide 54	v4 only	CC:3		MGC2835, APR-5, DP97
+DEK	DEK oncogene	v4 only	CC:3		D6S231E
+DENND4A	DENN/MADD domain containing 4A	v4 only	CC:3	MYCPBP	IRLB
+DEPDC7	DEP domain containing 7	v4 only	CC:3		
+DGCR6L	DiGeorge syndrome critical region gene 6-like	v4 only	CC:3		FLJ10666
+DIDO1	death inducer-obliterator 1	v4 only	CC:3	C20orf158, DATF1	DIO1, dJ885L7.8, FLJ11265, KIAA0333, DIO-1, BYE1
+DIP	interstitial pneumonitis, desquamative, familial	v4 only	CC:3	NA	NA
+DMAP1	DNA methyltransferase 1 associated protein 1	v4 only	CC:3		DNMAP1, FLJ11543, KIAA1425, DNMTAP1, EAF2, MEAF2, SWC4
+DMP1	dentin matrix acidic phosphoprotein 1	v4 only	CC:3		
+DMRTC1	DMRT-like family C1	v4 only	CC:3		
+DNAJB6	DnaJ (Hsp40) homolog, subfamily B, member 6	v4 only	CC:3		MRJ
+DNM2	dynamin 2	v4 only	CC:3		DYNII, DYN2, CMTDIB, CMTDI1, DI-CMTB
+DNMT1	DNA (cytosine-5-)-methyltransferase 1	v4 only	CC:3	DNMT	MCMT, CXXC9
+DNMT3L	DNA (cytosine-5-)-methyltransferase 3-like	v4 only	CC:3		MGC1090
+DPF1	D4, zinc and double PHD fingers family 1	v4 only	CC:3		neuro-d4, NEUD4, BAF45b
+DPF2	D4, zinc and double PHD fingers family 2	v4 only	CC:3	REQ	ubi-d4
+DPF3	D4, zinc and double PHD fingers, family 3	v4 only	CC:3		cer-d4, Cerd4, FLJ14079
+DR1	down-regulator of transcription 1, TBP-binding (negative cofactor 2)	v4 only	CC:3		NC2, NC2-BETA
+DTX2	deltex homolog 2 (Drosophila)	v4 only	CC:3		RNF58
+DYRK1B	dual-specificity tyrosine-(Y)-phosphorylation regulated kinase 1B	v4 only	CC:3		MIRK
+ECD	ecdysoneless homolog (Drosophila)	v4 only	CC:3		hSGT1, GCR2
+EED	embryonic ectoderm development	v4 only	CC:3		WAIT-1, HEED
+EGLN1	egl nine homolog 1 (C. elegans)	v4 only	CC:3	C1orf12	SM-20, PHD2, ZMYND6, HIFPH2
+EGLN2	egl nine homolog 2 (C. elegans)	v4 only	CC:3		PHD1, HIFPH1
+ELAC1	elaC homolog 1 (E. coli)	v4 only	CC:3		D29
+ENC1	ectodermal-neural cortex (with BTB-like domain)	v4 only	CC:3	NRPB	PIG10, ENC-1, TP53I10, KLHL37
+EP400	E1A binding protein p400	v4 only	CC:3	TNRC12	CAGH32, KIAA1498, P400, KIAA1818, DKFZP434I225
+EPC1	enhancer of polycomb homolog 1 (Drosophila)	v4 only	CC:3		Epl1
+ERCC2	excision repair cross-complementing rodent repair deficiency, complementation group 2	v4 only	CC:3	XPD	MAG, EM9, MGC102762, MGC126218, MGC126219
+ERCC3	excision repair cross-complementing rodent repair deficiency, complementation group 3 (xeroderma pigmentosum group B complementing)	v4 only	CC:3		XPB, BTF2, RAD25, TFIIH, GTF2H
+ERCC8	excision repair cross-complementing rodent repair deficiency, complementation group 8	v4 only	CC:3	CKN1	CSA
+ERGIC2	ERGIC and golgi 2	v4 only	CC:3		PTX1, Erv41
+EWSR1	Ewing sarcoma breakpoint region 1	v4 only	CC:3		EWS
+EYA1	eyes absent homolog 1 (Drosophila)	v4 only	CC:3	BOR	
+EYA2	eyes absent homolog 2 (Drosophila)	v4 only	CC:3		EAB1
+EYA3	eyes absent homolog 3 (Drosophila)	v4 only	CC:3		DKFZp686C132
+EYA4	eyes absent homolog 4 (Drosophila)	v4 only	CC:3	DFNA10, CMD1J	
+EZH1	enhancer of zeste homolog 1 (Drosophila)	v4 only	CC:3		KIAA0388, KMT6B
+EZH2	enhancer of zeste homolog 2 (Drosophila)	v4 only	CC:3		EZH1, ENX-1, KMT6, KMT6A
+F2	coagulation factor II (thrombin)	v4 only	CC:3		
+FABP4	fatty acid binding protein 4, adipocyte	v4 only	CC:3		A-FABP, aP2
+FAM20C	family with sequence similarity 20, member C	v4 only	CC:3		IMAGE:4942737, DKFZp547D065, DMP4
+FAM48A	family with sequence similarity 48, member A	v4 only	CC:3	C13orf19	bA421P11.4, P38IP
+FEM1A	fem-1 homolog a (C. elegans)	v4 only	CC:3		
+FHL1	four and a half LIM domains 1	v4 only	CC:3		SLIM1, KYO-T, bA535K18.1, FHL1B, XMPMA, FLH1A, MGC111107
+FHL2	four and a half LIM domains 2	v4 only	CC:3		SLIM3, DRAL
+FHL5	four and a half LIM domains 5	v4 only	CC:3		FLJ33049, ACT, dJ393D12.2
+FLJ46838	FLJ46838 protein	v4 only	CC:3	NA	NA
+FMNL2	formin-like 2	v4 only	CC:3	FHOD2	KIAA1902
+FOXD4L2	forkhead box D4-like 2	v4 only	CC:3		OTTHUMG00000066752
+FUBP3	far upstream element (FUSE) binding protein 3	v4 only	CC:3	FBP3	
+GCM2	glial cells missing homolog 2 (Drosophila)	v4 only	CC:3	GCMB	hGCMb
+GFI1	growth factor independent 1 transcription repressor	v4 only	CC:3	ZNF163	
+GFI1B	growth factor independent 1B transcription repressor	v4 only	CC:3		
+GLI4	GLI family zinc finger 4	v4 only	CC:3		HKR4, ZNF928
+GLIS1	GLIS family zinc finger 1	v4 only	CC:3		FLJ36155
+GLIS2	GLIS family zinc finger 2	v4 only	CC:3		NPHP7
+GREB1	growth regulation by estrogen in breast cancer 1	v4 only	CC:3		KIAA0575
+GRHL1	grainyhead-like 1 (Drosophila)	v4 only	CC:3	TFCP2L2	LBP-32, MGR
+GRHL2	grainyhead-like 2 (Drosophila)	v4 only	CC:3	DFNA28, TFCP2L3	FLJ13782, BOM
+GRHL3	grainyhead-like 3 (Drosophila)	v4 only	CC:3	TFCP2L4	SOM
+GRLF1	glucocorticoid receptor DNA binding factor 1	v4 only	CC:3	NA	NA
+GSK3A	glycogen synthase kinase 3 alpha	v4 only	CC:3		
+HDAC10	histone deacetylase 10	v4 only	CC:3		DKFZP761B039
+HDAC4	histone deacetylase 4	v4 only	CC:3		KIAA0288, HDAC-A, HDACA, HD4, HA6116, HDAC-4
+HDAC5	histone deacetylase 5	v4 only	CC:3		KIAA0600, NY-CO-9, FLJ90614
+HDAC6	histone deacetylase 6	v4 only	CC:3		KIAA0901, JM21, HD6, FLJ16239
+HDAC8	histone deacetylase 8	v4 only	CC:3	HDACL1	RPD3
+HDAC9	histone deacetylase 9	v4 only	CC:3		KIAA0744, HDAC, MITR, HD7, HDAC7B
+HES1	hairy and enhancer of split 1, (Drosophila)	v4 only	CC:3	HRY	FLJ20408, HES-1, Hes1, bHLHb39
+HES2	hairy and enhancer of split 2 (Drosophila)	v4 only	CC:3		bHLHb40
+HES4	hairy and enhancer of split 4 (Drosophila)	v4 only	CC:3		bHLHb42
+HES7	hairy and enhancer of split 7 (Drosophila)	v4 only	CC:3		bHLHb37
+HEXIM1	hexamethylene bis-acetamide inducible 1	v4 only	CC:3		CLP-1, HIS1, MAQ1, EDG1
+HEXIM2	hexamthylene bis-acetamide inducible 2	v4 only	CC:3		FLJ32384
+HIC2	hypermethylated in cancer 2	v4 only	CC:3		KIAA1020, HRG22, ZBTB30, ZNF907
+HIPK2	homeodomain interacting protein kinase 2	v4 only	CC:3		
+HIVEP1	human immunodeficiency virus type I enhancer binding protein 1	v4 only	CC:3	ZNF40	CIRIP, MBP-1, CRYBP1, PRDII-BF1, ZAS1, Schnurri-1, ZNF40A
+HIVEP2	human immunodeficiency virus type I enhancer binding protein 2	v4 only	CC:3		MBP-2, HIV-EP2, MIBP1, ZAS2, Schnurri-2, ZNF40B
+HIVEP3	human immunodeficiency virus type I enhancer binding protein 3	v4 only	CC:3		KRC, KBP1, KBP-1, SHN3, FLJ16752, KIAA1555, ZAS3, Schnurri-3, ZNF40C
+HKR1	GLI-Kruppel family member HKR1	v4 only	CC:3		ZNF875
+HMGA2	high mobility group AT-hook 2	v4 only	CC:3	HMGIC	BABL, LIPO
+HMGB1	high-mobility group box 1	v4 only	CC:3	HMG1	HMG3, SBP-1, DKFZp686A04236
+HMGB3	high-mobility group box 3	v4 only	CC:3	HMG4	HMG2A, MGC90319
+HMGN2	high-mobility group nucleosomal binding domain 2	v4 only	CC:3	HMG17	
+HNRNPD	heterogeneous nuclear ribonucleoprotein D (AU-rich element RNA binding protein 1, 37kDa)	v4 only	CC:3	AUF1, HNRPD	
+HPCA	hippocalcin	v4 only	CC:3		
+HPCAL1	hippocalcin-like 1	v4 only	CC:3		BDR1, HLP2, VILIP-3
+HSBP1	heat shock factor binding protein 1	v4 only	CC:3		
+ID1	inhibitor of DNA binding 1, dominant negative helix-loop-helix protein	v4 only	CC:3		dJ857M17.1.2, bHLHb24
+ID2	inhibitor of DNA binding 2, dominant negative helix-loop-helix protein	v4 only	CC:3		GIG8, bHLHb26
+ID2B	inhibitor of DNA binding 2B, dominant negative helix-loop-helix protein (pseudogene)	v4 only	CC:3		
+ID3	inhibitor of DNA binding 3, dominant negative helix-loop-helix protein	v4 only	CC:3		HEIR-1, bHLHb25
+ID4	inhibitor of DNA binding 4, dominant negative helix-loop-helix protein	v4 only	CC:3		bHLHb27
+IER2	immediate early response 2	v4 only	CC:3		ETR101
+IFI16	interferon, gamma-inducible protein 16	v4 only	CC:3		IFNGIP1, PYHIN2
+IFT172	intraflagellar transport 172 homolog (Chlamydomonas)	v4 only	CC:3		SLB, wim, osm-1
+IKBKB	inhibitor of kappa light polypeptide gene enhancer in B-cells, kinase beta	v4 only	CC:3		IKK2, NFKBIKB, IKK-beta, IKKB
+IL31RA	interleukin 31 receptor A	v4 only	CC:3		CRL3, GLM-R, CRL, Glmr, IL-31RA
+ILF3	interleukin enhancer binding factor 3, 90kDa	v4 only	CC:3		NF90, MPHOSPH4, MPP4, DRBP76, NFAR-1
+ILK	integrin-linked kinase	v4 only	CC:3		
+ING2	inhibitor of growth family, member 2	v4 only	CC:3	ING1L	p33ING2
+INSM1	insulinoma-associated 1	v4 only	CC:3		IA-1
+INSM2	insulinoma-associated 2	v4 only	CC:3		IA-6
+INTS4	integrator complex subunit 4	v4 only	CC:3		INT4, MGC16733, MST093
+IRAK1	interleukin-1 receptor-associated kinase 1	v4 only	CC:3		IRAK, pelle
+IVNS1ABP	influenza virus NS1A binding protein	v4 only	CC:3		NS1-BP, HSPC068, NS-1, KIAA0850, ND1, KLHL39
+JARID2	jumonji, AT rich interactive domain 2	v4 only	CC:3	JMJ	
+JMJD1C	jumonji domain containing 1C	v4 only	CC:3	TRIP8	DKFZp761F0118, KIAA1380, FLJ14374
+JMJD4	jumonji domain containing 4	v4 only	CC:3		FLJ12517
+KBTBD10	kelch repeat and BTB (POZ) domain containing 10	v4 only	CC:3		SARCOSIN
+KBTBD5	kelch repeat and BTB (POZ) domain containing 5	v4 only	CC:3		SRYP
+KBTBD7	kelch repeat and BTB (POZ) domain containing 7	v4 only	CC:3		DKFZP434E2318
+KCNIP1	Kv channel interacting protein 1	v4 only	CC:3		KCHIP1
+KCNIP2	Kv channel interacting protein 2	v4 only	CC:3		KCHIP2
+KCNIP3	Kv channel interacting protein 3, calsenilin	v4 only	CC:3	CSEN	DREAM, KCHIP3, calsenilin
+KCNIP4	Kv channel interacting protein 4	v4 only	CC:3		CALP, KCHIP4, MGC44947
+KDM4A	lysine (K)-specific demethylase 4A	v4 only	CC:3	JMJD2, JMJD2A	KIAA0677, JHDM3A
+KEAP1	kelch-like ECH-associated protein 1	v4 only	CC:3		KIAA0132, MGC10630, MGC1114, MGC20887, MGC4407, MGC9454, INrf2, KLHL19
+KHDRBS1	KH domain containing, RNA binding, signal transduction associated 1	v4 only	CC:3		Sam68, p62, FLJ34027
+KIAA0040	KIAA0040	v4 only	CC:3		
+KLF14	Kruppel-like factor 14	v4 only	CC:3		BTEB5
+KLF8	Kruppel-like factor 8	v4 only	CC:3		BKLF3, ZNF741, DXS741
+KLHDC5	kelch domain containing 5	v4 only	CC:3		KIAA1340, Ctb9
+KLHL1	kelch-like 1 (Drosophila)	v4 only	CC:3		KIAA1490, MRP2, FLJ30047
+KLHL12	kelch-like 12 (Drosophila)	v4 only	CC:3		C3IP1
+KLHL13	kelch-like 13 (Drosophila)	v4 only	CC:3	BKLHD2, KIAA1309	FLJ10262
+KLHL14	kelch-like 14 (Drosophila)	v4 only	CC:3		KIAA1384
+KLHL21	kelch-like 21 (Drosophila)	v4 only	CC:3		KIAA0469
+KLHL25	kelch-like 25 (Drosophila)	v4 only	CC:3		FLJ12587, ENC2, ENC-2
+KLHL26	kelch-like 26 (Drosophila)	v4 only	CC:3		
+KLHL4	kelch-like 4 (Drosophila)	v4 only	CC:3		KIAA1687, DKELCHL, KHL4
+KLHL5	kelch-like 5 (Drosophila)	v4 only	CC:3		
+KLHL6	kelch-like 6 (Drosophila)	v4 only	CC:3		FLJ00029
+KLHL8	kelch-like 8 (Drosophila)	v4 only	CC:3		KIAA1378
+L3MBTL2	l(3)mbt-like 2 (Drosophila)	v4 only	CC:3		H-l(3)mbt-l, DKFZP761I141, dJ756G23.3
+L3MBTL3	l(3)mbt-like 3 (Drosophila)	v4 only	CC:3		KIAA1798
+LARP1	La ribonucleoprotein domain family, member 1	v4 only	CC:3		LARP, KIAA0731, MGC19556
+LAS1L	LAS1-like (S. cerevisiae)	v4 only	CC:3		FLJ12525
+LDB1	LIM domain binding 1	v4 only	CC:3		NLI, CLIM2
+LDB2	LIM domain binding 2	v4 only	CC:3		CLIM1, LDB1
+LDOC1	leucine zipper, down-regulated in cancer 1	v4 only	CC:3	BCUR1	Mar7, Mart7
+LIMA1	LIM domain and actin binding 1	v4 only	CC:3		EPLIN
+LIN28	lin-28 homolog (C. elegans)	v4 only	CC:3	NA	NA
+LMO2	LIM domain only 2 (rhombotin-like 1)	v4 only	CC:3	RBTNL1	TTG2, RHOM2, RBTN2
+LMO3	LIM domain only 3 (rhombotin-like 2)	v4 only	CC:3	RBTNL2	Rhom-3, DAT1
+LMO7	LIM domain 7	v4 only	CC:3	FBXO20	FBX20, KIAA0858
+LOC151162	hypothetical LOC151162	v4 only	CC:3	NA	NA
+LOC441056	double homeobox, 4-like	v4 only	CC:3	NA	NA
+LOC643313	similar to hypothetical protein LOC284701	v4 only	CC:3	NA	NA
+LOC729991-MEF2B	LOC729991-MEF2B readthrough transcript	v4 only	CC:3	NA	NA
+LRCH4	leucine-rich repeats and calponin homology (CH) domain containing 4	v4 only	CC:3	LRN, LRRN1	
+LRRC14	leucine rich repeat containing 14	v4 only	CC:3		KIAA0014, LRRC14A
+LRRFIP1	leucine rich repeat (in FLII) interacting protein 1	v4 only	CC:3		FLAP-1, FLIIAP1, TRIP, GCF-2, HUFI-1
+LSR	lipolysis stimulated lipoprotein receptor	v4 only	CC:3		LISCH7, ILDR3
+LYL1	lymphoblastic leukemia derived sequence 1	v4 only	CC:3		bHLHa18
+MAML3	mastermind-like 3 (Drosophila)	v4 only	CC:3	TNRC3	KIAA1816, MAM2, CAGH3, GDN
+MANSC1	MANSC domain containing 1	v4 only	CC:3		FLJ10298, LOH12CR3
+MAP3K8	mitogen-activated protein kinase kinase kinase 8	v4 only	CC:3	COT, ESTF	Tpl-2, EST, c-COT, MEKK8
+MAPK8IP1	mitogen-activated protein kinase 8 interacting protein 1	v4 only	CC:3	PRKM8IP	IB1, JIP-1, JIP1
+MBD2	methyl-CpG binding domain protein 2	v4 only	CC:3		
+MECP2	methyl CpG binding protein 2 (Rett syndrome)	v4 only	CC:3	RTT, MRX16, MRX79	
+MED12	mediator complex subunit 12	v4 only	CC:3	TNRC11, FGS1	CAGH45, HOPA, OPA1, TRAP230, KIAA0192, OKS
+MED24	mediator complex subunit 24	v4 only	CC:3	THRAP4, CRSP4	TRAP100, KIAA0130, DRIP100, CRSP100
+MED30	mediator complex subunit 30	v4 only	CC:3	THRAP6	TRAP25
+MED31	mediator complex subunit 31	v4 only	CC:3		CGI-125, Soh1
+MED4	mediator complex subunit 4	v4 only	CC:3	VDRIP	HSPC126, DRIP36, TRAP36
+MEFV	Mediterranean fever	v4 only	CC:3	MEF	FMF, TRIM20
+METTL3	methyltransferase like 3	v4 only	CC:3		Spo8, M6A
+MFSD3	major facilitator superfamily domain containing 3	v4 only	CC:3		
+MID1	midline 1 (Opitz/BBB syndrome)	v4 only	CC:3		OS, FXY, TRIM18, RNF59
+MID2	midline 2	v4 only	CC:3		FXY2, TRIM1, RNF60
+MIER1	mesoderm induction early response 1 homolog (Xenopus laevis)	v4 only	CC:3		hMI-ER1, MI-ER1, KIAA1610
+MIER3	mesoderm induction early response 1, family member 3	v4 only	CC:3		FLJ35954, DKFZp686L09111, DKFZp781I1119
+MKL2	MKL/myocardin-like 2	v4 only	CC:3		MRTF-B, FLJ31823
+MLL2	myeloid/lymphoid or mixed-lineage leukemia 2	v4 only	CC:3	TNRC21	ALR, MLL4, CAGL114, KMT2D
+MLLT3	myeloid/lymphoid or mixed-lineage leukemia (trithorax homolog, Drosophila); translocated to, 3	v4 only	CC:3		AF-9, AF9, YEATS3
+MLLT4	myeloid/lymphoid or mixed-lineage leukemia (trithorax homolog, Drosophila); translocated to, 4	v4 only	CC:3		AF-6, AF6
+MLLT6	myeloid/lymphoid or mixed-lineage leukemia (trithorax homolog, Drosophila); translocated to, 6	v4 only	CC:3		AF17, FLJ23480
+MLXIP	MLX interacting protein	v4 only	CC:3		MONDOA, KIAA0867, MIR, bHLHe36
+MNAT1	menage a trois homolog 1, cyclin H assembly factor (Xenopus laevis)	v4 only	CC:3		MAT1, RNF66
+MNDA	myeloid cell nuclear differentiation antigen	v4 only	CC:3		PYHIN3
+MORF4	mortality factor 4	v4 only	CC:3	SEN, SEN1	
+MORF4L1	mortality factor 4 like 1	v4 only	CC:3		MRG15, MORFRG15, HsT17725, Eaf3, MEAF3
+MORF4L2	mortality factor 4 like 2	v4 only	CC:3		KIAA0026, MRGX
+MPP4	membrane protein, palmitoylated 4 (MAGUK p55 subfamily member 4)	v4 only	CC:3	DLG6	
+MRPS5	mitochondrial ribosomal protein S5	v4 only	CC:3		MRP-S5, S5mt
+MXD3	MAX dimerization protein 3	v4 only	CC:3		MAD3, bHLHc13
+MXD4	MAX dimerization protein 4	v4 only	CC:3		MAD4, MSTP149, MST149, bHLHc12
+MXI1	MAX interactor 1	v4 only	CC:3		MXD2, MAD2, MXI, bHLHc11
+MYB	v-myb myeloblastosis viral oncogene homolog (avian)	v4 only	CC:3		c-myb
+MYBBP1A	MYB binding protein (P160) 1a	v4 only	CC:3		P160, PAP2, FLJ37886
+MYBL1	v-myb myeloblastosis viral oncogene homolog (avian)-like 1	v4 only	CC:3		AMYB, A-myb
+MYCBP	c-myc binding protein	v4 only	CC:3		AMY-1
+MYEF2	myelin expression factor 2	v4 only	CC:3		MEF-2, FLJ11213, KIAA1341, HsT18564
+MYST3	MYST histone acetyltransferase (monocytic leukemia) 3	v4 only	CC:3	NA	NA
+MYST4	MYST histone acetyltransferase (monocytic leukemia) 4	v4 only	CC:3	NA	NA
+NAB1	NGFI-A binding protein 1 (EGR1 binding protein 1)	v4 only	CC:3		
+NAB2	NGFI-A binding protein 2 (EGR1 binding protein 2)	v4 only	CC:3		MADER
+NAT14	N-acetyltransferase 14 (GCN5-related, putative)	v4 only	CC:3		KLP1
+NCALD	neurocalcin delta	v4 only	CC:3		
+NCOA1	nuclear receptor coactivator 1	v4 only	CC:3		SRC1, F-SRC-1, NCoA-1, KAT13A, RIP160, bHLHe74
+NCOA2	nuclear receptor coactivator 2	v4 only	CC:3		TIF2, GRIP1, NCoA-2, KAT13C, bHLHe75
+NCOA3	nuclear receptor coactivator 3	v4 only	CC:3		RAC3, AIB1, ACTR, p/CIP, TRAM-1, CAGH16, TNRC16, KAT13B, bHLHe42, SRC-3, SRC3
+NCOA4	nuclear receptor coactivator 4	v4 only	CC:3		ARA70, RFG, ELE1, PTC3, DKFZp762E1112
+NCOA6	nuclear receptor coactivator 6	v4 only	CC:3		KIAA0181, RAP250, ASC2, AIB3, PRIP, TRBP, NRC
+NCOR1	nuclear receptor co-repressor 1	v4 only	CC:3		N-CoR, hCIT529I10, TRAC1, hN-CoR, KIAA1047, MGC104216
+NCOR2	nuclear receptor co-repressor 2	v4 only	CC:3		SMRT, SMRTE, TRAC-1, CTG26, TNRC14
+NEUROD4	neurogenic differentiation 4	v4 only	CC:3		Atoh3, ATH-3, MATH-3, bHLHa4
+NEUROD6	neurogenic differentiation 6	v4 only	CC:3		Atoh2, NEX1M, Math-2, bHLHa2
+NFKBIA	nuclear factor of kappa light polypeptide gene enhancer in B-cells inhibitor, alpha	v4 only	CC:3	NFKBI	IKBA, MAD-3, IkappaBalpha
+NFKBIB	nuclear factor of kappa light polypeptide gene enhancer in B-cells inhibitor, beta	v4 only	CC:3		IKBB, TRIP9
+NFKBIE	nuclear factor of kappa light polypeptide gene enhancer in B-cells inhibitor, epsilon	v4 only	CC:3		IKBE
+NFKBIL1	nuclear factor of kappa light polypeptide gene enhancer in B-cells inhibitor-like 1	v4 only	CC:3	NFKBIL	IKBL
+NFKBIL2	nuclear factor of kappa light polypeptide gene enhancer in B-cells inhibitor-like 2	v4 only	CC:3	NA	NA
+NFRKB	nuclear factor related to kappaB binding protein	v4 only	CC:3		DKFZp547B2013, INO80G
+NHLH1	nescient helix loop helix 1	v4 only	CC:3	HEN1	NSCL, NSCL1, bHLHa35
+NHLH2	nescient helix loop helix 2	v4 only	CC:3	HEN2	NSCL2, bHLHa34
+NKRF	NFKB repressing factor	v4 only	CC:3		ITBA4, NRF
+NME2	non-metastatic cells 2, protein (NM23B) expressed in	v4 only	CC:3		NM23-H2
+NMI	N-myc (and STAT) interactor	v4 only	CC:3		
+NMRAL1	NmrA-like family domain containing 1	v4 only	CC:3		FLJ25918, HSCARG, SDR48A1
+NOTCH2	Notch homolog 2 (Drosophila)	v4 only	CC:3		
+NPAS3	neuronal PAS domain protein 3	v4 only	CC:3		MOP6, PASD6, bHLHe12
+NPM1	nucleophosmin (nucleolar phosphoprotein B23, numatrin)	v4 only	CC:3		B23, NPM
+NRF1	nuclear respiratory factor 1	v4 only	CC:3		EWG, ALPHA-PAL
+NRIP1	nuclear receptor interacting protein 1	v4 only	CC:3		RIP140
+NSD1	nuclear receptor binding SET domain protein 1	v4 only	CC:3	STO	ARA267, FLJ22263, KMT3B
+NT5C	5', 3'-nucleotidase, cytosolic	v4 only	CC:3	UMPH2	DNT1, DNT-1, PN-I, cdN, dNT-1
+NUFIP2	nuclear fragile X mental retardation protein interacting protein 2	v4 only	CC:3		KIAA1321, MGC117262, PIG1, 182-FIP, FIP-82, 82-FIP
+OPA1	optic atrophy 1 (autosomal dominant)	v4 only	CC:3		NTG, KIAA0567, FLJ12460, NPG, MGM1
+OPTN	optineurin	v4 only	CC:3	GLC1E	FIP2, HYPL, TFIIIA-INTP, NRP, HIP7
+OSR1	odd-skipped related 1 (Drosophila)	v4 only	CC:3	ODD	
+OSR2	odd-skipped related 2 (Drosophila)	v4 only	CC:3		FLJ90037
+OVOL1	ovo-like 1(Drosophila)	v4 only	CC:3		
+OVOL2	ovo-like 2 (Drosophila)	v4 only	CC:3	ZNF339	bA504H3.3
+PACS2	phosphofurin acidic cluster sorting protein 2	v4 only	CC:3	PACS1L	KIAA0602
+PARN	poly(A)-specific ribonuclease (deadenylation nuclease)	v4 only	CC:3		DAN
+PATZ1	POZ (BTB) and AT hook containing zinc finger 1	v4 only	CC:3	ZNF278	MAZR, dJ400N23, ZBTB19, ZSG, RIAZ, PATZ
+PAWR	PRKC, apoptosis, WT1, regulator	v4 only	CC:3		par-4, PAR4
+PAX1	paired box 1	v4 only	CC:3		
+PAX2	paired box 2	v4 only	CC:3		
+PAX9	paired box 9	v4 only	CC:3		
+PAXIP1	PAX interacting (with transcription-activation domain) protein 1	v4 only	CC:3	PAXIP1L	CAGF29, CAGF28, TNRC2, PTIP
+PBXIP1	pre-B-cell leukemia homeobox interacting protein 1	v4 only	CC:3		HPIP
+PCGF3	polycomb group ring finger 3	v4 only	CC:3	RNF3	FLJ36550, DONG1, RNF3A, MGC40413
+PCM1	pericentriolar material 1	v4 only	CC:3		PTC4
+PDCD6	programmed cell death 6	v4 only	CC:3		ALG-2, PEF1B
+PDLIM5	PDZ and LIM domain 5	v4 only	CC:3		LIM, Enh
+PER1	period homolog 1 (Drosophila)	v4 only	CC:3	PER	RIGUI
+PER2	period homolog 2 (Drosophila)	v4 only	CC:3		KIAA0347
+PER3	period homolog 3 (Drosophila)	v4 only	CC:3		
+PFDN5	prefoldin subunit 5	v4 only	CC:3		PFD5, MM-1
+PGBD3	piggyBac transposable element derived 3	v4 only	CC:3		FLJ90201
+PHB	prohibitin	v4 only	CC:3		PHB1
+PHC1	polyhomeotic homolog 1 (Drosophila)	v4 only	CC:3	EDR1	HPH1, RAE28
+PHF12	PHD finger protein 12	v4 only	CC:3		PF1, KIAA1523
+PHF15	PHD finger protein 15	v4 only	CC:3		KIAA0239
+PHF16	PHD finger protein 16	v4 only	CC:3		KIAA0215
+PHF17	PHD finger protein 17	v4 only	CC:3		JADE1
+PHF2	PHD finger protein 2	v4 only	CC:3		KIAA0662, JHDM1E, CENP-35
+PHF21A	PHD finger protein 21A	v4 only	CC:3		BHC80, KIAA1696, BM-006
+PHF3	PHD finger protein 3	v4 only	CC:3		
+PIAS1	protein inhibitor of activated STAT, 1	v4 only	CC:3	DDXBP1	GBP, GU/RH-II, ZMIZ3
+PIAS2	protein inhibitor of activated STAT, 2	v4 only	CC:3		PIASX-BETA, miz, PIASX-ALPHA, ZMIZ4
+PIAS3	protein inhibitor of activated STAT, 3	v4 only	CC:3		FLJ14651, ZMIZ5
+PIAS4	protein inhibitor of activated STAT, 4	v4 only	CC:3		Piasg, PIASY, FLJ12419, ZMIZ6
+PIGF	phosphatidylinositol glycan anchor biosynthesis, class F	v4 only	CC:3		
+PIR	pirin (iron-binding nuclear protein)	v4 only	CC:3		
+PLAGL1	pleiomorphic adenoma gene-like 1	v4 only	CC:3		ZAC, LOT1
+PLRG1	pleiotropic regulator 1 (PRL1 homolog, Arabidopsis)	v4 only	CC:3		PRL1, Prp46, PRPF46
+PMF1	polyamine-modulated factor 1	v4 only	CC:3		
+PMFBP1	polyamine modulated factor 1 binding protein 1	v4 only	CC:3		
+PML	promyelocytic leukemia	v4 only	CC:3		MYL, TRIM19, RNF71
+PNLDC1	poly(A)-specific ribonuclease (PARN)-like domain containing 1	v4 only	CC:3		FLJ40240, dJ195P10.2
+POLR2I	polymerase (RNA) II (DNA directed) polypeptide I, 14.5kDa	v4 only	CC:3		RPB9, hRPB14.5
+POU2AF1	POU class 2 associating factor 1	v4 only	CC:3		OBF1
+POU5F1P3	POU class 5 homeobox 1 pseudogene 3	v4 only	CC:3	OTF3L, POU5F1L	POU5FLC12
+POU5F1P4	POU class 5 homeobox 1 pseudogene 4	v4 only	CC:3		POU5FLC1
+PPARGC1A	peroxisome proliferator-activated receptor gamma, coactivator 1 alpha	v4 only	CC:3	PPARGC1	PGC1, PGC1A
+PPARGC1B	peroxisome proliferator-activated receptor gamma, coactivator 1 beta	v4 only	CC:3		PERC, PGC1B
+PPBPL2	pro-platelet basic protein-like 2	v4 only	CC:3		SPBPBP
+PPP1R13L	protein phosphatase 1, regulatory (inhibitor) subunit 13 like	v4 only	CC:3		RAI, IASPP
+PPP1R3E	protein phosphatase 1, regulatory (inhibitor) subunit 3E	v4 only	CC:3		FLJ00089
+PRDM10	PR domain containing 10	v4 only	CC:3		KIAA1231, PFM7, MGC131802
+PRDM11	PR domain containing 11	v4 only	CC:3		PFM8
+PRDM12	PR domain containing 12	v4 only	CC:3		
+PRDM13	PR domain containing 13	v4 only	CC:3		
+PRDM14	PR domain containing 14	v4 only	CC:3		
+PRDM15	PR domain containing 15	v4 only	CC:3	ZNF298, C21orf83	
+PRDM16	PR domain containing 16	v4 only	CC:3		MEL1, PFM13, KIAA1675, MGC166915
+PRDM5	PR domain containing 5	v4 only	CC:3		PFM2
+PRDM6	PR domain containing 6	v4 only	CC:3		
+PRDM7	PR domain containing 7	v4 only	CC:3		ZNF910
+PRDM8	PR domain containing 8	v4 only	CC:3		
+PRDM9	PR domain containing 9	v4 only	CC:3	MSBP3	PFM6, ZNF899
+PREB	prolactin regulatory element binding	v4 only	CC:3		SEC12
+PRR7	proline rich 7 (synaptic)	v4 only	CC:3		MGC10772
+PSIP1	PC4 and SFRS1 interacting protein 1	v4 only	CC:3	PSIP2	p52, LEDGF, p75
+PSMC2	proteasome (prosome, macropain) 26S subunit, ATPase, 2	v4 only	CC:3		MSS1, S7, Nbla10058
+PSMC3	proteasome (prosome, macropain) 26S subunit, ATPase, 3	v4 only	CC:3		TBP1, TBP-1
+PSMC5	proteasome (prosome, macropain) 26S subunit, ATPase, 5	v4 only	CC:3		SUG1, p45/SUG, TBP10, p45, S8, TRIP1, SUG-1
+PSMG4	proteasome (prosome, macropain) assembly chaperone 4	v4 only	CC:3	C6orf86	PAC4
+PTTG1IP	pituitary tumor-transforming 1 interacting protein	v4 only	CC:3	C21orf3, C21orf1	PBF
+RAC3	ras-related C3 botulinum toxin substrate 3 (rho family, small GTP binding protein Rac3)	v4 only	CC:3		
+RAN	RAN, member RAS oncogene family	v4 only	CC:3		ARA24, TC4, Gsp1
+RASSF7	Ras association (RalGDS/AF-6) domain family (N-terminal) member 7	v4 only	CC:3	C11orf13	HRC1, HRAS1
+RBAK	RB-associated KRAB zinc finger	v4 only	CC:3		ZNF769
+RBBP5	retinoblastoma binding protein 5	v4 only	CC:3		RBQ3, SWD1
+RBBP9	retinoblastoma binding protein 9	v4 only	CC:3		Bog
+RBL1	retinoblastoma-like 1 (p107)	v4 only	CC:3		p107, cp107, PRB1
+RBL2	retinoblastoma-like 2 (p130)	v4 only	CC:3		Rb2, p130
+RBP1	retinol binding protein 1, cellular	v4 only	CC:3		CRABP-I, CRBP1, CRBP, RBPC, CRBPI
+RCOR1	REST corepressor 1	v4 only	CC:3	RCOR	COREST, KIAA0071
+RCOR3	REST corepressor 3	v4 only	CC:3		FLJ10876
+REV3L	REV3-like, catalytic subunit of DNA polymerase zeta (yeast)	v4 only	CC:3		POLZ
+RFPL3	ret finger protein-like 3	v4 only	CC:3		
+RFX2	regulatory factor X, 2 (influences HLA class II expression)	v4 only	CC:3		FLJ14226
+RFX4	regulatory factor X, 4 (influences HLA class II expression)	v4 only	CC:3		
+RIMS3	regulating synaptic membrane exocytosis 3	v4 only	CC:3		RIM3, NIM3
+RIN3	Ras and Rab interactor 3	v4 only	CC:3		FLJ22439
+RING1	ring finger protein 1	v4 only	CC:3		RNF1
+RNF10	ring finger protein 10	v4 only	CC:3		KIAA0262, RIE2
+RNF113A	ring finger protein 113A	v4 only	CC:3	ZNF183	RNF113, Cwc24
+RNF113B	ring finger protein 113B	v4 only	CC:3	ZNF183L1	RNF161
+RNF13	ring finger protein 13	v4 only	CC:3		RZF
+RNF135	ring finger protein 135	v4 only	CC:3		MGC13061
+RNF14	ring finger protein 14	v4 only	CC:3		ARA54, HFB30, TRIAD2
+RNF141	ring finger protein 141	v4 only	CC:3		ZFP26, ZNF230
+RNF2	ring finger protein 2	v4 only	CC:3		BAP-1, BAP1, DING, HIPI3, RING1B, RING2
+RNF20	ring finger protein 20	v4 only	CC:3		FLJ20382, FLJ11189, KAIA2779, BRE1A, hBRE1, BRE1
+RNF24	ring finger protein 24	v4 only	CC:3		G1L
+RNF31	ring finger protein 31	v4 only	CC:3		ZIBRA, FLJ10111, FLJ23501
+RNF41	ring finger protein 41	v4 only	CC:3		SBBI03
+RNF8	ring finger protein 8	v4 only	CC:3		KIAA0646
+ROR1	receptor tyrosine kinase-like orphan receptor 1	v4 only	CC:3	NTRKR1	
+RREB1	ras responsive element binding protein 1	v4 only	CC:3		HNT
+RSF1	remodeling and spacing factor 1	v4 only	CC:3	HBXAP	XAP8, RSF-1, p325
+RUFY3	RUN and FYVE domain containing 3	v4 only	CC:3		RIPx, KIAA0871, Singar1
+RUNDC2A	RUN domain containing 2A	v4 only	CC:3	NA	NA
+RYBP	RING1 and YY1 binding protein	v4 only	CC:3		YEAF1, AAP1, DEDAF
+SAFB	scaffold attachment factor B	v4 only	CC:3		HET, SAFB1
+SALL3	sal-like 3 (Drosophila)	v4 only	CC:3		ZNF796
+SALL4	sal-like 4 (Drosophila)	v4 only	CC:3		dJ1112F19.1, ZNF797
+SAMD4B	sterile alpha motif domain containing 4B	v4 only	CC:3		FLJ10211, MGC99832, SMGB, hSmaug2
+SAP18	Sin3A-associated protein, 18kDa	v4 only	CC:3		SAP18p, 2HOR0202, MGC27131
+SAP30	Sin3A-associated protein, 30kDa	v4 only	CC:3		
+SAP30BP	SAP30 binding protein	v4 only	CC:3		HCNGP, HTRG, HTRP
+SART3	squamous cell carcinoma antigen recognized by T cells 3	v4 only	CC:3		KIAA0156, RP11-13G14
+SBNO2	strawberry notch homolog 2 (Drosophila)	v4 only	CC:3	KIAA0963	FLJ00173, Stno, Sno
+SCML4	sex comb on midleg-like 4 (Drosophila)	v4 only	CC:3		dJ47M23.1
+SEC14L2	SEC14-like 2 (S. cerevisiae)	v4 only	CC:3	C22orf6	TAP, SPF, KIAA1186, KIAA1658
+SERTAD1	SERTA domain containing 1	v4 only	CC:3		SEI1, TRIP-Br1
+SERTAD2	SERTA domain containing 2	v4 only	CC:3		TRIP-Br2, KIAA0127, Sei-2
+SERTAD3	SERTA domain containing 3	v4 only	CC:3		RBT1
+SETBP1	SET binding protein 1	v4 only	CC:3		SEB, KIAA0437
+SETD1A	SET domain containing 1A	v4 only	CC:3		KIAA0339, Set1, KMT2F
+SETD1B	SET domain containing 1B	v4 only	CC:3		KIAA1076, Set1B, KMT2G
+SETD4	SET domain containing 4	v4 only	CC:3	C21orf27, C21orf18	
+SETDB1	SET domain, bifurcated 1	v4 only	CC:3		KG1T, KIAA0067, ESET, KMT1E
+SFRS2	splicing factor, arginine/serine-rich 2	v4 only	CC:3	NA	NA
+SIAH1	seven in absentia homolog 1 (Drosophila)	v4 only	CC:3		hSIAH1
+SIAH2	seven in absentia homolog 2 (Drosophila)	v4 only	CC:3		
+SIN3B	SIN3 homolog B, transcription regulator (yeast)	v4 only	CC:3		KIAA0700
+SKIL	SKI-like oncogene	v4 only	CC:3		SNO, SnoN, SnoA
+SMARCA1	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily a, member 1	v4 only	CC:3	SNF2L1, SNF2L	SNF2LB, NURF140, ISWI, SWI
+SMARCA2	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily a, member 2	v4 only	CC:3	SNF2L2	BAF190, hSNF2a, hBRM, Sth1p, SNF2LA, BRM, SNF2, SWI2
+SMARCA4	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily a, member 4	v4 only	CC:3	SNF2L4	hSNF2b, BRG1, BAF190, SNF2, SWI2, SNF2-BETA, SNF2LB, FLJ39786
+SMARCAD1	SWI/SNF-related, matrix-associated actin-dependent regulator of chromatin, subfamily a, containing DEAD/H box 1	v4 only	CC:3		ETL1, DKFZP762K2015, KIAA1122, DKFZp762K2015
+SMARCAL1	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily a-like 1	v4 only	CC:3		HHARP, HARP
+SMARCB1	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily b, member 1	v4 only	CC:3	SNF5L1	BAF47, Ini1, Snr1, hSNFS, Sfh1p, RDT
+SMARCC1	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily c, member 1	v4 only	CC:3		BAF155, SRG3, Rsc8, CRACC1
+SMARCC2	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily c, member 2	v4 only	CC:3		BAF170, Rsc8, CRACC2
+SMARCD1	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily d, member 1	v4 only	CC:3		BAF60A, Rsc6p, CRACD1
+SMARCD2	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily d, member 2	v4 only	CC:3		BAF60B, Rsc6p, CRACD2, PRO2451
+SMARCE1	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily e, member 1	v4 only	CC:3		BAF57
+SMYD5	SMYD family member 5	v4 only	CC:3	RAI15	RRG1, NN8-4AG, ZMYND23
+SNAI1	snail homolog 1 (Drosophila)	v4 only	CC:3		SNA, SLUGH2, SNAH, SNAIL1, SNAIL
+SNAI2	snail homolog 2 (Drosophila)	v4 only	CC:3	SLUG	SLUGH1, SNAIL2
+SNAPC1	small nuclear RNA activating complex, polypeptide 1, 43kDa	v4 only	CC:3		SNAP43, PTFgamma
+SND1	staphylococcal nuclease and tudor domain containing 1	v4 only	CC:3		TDRD11, p100
+SNRPD1	small nuclear ribonucleoprotein D1 polypeptide 16kDa	v4 only	CC:3	SNRPD	HsT2456, Sm-D1
+SNW1	SNW domain containing 1	v4 only	CC:3	SKIIP	NCoA-62, SKIP, Prp45, PRPF45, Bx42
+SOX14	SRY (sex determining region Y)-box 14	v4 only	CC:3		SOX28
+SOX17	SRY (sex determining region Y)-box 17	v4 only	CC:3		
+SOX3	SRY (sex determining region Y)-box 3	v4 only	CC:3	PHP	
+SP100	SP100 nuclear antigen	v4 only	CC:3		
+SPEN	spen homolog, transcriptional regulator (Drosophila)	v4 only	CC:3		KIAA0929, MINT, SHARP, RBM15C
+SRA1	steroid receptor RNA activator 1	v4 only	CC:3		SRA, STRAA1
+SRCAP	Snf2-related CREBBP activator protein	v4 only	CC:3		KIAA0309, EAF1, SWR1, DOMO1
+SRXN1	sulfiredoxin 1 homolog (S. cerevisiae)	v4 only	CC:3	C20orf139	Npn3, SRX1, YKL086W, dJ850E9.2
+SSRP1	structure specific recognition protein 1	v4 only	CC:3		FACT80
+SSX1	synovial sarcoma, X breakpoint 1	v4 only	CC:3		CT5.1
+SSX2	synovial sarcoma, X breakpoint 2	v4 only	CC:3	SSX	HOM-MEL-40, HD21, MGC3884, MGC15364, MGC119055, CT5.2a
+SSX3	synovial sarcoma, X breakpoint 3	v4 only	CC:3		CT5.3
+SSX4	synovial sarcoma, X breakpoint 4	v4 only	CC:3		CT5.4
+SSX5	synovial sarcoma, X breakpoint 5	v4 only	CC:3		
+SSX6	synovial sarcoma, X breakpoint 6 (pseudogene)	v4 only	CC:3	SSXP2	psiSSX2
+SSX8	synovial sarcoma, X breakpoint 8	v4 only	CC:3		
+SSX9	synovial sarcoma, X breakpoint 9	v4 only	CC:3		
+STON1-GTF2A1L	STON1-GTF2A1L readthrough	v4 only	CC:3		SALF
+SUB1	SUB1 homolog (S. cerevisiae)	v4 only	CC:3		PC4, p15, p14
+SUFU	suppressor of fused homolog (Drosophila)	v4 only	CC:3		SUFUH, SUFUXL, PRO1280
+SUPT16H	suppressor of Ty 16 homolog (S. cerevisiae)	v4 only	CC:3		FACT, FACTP140, SPT16/CDC68, FLJ14010, FLJ10857, CDC68
+SUPT5H	suppressor of Ty 5 homolog (S. cerevisiae)	v4 only	CC:3		SPT5H, SPT5, FLJ34157
+SUV39H1	suppressor of variegation 3-9 homolog 1 (Drosophila)	v4 only	CC:3	SUV39H	KMT1A
+SUV420H1	suppressor of variegation 4-20 homolog 1 (Drosophila)	v4 only	CC:3		CGI-85, KMT5B
+TAF1	TAF1 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 250kDa	v4 only	CC:3	TAF2A, BA2R, CCG1, CCGS, DYT3	NSCL2, TAFII250, KAT4, DYT3/TAF1
+TAF11	TAF11 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 28kDa	v4 only	CC:3	TAF2I	TAFII28
+TAF15	TAF15 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 68kDa	v4 only	CC:3	TAF2N	hTAFII68, RBP56, Npl3
+TAF1L	TAF1 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 210kDa-like	v4 only	CC:3		
+TAF2	TAF2 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 150kDa	v4 only	CC:3	TAF2B	TAFII150, CIF150
+TAF3	TAF3 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 140kDa	v4 only	CC:3		TAF140, TAFII140
+TAF7L	TAF7-like RNA polymerase II, TATA box binding protein (TBP)-associated factor, 50kDa	v4 only	CC:3	TAF2Q	CT40
+TAF8	TAF8 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 43kDa	v4 only	CC:3	TBN	FLJ32821, TAF(II)43
+TAF9	TAF9 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 32kDa	v4 only	CC:3	TAF2G	TAFII31, TAFII32, TAFIID32, MGC5067, CGI-137, MGC1603, MGC3647, CINAP, AD-004, AK6
+TAL2	T-cell acute lymphocytic leukemia 2	v4 only	CC:3		bHLHa19
+TAS1R1	taste receptor, type 1, member 1	v4 only	CC:3	GPR70	T1R1, TR1
+TBC1D10B	TBC1 domain family, member 10B	v4 only	CC:3		DKFZP434P1750, Rab27A-GAPbeta, FLJ13130
+TBL1Y	transducin (beta)-like 1, Y-linked	v4 only	CC:3		TBL1
+TCEA1	transcription elongation factor A (SII), 1	v4 only	CC:3	TCEA, GTF2S	SII, TF2S, TFIIS
+TGFB1	transforming growth factor, beta 1	v4 only	CC:3	TGFB, DPD1	CED, TGFbeta
+TGFB1I1	transforming growth factor beta 1 induced transcript 1	v4 only	CC:3		Hic-5, TSC-5, ARA55, HIC-5
+THRAP3	thyroid hormone receptor associated protein 3	v4 only	CC:3		TRAP150
+TIMELESS	timeless homolog (Drosophila)	v4 only	CC:3		hTIM, TIM, TIM1
+TNRC6A	trinucleotide repeat containing 6A	v4 only	CC:3	TNRC6	CAGH26, KIAA1460, GW182
+TOE1	target of EGR1, member 1 (nuclear)	v4 only	CC:3		
+TOX	thymocyte selection-associated high mobility group box	v4 only	CC:3		KIAA0808, TOX1
+TP53BP1	tumor protein p53 binding protein 1	v4 only	CC:3		53BP1, p202
+TP53BP2	tumor protein p53 binding protein, 2	v4 only	CC:3		PPP1R13A, ASPP2, 53BP2
+TP53I13	tumor protein p53 inducible protein 13	v4 only	CC:3		DSCP1
+TRIB3	tribbles homolog 3 (Drosophila)	v4 only	CC:3	C20orf97	dJ1103G7.3, TRB3
+TRIM10	tripartite motif-containing 10	v4 only	CC:3	RNF9	RFB30, HERF1
+TRIM14	tripartite motif-containing 14	v4 only	CC:3		KIAA0129
+TRIM15	tripartite motif-containing 15	v4 only	CC:3	ZNF178	ZNFB7, RNF93
+TRIM16	tripartite motif-containing 16	v4 only	CC:3		EBBP
+TRIM17	tripartite motif-containing 17	v4 only	CC:3	RNF16	terf, RBCC
+TRIM21	tripartite motif-containing 21	v4 only	CC:3	SSA1	RNF81, RO52
+TRIM24	tripartite motif-containing 24	v4 only	CC:3	TIF1	hTIF1, Tif1a, RNF82, TIF1A
+TRIM26	tripartite motif-containing 26	v4 only	CC:3	ZNF173	RNF95
+TRIM3	tripartite motif-containing 3	v4 only	CC:3	RNF22	HAC1, BERP, RNF97
+TRIM31	tripartite motif-containing 31	v4 only	CC:3		RNF, HCGI, C6orf13, HCG1
+TRIM32	tripartite motif-containing 32	v4 only	CC:3	LGMD2H	HT2A, TATIP, BBS11
+TRIM33	tripartite motif-containing 33	v4 only	CC:3		TIF1GAMMA, FLJ11429, KIAA1113, TIFGAMMA, RFG7, TF1G, TIF1G, PTC7
+TRIM34	tripartite motif-containing 34	v4 only	CC:3	RNF21	
+TRIM35	tripartite motif-containing 35	v4 only	CC:3		KIAA1098, MAIR, HLS5
+TRIM39	tripartite motif-containing 39	v4 only	CC:3	RNF23	
+TRIM4	tripartite motif-containing 4	v4 only	CC:3		RNF87
+TRIM40	tripartite motif-containing 40	v4 only	CC:3		RNF35
+TRIM41	tripartite motif-containing 41	v4 only	CC:3		MGC1127, RINCK
+TRIM47	tripartite motif-containing 47	v4 only	CC:3		GOA, RNF100
+TRIM48	tripartite motif-containing 48	v4 only	CC:3		RNF101
+TRIM49	tripartite motif-containing 49	v4 only	CC:3	RNF18	
+TRIM5	tripartite motif-containing 5	v4 only	CC:3		RNF88, TRIM5alpha
+TRIM52	tripartite motif-containing 52	v4 only	CC:3		RNF102
+TRIM56	tripartite motif-containing 56	v4 only	CC:3		RNF109
+TRIM58	tripartite motif-containing 58	v4 only	CC:3		BIA2
+TRIM62	tripartite motif-containing 62	v4 only	CC:3		FLJ10759, DEAR1
+TRIM65	tripartite motif-containing 65	v4 only	CC:3		
+TRIM66	tripartite motif-containing 66	v4 only	CC:3	C11orf29	KIAA0298, TIF1D
+TRIM68	tripartite motif-containing 68	v4 only	CC:3	RNF137	SS-56, FLJ10369
+TRIM72	tripartite motif-containing 72	v4 only	CC:3		
+TRIM8	tripartite motif-containing 8	v4 only	CC:3	RNF27	GERP
+TRIM9	tripartite motif-containing 9	v4 only	CC:3		SPRING, RNF91
+TRIOBP	TRIO and F-actin binding protein	v4 only	CC:3	DFNB28	HRIHFB2122, KIAA1662, Tara
+TRIP10	thyroid hormone receptor interactor 10	v4 only	CC:3	STOT	STP, HSTP, CIP4
+TRIP11	thyroid hormone receptor interactor 11	v4 only	CC:3		CEV14, Trip230, GMAP-210
+TRIP13	thyroid hormone receptor interactor 13	v4 only	CC:3		16E1BP
+TRIP4	thyroid hormone receptor interactor 4	v4 only	CC:3		HsT17391
+TRIP6	thyroid hormone receptor interactor 6	v4 only	CC:3		ZRP-1, OIP1, MGC10556, MGC10558, MGC29959, MGC3837, MGC4423
+TRMT1	TRM1 tRNA methyltransferase 1 homolog (S. cerevisiae)	v4 only	CC:3		FLJ20244
+TSG101	tumor susceptibility gene 101	v4 only	CC:3	TSG10	VPS23
+TTLL4	tubulin tyrosine ligase-like family, member 4	v4 only	CC:3		KIAA0173
+TTLL5	tubulin tyrosine ligase-like family, member 5	v4 only	CC:3	KIAA0998	
+TTRAP	TRAF and TNF receptor associated protein	v4 only	CC:3	NA	NA
+TUB	tubby homolog (mouse)	v4 only	CC:3		rd5
+TULP1	tubby like protein 1	v4 only	CC:3	RP14	TUBL1
+TULP2	tubby like protein 2	v4 only	CC:3		TUBL2, CT65
+TWIST1	twist homolog 1 (Drosophila)	v4 only	CC:3	ACS3, BPES3, TWIST	SCS, H-twist, BPES2, bHLHa38
+UBE2K	ubiquitin-conjugating enzyme E2K (UBC1 homolog, yeast)	v4 only	CC:3	HIP2	HYPG, UBC1
+UBE2V1	ubiquitin-conjugating enzyme E2 variant 1	v4 only	CC:3	UBE2V	UEV-1, CROC-1, UEV1A, CROC1
+UHRF2	ubiquitin-like with PHD and ring finger domains 2	v4 only	CC:3		RNF107, NIRF, URF2, MGC33463
+ULK2	unc-51-like kinase 2 (C. elegans)	v4 only	CC:3		KIAA0623, Unc51.2, ATG1B
+VENTXP7	VENT homeobox (Xenopus laevis) pseudogene 7	v4 only	CC:3	VENTX1	HPX42
+VGLL1	vestigial like 1 (Drosophila)	v4 only	CC:3		TONDU, TDU
+VPS24	vacuolar protein sorting 24 homolog (S. cerevisiae)	v4 only	CC:3	NA	NA
+WBP5	WW domain binding protein 5	v4 only	CC:3		DKFZp313K1940, TCEAL9
+WDR45L	WDR45-like	v4 only	CC:3		WIPI3
+WDR60	WD repeat domain 60	v4 only	CC:3		FLJ10300
+WHSC1	Wolf-Hirschhorn syndrome candidate 1	v4 only	CC:3		MMSET, NSD2
+WWTR1	WW domain containing transcription regulator 1	v4 only	CC:3		TAZ, DKFZp586I1419
+YAF2	YY1 associated factor 2	v4 only	CC:3		
+YAP1	Yes-associated protein 1, 65kDa	v4 only	CC:3		YAP65
+YBX2	Y box binding protein 2	v4 only	CC:3		MSY2, CSDA3
+YWHAH	tyrosine 3-monooxygenase/tryptophan 5-monooxygenase activation protein, eta polypeptide	v4 only	CC:3	YWHA1	
+ZAR1	zygote arrest 1	v4 only	CC:3		
+ZBTB1	zinc finger and BTB domain containing 1	v4 only	CC:3		KIAA0997, ZNF909
+ZBTB11	zinc finger and BTB domain containing 11	v4 only	CC:3		ZNF-U69274, ZNF913
+ZBTB2	zinc finger and BTB domain containing 2	v4 only	CC:3		KIAA1483, ZNF437, bA351K16.2
+ZBTB20	zinc finger and BTB domain containing 20	v4 only	CC:3	ZNF288	ODA-8S, DKFZp566F123, DPZF
+ZBTB22	zinc finger and BTB domain containing 22	v4 only	CC:3	ZNF297	BING1, ZNF297A, fruitless, fru, ZBTB22A
+ZBTB24	zinc finger and BTB domain containing 24	v4 only	CC:3	ZNF450	KIAA0441, BIF1, PATZ2
+ZBTB26	zinc finger and BTB domain containing 26	v4 only	CC:3	ZNF481	
+ZBTB32	zinc finger and BTB domain containing 32	v4 only	CC:3		TZFP, FAZF, FAXF, Rog, ZNF538
+ZBTB33	zinc finger and BTB domain containing 33	v4 only	CC:3		ZNF-kaiso, kaiso, WUGSC:H_DJ525N14.1, KAISO, ZNF348
+ZBTB37	zinc finger and BTB domain containing 37	v4 only	CC:3		MGC2629, ZNF908
+ZBTB39	zinc finger and BTB domain containing 39	v4 only	CC:3		KIAA0352, ZNF922
+ZBTB4	zinc finger and BTB domain containing 4	v4 only	CC:3		KIAA1538, KAISO-L1, ZNF903
+ZBTB40	zinc finger and BTB domain containing 40	v4 only	CC:3		KIAA0478, ZNF923
+ZBTB43	zinc finger and BTB domain containing 43	v4 only	CC:3	ZNF297B	KIAA0414, ZNF-X, FLJ22470, ZBTB22B
+ZBTB7A	zinc finger and BTB domain containing 7A	v4 only	CC:3	ZBTB7	FBI-1, LRF, DKFZp547O146, pokemon, ZNF857A
+ZDHHC1	zinc finger, DHHC-type containing 1	v4 only	CC:3	C16orf1	HSU90653, ZNF377
+ZDHHC17	zinc finger, DHHC-type containing 17	v4 only	CC:3		HIP14, HYPH, KIAA0946
+ZFAND3	zinc finger, AN1-type domain 3	v4 only	CC:3	TEX27	FLJ13222
+ZFP1	zinc finger protein 1 homolog (mouse)	v4 only	CC:3		FLJ34243, ZNF475
+ZFP106	zinc finger protein 106 homolog (mouse)	v4 only	CC:3	SH3BP3	ZNF474
+ZFP161	zinc finger protein 161 homolog (mouse)	v4 only	CC:3		ZNF478, ZBTB14
+ZFP28	zinc finger protein 28 homolog (mouse)	v4 only	CC:3		KIAA1431, mkr5
+ZFP3	zinc finger protein 3 homolog (mouse)	v4 only	CC:3		FLJ30726, ZNF752
+ZFP30	zinc finger protein 30 homolog (mouse)	v4 only	CC:3		ZNF745, KIAA0961
+ZFP36	zinc finger protein 36, C3H type, homolog (mouse)	v4 only	CC:3		RNF162A, TIS11, G0S24, TTP, NUP475
+ZFP64	zinc finger protein 64 homolog (mouse)	v4 only	CC:3	ZNF338	FLJ10734, dJ831D17.1, FLJ12628, dJ548G19.1
+ZFP91	zinc finger protein 91 homolog (mouse)	v4 only	CC:3		PZF, ZNF757
+ZFPL1	zinc finger protein-like 1	v4 only	CC:3		D11S750, MCG4
+ZFPM1	zinc finger protein, multitype 1	v4 only	CC:3		FOG1, FOG, ZNF89A
+ZFR	zinc finger RNA binding protein	v4 only	CC:3		ZFR1
+ZFX	zinc finger protein, X-linked	v4 only	CC:3		ZNF926
+ZFY	zinc finger protein, Y-linked	v4 only	CC:3		ZNF911
+ZIC2	Zic family member 2 (odd-paired homolog, Drosophila)	v4 only	CC:3		HPE5
+ZIC4	Zic family member 4	v4 only	CC:3		
+ZIC5	Zic family member 5 (odd-paired homolog, Drosophila)	v4 only	CC:3		
+ZIM3	zinc finger, imprinted 3	v4 only	CC:3		ZNF657
+ZMYM3	zinc finger, MYM-type 3	v4 only	CC:3	ZNF261	ZNF198L2, DXS6673E, KIAA0385, MYM
+ZMYM4	zinc finger, MYM-type 4	v4 only	CC:3	ZNF262	KIAA0425, ZNF198L3, MYM
+ZMYM6	zinc finger, MYM-type 6	v4 only	CC:3	ZNF258	ZNF198L4, MYM, Buster2
+ZMYND11	zinc finger, MYND domain containing 11	v4 only	CC:3		BS69
+ZNF100	zinc finger protein 100	v4 only	CC:3		
+ZNF101	zinc finger protein 101	v4 only	CC:3		HZF12, DKFZp570I0164
+ZNF114	zinc finger protein 114	v4 only	CC:3		MGC17986
+ZNF12	zinc finger protein 12	v4 only	CC:3	ZNF325	KOX3, GIOT-3
+ZNF124	zinc finger protein 124	v4 only	CC:3		HZF16, HZF-16
+ZNF136	zinc finger protein 136	v4 only	CC:3		pHZ-20
+ZNF137	zinc finger protein 137	v4 only	CC:3	NA	NA
+ZNF141	zinc finger protein 141	v4 only	CC:3	D4S90	pHZ-44
+ZNF146	zinc finger protein 146	v4 only	CC:3		OZF
+ZNF16	zinc finger protein 16	v4 only	CC:3		KOX9
+ZNF160	zinc finger protein 160	v4 only	CC:3		HZF5, F11, KR18, HKr18, FLJ00032, KIAA1611
+ZNF17	zinc finger protein 17	v4 only	CC:3		HPF3, KOX10, KIAA1947, FLJ40864, FLJ46058, FLJ46615
+ZNF180	zinc finger protein 180	v4 only	CC:3		HHZ168
+ZNF182	zinc finger protein 182	v4 only	CC:3	ZNF21	KOX14, HHZ150, Zfp182
+ZNF184	zinc finger protein 184	v4 only	CC:3		
+ZNF185	zinc finger protein 185 (LIM domain)	v4 only	CC:3		
+ZNF195	zinc finger protein 195	v4 only	CC:3		
+ZNF20	zinc finger protein 20	v4 only	CC:3		KOX13
+ZNF200	zinc finger protein 200	v4 only	CC:3		
+ZNF205	zinc finger protein 205	v4 only	CC:3	ZNF210	Zfp13
+ZNF208	zinc finger protein 208	v4 only	CC:3		PMIDP, ZNF95
+ZNF214	zinc finger protein 214	v4 only	CC:3		
+ZNF22	zinc finger protein 22 (KOX 15)	v4 only	CC:3		KOX15, HKR-T1, ZNF422, Zfp422
+ZNF221	zinc finger protein 221	v4 only	CC:3		
+ZNF222	zinc finger protein 222	v4 only	CC:3		
+ZNF223	zinc finger protein 223	v4 only	CC:3		
+ZNF224	zinc finger protein 224	v4 only	CC:3	ZNF255, ZNF27	BMZF-2, KOX22
+ZNF225	zinc finger protein 225	v4 only	CC:3		
+ZNF229	zinc finger protein 229	v4 only	CC:3		
+ZNF23	zinc finger protein 23 (KOX 16)	v4 only	CC:3	ZNF359	KOX16, Zfp612, ZNF612
+ZNF230	zinc finger protein 230	v4 only	CC:3		FDZF2
+ZNF234	zinc finger protein 234	v4 only	CC:3	ZNF269	HZF4
+ZNF235	zinc finger protein 235	v4 only	CC:3	ZNF270, ZFP93	HZF6, ANF270
+ZNF239	zinc finger protein 239	v4 only	CC:3		MOK2, HOK-2
+ZNF25	zinc finger protein 25	v4 only	CC:3		KOX19, FLJ31890, Zfp9
+ZNF250	zinc finger protein 250	v4 only	CC:3	ZNF647	MGC9718, ZFP647
+ZNF251	zinc finger protein 251	v4 only	CC:3		
+ZNF253	zinc finger protein 253	v4 only	CC:3	ZNF411	BMZF-1, FLJ90391
+ZNF257	zinc finger protein 257	v4 only	CC:3		BMZF-4
+ZNF259	zinc finger protein 259	v4 only	CC:3		ZPR1
+ZNF26	zinc finger protein 26	v4 only	CC:3		KOX20, FLJ20755
+ZNF264	zinc finger protein 264	v4 only	CC:3		KIAA0412
+ZNF266	zinc finger protein 266	v4 only	CC:3		HZF1
+ZNF267	zinc finger protein 267	v4 only	CC:3		HZF2
+ZNF271	zinc finger protein 271	v4 only	CC:3		HZF7, ZNFEB
+ZNF273	zinc finger protein 273	v4 only	CC:3		HZF9
+ZNF276	zinc finger protein 276	v4 only	CC:3	ZFP276	MGC45417, ZNF477, CENPZ, CENP-Z
+ZNF28	zinc finger protein 28	v4 only	CC:3		KOX24, DKFZp781D0275
+ZNF282	zinc finger protein 282	v4 only	CC:3		HUB1
+ZNF295	zinc finger protein 295	v4 only	CC:3		KIAA1227, ZBTB21
+ZNF30	zinc finger protein 30	v4 only	CC:3		KOX28, DKFZp686N19164, FLJ20562
+ZNF300	zinc finger protein 300	v4 only	CC:3		
+ZNF302	zinc finger protein 302	v4 only	CC:3		ZNF327, ZNF135L, ZNF140L
+ZNF304	zinc finger protein 304	v4 only	CC:3		
+ZNF317	zinc finger protein 317	v4 only	CC:3		
+ZNF318	zinc finger protein 318	v4 only	CC:3		HRIHFB2436, ZFP318
+ZNF319	zinc finger protein 319	v4 only	CC:3		KIAA1388, Zfp319
+ZNF32	zinc finger protein 32	v4 only	CC:3		KOX30
+ZNF322A	zinc finger protein 322A	v4 only	CC:3	NA	NA
+ZNF324	zinc finger protein 324	v4 only	CC:3		ZF5128, ZNF324A
+ZNF329	zinc finger protein 329	v4 only	CC:3		FLJ12586
+ZNF331	zinc finger protein 331	v4 only	CC:3		RITA, ZNF463, ZNF361
+ZNF333	zinc finger protein 333	v4 only	CC:3		KIAA1806
+ZNF334	zinc finger protein 334	v4 only	CC:3		bA179N14.1
+ZNF335	zinc finger protein 335	v4 only	CC:3		bA465L10.2, NIF-1
+ZNF337	zinc finger protein 337	v4 only	CC:3		dJ694B14.1
+ZNF341	zinc finger protein 341	v4 only	CC:3		dJ553F4.3
+ZNF343	zinc finger protein 343	v4 only	CC:3		MGC10715
+ZNF347	zinc finger protein 347	v4 only	CC:3		ZNF1111
+ZNF350	zinc finger protein 350	v4 only	CC:3		ZBRK1, ZFQR
+ZNF354C	zinc finger protein 354C	v4 only	CC:3		KID3
+ZNF358	zinc finger protein 358	v4 only	CC:3		FLJ10390, ZFEND
+ZNF366	zinc finger protein 366	v4 only	CC:3		FLJ39796
+ZNF382	zinc finger protein 382	v4 only	CC:3		FLJ14686, KS1
+ZNF383	zinc finger protein 383	v4 only	CC:3		FLJ35863
+ZNF384	zinc finger protein 384	v4 only	CC:3	TNRC1	CAGH1A, CIZ, NMP4, NP
+ZNF395	zinc finger protein 395	v4 only	CC:3		PRF-1, HDBP2, PBF, DKFZp434K1210
+ZNF398	zinc finger protein 398	v4 only	CC:3		ZER6, KIAA1339, P51, P71
+ZNF407	zinc finger protein 407	v4 only	CC:3		FLJ20307, FLJ13839, KIAA1703
+ZNF410	zinc finger protein 410	v4 only	CC:3		APA1, APA-1
+ZNF414	zinc finger protein 414	v4 only	CC:3		MGC15716, Zfp414
+ZNF415	zinc finger protein 415	v4 only	CC:3		
+ZNF416	zinc finger protein 416	v4 only	CC:3		FLJ20557
+ZNF417	zinc finger protein 417	v4 only	CC:3		MGC34079
+ZNF419	zinc finger protein 419	v4 only	CC:3	ZNF419A	
+ZNF420	zinc finger protein 420	v4 only	CC:3		FLJ32191
+ZNF426	zinc finger protein 426	v4 only	CC:3		MGC2663
+ZNF43	zinc finger protein 43	v4 only	CC:3	ZNF39L1	HTF6, KOX27
+ZNF430	zinc finger protein 430	v4 only	CC:3		FLJ13659
+ZNF432	zinc finger protein 432	v4 only	CC:3		KIAA0798
+ZNF434	zinc finger protein 434	v4 only	CC:3		FLJ20417
+ZNF436	zinc finger protein 436	v4 only	CC:3		KIAA1710, Zfp46
+ZNF44	zinc finger protein 44	v4 only	CC:3	ZNF58, ZNF55	KOX7, ZNF504
+ZNF443	zinc finger protein 443	v4 only	CC:3		ZK1
+ZNF454	zinc finger protein 454	v4 only	CC:3		FLJ37444
+ZNF467	zinc finger protein 467	v4 only	CC:3		EZI, Zfp467
+ZNF473	zinc finger protein 473	v4 only	CC:3		KIAA1141, DKFZP434N043, HZFP100
+ZNF480	zinc finger protein 480	v4 only	CC:3		MGC32104
+ZNF485	zinc finger protein 485	v4 only	CC:3		
+ZNF486	zinc finger protein 486	v4 only	CC:3	KRBO2	MGC2396
+ZNF488	zinc finger protein 488	v4 only	CC:3		FLJ32104
+ZNF491	zinc finger protein 491	v4 only	CC:3		FLJ34791
+ZNF493	zinc finger protein 493	v4 only	CC:3		FLJ36504
+ZNF497	zinc finger protein 497	v4 only	CC:3		FLJ44773
+ZNF502	zinc finger protein 502	v4 only	CC:3		FLJ14855, FLJ12515
+ZNF503	zinc finger protein 503	v4 only	CC:3		FLJ45745, MGC2555
+ZNF506	zinc finger protein 506	v4 only	CC:3		DKFZp761G1812
+ZNF510	zinc finger protein 510	v4 only	CC:3		KIAA0972
+ZNF513	zinc finger protein 513	v4 only	CC:3		FLJ32203
+ZNF519	zinc finger protein 519	v4 only	CC:3		HsT2362, FLJ36809
+ZNF521	zinc finger protein 521	v4 only	CC:3		EHZF, Evi3
+ZNF524	zinc finger protein 524	v4 only	CC:3		MGC23143
+ZNF526	zinc finger protein 526	v4 only	CC:3		KIAA1951, MGC4267
+ZNF528	zinc finger protein 528	v4 only	CC:3		KIAA1827
+ZNF532	zinc finger protein 532	v4 only	CC:3		FLJ10697
+ZNF536	zinc finger protein 536	v4 only	CC:3		KIAA0390
+ZNF540	zinc finger protein 540	v4 only	CC:3		DKFZp547B0714
+ZNF542	zinc finger protein 542	v4 only	CC:3		DKFZp686B2197
+ZNF544	zinc finger protein 544	v4 only	CC:3		AF020591
+ZNF547	zinc finger protein 547	v4 only	CC:3		FLJ31100
+ZNF549	zinc finger protein 549	v4 only	CC:3		FLJ34917
+ZNF552	zinc finger protein 552	v4 only	CC:3		FLJ21603
+ZNF554	zinc finger protein 554	v4 only	CC:3		FLJ34817
+ZNF555	zinc finger protein 555	v4 only	CC:3		MGC26707
+ZNF556	zinc finger protein 556	v4 only	CC:3		FLJ11637
+ZNF557	zinc finger protein 557	v4 only	CC:3		MGC4054
+ZNF558	zinc finger protein 558	v4 only	CC:3		FLJ30932
+ZNF559	zinc finger protein 559	v4 only	CC:3		MGC13105
+ZNF560	zinc finger protein 560	v4 only	CC:3		FLJ31986
+ZNF562	zinc finger protein 562	v4 only	CC:3		FLJ20079
+ZNF564	zinc finger protein 564	v4 only	CC:3		MGC26914
+ZNF566	zinc finger protein 566	v4 only	CC:3		FLJ14779, MGC12515
+ZNF567	zinc finger protein 567	v4 only	CC:3		MGC45586
+ZNF568	zinc finger protein 568	v4 only	CC:3		DKFZp686B0797
+ZNF569	zinc finger protein 569	v4 only	CC:3		FLJ32053, ZAP1
+ZNF57	zinc finger protein 57	v4 only	CC:3	ZNF424	
+ZNF571	zinc finger protein 571	v4 only	CC:3		HSPC059
+ZNF573	zinc finger protein 573	v4 only	CC:3		FLJ30921
+ZNF574	zinc finger protein 574	v4 only	CC:3		FLJ22059
+ZNF575	zinc finger protein 575	v4 only	CC:3		FLJ32567
+ZNF576	zinc finger protein 576	v4 only	CC:3		MGC2508
+ZNF577	zinc finger protein 577	v4 only	CC:3		MGC4400
+ZNF581	zinc finger protein 581	v4 only	CC:3		HSPC189, FLJ22550
+ZNF582	zinc finger protein 582	v4 only	CC:3		FLJ30927
+ZNF583	zinc finger protein 583	v4 only	CC:3		FLJ31030
+ZNF584	zinc finger protein 584	v4 only	CC:3		FLJ39899
+ZNF585A	zinc finger protein 585A	v4 only	CC:3		FLJ23765
+ZNF585B	zinc finger protein 585B	v4 only	CC:3		FLJ14928, SZFP41
+ZNF589	zinc finger protein 589	v4 only	CC:3		SZF1
+ZNF592	zinc finger protein 592	v4 only	CC:3	SCAR5	KIAA0211, CAMOS
+ZNF593	zinc finger protein 593	v4 only	CC:3		ZT86
+ZNF596	zinc finger protein 596	v4 only	CC:3		
+ZNF597	zinc finger protein 597	v4 only	CC:3		FLJ33071
+ZNF599	zinc finger protein 599	v4 only	CC:3		FLJ30663
+ZNF605	zinc finger protein 605	v4 only	CC:3		
+ZNF606	zinc finger protein 606	v4 only	CC:3	ZNF328	FLJ14260, KIAA1852
+ZNF610	zinc finger protein 610	v4 only	CC:3		FLJ36040
+ZNF611	zinc finger protein 611	v4 only	CC:3		MGC5384
+ZNF613	zinc finger protein 613	v4 only	CC:3		FLJ13590
+ZNF614	zinc finger protein 614	v4 only	CC:3		FLJ21941
+ZNF615	zinc finger protein 615	v4 only	CC:3		FLJ33710
+ZNF621	zinc finger protein 621	v4 only	CC:3		FLJ45246
+ZNF623	zinc finger protein 623	v4 only	CC:3		KIAA0628
+ZNF626	zinc finger protein 626	v4 only	CC:3		
+ZNF627	zinc finger protein 627	v4 only	CC:3		FLJ90365
+ZNF629	zinc finger protein 629	v4 only	CC:3	ZNF65	KIAA0326
+ZNF630	zinc finger protein 630	v4 only	CC:3		BC037316, dJ54B20.2, FLJ20573, MGC138344
+ZNF641	zinc finger protein 641	v4 only	CC:3		FLJ31295
+ZNF643	zinc finger protein 643	v4 only	CC:3		FLJ34293
+ZNF646	zinc finger protein 646	v4 only	CC:3		KIAA0296
+ZNF649	zinc finger protein 649	v4 only	CC:3		FLJ12644
+ZNF653	zinc finger protein 653	v4 only	CC:3		Zip67
+ZNF655	zinc finger protein 655	v4 only	CC:3		VIK-1, VIK
+ZNF658	zinc finger protein 658	v4 only	CC:3		MGC35232, DKFZp572C163, FLJ32813
+ZNF664	zinc finger protein 664	v4 only	CC:3	ZNF176	ZFOC1, DKFZp761B128
+ZNF665	zinc finger protein 665	v4 only	CC:3		FLJ14345
+ZNF668	zinc finger protein 668	v4 only	CC:3		FLJ13479
+ZNF669	zinc finger protein 669	v4 only	CC:3		FLJ12606
+ZNF670	zinc finger protein 670	v4 only	CC:3		MGC12466
+ZNF671	zinc finger protein 671	v4 only	CC:3		FLJ23506
+ZNF672	zinc finger protein 672	v4 only	CC:3		FLJ22301
+ZNF673	zinc finger family member 673	v4 only	CC:3		FLJ20344
+ZNF675	zinc finger protein 675	v4 only	CC:3		TIZ, TBZF
+ZNF677	zinc finger protein 677	v4 only	CC:3		MGC48625
+ZNF681	zinc finger protein 681	v4 only	CC:3		FLJ31526
+ZNF682	zinc finger protein 682	v4 only	CC:3		BC39498_3
+ZNF683	zinc finger protein 683	v4 only	CC:3		MGC33414
+ZNF684	zinc finger protein 684	v4 only	CC:3		MGC27466
+ZNF687	zinc finger protein 687	v4 only	CC:3		KIAA1441
+ZNF688	zinc finger protein 688	v4 only	CC:3		
+ZNF689	zinc finger protein 689	v4 only	CC:3		FLJ90415
+ZNF691	zinc finger protein 691	v4 only	CC:3		Zfp691
+ZNF692	zinc finger protein 692	v4 only	CC:3		FLJ20531, Zfp692
+ZNF695	zinc finger protein 695	v4 only	CC:3		SBZF3
+ZNF696	zinc finger protein 696	v4 only	CC:3		FLJ14129
+ZNF7	zinc finger protein 7	v4 only	CC:3		KOX4, HF.16
+ZNF701	zinc finger protein 701	v4 only	CC:3		FLJ10891
+ZNF703	zinc finger protein 703	v4 only	CC:3		FLJ14299, ZNF503L
+ZNF706	zinc finger protein 706	v4 only	CC:3		HSPC038
+ZNF708	zinc finger protein 708	v4 only	CC:3	ZNF15, ZNF15L1	KOX8
+ZNF713	zinc finger protein 713	v4 only	CC:3		FLJ39963
+ZNF714	zinc finger protein 714	v4 only	CC:3		
+ZNF74	zinc finger protein 74	v4 only	CC:3		Cos52, Zfp520, ZNF520
+ZNF746	zinc finger protein 746	v4 only	CC:3		FLJ31413
+ZNF75A	zinc finger protein 75a	v4 only	CC:3		FLJ31529
+ZNF76	zinc finger protein 76 (expressed in testis)	v4 only	CC:3	D6S229E	Zfp523, ZNF523
+ZNF77	zinc finger protein 77	v4 only	CC:3		pT1
+ZNF79	zinc finger protein 79	v4 only	CC:3		pT7
+ZNF8	zinc finger protein 8	v4 only	CC:3		HF.18, Zfp128
+ZNF84	zinc finger protein 84	v4 only	CC:3		HPF2
+ZNFX1	zinc finger, NFX1-type containing 1	v4 only	CC:3		KIAA1404, FLJ11277
+ZNRD1	zinc ribbon domain containing 1	v4 only	CC:3		hZR14, HTEX-6, tctex-6, RPA12
+ZNRF1	zinc and ring finger 1	v4 only	CC:3		nin283, FLJ14846, DKFZp434E229
+ZXDB	zinc finger, X-linked, duplicated B	v4 only	CC:3		ZNF905
+ZYX	zyxin	v4 only	CC:3		
+		symbol obsolete	CC:4	NA	NA
+	Apoptotic-related protein PCAR	symbol obsolete	CC:4	NA	NA
+	Transcribed locus	symbol obsolete	CC:4	NA	NA
+ALF	Stonin 1	symbol obsolete	CC:4	NA	NA
+APBA2BP	Amyloid beta (A4) precursor protein-binding, family A, member 2 binding protein	symbol obsolete	CC:4	NA	NA
+ASCIZ	ATM/ATR-Substrate Chk2-Interacting Zn2+finger protein	symbol obsolete	CC:4	NA	NA
+ATBF1	AT-binding transcription factor 1	symbol obsolete	CC:4	NA	NA
+BAPX1	Bagpipe homeobox homolog 1 (Drosophila)	symbol obsolete	CC:4	NA	NA
+BHLHB2	basic helix-loop-helix domain containing, class B, 2	symbol obsolete	CC:4	NA	NA
+BHLHB2	Basic helix-loop-helix domain containing, class B, 2	symbol obsolete	CC:4	NA	NA
+BHLHB3	Basic helix-loop-helix domain containing, class B, 3	symbol obsolete	CC:4	NA	NA
+BHLHB3	basic helix-loop-helix domain containing, class B, 3	symbol obsolete	CC:4	NA	NA
+BHLHB4	basic helix-loop-helix domain containing, class B, 4	symbol obsolete	CC:4	NA	NA
+BHLHB5	Basic helix-loop-helix domain containing, class B, 5	symbol obsolete	CC:4	NA	NA
+BHLHB5	basic helix-loop-helix domain containing, class B, 5	symbol obsolete	CC:4	NA	NA
+BTBD14A	BTB (POZ) domain containing 14A	symbol obsolete	CC:4	NA	NA
+BTBD14B	BTB (POZ) domain containing 14B	symbol obsolete	CC:4	NA	NA
+BTBD15	BTB (POZ) domain containing 15	symbol obsolete	CC:4	NA	NA
+BTBD4	BTB (POZ) domain containing 4	symbol obsolete	CC:4	NA	NA
+BTBD5	BTB (POZ) domain containing 5	symbol obsolete	CC:4	NA	NA
+C16orf44	Chromosome 16 open reading frame 44	symbol obsolete	CC:4	NA	NA
+C1orf181	Chromosome 1 open reading frame 181	symbol obsolete	CC:4	NA	NA
+C1orf2	Chromosome 1 open reading frame 2	symbol obsolete	CC:4	NA	NA
+C20orf174	Chromosome 20 open reading frame 174	symbol obsolete	CC:4	NA	NA
+CART1	Cartilage paired-class homeoprotein 1	symbol obsolete	CC:4	NA	NA
+CCDC88	Coiled-coil domain containing 88	symbol obsolete	CC:4	NA	NA
+CECR8	Cat eye syndrome chromosome region, candidate 8	symbol obsolete	CC:4	NA	NA
+CHES1	Checkpoint suppressor 1	symbol obsolete	CC:4	NA	NA
+CHX10	Ceh-10 homeodomain containing homolog (C. elegans)	symbol obsolete	CC:4	NA	NA
+CIR	NA	symbol obsolete	CC:4	NA	NA
+CIR	CBF1 interacting corepressor	symbol obsolete	CC:4	NA	NA
+CIR	corepressor interacting with RBPJ	symbol obsolete	CC:4	NA	NA
+CREBL1	cAMP responsive element binding protein-like 1	symbol obsolete	CC:4	NA	NA
+CREBL1	Tenascin XB	symbol obsolete	CC:4	NA	NA
+CRKRS	Cdc2-related kinase, arginine/serine-rich	symbol obsolete	CC:4	NA	NA
+CRSP2	Cofactor required for Sp1 transcriptional activation, subunit 2, 150kDa	symbol obsolete	CC:4	NA	NA
+CRSP3	Cofactor required for Sp1 transcriptional activation, subunit 3, 130kDa	symbol obsolete	CC:4	NA	NA
+CRSP6	Cofactor required for Sp1 transcriptional activation, subunit 6, 77kDa	symbol obsolete	CC:4	NA	NA
+CRSP7	Cofactor required for Sp1 transcriptional activation, subunit 7, 70kDa	symbol obsolete	CC:4	NA	NA
+CRSP8	Cofactor required for Sp1 transcriptional activation, subunit 8, 34kDa	symbol obsolete	CC:4	NA	NA
+CRSP9	Cofactor required for Sp1 transcriptional activation, subunit 9, 33kDa	symbol obsolete	CC:4	NA	NA
+CUTL1	Cut-like 1, CCAAT displacement protein (Drosophila)	symbol obsolete	CC:4	NA	NA
+CUTL2	Cut-like 2 (Drosophila)	symbol obsolete	CC:4	NA	NA
+CXorf6	Chromosome X open reading frame 6	symbol obsolete	CC:4	NA	NA
+DKFZP434B0335	DKFZP434B0335 protein	symbol obsolete	CC:4	NA	NA
+DKFZP686P18101	Similar to TFIIH basal transcription factor complex p44 subunit (Basic transcription factor 2 44 kDa subunit) (BTF2-p44) (General transcription factor IIH polypeptide 2)	symbol obsolete	CC:4	NA	NA
+DKFZp762I137	Hypothetical protein DKFZp762I137	symbol obsolete	CC:4	NA	NA
+DSCR1	Down syndrome critical region gene 1	symbol obsolete	CC:4	NA	NA
+EBF	Early B-cell factor	symbol obsolete	CC:4	NA	NA
+EVI1	Ecotropic viral integration site 1	symbol obsolete	CC:4	NA	NA
+FALZ	Fetal Alzheimer antigen	symbol obsolete	CC:4	NA	NA
+FKHL18	Forkhead-like 18 (Drosophila)	symbol obsolete	CC:4	NA	NA
+FLJ12700	Hypothetical protein FLJ12700	symbol obsolete	CC:4	NA	NA
+FLJ14768	Hypothetical protein FLJ14768	symbol obsolete	CC:4	NA	NA
+FLJ20582	Hypothetical protein FLJ20582	symbol obsolete	CC:4	NA	NA
+FLJ23436	Hypothetical protein FLJ23436	symbol obsolete	CC:4	NA	NA
+FLJ25169	Hypothetical protein FLJ25169	symbol obsolete	CC:4	NA	NA
+FLJ25476	FLJ25476 protein	symbol obsolete	CC:4	NA	NA
+FLJ31875	Hypothetical protein FLJ31875	symbol obsolete	CC:4	NA	NA
+FLJ32130	Hypothetical protein FLJ32130	symbol obsolete	CC:4	NA	NA
+FLJ38969	Hypothetical protein FLJ38969	symbol obsolete	CC:4	NA	NA
+FLJ90396	Hypothetical protein LOC163049	symbol obsolete	CC:4	NA	NA
+FOXG1B	Forkhead box G1B	symbol obsolete	CC:4	NA	NA
+FOXO1A	Forkhead box O1A (rhabdomyosarcoma)	symbol obsolete	CC:4	NA	NA
+FOXO3A	Forkhead box O3A	symbol obsolete	CC:4	NA	NA
+FREQ	Frequenin homolog (Drosophila)	symbol obsolete	CC:4	NA	NA
+GCN5L2	GCN5 general control of amino-acid synthesis 5-like 2 (yeast)	symbol obsolete	CC:4	NA	NA
+GIOT-1	Gonadotropin inducible transcription repressor 1	symbol obsolete	CC:4	NA	NA
+GSCL	Goosecoid-like	symbol obsolete	CC:4	NA	NA
+GSH1	GS homeobox 1	symbol obsolete	CC:4	NA	NA
+GSH2	GS homeobox 2	symbol obsolete	CC:4	NA	NA
+GTL3	Gene trap locus 3 (mouse)	symbol obsolete	CC:4	NA	NA
+HBXAP	Remodeling and spacing factor 1	symbol obsolete	CC:4	NA	NA
+HD	Huntingtin (Huntington disease)	symbol obsolete	CC:4	NA	NA
+HDAC7A	Histone deacetylase 7A	symbol obsolete	CC:4	NA	NA
+HKR3	GLI-Kruppel family member HKR3	symbol obsolete	CC:4	NA	NA
+HLX1	H2.0-like homeobox 1 (Drosophila)	symbol obsolete	CC:4	NA	NA
+HLXB9	Homeobox HB9	symbol obsolete	CC:4	NA	NA
+HNRPA0	Heterogeneous nuclear ribonucleoprotein A0	symbol obsolete	CC:4	NA	NA
+HNRPD	Heterogeneous nuclear ribonucleoprotein D (AU-rich element RNA binding protein 1, 37kDa)	symbol obsolete	CC:4	NA	NA
+HOP	Homeodomain-only protein	symbol obsolete	CC:4	NA	NA
+HS747E2A	Hypothetical protein HS747E2A	symbol obsolete	CC:4	NA	NA
+HSZFP36	ZFP-36 for a zinc finger protein	symbol obsolete	CC:4	NA	NA
+HTATIP	HIV-1 Tat interacting protein, 60kDa	symbol obsolete	CC:4	NA	NA
+HTLF	Human T-cell leukemia virus enhancer factor	symbol obsolete	CC:4	NA	NA
+IPF1	Insulin promoter factor 1, homeodomain transcription factor	symbol obsolete	CC:4	NA	NA
+ISGF3G	Interferon-stimulated transcription factor 3, gamma 48kDa	symbol obsolete	CC:4	NA	NA
+JARID1A	jumonji, AT rich interactive domain 1A	symbol obsolete	CC:4	NA	NA
+JARID1A	Jumonji, AT rich interactive domain 1A (RBBP2-like)	symbol obsolete	CC:4	NA	NA
+JARID1B	jumonji, AT rich interactive domain 1B	symbol obsolete	CC:4	NA	NA
+JARID1B	Jumonji, AT rich interactive domain 1B (RBP2-like)	symbol obsolete	CC:4	NA	NA
+JMJD1A	Jumonji domain containing 1A	symbol obsolete	CC:4	NA	NA
+JMJD1B	Jumonji domain containing 1B	symbol obsolete	CC:4	NA	NA
+JMJD2A	jumonji domain containing 2A	symbol obsolete	CC:4	NA	NA
+JMJD2B	Jumonji domain containing 2B	symbol obsolete	CC:4	NA	NA
+JMJD2C	Jumonji domain containing 2C	symbol obsolete	CC:4	NA	NA
+JMJD2D	Jumonji domain containing 2D	symbol obsolete	CC:4	NA	NA
+KIAA0194	KIAA0194 protein	symbol obsolete	CC:4	NA	NA
+KIAA1285	KIAA1285 protein	symbol obsolete	CC:4	NA	NA
+KIAA1542	CTD-binding SR-like protein rA9	symbol obsolete	CC:4	NA	NA
+KIAA1618	KIAA1618	symbol obsolete	CC:4	NA	NA
+KIAA1815	KIAA1815	symbol obsolete	CC:4	NA	NA
+KIAA1856	KIAA1856 protein	symbol obsolete	CC:4	NA	NA
+KIAA1862	KIAA1862 protein	symbol obsolete	CC:4	NA	NA
+LMO6	LIM domain only 6	symbol obsolete	CC:4	NA	NA
+LOC125893	Hypothetical protein LOC125893	symbol obsolete	CC:4	NA	NA
+LOC132241	Hypothetical protein LOC132241	symbol obsolete	CC:4	NA	NA
+LOC147808	Similar to zinc finger protein	symbol obsolete	CC:4	NA	NA
+LOC152485	Hypothetical protein LOC152485	symbol obsolete	CC:4	NA	NA
+LOC168850	Hypothetical protein LOC168850	symbol obsolete	CC:4	NA	NA
+LOC285346	Hypothetical protein LOC285346	symbol obsolete	CC:4	NA	NA
+LOC388519	Similar to 40S ribosomal protein S16	symbol obsolete	CC:4	NA	NA
+LOC401898	Similar to hypothetical protein FLJ38281	symbol obsolete	CC:4	NA	NA
+LOC51333	Mesenchymal stem cell protein DSC43	symbol obsolete	CC:4	NA	NA
+LOC643641	Hypothetical protein LOC643641	symbol obsolete	CC:4	NA	NA
+LOC646906	Similar to Zinc finger protein 254 (Bone marrow zinc finger 5) (BMZF-5) (Hematopoietic cell derived zinc finger protein 1) (HD-ZNF1)	symbol obsolete	CC:4	NA	NA
+LOC730394	NA	symbol obsolete	CC:4	NA	NA
+LOC90321	Hypothetical protein LOC90321	symbol obsolete	CC:4	NA	NA
+M-RIP	Myosin phosphatase-Rho interacting protein	symbol obsolete	CC:4	NA	NA
+MCFP	Mitochondrial carrier family protein	symbol obsolete	CC:4	NA	NA
+MDS032	Uncharacterized hematopoietic stem/progenitor cells protein MDS032	symbol obsolete	CC:4	NA	NA
+MDS1	myelodysplasia syndrome 1	symbol obsolete	CC:4	NA	NA
+MGC13138	Hypothetical protein MGC13138	symbol obsolete	CC:4	NA	NA
+MGC4618	Hypothetical protein MGC4618	symbol obsolete	CC:4	NA	NA
+MGC4728	Similar to hypothetical protein FLJ23233	symbol obsolete	CC:4	NA	NA
+MICAL-L1	MICAL-like 1	symbol obsolete	CC:4	NA	NA
+MLLT7	Myeloid/lymphoid or mixed-lineage leukemia (trithorax homolog, Drosophila); translocated to, 7	symbol obsolete	CC:4	NA	NA
+MSL3L1	male-specific lethal 3-like 1 (Drosophila)	symbol obsolete	CC:4	NA	NA
+MSX2P	Msh homeobox homolog 2 (Drosophila) pseudogene	symbol obsolete	CC:4	NA	NA
+NSBP1	nucleosomal binding protein 1	symbol obsolete	CC:4	NA	NA
+OTEX	Paired-like homeobox protein OTEX	symbol obsolete	CC:4	NA	NA
+PCAF	P300/CBP-associated factor	symbol obsolete	CC:4	NA	NA
+PCQAP	PC2 (positive cofactor 2, multiprotein complex) glutamine/Q-rich-associated protein	symbol obsolete	CC:4	NA	NA
+POU5F1P1	POU class 5 homeobox 1 pseudogene 1	symbol obsolete	CC:4	NA	NA
+PPARBP	PPAR binding protein	symbol obsolete	CC:4	NA	NA
+PRKCBP1	Protein kinase C binding protein 1	symbol obsolete	CC:4	NA	NA
+RAXL1	Retina and anterior neural fold homeobox like 1	symbol obsolete	CC:4	NA	NA
+RAXLX	RAX-like homeobox	symbol obsolete	CC:4	NA	NA
+RBPSUH	Recombining binding protein suppressor of hairless (Drosophila)	symbol obsolete	CC:4	NA	NA
+RBPSUHL	Recombining binding protein suppressor of hairless (Drosophila)-like	symbol obsolete	CC:4	NA	NA
+RCV1	Recoverin	symbol obsolete	CC:4	NA	NA
+RFP	Ret finger protein	symbol obsolete	CC:4	NA	NA
+RFP2	Ret finger protein 2	symbol obsolete	CC:4	NA	NA
+RGC32	Response gene to complement 32	symbol obsolete	CC:4	NA	NA
+RNF12	Ring finger protein 12	symbol obsolete	CC:4	NA	NA
+RNF144	Ring finger protein 144	symbol obsolete	CC:4	NA	NA
+RNF36	Ring finger protein 36	symbol obsolete	CC:4	NA	NA
+RP13-297E16.1	DNA segment on chromosome X and Y (unique) 155 expressed sequence, isoform 1	symbol obsolete	CC:4	NA	NA
+RP5-860F19.3	KIAA1442 protein	symbol obsolete	CC:4	NA	NA
+SMARCA3	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily a, member 3	symbol obsolete	CC:4	NA	NA
+SMCX	Smcy homolog, X-linked (mouse)	symbol obsolete	CC:4	NA	NA
+SMCY	Smcy homolog, Y-linked (mouse)	symbol obsolete	CC:4	NA	NA
+SNFT	Jun dimerization protein p21SNFT	symbol obsolete	CC:4	NA	NA
+SURB7	SRB7 suppressor of RNA polymerase B homolog (yeast)	symbol obsolete	CC:4	NA	NA
+SYBL1	Synaptobrevin-like 1	symbol obsolete	CC:4	NA	NA
+TADA2L	Transcriptional adaptor 2 (ADA2 homolog, yeast)-like	symbol obsolete	CC:4	NA	NA
+TADA2L	transcriptional adaptor 2 (ADA2 homolog, yeast)-like	symbol obsolete	CC:4	NA	NA
+TADA3L	Transcriptional adaptor 3 (NGG1 homolog, yeast)-like	symbol obsolete	CC:4	NA	NA
+TADA3L	transcriptional adaptor 3 (NGG1 homolog, yeast)-like	symbol obsolete	CC:4	NA	NA
+TCF1	Transcription factor 1, hepatic; LF-B1, hepatic nuclear factor (HNF1), albumin proximal factor	symbol obsolete	CC:4	NA	NA
+TCF2	Transcription factor 2, hepatic; LF-B3; variant hepatic nuclear factor	symbol obsolete	CC:4	NA	NA
+TCF8	Transcription factor 8 (represses interleukin 2 expression)	symbol obsolete	CC:4	NA	NA
+TGIF	TGFB-induced factor (TALE family homeobox)	symbol obsolete	CC:4	NA	NA
+THRAP1	Thyroid hormone receptor associated protein 1	symbol obsolete	CC:4	NA	NA
+THRAP4	Thyroid hormone receptor associated protein 4	symbol obsolete	CC:4	NA	NA
+THRAP5	Thyroid hormone receptor associated protein 5	symbol obsolete	CC:4	NA	NA
+THRAP6	Thyroid hormone receptor associated protein 6	symbol obsolete	CC:4	NA	NA
+TITF1	Thyroid transcription factor 1	symbol obsolete	CC:4	NA	NA
+TNRC4	trinucleotide repeat containing 4	symbol obsolete	CC:4	NA	NA
+TNRC4	Trinucleotide repeat containing 4	symbol obsolete	CC:4	NA	NA
+TNRC5	Trinucleotide repeat containing 5	symbol obsolete	CC:4	NA	NA
+TNRC8	Trinucleotide repeat containing 8	symbol obsolete	CC:4	NA	NA
+TNRC9	Trinucleotide repeat containing 9	symbol obsolete	CC:4	NA	NA
+TP73L	Tumor protein p73-like	symbol obsolete	CC:4	NA	NA
+TRFP	Trf (TATA binding protein-related factor)-proximal homolog (Drosophila)	symbol obsolete	CC:4	NA	NA
+UBXD2	UBX domain containing 2	symbol obsolete	CC:4	NA	NA
+WDR39	WD repeat domain 39	symbol obsolete	CC:4	NA	NA
+ZA20D1	Zinc finger, A20 domain containing 1	symbol obsolete	CC:4	NA	NA
+ZA20D2	Zinc finger, A20 domain containing 2	symbol obsolete	CC:4	NA	NA
+ZA20D3	Zinc finger, A20 domain containing 3	symbol obsolete	CC:4	NA	NA
+ZF	HCF-binding transcription factor Zhangfei	symbol obsolete	CC:4	NA	NA
+ZFHX1B	Zinc finger homeobox 1b	symbol obsolete	CC:4	NA	NA
+ZFP95	Zinc finger protein 95 homolog (mouse)	symbol obsolete	CC:4	NA	NA
+ZNF161	Zinc finger protein 161	symbol obsolete	CC:4	NA	NA
+ZNF179	Zinc finger protein 179	symbol obsolete	CC:4	NA	NA
+ZNF206	Zinc finger protein 206	symbol obsolete	CC:4	NA	NA
+ZNF228	Zinc finger protein 228	symbol obsolete	CC:4	NA	NA
+ZNF265	Zinc finger protein 265	symbol obsolete	CC:4	NA	NA
+ZNF272	Zinc finger protein 272	symbol obsolete	CC:4	NA	NA
+ZNF278	Zinc finger protein 278	symbol obsolete	CC:4	NA	NA
+ZNF286	Zinc finger protein 286	symbol obsolete	CC:4	NA	NA
+ZNF289	Zinc finger protein 289, ID1 regulated	symbol obsolete	CC:4	NA	NA
+ZNF294	Zinc finger protein 294	symbol obsolete	CC:4	NA	NA
+ZNF306	Zinc finger protein 306	symbol obsolete	CC:4	NA	NA
+ZNF307	Zinc finger protein 307	symbol obsolete	CC:4	NA	NA
+ZNF31	Zinc finger protein 31	symbol obsolete	CC:4	NA	NA
+ZNF312	Zinc finger protein 312	symbol obsolete	CC:4	NA	NA
+ZNF313	Zinc finger protein 313	symbol obsolete	CC:4	NA	NA
+ZNF336	Zinc finger protein 336	symbol obsolete	CC:4	NA	NA
+ZNF342	Zinc finger protein 342	symbol obsolete	CC:4	NA	NA
+ZNF364	Zinc finger protein 364	symbol obsolete	CC:4	NA	NA
+ZNF38	Zinc finger protein 38	symbol obsolete	CC:4	NA	NA
+ZNF406	Zinc finger protein 406	symbol obsolete	CC:4	NA	NA
+ZNF409	Zinc finger protein 409	symbol obsolete	CC:4	NA	NA
+ZNF42	Myeloid zinc finger 1	symbol obsolete	CC:4	NA	NA
+ZNF435	Zinc finger protein 435	symbol obsolete	CC:4	NA	NA
+ZNF447	Zinc finger protein 447	symbol obsolete	CC:4	NA	NA
+ZNF452	Zinc finger protein 452	symbol obsolete	CC:4	NA	NA
+ZNF452	zinc finger protein 452	symbol obsolete	CC:4	NA	NA
+ZNF509	Zinc finger protein 509	symbol obsolete	CC:4	NA	NA
+ZNF539	Zinc finger protein 539	symbol obsolete	CC:4	NA	NA
+ZNF545	Zinc finger protein 545	symbol obsolete	CC:4	NA	NA
+ZNF553	Zinc finger protein 553	symbol obsolete	CC:4	NA	NA
+ZNF588	Zinc finger protein 588	symbol obsolete	CC:4	NA	NA
+ZNF6	Zinc finger protein 6	symbol obsolete	CC:4	NA	NA
+ZNF651	Zinc finger protein 651	symbol obsolete	CC:4	NA	NA
+ZNF690	Zinc finger protein 690	symbol obsolete	CC:4	NA	NA
+ZNF702	Zinc finger protein 702	symbol obsolete	CC:4	NA	NA
+ZNF75	Zinc finger protein 75 (D8C6)	symbol obsolete	CC:4	NA	NA
+ZNF9	Zinc finger protein 9	symbol obsolete	CC:4	NA	NA
+ZNFN1A1	Zinc finger protein, subfamily 1A, 1 (Ikaros)	symbol obsolete	CC:4	NA	NA
+ZNFN1A2	Zinc finger protein, subfamily 1A, 2 (Helios)	symbol obsolete	CC:4	NA	NA
+ZNFN1A3	Zinc finger protein, subfamily 1A, 3 (Aiolos)	symbol obsolete	CC:4	NA	NA
+ZNFN1A4	Zinc finger protein, subfamily 1A, 4 (Eos)	symbol obsolete	CC:4	NA	NA
+ZNFN1A5	Zinc finger protein, subfamily 1A, 5	symbol obsolete	CC:4	NA	NA
+ZSCAN5	Zinc finger and SCAN domain containing 5	symbol obsolete	CC:4	NA	NA
+ZSCAN5	zinc finger and SCAN domain containing 5	symbol obsolete	CC:4	NA	NA
+ZUBR1	Zinc finger, UBR1 type 1	symbol obsolete	CC:4	NA	NA
