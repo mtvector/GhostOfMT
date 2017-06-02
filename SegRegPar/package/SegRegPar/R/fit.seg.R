@@ -30,10 +30,10 @@
 # search from 1 to 5 breakpoints
 ###################
 fit.seg <- function(data, g.in, maxk=5, t.vect=NULL,min.num.in.seg=5, pvalcut=.1, 
-										cutdiff=.01, num.try=100,keepfit=FALSE){
+										cutdiff=.01, num.try=100,keepfit=FALSE,exclude.1=F,force.rsqared=F){
 data.norm <- data
 if(length(g.in)!=1)stop("only one gene should be considered!")
-if(!g.in%in%rownames(data)) stop("gene name is not in row names of expressiopn matrix!")
+if(!g.in%in%rownames(data)) stop("gene name is not in row names of expression matrix!")
 library(segmented)
 t.use <- 1:ncol(data.norm)
 if(!is.null(t.vect))t.use <- t.vect
@@ -44,6 +44,7 @@ step.r <- c(1:maxk)
 dat.tmp <- data.norm[g.in,]
 seed.use <- 1
 
+#lm1 <- glm(dat.tmp ~ t.use,family = poisson)
 # start with lm without bp
 lm1 <- lm(dat.tmp ~ t.use)
 lm.radj <- summary(lm1)$adj.r.squared
@@ -55,14 +56,18 @@ lm.sign[which(lm.pval>pvalcut)] <- 0
 lm.id.sign <- rep(lm.sign, length(t.use))
 fit.l.0 <- sapply(1:length(step.r), function(j){
   i <- step.r[j]
-  lmseg.try <- suppressMessages(try(segmented(lm1, seg.Z = ~t.use, psi = seq(t.m,t.l, length.out=i+2)[2:(i+1)], control=seg.control(seed=seed.use)),silent=T))
+  lmseg.try <- suppressMessages(try(segmented(lm1, seg.Z = ~t.use+0, psi = seq(t.m,t.l, length.out=i+2)[2:(i+1)], control=seg.control(seed=seed.use)),silent=T))
   seed.use2 <- seed.use 
   while("try-error"%in%class(lmseg.try)& seed.use2<=num.try){
     seed.use2 <- seed.use2 + 1
-    lmseg.try <- suppressMessages(try(segmented(lm1, seg.Z = ~t.use, psi = round(seq(1,t.l, length.out=i+2)[2:(i+1)]),control=seg.control(seed=seed.use2)),silent=T))
+    lmseg.try <- suppressMessages(try(segmented(lm1, seg.Z = ~t.use+0, psi = round(seq(1,t.l, length.out=i+2)[2:(i+1)]),control=seg.control(seed=seed.use2)),silent=T))
 }
   out <- lmseg.try
 },simplify=F)
+#lapply(fit.l.0,function(x)print(fitted.values(x)))
+#print(sapply(fit.l.0,function(x)which(fitted.values(x)< -.5)) )
+#fit.l.0 <- fit.l.0[sapply(fit.l.0,function(x)sum(fitted.values(x)< -.5)<1 )]
+#print(fit.l.0)
 
 isna <- which(sapply(fit.l.0, function(i)"try-error"%in%class(i)))
 
@@ -74,7 +79,6 @@ if(length(isna)==maxk){
 	# if it is not solved in 100 trys then return lm results (if num.try=100)
 	break
 }
-
 fit.l <- fit.l.0
 if(length(isna)>0){ # if one of step.r cant be fitted..
   fit.l <- fit.l.0[-isna]
@@ -83,6 +87,7 @@ if(length(isna)>0){ # if one of step.r cant be fitted..
 
 slp.l <- sapply(fit.l, slope, simplify=F)
 radj <- sapply(fit.l,function(i)summary(i)$adj.r.squared)
+if(force.rsqared)radj <- sapply(fit.l,function(i)summary(i)$r.squared)
 brk.l <- sapply(fit.l ,function(i)i$psi[,2], simplify=F)
 id.l <- sapply(fit.l, function(i)i$id.group, simplify=F)
 
@@ -103,7 +108,11 @@ if(length(radj.whichmax)==0& radj[1] <= lm.radj){
 	return(out)
 }
 
-while((min(table(id.l[[r.choose]])[c(-1,-length(table(id.l[[r.choose]])))])<min.num.in.seg) & r.choose>1) r.choose <- r.choose - 1
+if(exclude.1)while((min(table(id.l[[r.choose]])[-1])<min.num.in.seg) & r.choose>1) r.choose <- r.choose - 1
+else{
+  while((min(table(id.l[[r.choose]]))<min.num.in.seg) & r.choose>1) r.choose <- r.choose - 1
+}
+
 
 if(r.choose==1 & (min(table(id.l[[r.choose]]))<min.num.in.seg)){
 		# if 1 bp gives small segment, then take the linear

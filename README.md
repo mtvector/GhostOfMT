@@ -1,5 +1,5 @@
 # GhostOfMT
-**A set of tools that I commonly use to help out the scientists in Thomson Lab**
+**A set of tools for biologists who sequence RNA**
 
 #### Includes:
 
@@ -35,11 +35,7 @@
     * Jython scripts for ImageJ cell tracking
     
     * Python scripts for processing tracking output
-    
-* SegRegPar
 
-    * A parallelized version of Ning Leng's Segmented Regression implementation, modified to fix problems with endpoints
-    
 * Data
 
     * Mouse and Human RNAseq Time Series from Barry, Schmitz et al (2017)
@@ -52,3 +48,6 @@
 
     * Dumping ground for R code I can't organize
 
+* SegRegPar
+
+    * A parallelized version of Ning Leng's Segmented Regression implementation, modified to fix problems with endpoints
