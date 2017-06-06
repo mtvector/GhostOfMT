@@ -43,7 +43,7 @@ print(head(GeneData))
     ## 5        SNPH        plasma membrane
     ## 6        SNPH          mitochondrion
 
-We could also do this with multiple terms by making an array of them inside c(), separated by commas:
+We could also do this with multiple terms by making a vector of them inside c(), separated by commas:
 
 ``` r
 termList <- c("GO:0007399","GO:0097458","GO:0045202")

@@ -50,4 +50,4 @@
 
 * SegRegPar
 
-    * A parallelized version of Ning Leng's Segmented Regression implementation, modified to fix problems with endpoints
+    * A parallelized version of Ning Leng's Segmented Regression implementation, modified to fix problems with endpoints. Mostly the same as Rhonda's Trendy Package

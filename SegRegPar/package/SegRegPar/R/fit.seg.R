@@ -30,7 +30,7 @@
 # search from 1 to 5 breakpoints
 ###################
 fit.seg <- function(data, g.in, maxk=5, t.vect=NULL,min.num.in.seg=5, pvalcut=.1, 
-										cutdiff=.01, num.try=100,keepfit=FALSE,exclude.1=F,force.rsqared=F){
+										cutdiff=.01, num.try=100,keepfit=FALSE,exclude.1=F,force.rsquared=F){
 data.norm <- data
 if(length(g.in)!=1)stop("only one gene should be considered!")
 if(!g.in%in%rownames(data)) stop("gene name is not in row names of expression matrix!")
@@ -48,6 +48,8 @@ seed.use <- 1
 # start with lm without bp
 lm1 <- lm(dat.tmp ~ t.use)
 lm.radj <- summary(lm1)$adj.r.squared
+if(force.rsquared)radj <- lm.radj <- summary(lm1)$r.squared
+
 lm.slp <- coef(lm1)[2]
 lm.fit <- fitted.values(lm1)
 lm.pval <- coef(summary(lm1))[2,4]
@@ -87,7 +89,7 @@ if(length(isna)>0){ # if one of step.r cant be fitted..
 
 slp.l <- sapply(fit.l, slope, simplify=F)
 radj <- sapply(fit.l,function(i)summary(i)$adj.r.squared)
-if(force.rsqared)radj <- sapply(fit.l,function(i)summary(i)$r.squared)
+if(force.rsquared)radj <- sapply(fit.l,function(i)summary(i)$r.squared)
 brk.l <- sapply(fit.l ,function(i)i$psi[,2], simplify=F)
 id.l <- sapply(fit.l, function(i)i$id.group, simplify=F)
 

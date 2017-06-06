@@ -1,0 +1,279 @@
+--- 
+author: "MTSchmitz"
+output: github_document 
+--- 
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Plotting Favorite Genes Along a Multi-Condition Time Series
+###Loading Gene Lists
+Lists of your favorite genes might come from any number of sources. You can see how to make one based upon GO term annotation in the QueryingGO tutorial. You can also enter them in a column in excel and save the file as a tab delimited text file.
+
+Reminder: In Rstudio typing a ? in front of a function or package you don't understand pulls up the help documents.
+
+Here we load THEneuralList_2017.txt, which can be found in the Data directory of this repository. **Don't forget to replace the path with the correct location of the file on your own computer!** The function unique() removes any duplicates in the list, and toupper is necessary because if you're comparing mouse and human gene names, you won't be able to match them if they aren't the same case. Just to note, the neuralList is not a list in the R data structure sense (it's a vector of character strings).
+
+```{r LoadList}
+pathToList <- "~/code/GhostOfMT/Data/GeneLists/THEneuralList_2017.txt"
+#NOTE THE PARAMETERS
+rawList <- read.csv2(file=pathToList,header = F,sep = "\t",stringsAsFactors = F)
+neuralList <- unique(toupper(rawList[,1]))
+print(neuralList)
+``` 
+
+### Loading RNAseq Data files
+
+You should see the beginning of the tutorial for BasicRNAseq if you want more info on loading unnormalized counts files, or to install packages you're missing.
+
+```{r LoadPackages,warning=F,message=F}
+
+#load the packages you'll need:
+#for normalizing
+library(EBSeq)
+#for changing view layout
+library(rafalib)
+#for the color palette
+library(RColorBrewer)
+#for fancy plots
+library(gplots)
+library(ggplot2)
+```
+
+
+Once we have those packages loaded, we can load up the RNAseq file, which you can download from the Data folder in this Github Repo. This file is TPMs, which are normalized by both the number of reads, and the length of each transcript (in number of base pairs). Because TPMs are normalized by length of transcript by RSEM, you can't compare them to "normalized counts". Be aware 
+
+```{r LoadFile}
+pathToFile <- "~/code/GhostOfMT/Data/GSE90053_H1_TPM.txt"
+#NOTE THE PARAMETERS
+hTPMs <- read.csv2(file=pathToFile,header = T,row.names = 1,sep = "\t")
+#hTPMs <- hTPMs[,-ncol(hTPMs)] #uncomment this line if the last column is gene name description text (or modify it if it is a different column)
+#It removes the last column of the data from the data set
+hTPMs <- as.matrix(hTPMs)
+storage.mode(hTPMs) <- "numeric"
+rownames(hTPMs) <- toupper(rownames(hTPMs))
+
+pathToFileM <- "~/code/GhostOfMT/Data/GSE90053_mEpi_TPM.txt"
+#NOTE THE PARAMETERS
+mTPMs <- read.csv2(file=pathToFileM,header = T,row.names = 1,sep = "\t")
+#mTPMS <- mTPMs[,-ncol(mTPMs)] #uncomment this line if the last column is gene name description text (or modify it if it is a different column)
+#It removes the last column of the data from the data set
+mTPMs <- as.matrix(mTPMs)
+storage.mode(mTPMs) <- "numeric"
+rownames(mTPMs) <- toupper(rownames(mTPMs))
+``` 
+
+You can check that you're dealing with TPMs, because each column should sum to 1,000,000 (slightly off due to mystery rounding error)
+
+```{r CheckUp}
+colSums(hTPMs)
+``` 
+
+
+See the BasicRNAseq tutorial for more explanation on this parsing colnames to get timepoints
+```{r tps}
+splitList <- strsplit(x = colnames(hTPMs),split = "_d")
+splitMatrix <- sapply(splitList, "[", 1:max(sapply(splitList,length)) )
+tpsH <- as.numeric(splitMatrix[2,])
+conditionsH <- splitMatrix[1,]
+splitList <- strsplit(x = colnames(mTPMs),split = "_d")
+splitMatrix <- sapply(splitList, "[", 1:max(sapply(splitList,length)) )
+tpsM <- as.numeric(splitMatrix[2,])
+conditionsM <- gsub("_Sorted","",splitMatrix[1,])
+``` 
+
+If you want to be a smart scripter, instead of copying and pasting the same code twice and slightly modifying it , you can wrap it into a function
+```{r tpsFunction}
+getConditionsFromColnames <- function(data,split="_",ind=1 ){
+  splitList <- strsplit(x = colnames(data),split = split)
+  splitMatrix <- sapply(splitList, "[", 1:max(sapply(splitList,length)) )
+  return(splitMatrix[ind,])
+}
+
+tpsH <- as.numeric(getConditionsFromColnames(hTPMs,"_d",2))
+conditionsH <- getConditionsFromColnames(hTPMs,"_d",1)
+tpsM <- as.numeric(getConditionsFromColnames(mTPMs,"_d",2))
+conditionsM <- gsub("_Sorted","",getConditionsFromColnames(mTPMs,"_d",1))
+``` 
+
+Speaking of functions, here is a helpful function that will allow you to stick two matrices together, filling in zeros for genes that are not shared between the two datasets
+
+```{r rn.merge}
+rn.merge <- function(x,y,fill=0){
+  rn <- intersect(rownames(x),rownames(y))
+  zerosx <- setdiff(rownames(x),rownames(y))
+  zerosy <- setdiff(rownames(y),rownames(x))
+  out <- cbind(x[rn,],y[rn,])
+  if(length(zerosx)!=1  &length(zerosy)!=1){
+    zx <- matrix(fill, nrow=length(zerosx), ncol =ncol(y), dimnames = list(zerosx,NULL))
+    zy <- matrix(fill, nrow=length(zerosy), ncol =ncol(x), dimnames = list(zerosy,NULL))
+    zx <- cbind(x[zerosx,],zx)
+    zy <- cbind(zy,y[zerosy,])
+  }else if(length(zerosx)==1){
+    zx <- rep(fill, ncol(y))
+    zy <- matrix(fill, nrow=length(zerosy), ncol =ncol(x), dimnames = list(zerosy,NULL))
+    zx <- c(x[zerosx,],zx)
+    zy <- cbind(zy,y[zerosy,])
+  }else if(length(zerosy)==1){
+    zx <- matrix(fill, nrow=length(zerosx), ncol =ncol(y), dimnames = list(zerosx,NULL))
+    zy <- rep(fill, ncol(x))
+    print(zx)
+    print(zy)
+    zx <- cbind(x[zerosx,],zx)
+    zy <- c(zy,y[zerosy,])
+  }
+  out <- rbind(out,rbind(zx,zy))
+  return(out)
+
+}
+
+#This function will allow you to plot just a legend by itself
+g_legend<-function(a.gplot){ 
+  tmp <- ggplot_gtable(ggplot_build(a.gplot)) 
+  leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box") 
+  legend <- tmp$grobs[[leg]] 
+  return(legend)
+  } 
+
+
+```
+
+We have the timepoints (in days) captured as "tps"" and also have renamed the column names of hTPMS to the timepoints, as well as having the other condition group (in this case it is species) in the conditions vectors! We can use the rn.merge function to put all the data together, while concatenating all the conditions and time points.
+
+###Plotting together
+```{r plotTogether,warning=F,message=F}
+#melt function
+library(reshape2)
+#for time series analysis
+library(zoo)
+#for plotting
+library(ggplot2)
+library(grid)
+library(gridExtra)
+#You can string together as many datasets as you as you want!
+conditionsMerged <- c(conditionsH,conditionsM)
+tpMerged <- c(tpsH,tpsM)
+dataMerged <- rn.merge(hTPMs,mTPMs)
+ggg <- NULL
+gene_list <- neuralList[neuralList%in%rownames(dataMerged)]
+
+if(length(tpMerged)!=length(conditionsMerged))stop("You need to have the same number of conditions and time points")
+
+plotlist <- lapply( gene_list,function(gn){
+  #Calculate mean values
+  meanGenes <- lapply(unique(conditionsMerged),function(x){
+    data.frame(condit=rep(x, sum(conditionsMerged==x)),tp=tpMerged[conditionsMerged==x],value=dataMerged[gn,conditionsMerged==x])
+  })
+  ds <- Reduce(rbind,meanGenes)
+  gg <-  ggplot(ds, aes(x=tp, y=value, group=condit,colour=condit)) + 
+    geom_point(size=1) +
+    theme_bw(base_size = 6) +
+    theme(legend.position="none",
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank(),
+          panel.background = element_blank())+
+    labs(x = "Time", y = "Expression", 
+         title = gn,family="arial",size=6)
+  gg
+  ggg <<- gg
+  })
+#plot just the legend
+#Extract Legend 
+legend <- g_legend(ggg+theme(legend.position="left",
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank(),
+          panel.background = element_blank())) 
+
+#output this whole list of plots as a PDF on your desktop
+marrangeGrob(grobs= c(grid.draw(legend) ,plotlist) , nrow=4, ncol=4,top = NULL)
+
+pdf("~/Desktop/ChosenGenes.pdf", onefile = TRUE)
+grid.draw(legend) 
+marrangeGrob(grobs=plotlist , nrow=4, ncol=4,top = NULL)
+dev.off()
+
+``` 
+
+
+
+
+We can also graph the gene expression over time, averaging replicates (There are no replicates in this time series, but we can pretend there are for one timepoint just to see error bars). Plotting takes a decent amount of resources, so brace yourself if it takes a few minutes of thinking
+
+###Plotting together, averaging timepoints
+```{r plotTogetherMean,warning=F,message=F}
+#You can string together as many datasets as you as you want!
+conditionsMerged <- c(conditionsH,conditionsM)
+tpMerged <- c(tpsH,tpsM)
+dataMerged <- rn.merge(hTPMs,mTPMs)
+ggg <- NULL
+
+###GET RID OF THESE 3 LINES WHEN DOING REAL ANALYSIS
+#pretend that the 3rd through the 5th tps are replicates
+tpMerged <- tpMerged[c(1,2,3,3,3,4:length(tpMerged))]
+conditionsMerged <- conditionsMerged[c(1,2,3,3,3,4:length(conditionsMerged))]
+dataMerged <- dataMerged[,c(1,2,3,4,5,4:ncol(dataMerged))]
+
+gene_list <- neuralList[neuralList%in%rownames(dataMerged)]
+
+if(length(tpMerged)!=length(conditionsMerged))stop("You need to have the same number of conditions and time points")
+
+plotlist <- lapply( gene_list,function(gn){
+  #Calculate mean values
+  meanGenes <- sapply(unique(conditionsMerged),function(x){
+    #get the row for the current gene in the outer loop, with all the samples from condition x
+    #take the mean if the timepoint matches
+    tst <- aggregate(dataMerged[gn,conditionsMerged==x], list(tpMerged[conditionsMerged==x]), mean)
+    zoo(tst[,2],tst[,1])
+      })
+  ds <- Reduce(merge.zoo,meanGenes)
+  colnames(ds) <- unique(conditionsMerged)
+  ds <- data.frame(ds)
+  ds <- cbind("tme"=rownames(ds) , ds)
+  melted <-  melt(ds)
+  #calculate standard errors
+  seGenes <- sapply(unique(conditionsMerged),function(x){
+    tst <- aggregate(dataMerged[gn,conditionsMerged==x], list(tpMerged[conditionsMerged==x]), function(q)sd(q)/sqrt(length(q)))
+    zoo(tst[,2],tst[,1])
+  })
+  seGenes <- Reduce(merge.zoo,seGenes)
+  colnames(seGenes) <-unique(conditionsMerged)
+  seGenes <- as.data.frame(seGenes)
+  seGenes <- cbind("tme"=rownames(seGenes) , seGenes)
+  meltSE <-  melt(seGenes)
+  melted <-  cbind(melted,"se"= meltSE$value)
+  melted$tme <- as.numeric(as.character(melted$tme))
+  #Plotting Error Bars
+  pd <- position_dodge(0.5) # move them .05 to the left and right
+  
+  gg <-  ggplot(melted, aes(x=tme, y=value, group=variable,color=variable)) + 
+    geom_errorbar(aes(ymin=value-se, ymax=value+se), width=.03, position=pd) +
+    geom_line(position=pd,size=.4) +
+    geom_point(position=pd,size=.8) +
+    theme_bw(base_size = 6) +
+    theme(legend.position="none",
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank(),
+          panel.background = element_blank())+
+  #scale_x_continuous(expand = c(0, 0)) + scale_y_continuous(expand = c(0, 0))+
+    labs(x = "Time", y = "Expression", 
+         title = gn,family="arial",size=6)
+  gg
+  ggg<<-gg 
+})
+
+legend <- g_legend(ggg+theme(legend.position="left",
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank(),
+          panel.background = element_blank())) 
+marrangeGrob(grobs=c(grid.draw(legend),plotlist) , nrow=4, ncol=4,top = NULL)
+
+#output this whole list of plots as a PDF on your desktop
+pdf("~/Desktop/ChosenMeanGenes.pdf", onefile = TRUE)
+ 
+marrangeGrob(grobs=c(grid.draw(legend),plotlist) , nrow=4, ncol=4,top = NULL)
+dev.off()
+
+``` 
+
+

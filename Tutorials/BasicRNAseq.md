@@ -13,9 +13,9 @@ Basic RNAseq Analysis
 
 **library**: An R package, a bunch of code and functions wrapped up which can be loaded together with library()
 
-**array** What you get when you string things together using c()
+**vector** What you get when you string things together using c()
 
-**list**: A data structure like an array, get a single element using double brackets \[\[\]\] instead of single brackets \[\]
+**list**: A data structure like a vector, get a single element using double brackets \[\[\]\] instead of single brackets \[\]
 
 If the computer can't find a function, you probably haven't loaded the library you need! Paste error messages into google. You can solve 99.999% of your problems by copying and pasting to and from google or stackOverflow
 

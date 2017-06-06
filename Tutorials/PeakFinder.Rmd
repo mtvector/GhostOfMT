@@ -173,7 +173,7 @@ print(HumanScores[1:30])
 This will give you the scores of the mouse and human peak genes. Scores closer to 1 mean genes have higher and cleaner peaks. We can plot the top genes to see if the algorithm has worked. 
 
 
-names(HumanScores)[1:16] gets the names of the top 16 human genes, because we have already sorted them above. This can be done because the HumanScores has named values (each value in the array has a gene name attached to it).
+names(HumanScores)[1:16] gets the names of the top 16 human genes, because we have already sorted them above. This can be done because the HumanScores has named values (each value in the vector has a gene name attached to it).
 
 ```{r PlotPeaksH,warning=FALSE}
 mypar(4,4)
