@@ -208,17 +208,12 @@ legend <- g_legend(ggg+theme(legend.position="left",
           panel.grid.major = element_blank(),
           panel.grid.minor = element_blank(),
           panel.background = element_blank())) 
-grid.draw(legend) 
-```
 
-![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-1.png)
-
-``` r
 #output this whole list of plots as a PDF on your desktop
-marrangeGrob(grobs=plotlist , nrow=4, ncol=4,top = NULL)
+marrangeGrob(grobs= c(grid.draw(legend) ,plotlist) , nrow=4, ncol=4,top = NULL)
 ```
 
-![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-2.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-3.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-4.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-5.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-6.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-7.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-8.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-9.png)
+![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-1.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-2.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-3.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-4.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-5.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-6.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-7.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-8.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-9.png)
 
 ``` r
 pdf("~/Desktop/ChosenGenes.pdf", onefile = TRUE)
@@ -233,7 +228,7 @@ dev.off()
     ## quartz_off_screen 
     ##                 2
 
-We can also graph the gene expression over time, averaging replicates (There are no replicates in this time series, but we can pretend there are for one timepoint just to see error bars)
+We can also graph the gene expression over time, averaging replicates (There are no replicates in this time series, but we can pretend there are for one timepoint just to see error bars). Plotting takes a decent amount of resources, so brace yourself if it takes a few minutes of thinking
 
 ### Plotting together, averaging timepoints
 
@@ -302,22 +297,16 @@ legend <- g_legend(ggg+theme(legend.position="left",
           panel.grid.major = element_blank(),
           panel.grid.minor = element_blank(),
           panel.background = element_blank())) 
-grid.draw(legend) 
+marrangeGrob(grobs=c(grid.draw(legend),plotlist) , nrow=4, ncol=4,top = NULL)
 ```
 
-![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-1.png)
-
-``` r
-marrangeGrob(grobs=plotlist , nrow=4, ncol=4,top = NULL)
-```
-
-![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-2.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-3.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-4.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-5.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-6.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-7.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-8.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-9.png)
+![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-1.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-2.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-3.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-4.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-5.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-6.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-7.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-8.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-9.png)
 
 ``` r
 #output this whole list of plots as a PDF on your desktop
 pdf("~/Desktop/ChosenMeanGenes.pdf", onefile = TRUE)
-grid.draw(legend) 
-marrangeGrob(grobs=plotlist , nrow=4, ncol=4,top = NULL)
+ 
+marrangeGrob(grobs=c(grid.draw(legend),plotlist) , nrow=4, ncol=4,top = NULL)
 ```
 
 ``` r

@@ -3,30 +3,9 @@ MTSchmitz
 Basic RNAseq Analysis
 =====================
 
-### Loading Files and Exploratory Data Analysis
+See the end of this page for vocab and other hints \#\# Loading a File
 
-##### Quick basic computer tips and vocab beforehand:
-
-**directory** means folder in computer lingo
-
-**command line**: the terminal app on mac (in utilities directory within Applications), a basic guide can be found here: <https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html> . You don't need this unless you want to go deeper.
-
-**library**: An R package, a bunch of code and functions wrapped up which can be loaded together with library()
-
-**vector** What you get when you string things together using c()
-
-**list**: A data structure like a vector, get a single element using double brackets \[\[\]\] instead of single brackets \[\]
-
-If the computer can't find a function, you probably haven't loaded the library you need! Paste error messages into google. You can solve 99.999% of your problems by copying and pasting to and from google or stackOverflow
-
-Loading a File
---------------
-
-Most of data you will be dealing with will probably be RSEM outputs. These outputs are usually structured as a directory with a name like "Sub\_0146\_Developmental\_Clock\_Human\_hg19\_\_890bf46a388bf6b4". Inside will be a mess of files, the most likely ones you will be working with are genes.no\_mt.**ec**.tab for counts data (NOT NORMALIZED) or TPMs genes.no\_mt.**tpm**.renorm.tab.
-
-**QUICK NOTE:** If you have opened your files in Excel, always check the genes "MARCH1" and "SEPT1" to make sure that these gene names haven't been transformed into dates. If they have and you share/publish this data, people will instantly know you are a noob and discount any analysis you do!s
-
-You can type "pwd ~" (pwd stands for print working directory) on the command line and it will tell you what your home directory is. Then you can do paths like ~/GhostOfMT/Data/FILENAME.txt
+The first step will be to download the example expected counts file GhostOfMT/Data/GSE90053\_H1\_EC.txt. You can do this by downloading the whole repository from github or by downloading the individual files. When you download it, the file will probably at the path ~/Downloads/GSE90053\_H1\_EC.txt. You can move it wherever you want and then right click and "Get Info" to find the path to the file (without the file name itself tacked on the end, which you will need to add after you copy and paste the path from there).
 
 We will start by installing the packages we need:
 
@@ -39,7 +18,7 @@ biocLite("RColorBrewer")
 biocLite("ggplot2")
 ```
 
-Once we have those, we can load up the RNAseq file, which you can download from the Data folder in this Github Repo
+Once we have those, we can load up the RNAseq file, which you downloaded from the Data folder in this Github Repo
 
 read.csv2 is a versatile function that you can use to read data files that are delineated with a bunch of stuff. It's not magic though, and if your files are irregular or tampered with, it won't save you.
 
@@ -70,9 +49,50 @@ counts <- read.csv2(file=pathToFile,header = T,row.names = 1,sep = "\t")
 #It removes the last column of the data from the data set
 counts <- as.matrix(counts)
 storage.mode(counts) <- "numeric"
+head(counts)
 ```
 
-You can get the number of reads in each sample by getting the sum of the count numbers for each column (Genes are rows, Samples are columns)
+    ##        H1Rosa7_d0 H1Rosa7_d1 H1Rosa7_d2 H1Rosa7_d3 H1Rosa7_d4 H1Rosa7_d5
+    ## A1BG        12.00       7.00      13.00       4.00       1.00          9
+    ## A1CF         0.00       0.00       2.87       0.00       0.00          0
+    ## A2LD1        0.00       1.00       6.00       9.00       7.00          5
+    ## A2M          0.00       0.00       0.00       0.00       0.00          0
+    ## A2ML1       20.08       7.64       8.40       4.04       1.14          0
+    ## A4GALT      19.00      19.00      34.00      41.00      21.00         19
+    ##        H1Rosa7_d6 H1Rosa7_d7 H1Rosa7_d8 H1Rosa7_d10 H1Rosa7_d12
+    ## A1BG        14.00       6.00       5.00           1       11.00
+    ## A1CF         0.00       1.05       0.00           0        7.51
+    ## A2LD1       13.00       3.00       2.00          10        6.00
+    ## A2M          5.00       0.00       0.00           0        0.00
+    ## A2ML1        0.90       0.00       1.89           0        7.82
+    ## A4GALT       6.93      20.00       4.00           0        0.00
+    ##        H1Rosa7_d14 H1Rosa7_d16 H1Rosa7_d18 H1Rosa7_d20 H1Rosa7_d21
+    ## A1BG         12.00        8.00          15       27.00          12
+    ## A1CF          0.58        0.07           0        0.00           0
+    ## A2LD1         0.00        2.00           3        6.00           0
+    ## A2M           9.00       29.00          53       83.00         160
+    ## A2ML1         0.00        1.02           5        1.02           0
+    ## A4GALT        0.00        0.00           1        0.00           1
+    ##        H1Rosa7_d22 H1Rosa7_d24 H1Rosa7_d26 H1Rosa7_d30 H1Rosa7_d32
+    ## A1BG             0           3        5.00          10        4.00
+    ## A1CF             0           0        1.01           1        0.00
+    ## A2LD1            3           0        1.00           2        2.00
+    ## A2M            118          31       19.00          16       26.00
+    ## A2ML1            0           0        0.00           0        2.21
+    ## A4GALT           3           0        0.00           0        0.00
+    ##        H1Rosa7_d34 H1Rosa7_d36 H1Rosa7_d38 H1Rosa7_d40 H1Rosa7_d42
+    ## A1BG          5.00           8           7          15        8.00
+    ## A1CF          0.00           0           0           0        3.65
+    ## A2LD1         2.00           3           0          11        0.00
+    ## A2M          62.00          67          96          80       70.00
+    ## A2ML1         7.85           0           0           0        5.38
+    ## A4GALT        0.00           0           3           0        0.00
+
+Most of data you will be dealing with will probably be RSEM outputs. These outputs are usually structured as a directory with a name like "Sub\_0146\_Developmental\_Clock\_Human\_hg19\_\_890bf46a388bf6b4". Inside will be a mess of files, the most likely ones you will be working with are genes.no\_mt.**ec**.tab for counts data (NOT NORMALIZED) or TPMs genes.no\_mt.**tpm**.renorm.tab.
+
+**QUICK NOTE:** If you have opened your files in Excel, always check the genes "MARCH1" and "SEPT1" to make sure that these gene names haven't been transformed into dates. If they have and you share/publish this data, people will instantly know you are a noob and discount any analysis you do!
+
+You can get the number of mapped reads in each sample by getting the sum of the count numbers for each column (Genes are rows, Samples are columns)
 
 ``` r
 colSums(counts)
@@ -152,9 +172,9 @@ print(splitMatrix)
     ## [1,] "H1Rosa7" "H1Rosa7" "H1Rosa7" "H1Rosa7" "H1Rosa7"
     ## [2,] "34"      "36"      "38"      "40"      "42"
 
-That was a bit complicated. In plain english, this is what happened. Assign the following to the variable "splitMatrix": loop through the objects stored in splitList, for each one, take elements number 1 through the minimum number of elements in the whole splitlist. It should work for any strsplit output, as long as your sample namings are consistent!
+That was a bit complicated... In plain english, this is what happened. Assign the following to the variable "splitMatrix": loop through the objects stored in splitList, for each one, take elements number 1 through the minimum number of elements in the whole splitlist. It should work for any strsplit output, as long as your sample namings are consistent!
 
-Lastly, we'll take the second row of this matrix, which should be the day at which each sample was taken, and convert it to a numeric (it is currently characters ("9") instead of numbers (9) )
+Lastly, we'll take the second row of this matrix, which should be the day at which each sample was taken, and convert it to a numeric type (it is currently characters ("9") instead of numbers (9) )
 
 ``` r
 tps <- as.numeric(splitMatrix[2,])
@@ -216,3 +236,19 @@ We can also save this output as a multipage PDF by wrapping the code that create
   }
   dev.off()
 ```
+
+##### Quick basic computer tips and vocab review:
+
+**directory** means folder in computer lingo
+
+**command line**: the terminal app on mac (in utilities directory within Applications), a basic guide can be found here: <https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html> . You don't need this unless you want to go deeper.
+
+You can type "pwd ~" (pwd stands for print working directory) on the command line and it will tell you what your home directory is. Then you can write paths like ~/GhostOfMT/Data/FILENAME.txt if I have the GhostOfMT directory in my home folder (the one that contains ~/Downloads/ , ~/Documents/ and ~/Desktop/ etc)
+
+**library**: An R package, a bunch of code and functions wrapped up which can be loaded together with library()
+
+**vector** What you get when you string things together using c()
+
+**list**: A data structure like a vector, get a single element using double brackets \[\[\]\] instead of single brackets \[\]
+
+If the computer can't find a function, you probably haven't loaded the library you need! Paste error messages into google. You can solve 99.999% of your problems by copying and pasting to and from google or stackOverflow
