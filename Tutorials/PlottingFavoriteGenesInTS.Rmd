@@ -11,7 +11,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ###Loading Gene Lists
 Lists of your favorite genes might come from any number of sources. You can see how to make one based upon GO term annotation in the QueryingGO tutorial. You can also enter them in a column in excel and save the file as a tab delimited text file.
 
-Reminder: In Rstudio typing a ? in front of a function or package you don't understand pulls up the help documents.
 
 Here we load THEneuralList_2017.txt, which can be found in the Data directory of this repository. **Don't forget to replace the path with the correct location of the file on your own computer!** The function unique() removes any duplicates in the list, and toupper is necessary because if you're comparing mouse and human gene names, you won't be able to match them if they aren't the same case. Just to note, the neuralList is not a list in the R data structure sense (it's a vector of character strings).
 
@@ -42,7 +41,10 @@ library(ggplot2)
 ```
 
 
-Once we have those packages loaded, we can load up the RNAseq file, which you can download from the Data folder in this Github Repo. This file is TPMs, which are normalized by both the number of reads, and the length of each transcript (in number of base pairs). Because TPMs are normalized by length of transcript by RSEM, you can't compare them to "normalized counts". Be aware 
+Once we have those packages loaded, we can load up the RNAseq file, which you can download from the Data folder in this Github Repo. This file is TPMs, which are normalized by both the number of reads, and the length of each transcript (in number of base pairs). Because TPMs are normalized by length of transcript by RSEM, you can't compare them to "normalized counts". 
+
+Reminder: In Rstudio typing a ? in front of a function or package you don't understand pulls up the help documents.
+
 
 ```{r LoadFile}
 pathToFile <- "~/code/GhostOfMT/Data/GSE90053_H1_TPM.txt"

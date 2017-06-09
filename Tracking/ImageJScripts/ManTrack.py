@@ -22,6 +22,9 @@ from ij.io import Opener
 from ij.plugin import Concatenator
 from jarray import array
 import ij.gui.GenericDialog as GenericDialog 
+import subprocess
+import java.awt.Font as Font
+import java.awt.Color as Color
 
 def setColor(color):
     IJ.run('Colors...', 'foreground=255')
@@ -33,18 +36,21 @@ def draw(i, j, array):
     setColor(255)
     IJ.run("Draw")
 
-def drawDivNumber(imp,string, frame, x,y,col=255):
-	if float(string) > 0:
+def drawDivNumber(imp,string, frame, x,y,col=0):
+	if float(string) < 0:
+		imp.setPosition(1,1,int(frame))
+		setColor(col)
   		imp.setRoi(TextRoi( int(x)-diameter/2, int(y)-diameter/2,"X"))
   		IJ.run(imp, "Fill", "slice")
   	else:
 		imp.setPosition(1,1,int(frame))
-		setColor(col)
-		imp.setRoi(TextRoi( int(x), int(y),string))
-	  	IJ.run(imp, "Fill", "slice")
+	  	IJ.setForegroundColor(col,col,col)
 	  	imp.setRoi(OvalRoi(int(x)-diameter/2, int(y)-diameter/2,diameter,diameter))
 	  	IJ.run(imp, "Fill", "slice")
-  	
+	  	colFill = abs(col-255)
+		IJ.setForegroundColor(colFill,colFill,colFill)
+		imp.setRoi(TextRoi( int(x)-diameter/3, int(y)-diameter/1.5,re.sub("\\.0","",string),Font("Arial",Font.BOLD,int(diameter))))
+	  	IJ.run(imp, "Fill", "slice")
 
 def importDirAsStack(specdir):
 	timeseries = []
@@ -75,11 +81,12 @@ continuing = gd.getChoices().get(0).getSelectedItem()
 
 if continuing=="Yes":
 	continueFilePath=IJ.getFilePath("Choose ContinueFile")
-	csvfile = open(continueFilePath, 'r')
+	csvfile = open(continueFilePath, 'rU')
 	spamreader = csv.reader(csvfile, delimiter=',')
 	lll = spamreader.next()
 	chosen=lll[0]
 	diameter=float(lll[1])
+	trackingFilename=spamreader.next()[0]
 	spamreader.next()
 	try:
 		for row in spamreader:
@@ -127,9 +134,15 @@ elif continuing=="No":
 	gd.showDialog()
 	continueDir = IJ.getDirectory("Choose a directory")
 	continueFN = IJ.getString("ContinueFile Name?",str(imPaths[0].split("/")[len(imPaths[0].split("/"))-3]) )
+	trackFile= imPaths[0].split("/")[len(imPaths[0].split("/"))-3]
+	inds=range(len(imPaths[0].split("/"))-2)
+	trackPath=[imPaths[0].split("/")[i] for i in inds]
+	trackPath= os.path.join(*trackPath)
+	trackingFilename='/'+os.path.join(trackPath,trackFile+'trackingFile.csv')
 	csvfile = open(str(continueDir)+ continueFN+'_ContinueFile.csv', 'w')
 	spamwriter = csv.writer(csvfile, delimiter=',')
 	spamwriter.writerow([chosen,diameter])
+	spamwriter.writerow([trackingFilename])
 	spamwriter.writerow(["ch","path"])
 	for x in range(len(imPaths)):
 		spamwriter.writerow([x+1,imPaths[x]])
@@ -147,26 +160,33 @@ for p in imPaths:
 		imps.append(importDirAsStack(p))
 				
 
-#Process a path for 
-myFile= imPaths[0].split("/")[len(imPaths[0].split("/"))-3]
-inds=range(len(imPaths[0].split("/"))-2)
-myPath=[imPaths[0].split("/")[i] for i in inds]
-myPath= os.path.join(*myPath)
-trackingFilename='/'+os.path.join(myPath,myFile+'trackingFile.csv')
-
 if continuing =="GenerateResults":
 	print "run results script"
-
+	cFiles=[]
+	continueFilePath=IJ.getFilePath("Choose ContinueFile")
+	cFiles.append(continueFilePath)
+	nextFile=True
+	while(nextFile):
+		gd = GenericDialog("Add another file to aggregate results?")
+		gd.addMessage("Add another file to aggregate results?")
+		gd.showDialog()
+		if gd.wasCanceled():
+				break
+		else:
+			newCFP=IJ.getFilePath("Choose ContinueFile")
+			cFiles.append(newCFP)
+	cFilesString= ''.join([" "+str(x) for x in cFiles])
+	subprocess.call("python " +re.sub("ImageJScripts", "PythonScripts",re.sub("ManTrack", "GraphReferenceColorReporter",str(os.path.realpath(__file__))))+ cFilesString)
 
 	
 print trackingFilename
 if os.path.exists(trackingFilename):
-	csvfile = open(trackingFilename, 'r')
+	csvfile = open(trackingFilename, 'rU')
 	spamreader = csv.reader(csvfile, delimiter=',')
 	keys=spamreader.next()
 	try:
 		for row in spamreader:
-			tab.append( {keys[i]:row[i] for i in range(len(keys)) } )
+			tab.append( {keys[i]:row[i] for i in range(len(row)) } )
 		csvfile.close()
 		track = int(tab[len(tab)-1]['track']) +1
 		print "reading"
@@ -190,10 +210,11 @@ for i in range(len(tab)-1):
 	x=tab[i]
 	print x
 	if  float(tab[i+1]['divs']) == (float(tab[i]['divs']) + 1):
-		drawDivNumber(imp, str(x['divs']),float(x['t']),float(x['x']), float(x['y']),col=250)
+		drawDivNumber(imp, str(x['divs']),float(x['t']),float(x['x']), float(x['y']))
 	else:
 		drawDivNumber(imp, str(x['divs']),float(x['t']),float(x['x']), float(x['y']))
 
+IJ.run("Select None")
 
 #Open the file to write to later
 csvfile = open(trackingFilename, 'a')
@@ -224,15 +245,13 @@ while imp.getNFrames()==frames:
 			break
 		else:
 			clickedFrames.append(imp.getFrame())
-			imp.setRoi(OvalRoi(p.x-diameter/2,p.y-diameter/2, diameter, diameter))
 			fluor = []
 			for impF in imps:
 				impF.setPosition(1,1,imp.getFrame())
 				impF.setRoi(OvalRoi(p.x-diameter/2,p.y-diameter/2, diameter, diameter))
 				fluor.append(impF.getStatistics().mean)
 			spamwriter.writerow([imp.getFrame(),track,p.x,p.y,number] + fluor )
-			setColor(255)
-			IJ.run(imp, "Fill", "slice")
+			drawDivNumber(imp, str(number),float(imp.getFrame()),float(p.x), float(p.y))
 			IJ.run("Select None")
 			#Enter -1 if a cell dies, -2 if you lost a cell
 			if imp.getFrame() == imp.getNFrames() or number < 0:

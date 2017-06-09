@@ -11,8 +11,6 @@
     
     * Plotting Favorite Genes
 
-    * PeakFinder
-
     * ScaledBox & Overlay Heatmaps
 
     * Double-Color-Scheme Expression Heatmaps
@@ -24,6 +22,8 @@
     * Seahorse Data Processing
     
     * Mouse and Human Orthologs
+    
+    * PeakFinder
     
     * WGCNA (Maybe) 
 
