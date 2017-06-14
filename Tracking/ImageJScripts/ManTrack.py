@@ -25,6 +25,27 @@ import ij.gui.GenericDialog as GenericDialog
 import subprocess
 import java.awt.Font as Font
 import java.awt.Color as Color
+import java.lang.Runtime as Runtime
+import java.io.InputStreamReader
+import java.io.BufferedReader
+
+#p = subprocess.Popen(["whereis","python"], stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+#out = p.stdout.read()
+#print out
+
+# = IJ.openAsString("/Users/mschmitz/code/GhostOfMT/Tracking/PythonScripts/GraphReferenceColorReporter.py")
+#prijythonTextnt jythonText
+#call("ij.plugin.Macro_Runner.runPython", jythonText, "")
+#os.system( out + " /Users/mschmitz/code/GhostOfMT/Tracking/PythonScripts/GraphReferenceColorReporter.py" + " /Users/mschmitz/Desktop/TestImg_ContinueFile.csv")
+
+
+#p = subprocess.Popen([str(out)+" /Users/mschmitz/code/GhostOfMT/Tracking/PythonScripts/GraphReferenceColorReporter.py"+" /Users/mschmitz/Desktop/TestImg_ContinueFile.csv"], shell=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+#print p
+#print p.stderr.read()
+#print p.stdout.read()
+#print p.wait()
+#print dir(p)
+
 
 def setColor(color):
     IJ.run('Colors...', 'foreground=255')
@@ -73,7 +94,7 @@ imps=[]
 imPaths=[]
 
 gd = GenericDialog("Continue a track?")
-gd.addChoice("Yes or No?",["Yes","No","GenerateResults"],"No")
+gd.addChoice("Yes or No?",["Yes","No","GenerateResults"],"Yes")
 gd.showDialog()
 if (gd.wasCanceled()):
 	sys.exit()
@@ -138,7 +159,7 @@ elif continuing=="No":
 	inds=range(len(imPaths[0].split("/"))-2)
 	trackPath=[imPaths[0].split("/")[i] for i in inds]
 	trackPath= os.path.join(*trackPath)
-	trackingFilename='/'+os.path.join(trackPath,trackFile+'trackingFile.csv')
+	trackingFilename='/'+os.path.join(continueDir,continueFN+'_TrackingFile.csv')
 	csvfile = open(str(continueDir)+ continueFN+'_ContinueFile.csv', 'w')
 	spamwriter = csv.writer(csvfile, delimiter=',')
 	spamwriter.writerow([chosen,diameter])
@@ -163,6 +184,9 @@ for p in imPaths:
 if continuing =="GenerateResults":
 	print "run results script"
 	cFiles=[]
+	gd = GenericDialog("Choose ContinueFile")
+	gd.addMessage("Choose ContinueFile")
+	gd.showDialog()
 	continueFilePath=IJ.getFilePath("Choose ContinueFile")
 	cFiles.append(continueFilePath)
 	nextFile=True
@@ -176,10 +200,17 @@ if continuing =="GenerateResults":
 			newCFP=IJ.getFilePath("Choose ContinueFile")
 			cFiles.append(newCFP)
 	cFilesString= ''.join([" "+str(x) for x in cFiles])
-	subprocess.call("python " +re.sub("ImageJScripts", "PythonScripts",re.sub("ManTrack", "GraphReferenceColorReporter",str(os.path.realpath(__file__))))+ cFilesString)
+	gd = GenericDialog("Choose Script")
+	gd.addMessage("Find GraphReferenceColorReporter.py (or other)")
+	gd.showDialog()
+	if gd.wasCanceled():
+				sys.exit()
+	scriptFile=IJ.getFilePath("Choose Script")
+	IJ.getString("Paste into Terminal: ", " ".join(["python " , scriptFile , cFilesString]) )
+	sys.exit()
+		
 
-	
-print trackingFilename
+
 if os.path.exists(trackingFilename):
 	csvfile = open(trackingFilename, 'rU')
 	spamreader = csv.reader(csvfile, delimiter=',')
@@ -208,18 +239,17 @@ frames = imp.getNFrames()
 
 for i in range(len(tab)-1):
 	x=tab[i]
-	print x
+	#print x
 	if  float(tab[i+1]['divs']) == (float(tab[i]['divs']) + 1):
 		drawDivNumber(imp, str(x['divs']),float(x['t']),float(x['x']), float(x['y']))
 	else:
 		drawDivNumber(imp, str(x['divs']),float(x['t']),float(x['x']), float(x['y']))
 
 IJ.run("Select None")
-
+imp.setPosition(1,1,1) 
 #Open the file to write to later
 csvfile = open(trackingFilename, 'a')
 spamwriter = csv.writer(csvfile, delimiter=',')
-
 
 #IJ.setTool(Toolbar.HAND)
 IJ.setTool(Toolbar.POINT)
@@ -227,13 +257,18 @@ canvas = WindowManager.getCurrentImage().getCanvas()
 clicked = 0
 clickedFrames = []
 
+skipFrames = int(IJ.getNumber("Number Of Frames Between Observations",5))
+
+lastFrame=1
+nextJump=False
+lastDiv=0
 #HIT CANCEL ON Number prompt to save place
 while imp.getNFrames()==frames:
-	newClicked = canvas.getModifiers() == 16 
-	if clicked and not newClicked and imp.getFrame() not in clickedFrames:
+	newClicked = canvas.getModifiers() == 16
+	if not clicked and newClicked and imp.getFrame() not in clickedFrames:
 		p = canvas.getCursorLoc()
 		#PRESS CANCEL TO EXIT (RETURNS sys.minint)
-		number = IJ.getNumber("Number Of Divisions",0)
+		number = IJ.getNumber("Number Of Divisions",lastDiv)
 		#Enter 999 if you made a mistake
 		if number == 999:
 			clicked = newClicked
@@ -243,6 +278,24 @@ while imp.getNFrames()==frames:
 			imp.close()
 			csvfile.close()
 			break
+		#Get rid of last line of file
+		if number == 989:
+			clicked = newClicked
+			csvfile.close()
+			csvfile = open(trackingFilename, 'rU')
+			spamreader = csv.reader(csvfile, delimiter=',')
+			lines = [row for row in spamreader]
+			print lines
+			lines = lines[:-1] 
+			csvfile.close()
+			csvfile = open(trackingFilename, 'w')
+			spamwriter = csv.writer(csvfile, delimiter=',')
+			for line in lines:
+				spamwriter.writerow(line)
+			csvfile.close()
+			csvfile = open(trackingFilename, 'a')
+			spamwriter = csv.writer(csvfile, delimiter=',')
+			continue
 		else:
 			clickedFrames.append(imp.getFrame())
 			fluor = []
@@ -251,18 +304,38 @@ while imp.getNFrames()==frames:
 				impF.setRoi(OvalRoi(p.x-diameter/2,p.y-diameter/2, diameter, diameter))
 				fluor.append(impF.getStatistics().mean)
 			spamwriter.writerow([imp.getFrame(),track,p.x,p.y,number] + fluor )
+			tlf=lastFrame
+			lastFrame=imp.getFrame()
+			lastDiv=number
 			drawDivNumber(imp, str(number),float(imp.getFrame()),float(p.x), float(p.y))
+			print [imp.getFrame(),track,p.x,p.y,number] + fluor
 			IJ.run("Select None")
-			#Enter -1 if a cell dies, -2 if you lost a cell
+
+			#Enter -1 if a cell dies, -2 if you lost a cell, 989 to undo last action
 			if imp.getFrame() == imp.getNFrames() or number < 0:
 				clickedFrames=[]
 				clicked = False
+				lastFrame=1
+				lastDiv=0
+				nextJump=False
 				track = track +1
 				imp.setPosition(1,1,1)
-				sleep(.75)
-
+				sleep(.5)
+			else:
+				if (tlf != imp.getFrame()-skipFrames) == nextJump:
+					nextJump=False
+					for i in range(skipFrames):
+						sleep(.14)
+						imp.setPosition(1,1,int(imp.getFrame()+1))
+						#amount of time between each frame
+						
+				else:
+					imp.setPosition(1,1,int(imp.getFrame()+1))
+					nextJump=True	
+					
 	clicked = newClicked
 	sleep(.06)
 
 for impF in imps:
 	impF.close()
+csvfile.close()
