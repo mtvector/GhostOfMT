@@ -29,24 +29,6 @@ import java.lang.Runtime as Runtime
 import java.io.InputStreamReader
 import java.io.BufferedReader
 
-#p = subprocess.Popen(["whereis","python"], stdout=subprocess.PIPE,stderr=subprocess.PIPE)
-#out = p.stdout.read()
-#print out
-
-# = IJ.openAsString("/Users/mschmitz/code/GhostOfMT/Tracking/PythonScripts/GraphReferenceColorReporter.py")
-#prijythonTextnt jythonText
-#call("ij.plugin.Macro_Runner.runPython", jythonText, "")
-#os.system( out + " /Users/mschmitz/code/GhostOfMT/Tracking/PythonScripts/GraphReferenceColorReporter.py" + " /Users/mschmitz/Desktop/TestImg_ContinueFile.csv")
-
-
-#p = subprocess.Popen([str(out)+" /Users/mschmitz/code/GhostOfMT/Tracking/PythonScripts/GraphReferenceColorReporter.py"+" /Users/mschmitz/Desktop/TestImg_ContinueFile.csv"], shell=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
-#print p
-#print p.stderr.read()
-#print p.stdout.read()
-#print p.wait()
-#print dir(p)
-
-
 def setColor(color):
     IJ.run('Colors...', 'foreground=255')
 
@@ -280,6 +262,7 @@ while imp.getNFrames()==frames:
 			break
 		#Get rid of last line of file
 		if number == 989:
+			#You have to close the file, read the whole thing, remove the last line, then rewrite the file to remove a line :(
 			clicked = newClicked
 			csvfile.close()
 			csvfile = open(trackingFilename, 'rU')

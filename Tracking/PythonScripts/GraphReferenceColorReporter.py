@@ -20,14 +20,14 @@ import math
 import re
 from matplotlib.backends.backend_pdf import PdfPages
 import colorsys
-import seaborn as sns
+#import seaborn as sns
 import sys
 import colour
 import csv
 
 #radius = sys.argv[0]
 spaths = sys.argv[1:]
-#spaths = [os.path.expanduser("~/Desktop/exContF.txt")]
+#spaths = [os.path.expanduser("~/Desktop/Tracking/TestImg_ContinueFile.csv")]
 srcpath=spaths[0]
 if len(spaths)>1:
     srcpath = srcpath + "Aggregated"
@@ -49,8 +49,9 @@ def getNumToRoot(G,n,roots):
 
 def dist(a1,a2,b1,b2):
     return np.sqrt((a1-b1)**2 + (a2-b2)**2)
-    
-def mergeNodes(G, n1, n2):
+
+#G is directed, Q is undirected version of G
+def mergeNodes(G,Q, n1, n2):
     if G.node[n1]['t'] != G.node[n1]['t']:
         return None
     out = {}    
@@ -64,10 +65,11 @@ def mergeNodes(G, n1, n2):
     while not ended:
         outnum = outnum +1
         if outnum not in G.nodes():
-            ended=True      
+            ended=True    
+    Q = G.to_undirected()
     G.add_node(outnum,out)
-    nei1=G.neighbors(n1)
-    nei2=G.neighbors(n2)
+    nei1=Q.neighbors(n1)
+    nei2=Q.neighbors(n2)
     neibs = nei1+nei2
     for n in neibs:
         if G.node[n]['t'] > G.node[outnum]['t']:
@@ -91,7 +93,7 @@ def getNumToRootHelper(G,n,c):
 
 def loadNets(trainset,radius):
     ref= nx.DiGraph()
-    remov = trainset.loc[:,'divs'] > -1
+    remov = trainset.loc[:,'divs'] > -2
     trainset=trainset.fillna(0)
     trainset = trainset.loc[remov,:]
     for i in range(trainset.shape[0]):
@@ -99,6 +101,7 @@ def loadNets(trainset,radius):
         if(i>0):
             if(trainset.loc[trainset.index[i],'track'] == trainset.loc[trainset.index[i-1],'track'] ):
                 ref.add_edge(int(i-1),int(i))   
+    unD = ref.to_undirected()
     for i in ref.nodes():
         if i not in ref.nodes():
             continue
@@ -110,17 +113,11 @@ def loadNets(trainset,radius):
                 B = ref.node[j]
                 if A['t'] == B['t']:
                     if dist(A['x'],A['y'],B['x'],B['y']) <= radius:
-                        mergeNodes(ref, i, j)
+                        print i , j                        
+                        mergeNodes(ref,unD, i, j)
                         break
     return ref
 
-#spaths=[os.path.expanduser("~/code/data/cb/imageAnalysis/CB H9pax6td NBnog may10-2_2016051000002/CB H9pax6td NBnog may10-2_2016051000002_x-04572y001856-10x-FLsorted"),
-#os.path.expanduser("~/code/data/cb/imageAnalysis/CB H9pax6td NBnog may10-2_2016051000002/CB H9pax6td NBnog may10-2_2016051000002_x004790y003248-10x-FLsorted"),
-#os.path.expanduser("~/code/data/cb/imageAnalysis/CB H9pax6td NBnog may10-2_2016051000002/CB H9pax6td NBnog may10-2_2016051000002_x-03952y000264-10x-FLsorted")]
-   
-#srcpath = os.path.expanduser("~/code/data/cb/imageAnalysis/CB H9pax6td NBnog may10-2_2016051000002/CB H9pax6td NBnog may10-2_2016051000002_x-04572y001856-10x-FLsorted")
-#srcpath = os.path.expanduser("~/code/data/cb/imageAnalysis/CB H9pax6td NBnog may10-2_2016051000002/CB H9pax6td NBnog may10-2_2016051000002_x004790y003248-10x-FLsorted")
-#srcpath = os.path.expanduser("~/code/data/cb/imageAnalysis/CB H9pax6td NBnog may10-2_2016051000002/CB H9pax6td NBnog may10-2_2016051000002_x-03952y000264-10x-FLsorted")
 channelnames=[]
 nets=[]
 for s in spaths:
@@ -177,10 +174,12 @@ regressDF=pandas.DataFrame(regressDF,columns=('track', 'divs', 't'))
 DFch=outDF.columns[["ch" in x for x in outDF.columns]]
 channelOrder=[int(re.sub("ch|Mean","", y)) for y in DFch]
 
+
+outDir=os.path.join(os.path.dirname(os.path.realpath(srcpath)),'')
 rgb = [colorsys.hsv_to_rgb(i ,1.,1.) for i in np.array(nx.get_node_attributes(ref,'divs').values())/ (float(max(nx.get_node_attributes(ref,'divs').values()))*1.3)]
 rgbregress = [colorsys.hsv_to_rgb(i ,1.,1.) for i in np.array(regressDF.loc[:,'divs'])/ (float(max(regressDF.loc[:,'divs']))*1.3)]
-nx.write_gml(ref, os.path.expanduser(fn+'.dot'))
-nx.drawing.nx_pydot.write_dot(ref,os.path.expanduser(fn+'.dot'))
+nx.write_gml(ref, os.path.expanduser(outDir+fn+'.gml'))
+nx.drawing.nx_pydot.write_dot(ref,os.path.expanduser(outDir+fn+'.dot'))
 
 def graphviz_fixy(ref,yvals, prog='dot'):
     pos=nx.drawing.nx_pydot.graphviz_layout(ref, prog='dot')
@@ -192,7 +191,7 @@ def graphviz_fixy(ref,yvals, prog='dot'):
     return pos
     
 
-pp=PdfPages(os.path.expanduser('~/Desktop/'+fn+'analysis.pdf'))
+pp=PdfPages(os.path.expanduser(outDir+fn+'analysis.pdf'))
 for i in range(len(channelOrder)):
     plt.scatter(outDF.loc[:,'t'] ,outDF.loc[:,DFch[i]],c=rgb)#outDF.loc[:,'divs'])
     plt.xlabel('time')
