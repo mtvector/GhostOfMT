@@ -153,7 +153,7 @@ library(zoo)
 library(ggplot2)
 library(grid)
 library(gridExtra)
-#You can string together as many datasets as you as you want!
+#You can string together as many datasets as you as you want, just add conditions, TimePoints and TPMs!
 conditionsMerged <- c(conditionsH,conditionsM)
 tpMerged <- c(tpsH,tpsM)
 dataMerged <- rn.merge(hTPMs,mTPMs)

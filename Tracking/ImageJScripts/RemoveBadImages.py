@@ -1,6 +1,6 @@
 #Start by clicking on folder
 #!!!Will delete original image files
-
+#This script should be modified to do as many channels as you want.
 import math
 from ij import IJ, ImagePlus
 from ij.process import FloatProcessor
