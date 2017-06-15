@@ -1,0 +1,22 @@
+Val 100h
+Met 30h
+Gly 30h
+Pro 20h
+Ile 20h
+Thr 7.2h
+Leu 5.5h
+Ala 4.4h
+His 3.5h
+Trp 2.8h
+Tyr 2.8h
+Ser 1.9h
+Asn 1.4h
+Lys 1.3h
+Cys 1.2h
+Asp 1.1h
+Phe 1.1h
+Glu 1.0h
+Arg 1.0h
+Gln 0.8h
+
+
