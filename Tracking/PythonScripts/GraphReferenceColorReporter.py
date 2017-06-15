@@ -155,7 +155,7 @@ regressDF=[]
 for t in set(outDF.loc[:,'track']):
     curDF=outDF.loc[outDF.loc[:,'track']==t]
     #print curDF
-    curDF.sort(['t','divs'],ascending=[True,True])
+    curDF.sort_values(['t','divs'],ascending=[True,True])
     for i in range(curDF.shape[0]-1):
         r1=curDF.loc[curDF.index[i],:]       
         r2=curDF.loc[curDF.index[i+1],:]

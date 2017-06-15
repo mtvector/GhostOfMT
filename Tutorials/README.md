@@ -16,15 +16,4 @@ swirl()
 
 **Some assembly may be required.**
 
-
-
-
 Tutorials can be accessed by opening the .md files in Tutorials folder
-
-Or HTML pages found here:
-
-GO Terms: 
-http://htmlpreview.github.com/?https://github.com/mtvector/GhostOfMT/blob/master/Tutorials/htmlFiles/QueryingGO.html
-
-Basic RNA Seq Analyisis: 
-http://htmlpreview.github.com/?https://github.com/mtvector/GhostOfMT/blob/master/Tutorials/htmlFiles/BasicRNAseq.html

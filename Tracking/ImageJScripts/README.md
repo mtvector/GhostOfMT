@@ -54,19 +54,23 @@ sudo easy_install pip
 
 This should install pip (you'll need to enter your password). Next you use pip to install a few crucial packages for the plotting by entering the following on your command line:
 
-pip install pandas
+sudo pip install -I pandas==0.20.2
 
-pip install matplotlib
+sudo pip install matplotlib
 
-pip install networkx
+sudo pip install -I networkx==1.11
 
-pip install colour
+sudo pip install -I colour==0.1.2
 
-pip install colorsys
+sudo pip install -I pydotplus==2.0.2
 
-pip install numpy
+sudo pip install -I pyparsing==2.2.0
+
+sudo pip install -I numexpr==2.4.6
 
 (You should have python 2.7 automatically installed, but you can make sure you have python installed by typing "whereis python" in the command line, and it should give you a path) If you don't have python installed, install python first.
+
+If any packages are found to be missing, just try sudo pip install [NAME OF PACKAGE]
 
 Once you have done this, you can run ManTrack.py through the script editor and select GenerateResults. It will ask you first to select your continue file. If you want to include multiple FOVs from the same experiment, you can then select as many continuefiles as you want, if you have tracked cells in many FOVs and you want to aggregate them all into a single figure. Then you will personally locate the file GraphReferenceColorReporter.py and then it will give you a line to copy and paste into the terminal.
 
@@ -76,4 +80,4 @@ The output files should go to the same directory as your first continuefile was 
 
 ## Automated tracking
 
-I experimented extensively with the trackmate plugin in the FIJI package. According to my analysis and the word of the plugin's author, I have concluded that while it is very good at detecting round objects and tracking them between frames, it is not accurate at detecting divisions, so if you are hoping to draw cell lineages. This plugin is not viable. If you want a machine to do the tracking for you, I recommend trying Ilastik (http://ilastik.org/) and running it on a VNC server. Make sure you remove condensation ruined images before tracking though! They will totally destroy results from any program that can't detect them. 
+I experimented extensively with the trackmate plugin in the FIJI package. According to my analysis and the word of the plugin's author, I have concluded that while it is very good at detecting round objects and tracking them between frames, it is not accurate at detecting divisions, so if you are hoping to track cell lineages this plugin is not viable. If you want a machine to do the tracking for you, I recommend trying Ilastik (http://ilastik.org/) and running it on a VNC server. Make sure you remove condensation ruined images before tracking though! They will totally destroy results from any program that can't detect them. 

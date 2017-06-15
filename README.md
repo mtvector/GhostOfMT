@@ -9,7 +9,7 @@
   
     * Basic RNAseq EDA
     
-    * Plotting Favorite Genes
+    * Plotting Favorite Genes in a Time Series
 
     * ScaledBox & Overlay Heatmaps
 

@@ -5,7 +5,7 @@ See The ImageJScripts README.md file for instructions
 
 Scripts in the ImageJScripts should be run through the script editor of the FIJI software package. (Opened by pressing "[")
 
-The main user-friendly script is ManTrack.py in the ImageJScripts directory. This can launch the manual tracker, as well as a script to generate output analysis images. See ManTrack.md for further instructions.
+The main user-friendly script is ManTrack.py in the ImageJScripts directory. This can launch the manual tracker, as well as a script to generate output analysis images. See README.md in the ImageJScripts Folder for further instructions.
 
 Preprocessing to remove background of TIFF or directories of image files can be done with RemoveBackgrounds.py
 
