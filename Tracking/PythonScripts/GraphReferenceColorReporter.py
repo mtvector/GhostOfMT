@@ -7,25 +7,42 @@ Created on Wed Dec  7 14:36:22 2016
 
 Usage: python GraphReferenceColorReporter.py continuefile1 continuefile2...
 """
-#matplotlib.use('WxAgg')
+
+'''
+#This section is hopefully going to install packages for the user... in another life?
+def install_and_import(package):
+    import importlib
+    try:
+        importlib.import_module(package)
+    except ImportError:
+        import pip
+        pip.main(['install', package])
+    finally:
+        globals()[package] = importlib.import_module(package)
+
+packageList={'pandas':'0.20.2','matplotlib':'2.0.2','networkx':'1.11','colour':'0.1.2',
+'pydotplus':'2.0.2','pyparsing':'2.2.0','numexpr':'2.4.6'}
+
+import pip
+installed_packages = pip.get_installed_distributions()
+flat_installed_packages = [package.project_name for package in installed_packages]
+print packageList.keys()
+for p in packageList.keys():
+    if p not in flat_installed_packages:
+        install_and_import(p)
+'''      
 import os
 import numpy as np
-#import PIL
 import pandas
 import networkx as nx
-#import shutil
 import matplotlib.pyplot as plt
-#import wx
-import math
 import re
 from matplotlib.backends.backend_pdf import PdfPages
 import colorsys
-#import seaborn as sns
 import sys
 import colour
 import csv
 
-#radius = sys.argv[0]
 spaths = sys.argv[1:]
 #spaths = [os.path.expanduser("~/Desktop/Tracking/TestImg_ContinueFile.csv")]
 srcpath=spaths[0]
@@ -107,13 +124,10 @@ def loadNets(trainset,radius):
             continue
         for j in ref.nodes():
             if i != j:
-                #print i 
-                #print j
                 A = ref.node[i]
                 B = ref.node[j]
                 if A['t'] == B['t']:
-                    if dist(A['x'],A['y'],B['x'],B['y']) <= radius:
-                        print i , j                        
+                    if dist(A['x'],A['y'],B['x'],B['y']) <= radius:                    
                         mergeNodes(ref,unD, i, j)
                         break
     return ref
@@ -154,7 +168,6 @@ for n in ref.nodes():
 regressDF=[]
 for t in set(outDF.loc[:,'track']):
     curDF=outDF.loc[outDF.loc[:,'track']==t]
-    #print curDF
     curDF.sort_values(['t','divs'],ascending=[True,True])
     for i in range(curDF.shape[0]-1):
         r1=curDF.loc[curDF.index[i],:]       
@@ -218,14 +231,10 @@ for i in range(len(channelOrder)):
     colors = list(black.range_to(colour.Color("red"), maxFluors-minFluors ))
     pos= graphviz_fixy(ref,yvals=[ref.node[x]['t'] for x in ref.nodes()])
     ax=plt.yticks(range(int(min([ref.node[x]['t'] for x in ref.nodes()])), int(max([ref.node[x]['t'] for x in ref.nodes()]))))    
-    #pos=nx.drawing.nx_pydot.graphviz_layout(ref, prog='dot')
     nx.draw(ref, pos, with_labels=False,node_size =15,edge_color='black',linewidths= .1, width = .1,node_color=[colors[c-minFluors-1].get_rgb() for c in [int(x)for x in fluors]]  )  
     plt.ylabel("Frame")  
-    #nx.drawing.draw_spring(ref, prog='dot',node_color = [colors[c].get_rgb() for c in [int(x)for x in nx.get_node_attributes(ref,DFch[i]).values()]])
-    #nx.draw_networkx(ref,pos=positions, node_size =15,edge_color='black',linewidths= .1, width = .3,node_color = [colors[c].get_rgb() for c in [int(x)for x in nx.get_node_attributes(ref,DFch[i]).values()]],with_labels=False)
     pp.savefig()
     plt.close()    
-
 
 plt.scatter(outDF.loc[:,'t'] ,outDF.loc[:,'divs'],c=rgb)
 plt.xlabel('time')
@@ -238,9 +247,6 @@ plt.ylabel('divisions (Interploated)')
 pp.savefig()
 plt.close()
 pp.close()
-'''
-'''
-
 
 '''
 #PRINTING A FIGURE

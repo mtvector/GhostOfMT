@@ -48,15 +48,17 @@ This program is really dumb. It creates the lineages by detecting that two click
 
 # Generate Results
 
-Before you run the results you'll want to make sure you have a number of python packages installed. To do this you will use pip, the python package manager. Open your terminal app (on macs it is inside the utilities folder in the applications folder) and enter:
+Before you run the results you'll want to make sure you have a number of python packages installed. Sorry, there's a lot of installing to do for this... To do this you will use pip, the python package manager. Open your terminal app (on macs it is inside the utilities folder in the applications folder) and enter (on mac):
 
 sudo easy_install pip 
+
+You'll also need to install Graphviz. You can find it here: http://www.graphviz.org/Download_macos.php
 
 This should install pip (you'll need to enter your password). Next you use pip to install a few crucial packages for the plotting by entering the following on your command line:
 
 sudo pip install -I pandas==0.20.2
 
-sudo pip install matplotlib
+sudo pip install -I matplotlib==2.0.2
 
 sudo pip install -I networkx==1.11
 
@@ -70,7 +72,7 @@ sudo pip install -I numexpr==2.4.6
 
 (You should have python 2.7 automatically installed, but you can make sure you have python installed by typing "whereis python" in the command line, and it should give you a path) If you don't have python installed, install python first.
 
-If any packages are found to be missing, just try sudo pip install [NAME OF PACKAGE]
+If any packages are found to be missing when you run the script, just try sudo pip install [NAME OF PACKAGE]
 
 Once you have done this, you can run ManTrack.py through the script editor and select GenerateResults. It will ask you first to select your continue file. If you want to include multiple FOVs from the same experiment, you can then select as many continuefiles as you want, if you have tracked cells in many FOVs and you want to aggregate them all into a single figure. Then you will personally locate the file GraphReferenceColorReporter.py and then it will give you a line to copy and paste into the terminal.
 
