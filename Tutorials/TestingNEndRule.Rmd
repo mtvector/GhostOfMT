@@ -9,22 +9,128 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+source("http://bioconductor.org/biocLite.R")
+library(biomaRt)
+library(Biostrings)
+library(msa)
+library("seqinr")
+library(EBSeq)
+source("~/code/cb/LoadFunctions.R")
+#https://en.wikipedia.org/wiki/N-end_rule
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+forceConsensus <- function(mat,badind){
+  blanks <-  mat[badind,]
+  newM <- (sapply(1:ncol(mat), function(i){
+    q <- mat[-badind,]
+    q[which.max(q[,i]),i] <-  q[which.max(q[,i]),i]+blanks[i]
+    q[,i]
+  }))
+  rownames(newM) <- rownames(mat[-badind,])
+  newM
+}
 
-```{r cars}
-summary(cars)
-```
 
-## Including Plots
+findAttribute <- function(string, mart){
+  listAttributes(mart)[grepl(string,listAttributes(mart)[,1])|grepl(string,listAttributes(mart)[,2]),]
+}
 
-You can also embed plots, for example:
+findAttribute("symbol",mart)
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host="www.ensembl.org")
+rnSymbol <- getBM(attributes = c("ensembl_gene_id","hgnc_symbol","peptide"),filters = c("hgnc_symbol"),values = c("PAX6","ASCL1") ,mart = mart) 
+AllSequencesHuman <- getBM(attributes = c("hgnc_symbol","peptide") ,mart = mart) 
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "mmusculus_gene_ensembl", host="www.ensembl.org")
+rnSymbol <- getBM(attributes = c("ensembl_gene_id","mgi_symbol","peptide"),filters = c("mgi_symbol"),values =c("PAX6","ASCL1") ,mart = mart)
+AllSequencesMouse <- getBM(attributes = c("mgi_symbol","peptide") ,mart = mart) 
+
+#aMap <- rep(1.0/length(AA_STANDARD),length(AA_STANDARD))
+aMap <- paste0(AA_ALPHABET,"-")
+names(aMap) <- AA_ALPHABET
+aMap[(length(aMap)-3):length(aMap)] <- ""
+
+consensusString(forceConsensus(consensusMatrix( AAStringSet( msa(AAStringSet(lapply(AllSequencesHuman$peptide[AllSequencesHuman$hgnc_symbol == g],AAString) )))),1))
+
+
+consensusSeqsHuman <- lapply(unique(AllSequencesHuman$hgnc),function(g){
+  if(length(AllSequencesHuman$peptide[AllSequencesHuman$hgnc_symbol == g])>1){
+  align <- consensusString(forceConsensus(consensusMatrix( AAStringSet( msa(AAStringSet(lapply(AllSequencesHuman$peptide[AllSequencesHuman$hgnc_symbol == g],AAString) )))),1))
+  }else{
+    align <- AllSequencesHuman$peptide[AllSequencesHuman$hgnc_symbol == g]
+  }
+  align
+})
+names(consensusSeqsHuman) <- unique(AllSequencesHuman$hgnc)
+
+consensusSeqsMouse <- lapply(unique(AllSequencesMouse$mgi),function(g){
+  if(length(AllSequencesMouse$peptide[AllSequencesMouse$mgi_symbol == g])>1){
+    align <- consensusString(forceConsensus(consensusMatrix( AAStringSet( msa(AAStringSet(lapply(AllSequencesMouse$peptide[AllSequencesMouse$mgi_symbol == g],AAString) )))),1))
+  }else{
+    align <- AllSequencesMouse$peptide[AllSequencesMouse$mgi_symbol == g]
+  }
+  align
+})
+names(consensusSeqsMouse) <- toupper(unique(AllSequencesMouse$mgi))
+
+save.image(file="~/Desktop/PeptideSeqs.RData")
+
+substr(consensusSeqsHuman,2,2)
+
+b <-  AMINO_ACID_CODE
+names(b) <- b
+names(b) <- names(AMINO_ACID_CODE)
+nEndRule <-  read.table("~/code/nEndRule.txt",stringsAsFactors = F)
+for(aa in b[!b%in%nEndRule[,1]])nEndRule <-  rbind(nEndRule ,c(aa,NA))
+nEndRule[,2] <- as.numeric(gsub("h","",nEndRule[,2]))
+rownames(nEndRule) <- sapply(nEndRule[,1], function(aa) names(b)[which(aa==b)] )
+
+hist(nEndRule[substr(consensusSeqsHuman,2,2),2])
+hist(nEndRule[substr(consensusSeqsMouse,2,2),2])
+
+mean(nEndRule[substr(consensusSeqsHuman,2,2),2],na.rm=T)
+mean(nEndRule[substr(consensusSeqsMouse,2,2),2],na.rm=T)
+
+#Load in RNAseq to test for developmental genes only now
+pathToFileH <- "~/code/GhostOfMT/Data/GSE90053_H1_EC.txt"
+#NOTE THE PARAMETERS
+countsH <- read.csv2(file=pathToFileH,header = T,row.names = 1,sep = "\t")
+#countsH <- countsH[,-ncol(countsH)] #uncomment this line if the last column is gene name description text
+#It removes the last column of the data from the data set
+countsH <- as.matrix(countsH)
+storage.mode(countsH) <- "numeric"
+normCountsH <- round.log(GetNormalizedMat(countsH, MedianNorm(countsH)))
+splitListH <- strsplit(x = colnames(normCountsH),split = "_d")
+splitMatrixH <- sapply(splitListH, "[", 1:max(sapply(splitListH,length)) )
+tpsH <- as.numeric(splitMatrixH[2,])
+colnames(normCountsH) <- tpsH
+
+pathToFileM <- "~/code/GhostOfMT/Data/GSE90053_mEpi_EC.txt"
+#NOTE THE PARAMETERS
+countsM <- read.csv2(file=pathToFileM,header = T,row.names = 1,sep = "\t")
+#countsM <- countsM[,-ncol(countsM)] #uncomment this line if the last column is gene name description text
+#It removes the last column of the data from the data set
+countsM <- as.matrix(countsM)
+storage.mode(countsM) <- "numeric"
+#Make the genenames for mouse all uppercase.
+#It will be very annoying to compare mouse and human if they are left with different conventional capitalizations
+rownames(countsM) <- toupper(rownames(countsM))
+normCountsM <- round.log(GetNormalizedMat(countsM, MedianNorm(countsM)))
+splitListM <- strsplit(x = colnames(normCountsM),split = "_d")
+splitMatrixM <- sapply(splitListM, "[", 1:max(sapply(splitListM,length)) )
+tpsM <- as.numeric(splitMatrixM[2,])
+colnames(normCountsM) <- tpsM
+
+sum(rowMaxs(normCountsH)-rowMins(normCountsH) >5)
+sum(rowMaxs(normCountsM)-rowMins(normCountsM) >5)
+
+devM <-  rownames(normCountsM)[rowMaxs(normCountsM)-rowMins(normCountsM) >5]
+devH <- rownames(normCountsH)[rowMaxs(normCountsH)-rowMins(normCountsH) >5]
+
+median(nEndRule[substr(consensusSeqsHuman[devH],2,2),2],na.rm=T)
+median(nEndRule[substr(consensusSeqsHuman[devM],2,2),2],na.rm=T)
+
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "cjacchus_gene_ensembl", host="www.ensembl.org")
+
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "sscrofa_gene_ensembl", host="www.ensembl.org")
