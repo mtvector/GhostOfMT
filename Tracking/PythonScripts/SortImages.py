@@ -3,7 +3,7 @@
 Created on Thu Nov 10 11:40:26 2016
 
 @author: mschmitz
-
+Need to install pandas with sudo pip install pandas before using
 Command line usage:
 python PATH_TO_sortImages.py PATH_TO_DIRECTORY 
 or to do multiple

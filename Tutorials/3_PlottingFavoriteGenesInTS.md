@@ -220,7 +220,7 @@ legend <- g_legend(ggg+theme(legend.position="left",
 marrangeGrob(grobs= c(grid.draw(legend) ,plotlist) , nrow=4, ncol=4,top = NULL)
 ```
 
-![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-1.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-2.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-3.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-4.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-5.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-6.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-7.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-8.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-9.png)
+![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-1.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-2.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-3.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-4.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-5.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-6.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-7.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-8.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-9.png)
 
 ``` r
 #output this whole list of plots as a PDF on your desktop
@@ -316,7 +316,7 @@ legend <- g_legend(ggg+theme(legend.position="left",
 marrangeGrob(grobs=c(grid.draw(legend),plotlist) , nrow=4, ncol=4,top = NULL)
 ```
 
-![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-1.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-2.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-3.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-4.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-5.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-6.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-7.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-8.png)![](PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-9.png)
+![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-1.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-2.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-3.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-4.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-5.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-6.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-7.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-8.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-9.png)
 
 ``` r
 #output this whole list of plots as a PDF on your desktop

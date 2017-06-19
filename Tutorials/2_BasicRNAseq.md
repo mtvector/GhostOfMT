@@ -119,7 +119,7 @@ plot(counts["PAX6",],main = "PAX6 Unnormalized Reads")
 plot(normCounts["PAX6",],main = "PAX6 Normalized Reads",ylab="Normalized counts")
 ```
 
-![](BasicRNAseq_files/figure-markdown_github/Normalizing-1.png)
+![](2_BasicRNAseq_files/figure-markdown_github/Normalizing-1.png)
 
 It also might be helpful to parse the timepoints from the sample names. (Quite helpful.) The split parameter is a short bit of text that divides the different parts of longer strings of characters (sample names). This is why smart, standard naming of samples in the database is paramount!
 
@@ -195,7 +195,7 @@ spearmanCorrelations <- cor(normCounts,method = "spearman")
 heatmap.2( spearmanCorrelations ,trace = "none",col = cols,cexRow = .7, cexCol = .7)
 ```
 
-![](BasicRNAseq_files/figure-markdown_github/Spearman-1.png)
+![](2_BasicRNAseq_files/figure-markdown_github/Spearman-1.png)
 
 Or the pearson correlations (with samples not clustered in the heatmap, which you do with Rowv and Colv = F parameters)
 
@@ -205,7 +205,7 @@ pearsonCorrelations <- cor(normCounts,method = "pearson")
 heatmap.2( pearsonCorrelations ,trace = "none",col = cols,Rowv = F, Colv = F,cexRow = .7, cexCol = .7)
 ```
 
-![](BasicRNAseq_files/figure-markdown_github/Pearson-1.png)
+![](2_BasicRNAseq_files/figure-markdown_github/Pearson-1.png)
 
 ### Plot a list of genes
 
@@ -220,7 +220,7 @@ Now we take an array of genes
   }
 ```
 
-![](BasicRNAseq_files/figure-markdown_github/ListOGenes-1.png)![](BasicRNAseq_files/figure-markdown_github/ListOGenes-2.png)
+![](2_BasicRNAseq_files/figure-markdown_github/ListOGenes-1.png)![](2_BasicRNAseq_files/figure-markdown_github/ListOGenes-2.png)
 
 ### Save Scatterplots to a PDF
 

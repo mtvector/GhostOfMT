@@ -32,6 +32,7 @@ library(RColorBrewer)
 library(gplots)
 library(ggplot2)
 library(reshape2)
+library(matrixStats)
 ```
 
 So, now we have the data we need:
@@ -45,10 +46,11 @@ print("Neural List:")
 head(neuralList)
 ```
 
-The first thing we're going to do is see how the mouse samples correlate with the human data. Because we're looking at two different species it is best practice to include only those genes which are actually orthologs. For simplicity's sake though, we're going to assume that the same gene name in mouse and human means that they are the homologs we should be comparing (this is true for for most cases)
+The first thing we're going to do is see how the mouse samples correlate with the human data. Because we're looking at two different species it is best practice to include only those genes which are actually orthologs. For simplicity's sake though, we're going to assume that the same gene name in mouse and human means that they are the homologs we should be comparing (this is true for for most cases). The
 
 
-```{r CorCompareExample}
+```{r CorFunctions}
+#Take two matrices, return two matrices with matching rownames
 rn.compare <- function(x,y,fill=0){
   rn <- as.character(intersect(rownames(x),rownames(y)))
   zerosx <- setdiff(rownames(x),rownames(y))
@@ -59,7 +61,7 @@ rn.compare <- function(x,y,fill=0){
   ny <- rbind(y,zx)
   return(list(nx[rownames(ny),],ny[rownames(nx),]))
 }
-
+#Take two matrices, and get the correlations between the columns of all the samples between the two
 cor.compare <- function(x,y,min=0, varX=NULL ,interest.set =NULL, ...){
   d <- rn.compare(x,y)
   x <- d[[1]]
@@ -79,29 +81,17 @@ cor.compare <- function(x,y,min=0, varX=NULL ,interest.set =NULL, ...){
 }
 ```
 
+With these functions, you're ready to compare datasets!
 
+### Basic Heatmap
 
-
-```{r CorCompareCode}
-cor.compare <- function(x,y,min=0, varX=NULL ,interest.set =NULL, ...){
-  d <- rn.compare(x,y)
-  x <- d[[1]]
-  y <- d[[2]]
-  i = intersect(rownames(x), rownames(y))
-  i = i[rowMaxs(x[i,],na.rm = T)>=min | rowMaxs(y[i,],na.rm = )>=min]
-  if(!is.null(interest.set)){
-    i = interest.set[interest.set%in%i]
-  }
-  if(!is.null(varX)){
-    i = i[order(rowMeans(cbind(rowSds(x[i,]), rowSds(y[i,]))),decreasing = T)]
-    i = i[1:ifelse(varX>length(i),length(i),varX)]
-  }
-  print("Num Genes:")
-  print(length(i))
-  return(cor(as.matrix(x[i,]),as.matrix(y[i,]), ...))
-}
+```{r CorCompareExample,warning=F,message=F}
+cols <-  colorRampPalette(rev(brewer.pal(11,"RdBu")))(50)
+correlationMatrix <- cor.compare(hTPMs, mTPMs, method="spearman" )
+heatmap.2(correlationMatrix,trace="none", Rowv = F,Colv = F, col=cols)
 ```
 
+This is the same as from the BasicRNAseq tutorial. Now we're going to take it to the next level.
 
 
 

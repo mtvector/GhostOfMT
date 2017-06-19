@@ -172,7 +172,7 @@ print(HumanScores[1:30])
 
 This will give you the scores of the mouse and human peak genes. Scores closer to 1 mean genes have higher and cleaner peaks. We can plot the top genes to see if the algorithm has worked.
 
-names(HumanScores)\[1:16\] gets the names of the top 16 human genes, because we have already sorted them above. This can be done because the HumanScores has named values (each value in the array has a gene name attached to it).
+names(HumanScores)\[1:16\] gets the names of the top 16 human genes, because we have already sorted them above. This can be done because the HumanScores has named values (each value in the vector has a gene name attached to it).
 
 ``` r
 mypar(4,4)
@@ -181,7 +181,7 @@ for(g in names(HumanScores)[1:16]){
 }
 ```
 
-![](PeakFinder_files/figure-markdown_github/PlotPeaksH-1.png)
+![](7_PeakFinder_files/figure-markdown_github/PlotPeaksH-1.png)
 
 And the top 16 Mouse genes
 
@@ -192,7 +192,7 @@ for(g in names(MouseScores)[1:16]){
 }
 ```
 
-![](PeakFinder_files/figure-markdown_github/PlotPeaksM-1.png)
+![](7_PeakFinder_files/figure-markdown_github/PlotPeaksM-1.png)
 
 Lastly, we can find genes that are in the top 200 scoring genes for both species:
 
@@ -205,4 +205,4 @@ for(g in intersect(names(MouseScores)[1:L],  names(HumanScores)[1:L])){
 }
 ```
 
-![](PeakFinder_files/figure-markdown_github/IntersectPeaks-1.png)![](PeakFinder_files/figure-markdown_github/IntersectPeaks-2.png)
+![](7_PeakFinder_files/figure-markdown_github/IntersectPeaks-1.png)![](7_PeakFinder_files/figure-markdown_github/IntersectPeaks-2.png)

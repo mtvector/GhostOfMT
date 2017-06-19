@@ -34,7 +34,11 @@ for p in packageList.keys():
 import os
 import numpy as np
 import pandas
+import math
 import networkx as nx
+import matplotlib
+matplotlib.use('TkAgg')
+#matplotlib.use('WxAgg')
 import matplotlib.pyplot as plt
 import re
 from matplotlib.backends.backend_pdf import PdfPages
@@ -42,6 +46,8 @@ import colorsys
 import sys
 import colour
 import csv
+import warnings
+warnings.filterwarnings("ignore")
 
 spaths = sys.argv[1:]
 #spaths = [os.path.expanduser("~/Desktop/Tracking/TestImg_ContinueFile.csv")]
@@ -113,6 +119,7 @@ def loadNets(trainset,radius):
     remov = trainset.loc[:,'divs'] > -2
     trainset=trainset.fillna(0)
     trainset = trainset.loc[remov,:]
+    print trainset
     for i in range(trainset.shape[0]):
         ref.add_node(i,dict(trainset.loc[trainset.index[i],:]))
         if(i>0):
@@ -135,6 +142,7 @@ def loadNets(trainset,radius):
 channelnames=[]
 nets=[]
 for s in spaths:
+    print s
     s = os.path.expanduser(s)
     csvfile = open(s, 'rU')
     reader = csv.reader(csvfile, delimiter=',')
@@ -189,7 +197,7 @@ channelOrder=[int(re.sub("ch|Mean","", y)) for y in DFch]
 
 
 outDir=os.path.join(os.path.dirname(os.path.realpath(srcpath)),'')
-rgb = [colorsys.hsv_to_rgb(i ,1.,1.) for i in np.array(nx.get_node_attributes(ref,'divs').values())/ (float(max(nx.get_node_attributes(ref,'divs').values()))*1.3)]
+rgb = [colorsys.hsv_to_rgb(i ,1.,1.) for i in (np.array(nx.get_node_attributes(ref,'divs').values())+1)/ (float(max(nx.get_node_attributes(ref,'divs').values()))*1.3)]
 rgbregress = [colorsys.hsv_to_rgb(i ,1.,1.) for i in np.array(regressDF.loc[:,'divs'])/ (float(max(regressDF.loc[:,'divs']))*1.3)]
 nx.write_gml(ref, os.path.expanduser(outDir+fn+'.gml'))
 nx.drawing.nx_pydot.write_dot(ref,os.path.expanduser(outDir+fn+'.dot'))
@@ -202,7 +210,8 @@ def graphviz_fixy(ref,yvals, prog='dot'):
     for x in pos:
         pos[x]=(pos[x][0],posy[x])
     return pos
-    
+
+
 
 pp=PdfPages(os.path.expanduser(outDir+fn+'analysis.pdf'))
 for i in range(len(channelOrder)):
@@ -212,7 +221,7 @@ for i in range(len(channelOrder)):
     pp.savefig()
     plt.close()
     positions={x : np.array([ref.node[x]['t'], ref.node[x][DFch[i]]]) for x in ref.nodes()}
-    nx.draw_networkx(ref,pos=positions, node_size =15,edge_color='black',linewidths= .1, width = .1,node_color = rgb, with_labels=False)
+    nx.draw_networkx(ref,pos=positions, node_size =14,edge_color='black',linewidths= .1, width = .1,node_color = rgb, with_labels=False)
     plt.xlabel('time')
     plt.ylabel(channelnames[channelOrder[i]-1]+'fluorescence')    
     pp.savefig()
@@ -228,12 +237,22 @@ for i in range(len(channelOrder)):
     fluors = nx.get_node_attributes(ref,DFch[i]).values()
     maxFluors=int(max(fluors))
     minFluors=int(min(fluors))
-    colors = list(black.range_to(colour.Color("red"), maxFluors-minFluors ))
+    colors = list(black.range_to(colour.Color("red"), maxFluors-minFluors+1 ))
     pos= graphviz_fixy(ref,yvals=[ref.node[x]['t'] for x in ref.nodes()])
-    ax=plt.yticks(range(int(min([ref.node[x]['t'] for x in ref.nodes()])), int(max([ref.node[x]['t'] for x in ref.nodes()]))))    
-    nx.draw(ref, pos, with_labels=False,node_size =15,edge_color='black',linewidths= .1, width = .1,node_color=[colors[c-minFluors-1].get_rgb() for c in [int(x)for x in fluors]]  )  
-    plt.ylabel("Frame")  
+    #ax=plt.yticks(range(int(min([ref.node[x]['t'] for x in ref.nodes()])), int(max([ref.node[x]['t'] for x in ref.nodes()]))))    
+    nx.draw(ref, pos, with_labels=False,node_size =14,edge_color='black',linewidths= .15, width = .15,node_color=[colors[c-minFluors].get_rgb() for c in [int(x)for x in fluors]]  )  
     pp.savefig()
+    plt.title(channelnames[channelOrder[i]-1]+'log2 fluorescence')
+    black = colour.Color("black")
+    fluors=[math.log(x+1,2) for x in nx.get_node_attributes(ref,DFch[i]).values()]
+    maxFluors=int(max(fluors))
+    minFluors=int(min(fluors))
+    colors = list(black.range_to(colour.Color("red"), maxFluors-minFluors+1 ))
+    pos= graphviz_fixy(ref,yvals=[ref.node[x]['t'] for x in ref.nodes()])
+    #ax=plt.yticks(range(int(min([ref.node[x]['t'] for x in ref.nodes()])), int(max([ref.node[x]['t'] for x in ref.nodes()]))))    
+    nx.draw(ref, pos, with_labels=False,node_size =14,edge_color='black',linewidths= .15, width = .15,node_color=[colors[c-minFluors].get_rgb() for c in [int(x)for x in fluors]]  )  
+    pp.savefig()    
+    
     plt.close()    
 
 plt.scatter(outDF.loc[:,'t'] ,outDF.loc[:,'divs'],c=rgb)
