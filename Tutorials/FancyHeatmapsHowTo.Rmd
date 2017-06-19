@@ -34,7 +34,6 @@ library(ggplot2)
 library(reshape2)
 ```
 
-
 So, now we have the data we need:
 
 ```{r ShowData,warning=F,message=F}
@@ -46,8 +45,7 @@ print("Neural List:")
 head(neuralList)
 ```
 
-The first thing we're going to do is see how the mouse samples correlate with the human data. Because we're looking at two different species it is best practice to include only those genes which are actually orthologs
-
+The first thing we're going to do is see how the mouse samples correlate with the human data. Because we're looking at two different species it is best practice to include only those genes which are actually orthologs. For simplicity's sake though, we're going to assume that the same gene name in mouse and human means that they are the homologs we should be comparing (this is true for for most cases)
 
 
 ```{r CorCompareExample}
@@ -82,6 +80,8 @@ cor.compare <- function(x,y,min=0, varX=NULL ,interest.set =NULL, ...){
 ```
 
 
+
+
 ```{r CorCompareCode}
 cor.compare <- function(x,y,min=0, varX=NULL ,interest.set =NULL, ...){
   d <- rn.compare(x,y)
@@ -101,5 +101,7 @@ cor.compare <- function(x,y,min=0, varX=NULL ,interest.set =NULL, ...){
   return(cor(as.matrix(x[i,]),as.matrix(y[i,]), ...))
 }
 ```
+
+
 
 

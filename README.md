@@ -1,6 +1,8 @@
 # GhostOfMT
 **A set of tools for biologists who sequence RNA**
 
+To get started, make a folder called code in your home directory (~ on the command line, or on a mac click on finder, on the top bar select the go menu and the go to home), then download or clone this repository inside. 
+
 #### Includes:
 
 * Tutorials
