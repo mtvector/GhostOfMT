@@ -26,6 +26,7 @@ library(RColorBrewer)
 library(gplots)
 library(ggplot2)
 library(reshape2)
+library(ggrepel)
 library(matrixStats)
 ```
 
@@ -174,3 +175,131 @@ heatmap.2(correlationMatrix,trace="none", Rowv = F,Colv = F, col=cols)
 ![](4_FancyHeatmapsHowTo_files/figure-markdown_github/CorCompareExample-1.png)
 
 This is the same as from the BasicRNAseq tutorial. Now we're going to take it to the next level.
+
+### Scaled Box Heatmap
+
+So the normal heatmap is really useful for looking at which samples are most similar according to correlations, but when you're looking at samples which are ordered in time, the sampling density is not shown visually. We can remedy this by changing the size of the boxes in the heatmap to reflect the distance between a timepoint and the previous and next time point.
+
+You can do it by calling this function. It works by calculating how big each block should be in the x and y direction. For instance, the width of a block in the x direction at block n is half the distance between point n and n-1, plus half the distance between point n and n+1.
+
+``` r
+scaleBoxHM <- function(x,y,tpx,tpy,n1,n2,g_list=rownames(x),min = 0, method = "spearman",overlayX=NULL,overlayY=NULL,overlayLabels=NULL,diagonal=T){
+  in.interval <- function(x, interval){
+    stopifnot(length(interval) == 2L)
+    interval[1] <= x & x <= interval[2]
+    }
+
+  o.tpx <- tpx
+  o.tpy <- tpy
+  namex= n1
+  namey=n2
+  ### FOR SCALED BOXES
+  #get the correlation matrix
+  #Calculate what the width of the tiles should be
+  blocksize.vector.x <- diff(tpx)*(1/max(tpx))
+  blocksize.vector.x <- c(blocksize.vector.x[1],blocksize.vector.x,blocksize.vector.x[length(blocksize.vector.x)])
+  b.v.x <- sapply(2:length(blocksize.vector.x),function(i) blocksize.vector.x[i-1]/2 + blocksize.vector.x[i]/2 )
+  blocksize.vector.y <- diff(tpy)*(1/max(tpy))
+  blocksize.vector.y <- c(blocksize.vector.y[1],blocksize.vector.y,blocksize.vector.y[length(blocksize.vector.y)])
+  b.v.y <- sapply(2:length(blocksize.vector.y),function(i) blocksize.vector.y[i-1]/2 + blocksize.vector.y[i]/2 )
+  
+  b.v.x <- b.v.x * (max(tpx)*sum(b.v.x)/sum(b.v.x))
+  b.v.y <- b.v.y * (max(tpy)*sum(b.v.y)/sum(b.v.y))
+  #Figure out where to center the tiles
+  tpx.adj <- tpx
+  tpy.adj <- tpy
+  tpx.n <<- tpx.adj
+  tpx.adj[2:(length(tpx.adj))] <- as.vector(sapply(2:(length(tpx.adj)),function(i){
+    q <- tpx.n[i-1]+ .5*b.v.x[i-1] + .5*b.v.x[i]
+    tpx.n[i] <<- q
+    q
+  } ))
+  tpy.n <<- tpy.adj
+  tpy.adj[2:(length(tpy.adj))] <- as.vector(sapply(2:(length(tpy.adj)),function(i){
+    q <- tpy.n[i-1]+ .5*b.v.y[i-1] + .5*b.v.y[i]
+    tpy.n[i] <<- q
+    q
+  } ))
+  #make list of tile sizes for matrix
+  widths=as.vector(t(sapply(b.v.x, function (x) rep(x,length(tpy)))))
+  heights=as.vector(sapply(b.v.y, function (x) rep(x,length(tpx))))
+  
+  cc=cor.compare(x, y,min=min,interest.set = g_list,method=method)
+  rownames(cc) <- tpx.adj
+  colnames(cc) <- tpy.adj
+  d <- melt(cc)
+  #no overlay
+  if(is.null(overlayX)|is.null(overlayX)){
+    g3=ggplot(d, aes(Var1, Var2)) + 
+      geom_tile(aes(Var1, Var2,fill = value,width=widths,height = heights)) + 
+      coord_fixed(ratio=1)+
+      scale_fill_gradientn(colors = cols,guide = "colourbar",name="Correlation")+
+      scale_x_continuous()+
+      scale_y_continuous()+
+      theme_bw(base_size = 6)+
+      labs(x = paste0(namex,"Day"), y = paste0(namey,"Day"), 
+           title = paste(namex,namey,method," Correlation"))
+    g3
+  }
+  else{
+    overlayMat <- as.data.frame(cbind("label"=overlayLabels,"x"=overlayX,"y"=overlayY))
+    overlayMat <- overlayMat[which(in.interval(overlayMat$x,range(as.numeric(tpx))) & in.interval(overlayMat$y,range(as.numeric(tpy)))),]
+    dl <- NULL
+    if(diagonal)dl <-geom_abline(intercept=0,slope=1,lty=2)
+    g3=ggplot(d, aes(Var1, Var2)) + 
+      geom_tile(aes(Var1, Var2,fill = value,width=widths,height = heights)) + 
+      coord_fixed(ratio=1)+
+      scale_fill_gradientn(colors = cols,guide = "colourbar",name="Correlation")+
+      geom_point(data = overlayMat,aes(x,y,label=label))+
+      geom_text_repel(data = overlayMat,aes(x,y,label=label),segment.size = 0.000001, 
+                      segment.color = NA,size=3,nudge_y = 1.6, box.padding = unit(0.02,"lines"))+
+      geom_line(data =overlayMat,aes(x,y))+
+      dl+
+      scale_x_continuous()+
+      scale_y_continuous()+
+      theme_bw(base_size = 6)+
+      labs(x = paste0(namex,"Day"), y = paste0(namey,"Day"), 
+           title = paste(namex,namey,method," Correlation"))
+    g3
+ 
+    }
+}
+```
+
+Now we can call this function on the data we have:
+
+``` r
+scaleBoxHM(hTPMs,mTPMs,tpsH,tpsM,"Human","Mouse",min = 1, method = "spearman")
+```
+
+    ## [1] "Num Genes:"
+    ## [1] 17355
+
+![](4_FancyHeatmapsHowTo_files/figure-markdown_github/ScaleBoxOutput-1.png)
+
+Now, the cool thing about scaling the heatmap boxes, is the x and y axes are normal. This means you can overlay a scatterplot onto the top of the heatmap and it will be meaningful!
+
+``` r
+carnegieEquivalents <- read.table("~/code/GhostOfMT/Data/MtoH_carnegie_equivalents.txt",header = T)
+#Adjust the carnegie stages so that the approx embryonic day for our cells is differentiation day 0
+carne.adj <- carnegieEquivalents
+carne.adj$human <- carnegieEquivalents$human-15
+carne.adj$mouse <- carnegieEquivalents$mouse-6.5
+plot(carnegieEquivalents$human,carnegieEquivalents$mouse, main= "Carnegie Stage Equivalents")
+```
+
+![](4_FancyHeatmapsHowTo_files/figure-markdown_github/carnegieEquivalents-1.png)
+
+Now lets overlay this plot onto the heatmap we had!
+
+``` r
+scaleBoxHM(hTPMs,mTPMs,tpsH,tpsM,"Human","Mouse",min = 1, method = "spearman",
+           overlayX = carne.adj$human,overlayY=carne.adj$mouse,overlayLabels=carne.adj$CarnegieStage,diagonal = F)
+```
+
+    ## [1] "Num Genes:"
+    ## [1] 17355
+
+![](4_FancyHeatmapsHowTo_files/figure-markdown_github/ScaleBoxOverlayOutput-1.png)
+
+The overlay variables should all be vectors of the same lenghth. Diagonal

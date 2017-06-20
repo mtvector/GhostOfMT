@@ -23,7 +23,7 @@ The first step is to click in the center of the nucleus of a cell. For the first
 
 You will track the other daughter cell by going back to the frame before the cell divided, and clicking at the center of the dot you clicked before. Enter the same division number you entered before (# shown in the dot).
 
-### Secret Codes
+### Secret Codes (When entering number of divisions)
 
 **999** If you accidentally click on the image DON'T PRESS CANCEL. It will exit out everything. Instead enter **999** and hit okay and it will return
 
@@ -37,18 +37,18 @@ You will track the other daughter cell by going back to the frame before the cel
 
 ### Things to know
 
-Everything should save as you go along. To exit, just click on the image and hit cancel. Or exit the image window and don't save the open image (it can be reconstructed each time with the data from the continuefile and the trackingfile). It might take a little bit for the tracking data to appear in the file. Often it helps to hit run on the ManTrack script, then cancel out (something about ImageJ not finalizing the trackingfile until all ties to the previous run are broken).
+Everything should save as you go along. To exit, just click on the image as if tracking a cell and hit cancel. Or exit the image window and don't save the open image (it can be reconstructed each time with the data from the continuefile and the trackingfile). It might take a little bit for the tracking data to appear in the file. Often it helps to hit run on the ManTrack script, then cancel out (something about ImageJ not finalizing the trackingfile until all ties to the previous run are broken).
 
 It is best to do something to normalized the fluorescence in the channels. It seems the BioCT can do this for you when you output your files, however the RemoveBackgrounds.py ImageJ script can help you do this as well. There is also an imageJ function called Subtract Background that can help with this. If the fluorescence looks skewed across the image, your data will include this bias unless you do something to correct it!
 
 ### Limitations
 
-This program is really dumb. It creates the lineages by detecting that two clicks on the same frame are within the diameter you entered, and merging them in processing. Also it's very hard to synchronize observations when the cell divisions are not synchronize unless you are clicking in observations on every frame. 
+This program is really dumb. It creates the lineages by detecting that two clicks on the same frame are within the diameter you entered, and merging them in processing. Also it's very hard to synchronize observations when the cell divisions are not synchronize unless you are clicking in observations on every frame. Lastly, beware of how time is being counted. For the analysis here, I use the frame as the time value. If your sampling is nonuniform, or you remove frames that had condensation, there will be jumps in the actual time that won't be accounted for.
 
 
 # Generate Results
 
-Before you run the results you'll want to make sure you have a number of python packages installed. Sorry, there's a lot of installing to do for this... To do this you will use pip, the python package manager. Open your terminal app (on macs it is inside the utilities folder in the applications folder) and enter (on mac):
+Before you run the results you'll want to make sure you have a number of python packages installed. Sorry, there's a lot of installing to do for this... To do this you will use pip, the python package manager. Open your terminal app (on a mac it is inside the utilities folder in the applications folder) and enter (on mac):
 
 sudo easy_install pip 
 

@@ -32,6 +32,7 @@ library(RColorBrewer)
 library(gplots)
 library(ggplot2)
 library(reshape2)
+library(ggrepel)
 library(matrixStats)
 ```
 
@@ -93,5 +94,223 @@ heatmap.2(correlationMatrix,trace="none", Rowv = F,Colv = F, col=cols)
 
 This is the same as from the BasicRNAseq tutorial. Now we're going to take it to the next level.
 
+
+### Scaled Box Heatmap
+
+This style of heatmap, and the following one was used in our 2017 "Species-specific developmental timing is maintained by pluripotent stem cells ex utero" paper.
+
+So the normal heatmap is really useful for looking at which samples are most similar according to correlations, but when you're looking at samples which are ordered in time, the sampling density is not shown visually. We can remedy this by changing the size of the boxes in the heatmap to reflect the distance between a timepoint and the previous and next time point.
+
+You can do it by calling this function. It works by calculating how big each block should be in the x and y direction. For instance, the width of a block in the x direction at block n is half the distance between point n and n-1, plus half the distance between point n and n+1.
+
+```{r scaleBoxHM,warning=F,message=F}
+
+scaleBoxHM <- function(x,y,tpx,tpy,n1,n2,g_list=rownames(x),min = 0, method = "spearman",overlayX=NULL,overlayY=NULL,overlayLabels=NULL,diagonal=T){
+  in.interval <- function(x, interval){
+    stopifnot(length(interval) == 2L)
+    interval[1] <= x & x <= interval[2]
+    }
+
+  o.tpx <- tpx
+  o.tpy <- tpy
+  namex= n1
+  namey=n2
+  ### FOR SCALED BOXES
+  #get the correlation matrix
+  #Calculate what the width of the tiles should be
+  blocksize.vector.x <- diff(tpx)*(1/max(tpx))
+  blocksize.vector.x <- c(blocksize.vector.x[1],blocksize.vector.x,blocksize.vector.x[length(blocksize.vector.x)])
+  b.v.x <- sapply(2:length(blocksize.vector.x),function(i) blocksize.vector.x[i-1]/2 + blocksize.vector.x[i]/2 )
+  blocksize.vector.y <- diff(tpy)*(1/max(tpy))
+  blocksize.vector.y <- c(blocksize.vector.y[1],blocksize.vector.y,blocksize.vector.y[length(blocksize.vector.y)])
+  b.v.y <- sapply(2:length(blocksize.vector.y),function(i) blocksize.vector.y[i-1]/2 + blocksize.vector.y[i]/2 )
+  
+  b.v.x <- b.v.x * (max(tpx)*sum(b.v.x)/sum(b.v.x))
+  b.v.y <- b.v.y * (max(tpy)*sum(b.v.y)/sum(b.v.y))
+  #Figure out where to center the tiles
+  tpx.adj <- tpx
+  tpy.adj <- tpy
+  tpx.n <<- tpx.adj
+  tpx.adj[2:(length(tpx.adj))] <- as.vector(sapply(2:(length(tpx.adj)),function(i){
+    q <- tpx.n[i-1]+ .5*b.v.x[i-1] + .5*b.v.x[i]
+    tpx.n[i] <<- q
+    q
+  } ))
+  tpy.n <<- tpy.adj
+  tpy.adj[2:(length(tpy.adj))] <- as.vector(sapply(2:(length(tpy.adj)),function(i){
+    q <- tpy.n[i-1]+ .5*b.v.y[i-1] + .5*b.v.y[i]
+    tpy.n[i] <<- q
+    q
+  } ))
+  #make list of tile sizes for matrix
+  widths=as.vector(t(sapply(b.v.x, function (x) rep(x,length(tpy)))))
+  heights=as.vector(sapply(b.v.y, function (x) rep(x,length(tpx))))
+  
+  cc=cor.compare(x, y,min=min,interest.set = g_list,method=method)
+  rownames(cc) <- tpx.adj
+  colnames(cc) <- tpy.adj
+  d <- melt(cc)
+  #no overlay
+  if(is.null(overlayX)|is.null(overlayX)){
+    g3=ggplot(d, aes(Var1, Var2)) + 
+      geom_tile(aes(Var1, Var2,fill = value,width=widths,height = heights)) + 
+      coord_fixed(ratio=1)+
+      scale_fill_gradientn(colors = cols,guide = "colourbar",name="Correlation")+
+      scale_x_continuous()+
+      scale_y_continuous()+
+      theme_bw(base_size = 6)+
+      labs(x = paste0(namex,"Day"), y = paste0(namey,"Day"), 
+           title = paste(namex,namey,method," Correlation"))
+    g3
+  }
+  else{
+    overlayMat <- as.data.frame(cbind("label"=overlayLabels,"x"=overlayX,"y"=overlayY))
+    overlayMat <- overlayMat[which(in.interval(overlayMat$x,range(as.numeric(tpx))) & in.interval(overlayMat$y,range(as.numeric(tpy)))),]
+    dl <- NULL
+    if(diagonal)dl <-geom_abline(intercept=0,slope=1,lty=2)
+    g3=ggplot(d, aes(Var1, Var2)) + 
+      geom_tile(aes(Var1, Var2,fill = value,width=widths,height = heights)) + 
+      coord_fixed(ratio=1)+
+      scale_fill_gradientn(colors = cols,guide = "colourbar",name="Correlation")+
+      geom_point(data = overlayMat,aes(x,y,label=label))+
+      geom_text_repel(data = overlayMat,aes(x,y,label=label),segment.size = 0.000001, 
+                      segment.color = NA,size=3,nudge_y = 1.6, box.padding = unit(0.02,"lines"))+
+      geom_line(data =overlayMat,aes(x,y))+
+      dl+
+      scale_x_continuous()+
+      scale_y_continuous()+
+      theme_bw(base_size = 6)+
+      labs(x = paste0(namex,"Day"), y = paste0(namey,"Day"), 
+           title = paste(namex,namey,method," Correlation"))
+    g3
+ 
+  }
+  ggsave(filename = paste0("~/Desktop/ScaledBoxHeatmap",n1,n2,".pdf" ),plot=g,width = 30,height = 30)
+}
+```
+
+Now we can call this function on the data we have:
+
+```{r ScaleBoxOutput,warning=F,message=F}
+scaleBoxHM(hTPMs,mTPMs,tpsH,tpsM,"Human","Mouse",min = 1, method = "spearman")
+```
+
+Now, the cool thing about scaling the heatmap boxes, is the x and y axes are normal. This means you can overlay a scatterplot onto the top of the heatmap and it will be meaningful!
+
+```{r carnegieEquivalents,warning=F,message=F}
+
+carnegieEquivalents <- read.table("~/code/GhostOfMT/Data/MtoH_carnegie_equivalents.txt",header = T)
+#Adjust the carnegie stages so that the approx embryonic day for our cells is differentiation day 0
+carne.adj <- carnegieEquivalents
+carne.adj$human <- carnegieEquivalents$human-15
+carne.adj$mouse <- carnegieEquivalents$mouse-6.5
+plot(carnegieEquivalents$human,carnegieEquivalents$mouse, main= "Carnegie Stage Equivalents")
+
+```
+
+Now lets overlay this plot onto the heatmap we had!
+
+```{r ScaleBoxOverlayOutput,warning=F,message=F}
+scaleBoxHM(hTPMs,mTPMs,tpsH,tpsM,"Human","Mouse",min = 1, method = "spearman",
+           overlayX = carne.adj$human,overlayY=carne.adj$mouse,overlayLabels=carne.adj$CarnegieStage,diagonal = T)
+```
+
+The overlay variables should all be vectors of the same lenghth. Diagonal is a boolean signifying whether or not you want to include the diagonal reference line.
+
+
+### Alternating Color Expression Heatmaps
+
+These heatmaps are used to compare expression of a small number of genes over time. This is a hack, displaying a different color scheme between 0-1 and 1-2 (You artificially transform the expression values into these ranges).
+
+
+```{r TwoColorHM,warning=F,message=F}
+sortneurallist <- toupper(as.character(read.csv("~/code/data/cb/markers/OrderNeuralGeneList.csv",header = F)[,1]))
+
+
+mz= lapply(sortneurallist, function(gn){
+  if(gn %in% rownames(x)& gn%in% rownames(y)){
+    xi = zoo(x[gn,], tpx)
+    yi = zoo(y[gn,], tpy)
+    xi=merge(xi,zoo(NA, tpx))[,1]
+    yi=merge(yi,zoo(NA, tpy))[,1]
+    a=na.approx(merge(xi,yi))
+  }
+})
+
+mz=mz[!sapply(mz, is.null)] 
+#mz= mz[order(sapply(mz,function(x) which(rescale(x[,1]) > .8 )[1]))]
+mzn <- sortneurallist
+
+mz=Reduce(merge.zoo, mz )
+colnames(mz) <- paste0(c("mm","hs") ,rep(mzn,1,each=2))
+mz=apply(mz,2,rescale)
+#mz=sweep(mz,MARGIN = 2,colMaxs(mz,na.rm = T),FUN = "/")
+
+mz <- cbind("scale mm"=c(seq(0,1,length.out = 11), rep(NA,nrow(mz)-11 )),mz)
+mz <- cbind("scale hs"=c(seq(0,1,length.out = 11), rep(NA,nrow(mz)-11 )),mz)
+
+### FOR SCALED BOXES
+#get the correlation matrix
+#Calculate what the width of the tiles should be
+blocksize.vector.x <- diff(tpx)*(1/max(tpx))
+blocksize.vector.x <- c(blocksize.vector.x[1],blocksize.vector.x,blocksize.vector.x[length(blocksize.vector.x)])
+b.v.x <- sapply(2:length(blocksize.vector.x),function(i) blocksize.vector.x[i-1]/2 + blocksize.vector.x[i]/2 )
+blocksize.vector.y <- diff(tpy)*(1/max(tpy))
+blocksize.vector.y <- c(blocksize.vector.y[1],blocksize.vector.y,blocksize.vector.y[length(blocksize.vector.y)])
+b.v.y <- sapply(2:length(blocksize.vector.y),function(i) blocksize.vector.y[i-1]/2 + blocksize.vector.y[i]/2 )
+
+b.v.x <- b.v.x * (max(tpx)*sum(b.v.x)/sum(b.v.x))
+b.v.y <- b.v.y * (max(tpy)*sum(b.v.y)/sum(b.v.y))
+
+tpx.adj <- tpx
+tpy.adj <- tpy
+tpx.n <<- tpx.adj
+tpx.adj[2:(length(tpx.adj))] <- as.vector(sapply(2:(length(tpx.adj)),function(i){
+  q <- tpx.n[i-1]+ .5*b.v.x[i-1] + .5*b.v.x[i]
+  tpx.n[i] <<- q
+  q
+} ))
+tpy.n <<- tpy.adj
+tpy.adj[2:(length(tpy.adj))] <- as.vector(sapply(2:(length(tpy.adj)),function(i){
+  q <- tpy.n[i-1]+ .5*b.v.y[i-1] + .5*b.v.y[i]
+  tpy.n[i] <<- q
+  q
+} ))
+
+rownames(mz) <- tpy.adj
+
+for(i in seq(ncol(mz)-2,1,by = -2)){
+  df <- data.frame(rep(NA,nrow(mz)))
+  colnames(df) <- paste0(rep(" ",i),collapse = "")
+  mz <- cbind(mz[,1:i], df , mz[,(i+1):ncol(mz)] )
+}
+
+a = melt(as.matrix(mz),na.rm = F)
+#a=a[nrow(a):1,]
+a=cbind(a, "group"=as.integer(grepl("mm",a$Var2)))
+#a$Var1 <- as.factor(a$Var1)
+a$Var2 <- factor(a$Var2, levels=a$Var2[order(a$Var2,decreasing = T)],exclude = NULL)
+a$rescaleoffset <- a$value + 100*(a$group)
+
+scalerange <- range(a$value,na.rm = T)
+gradientends <- scalerange + rep(c(0,100), each=2)
+colorends <- c( "black", "yellow", "black", "yellow")
+
+g=ggplot(a, aes(Var1, Var2)) + 
+  ggtitle(paste(n1, "vs", n2,"\n( TPM)"))+
+  geom_tile(aes(x = Var1,fill = rescaleoffset,width=rep(b.v.y,nrow(a)/max(length(tpy),length(tpx)) ))) + 
+  scale_fill_gradientn(colours = colorends, values = rescale(gradientends),na.value = "grey55",guide = "legend",name="Expression",breaks=c(0,1,100,101),labels=c("mm 0%", "hs 100%", "mm 0%","mm 100%")) + 
+  #scale_x_discrete("Days", expand = c(0.05, .05)) + 
+  scale_y_discrete("Gene", expand = c(.05, .05)) +
+  theme_bw(base_size = 9) +  
+  theme(legend.position = "right",
+        panel.background = element_rect(fill = "grey55", size = 2),
+        axis.ticks.y = element_blank(),
+        panel.grid.major = element_blank(),
+        #panel.grid.major.y = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.text.x = element_text(angle = 330, hjust = 0))
+g
+```
 
 

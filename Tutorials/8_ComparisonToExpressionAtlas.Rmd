@@ -1,0 +1,97 @@
+--- 
+author: "MTSchmitz"
+output: github_document 
+--- 
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Fancy Heatmaps
+
+###How to make Scaled Box, Alternating Color Scheme, and Overlay heatmaps
+Instead of continuing to copy and paste the same data loading, we can write the code to load the TPMs and the NeuralList for the mouse and human data (from PlottingFavoriteGenesInTS) in a separate R script and load it in a single line.
+
+```{r SourceFile}
+#As always, make sure the path is correct on your computer
+source("~/code/GhostOfMT/Tutorials/LoadData.R")
+``` 
+
+Load the packages we need:
+
+```{r LoadPackages,warning=F,message=F}
+
+#load the packages you'll need:
+#for normalizing
+library(EBSeq)
+#for changing view layout
+library(rafalib)
+#for the color palette
+library(RColorBrewer)
+#for fancy plots
+library(gplots)
+library(ggplot2)
+library(reshape2)
+library(matrixStats)
+```
+
+So, now we have the data we need:
+
+```{r ShowData,warning=F,message=F}
+print("Mouse Data")
+head(mTPMs)
+print("Human data:")
+head(hTPMs)
+print("Neural List:")
+head(neuralList)
+```
+
+The first thing we're going to do is see how the mouse samples correlate with the human data. Because we're looking at two different species it is best practice to include only those genes which are actually orthologs. For simplicity's sake though, we're going to assume that the same gene name in mouse and human means that they are the homologs we should be comparing (this is true for for most cases). The
+
+
+```{r CorFunctions}
+#Take two matrices, return two matrices with matching rownames
+rn.compare <- function(x,y,fill=0){
+  rn <- as.character(intersect(rownames(x),rownames(y)))
+  zerosx <- setdiff(rownames(x),rownames(y))
+  zerosy <- setdiff(rownames(y),rownames(x))
+  zx <- matrix(fill, nrow=length(zerosx), ncol =ncol(y), dimnames = list(zerosx,NULL))
+  zy <- matrix(fill, nrow=length(zerosy), ncol =ncol(x), dimnames = list(zerosy,NULL))
+  nx <- rbind(x,zy)
+  ny <- rbind(y,zx)
+  return(list(nx[rownames(ny),],ny[rownames(nx),]))
+}
+#Take two matrices, and get the correlations between the columns of all the samples between the two
+cor.compare <- function(x,y,min=0, varX=NULL ,interest.set =NULL, ...){
+  d <- rn.compare(x,y)
+  x <- d[[1]]
+  y <- d[[2]]
+  i = intersect(rownames(x), rownames(y))
+  i = i[rowMaxs(x[i,],na.rm = T)>=min | rowMaxs(y[i,],na.rm = )>=min]
+  if(!is.null(interest.set)){
+    i = interest.set[interest.set%in%i]
+  }
+  if(!is.null(varX)){
+    i = i[order(rowMeans(cbind(rowSds(x[i,]), rowSds(y[i,]))),decreasing = T)]
+    i = i[1:ifelse(varX>length(i),length(i),varX)]
+  }
+  print("Num Genes:")
+  print(length(i))
+  return(cor(as.matrix(x[i,]),as.matrix(y[i,]), ...))
+}
+```
+
+With these functions, you're ready to compare datasets!
+
+### Basic Heatmap
+
+```{r CorCompareExample,warning=F,message=F}
+cols <-  colorRampPalette(rev(brewer.pal(11,"RdBu")))(50)
+correlationMatrix <- cor.compare(hTPMs, mTPMs, method="spearman" )
+heatmap.2(correlationMatrix,trace="none", Rowv = F,Colv = F, col=cols)
+```
+
+This is the same as from the BasicRNAseq tutorial. Now we're going to take it to the next level.
+
+
+
