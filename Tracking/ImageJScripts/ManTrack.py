@@ -15,39 +15,15 @@ from ij.gui import Toolbar
 from ij import WindowManager
 import ij.gui.OvalRoi as OvalRoi
 import ij.gui.TextRoi as TextRoi
-import shutil
-import os
 import re
 from ij import IJ
 from ij.io import Opener
 from ij.plugin import Concatenator
 from jarray import array
 import ij.gui.GenericDialog as GenericDialog 
-import subprocess
 import java.awt.Font as Font
 import java.awt.Color as Color
-import java.lang.Runtime as Runtime
-import java.io.InputStreamReader
-import java.io.BufferedReader
 import ij.plugin.Duplicator as dup
-'''
-o=Opener()
-o.setSilentMode(True)
-imp =o.openUsingBioFormats('/Volumes/shared/chris/BioCT/For ImageJ Tutorial 2017/TestPax6GFPShort.tif')
-imp.setOpenAsHyperStack(True)
-
-imp.show()
-
-imp1=imp=IJ.openImage('/Volumes/shared/chris/BioCT/For ImageJ Tutorial 2017/TestPax6GFPShort.tif')
-imp1.setOpenAsHyperStack(True)
-imp1=HSC.toHyperStack(imp1,1,1,50)
-imp1.show()
-print imp
-print imp1
-
-sadfjlk
-'''
-
 
 def setColor(color):
     IJ.run('Colors...', 'foreground=255')
@@ -180,11 +156,6 @@ for p in imPaths:
 		imp=IJ.openImage(p)
 		imp.setOpenAsHyperStack(True)
 		imps.append(HSC.toHyperStack(imp,1,1,imp.getNSlices()))
-		#o=Opener()
-		#o.setSilentMode(True)
-		#imp =o.openUsingBioFormats(p)
-		#imp.setOpenAsHyperStack(True)
-		#imps.append(imp)
 	elif chosen=="DIR":
 		print p
 		imps.append(importDirAsStack(p))
