@@ -8,6 +8,7 @@ from ij.process import ImageProcessor as IP
 import ij
 import csv
 import os
+import ij.plugin.HyperStackConverter
 from time import sleep
 import sys
 from ij.gui import Toolbar
@@ -157,11 +158,19 @@ print imPaths
 for p in imPaths:
 	if chosen=="TIFF":
 		print p
-		imps.append(IJ.open(p))
+		#imp=IJ.openImage(p)
+		#imp.setOpenAsHyperStack(True)
+		#imps.append(imp)
+		o=Opener()
+		o.setSilentMode(True)
+		imp =o.openUsingBioFormats(p)
+		imp.setOpenAsHyperStack(True)
+		imps.append(imp)
 	elif chosen=="DIR":
 		print p
 		imps.append(importDirAsStack(p))
 				
+print imps
 
 if continuing =="GenerateResults":
 	print "run results script"

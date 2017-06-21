@@ -3,6 +3,7 @@
 from ij import IJ, ImagePlus
 import os
 import ij.gui.GenericDialog as GenericDialog 
+from ij.io import Opener
 
 #This is how to make a dialog to control the if, else based on structure of input
 gd = GenericDialog("What type of image")
@@ -18,7 +19,10 @@ if(chosen=="TIFF"):
 	imPath = IJ.getFilePath("Choose and Image")
 	print(imPath)
 	if(imPath!= None):
-		imp=IJ.open(imPath)
+		o=Opener()
+		o.setSilentMode(True)
+		imp =o.openUsingBioFormats(imPath)
+		imp.setOpenAsHyperStack(True)
 		IJ.run(imp, "Subtract Background...", "rolling=100 disable")
 		IJ.saveAs(imp, "TIFF", imPath.split(".")[0]+"SubBack")
 else:
