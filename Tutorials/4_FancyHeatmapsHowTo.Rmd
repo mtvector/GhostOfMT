@@ -185,7 +185,8 @@ scaleBoxHM <- function(x,y,tpx,tpy,n1,n2,g_list=rownames(x),min = 0, method = "s
     g3
  
   }
-  ggsave(filename = paste0("~/Desktop/ScaledBoxHeatmap",n1,n2,".pdf" ),plot=g,width = 30,height = 30)
+  ggsave(filename = paste0("~/Desktop/ScaledBoxHeatmap",n1,n2,".pdf" ),plot=g3,width = 30,height = 30)
+  g3
 }
 ```
 
@@ -222,10 +223,10 @@ The overlay variables should all be vectors of the same lenghth. Diagonal is a b
 
 These heatmaps are used to compare expression of a small number of genes over time. This is a hack, displaying a different color scheme between 0-1 and 1-2 (You artificially transform the expression values into these ranges).
 
-
 ```{r TwoColorHM,warning=F,message=F}
 sortneurallist <- toupper(as.character(read.csv("~/code/data/cb/markers/OrderNeuralGeneList.csv",header = F)[,1]))
 
+alternatingGeneHM <- function(x,y,z,tpx,tpy,tpz,speciesy="mm",speciesy="hs",speciesz="?",col1="yellow",col2="cyan",col3="red")
 
 mz= lapply(sortneurallist, function(gn){
   if(gn %in% rownames(x)& gn%in% rownames(y)){
@@ -242,7 +243,7 @@ mz=mz[!sapply(mz, is.null)]
 mzn <- sortneurallist
 
 mz=Reduce(merge.zoo, mz )
-colnames(mz) <- paste0(c("mm","hs") ,rep(mzn,1,each=2))
+colnames(mz) <- paste0(c() ,rep(mzn,1,each=2))
 mz=apply(mz,2,rescale)
 #mz=sweep(mz,MARGIN = 2,colMaxs(mz,na.rm = T),FUN = "/")
 
@@ -294,7 +295,7 @@ a$rescaleoffset <- a$value + 100*(a$group)
 
 scalerange <- range(a$value,na.rm = T)
 gradientends <- scalerange + rep(c(0,100), each=2)
-colorends <- c( "black", "yellow", "black", "yellow")
+colorends <- c( "black", col1, "black",col2)
 
 g=ggplot(a, aes(Var1, Var2)) + 
   ggtitle(paste(n1, "vs", n2,"\n( TPM)"))+
@@ -312,5 +313,6 @@ g=ggplot(a, aes(Var1, Var2)) +
         axis.text.x = element_text(angle = 330, hjust = 0))
 g
 ```
+
 
 

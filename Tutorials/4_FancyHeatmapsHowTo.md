@@ -178,6 +178,8 @@ This is the same as from the BasicRNAseq tutorial. Now we're going to take it to
 
 ### Scaled Box Heatmap
 
+This style of heatmap, and the following one was used in our 2017 "Species-specific developmental timing is maintained by pluripotent stem cells ex utero" paper.
+
 So the normal heatmap is really useful for looking at which samples are most similar according to correlations, but when you're looking at samples which are ordered in time, the sampling density is not shown visually. We can remedy this by changing the size of the boxes in the heatmap to reflect the distance between a timepoint and the previous and next time point.
 
 You can do it by calling this function. It works by calculating how big each block should be in the x and y direction. For instance, the width of a block in the x direction at block n is half the distance between point n and n-1, plus half the distance between point n and n+1.
@@ -262,7 +264,9 @@ scaleBoxHM <- function(x,y,tpx,tpy,n1,n2,g_list=rownames(x),min = 0, method = "s
            title = paste(namex,namey,method," Correlation"))
     g3
  
-    }
+  }
+  ggsave(filename = paste0("~/Desktop/ScaledBoxHeatmap",n1,n2,".pdf" ),plot=g3,width = 30,height = 30)
+  g3
 }
 ```
 
@@ -294,7 +298,7 @@ Now lets overlay this plot onto the heatmap we had!
 
 ``` r
 scaleBoxHM(hTPMs,mTPMs,tpsH,tpsM,"Human","Mouse",min = 1, method = "spearman",
-           overlayX = carne.adj$human,overlayY=carne.adj$mouse,overlayLabels=carne.adj$CarnegieStage,diagonal = F)
+           overlayX = carne.adj$human,overlayY=carne.adj$mouse,overlayLabels=carne.adj$CarnegieStage,diagonal = T)
 ```
 
     ## [1] "Num Genes:"
@@ -302,4 +306,8 @@ scaleBoxHM(hTPMs,mTPMs,tpsH,tpsM,"Human","Mouse",min = 1, method = "spearman",
 
 ![](4_FancyHeatmapsHowTo_files/figure-markdown_github/ScaleBoxOverlayOutput-1.png)
 
-The overlay variables should all be vectors of the same lenghth. Diagonal
+The overlay variables should all be vectors of the same lenghth. Diagonal is a boolean signifying whether or not you want to include the diagonal reference line.
+
+### Alternating Color Expression Heatmaps
+
+These heatmaps are used to compare expression of a small number of genes over time. This is a hack, displaying a different color scheme between 0-1 and 1-2 (You artificially transform the expression values into these ranges).
