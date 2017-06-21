@@ -8,7 +8,7 @@ from ij.process import ImageProcessor as IP
 import ij
 import csv
 import os
-import ij.plugin.HyperStackConverter
+import ij.plugin.HyperStackConverter as HSC
 from time import sleep
 import sys
 from ij.gui import Toolbar
@@ -29,6 +29,25 @@ import java.awt.Color as Color
 import java.lang.Runtime as Runtime
 import java.io.InputStreamReader
 import java.io.BufferedReader
+import ij.plugin.Duplicator as dup
+'''
+o=Opener()
+o.setSilentMode(True)
+imp =o.openUsingBioFormats('/Volumes/shared/chris/BioCT/For ImageJ Tutorial 2017/TestPax6GFPShort.tif')
+imp.setOpenAsHyperStack(True)
+
+imp.show()
+
+imp1=imp=IJ.openImage('/Volumes/shared/chris/BioCT/For ImageJ Tutorial 2017/TestPax6GFPShort.tif')
+imp1.setOpenAsHyperStack(True)
+imp1=HSC.toHyperStack(imp1,1,1,50)
+imp1.show()
+print imp
+print imp1
+
+sadfjlk
+'''
+
 
 def setColor(color):
     IJ.run('Colors...', 'foreground=255')
@@ -158,14 +177,14 @@ print imPaths
 for p in imPaths:
 	if chosen=="TIFF":
 		print p
-		#imp=IJ.openImage(p)
+		imp=IJ.openImage(p)
+		imp.setOpenAsHyperStack(True)
+		imps.append(HSC.toHyperStack(imp,1,1,imp.getNSlices()))
+		#o=Opener()
+		#o.setSilentMode(True)
+		#imp =o.openUsingBioFormats(p)
 		#imp.setOpenAsHyperStack(True)
 		#imps.append(imp)
-		o=Opener()
-		o.setSilentMode(True)
-		imp =o.openUsingBioFormats(p)
-		imp.setOpenAsHyperStack(True)
-		imps.append(imp)
 	elif chosen=="DIR":
 		print p
 		imps.append(importDirAsStack(p))
@@ -224,6 +243,8 @@ print(trackingFilename)
 print "Starting at track=" + str(track)
 
 imp = imps[0]
+d=dup()
+imp = d.run(imp)
 imp.show()
 frames = imp.getNFrames()
 

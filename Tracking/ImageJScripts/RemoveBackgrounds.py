@@ -19,11 +19,9 @@ if(chosen=="TIFF"):
 	imPath = IJ.getFilePath("Choose and Image")
 	print(imPath)
 	if(imPath!= None):
-		o=Opener()
-		o.setSilentMode(True)
-		imp =o.openUsingBioFormats(imPath)
+		imp = IJ.openImage(imPath)
 		imp.setOpenAsHyperStack(True)
-		IJ.run(imp, "Subtract Background...", "rolling=100 disable")
+		IJ.run(imp, "Subtract Background...", "rolling=100 disable stack")
 		IJ.saveAs(imp, "TIFF", imPath.split(".")[0]+"SubBack")
 else:
 	myFile = IJ.getDirectory("Choose a directory")
