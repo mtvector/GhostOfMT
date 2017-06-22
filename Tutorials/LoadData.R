@@ -32,6 +32,56 @@ rn.merge <- function(x,y,fill=0){
   
 }
 
+#Load in RNAseq to test for developmental genes only now
+pathToFileH <- "~/code/GhostOfMT/Data/GSE90053_H1_EC.txt"
+#NOTE THE PARAMETERS
+countsH <- read.csv2(file=pathToFileH,header = T,row.names = 1,sep = "\t")
+#countsH <- countsH[,-ncol(countsH)] #uncomment this line if the last column is gene name description text
+#It removes the last column of the data from the data set
+countsH <- as.matrix(countsH)
+storage.mode(countsH) <- "numeric"
+normCountsH <- round.log(GetNormalizedMat(countsH, MedianNorm(countsH)))
+splitListH <- strsplit(x = colnames(normCountsH),split = "_d")
+splitMatrixH <- sapply(splitListH, "[", 1:max(sapply(splitListH,length)) )
+tpsH <- as.numeric(splitMatrixH[2,])
+colnames(normCountsH) <- tpsH
+
+pathToFileM <- "~/code/GhostOfMT/Data/GSE90053_mEpi_EC.txt"
+#NOTE THE PARAMETERS
+countsM <- read.csv2(file=pathToFileM,header = T,row.names = 1,sep = "\t")
+#countsM <- countsM[,-ncol(countsM)] #uncomment this line if the last column is gene name description text
+#It removes the last column of the data from the data set
+countsM <- as.matrix(countsM)
+storage.mode(countsM) <- "numeric"
+#Make the genenames for mouse all uppercase.
+#It will be very annoying to compare mouse and human if they are left with different conventional capitalizations
+rownames(countsM) <- toupper(rownames(countsM))
+normCountsM <- round.log(GetNormalizedMat(countsM, MedianNorm(countsM)))
+splitListM <- strsplit(x = colnames(normCountsM),split = "_d")
+splitMatrixM <- sapply(splitListM, "[", 1:max(sapply(splitListM,length)) )
+tpsM <- as.numeric(splitMatrixM[2,])
+colnames(normCountsM) <- tpsM
+
+
+pathToFile <- "~/code/GhostOfMT/Data/GSE90053_H1_EC.txt"
+#NOTE THE PARAMETERS
+hTPMs <- read.csv2(file=pathToFile,header = T,row.names = 1,sep = "\t")
+#hTPMs <- hTPMs[,-ncol(hTPMs)] #uncomment this line if the last column is gene name description text (or modify it if it is a different column)
+#It removes the last column of the data from the data set
+hTPMs <- as.matrix(hTPMs)
+storage.mode(hTPMs) <- "numeric"
+rownames(hTPMs) <- toupper(rownames(hTPMs))
+
+pathToFileM <- "~/code/GhostOfMT/Data/GSE90053_mEpi_EC.txt"
+#NOTE THE PARAMETERS
+mTPMs <- read.csv2(file=pathToFileM,header = T,row.names = 1,sep = "\t")
+#mTPMS <- mTPMs[,-ncol(mTPMs)] #uncomment this line if the last column is gene name description text (or modify it if it is a different column)
+#It removes the last column of the data from the data set
+mTPMs <- as.matrix(mTPMs)
+storage.mode(mTPMs) <- "numeric"
+rownames(mTPMs) <- toupper(rownames(mTPMs))
+
+
 pathToFile <- "~/code/GhostOfMT/Data/GSE90053_H1_TPM.txt"
 #NOTE THE PARAMETERS
 hTPMs <- read.csv2(file=pathToFile,header = T,row.names = 1,sep = "\t")

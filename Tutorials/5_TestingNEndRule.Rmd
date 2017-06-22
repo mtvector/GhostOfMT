@@ -2,21 +2,93 @@
 title: "TestingNEndRule"
 author: "MTSchmitz"
 output: github_document 
-
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+In this tutorial, I will walk through how to test whether or not developmentally dynamic genes are predicted to have shorter half lives according to the N-end Rule.
 
+### The N-End Rule
+
+There is an old observation in biology that the second residue of a protein is very predictive of that protein's half life. In specific, charged or bulky second amino acids of proteins inhibit the ubiquitous N-terminal start methionine, and this is a signal leading to faster degradation of these proteins. The idea is that perhaps species like mice, shrews and dogs have shorter half lives for developmentally related genes, and therefore would be able to have a more dynamic proteome than primates, whales and elephants. Maybe the fact that developmental proteins are more transient in these species could explain the different rates of embryonic development *in vivo* and which are maintained in differentiations *in vitro*!
+
+You can read more about the N-end Rule here and in the associated references:  https://en.wikipedia.org/wiki/N-end_rule
+
+
+```{r loadpackages, warning=F,message=F}
 source("http://bioconductor.org/biocLite.R")
 library(biomaRt)
 library(Biostrings)
+#multiple sequence alignment
 library(msa)
 library(EBSeq)
-source("~/code/cb/LoadFunctions.R")
-#https://en.wikipedia.org/wiki/N-end_rule
+library(matrixStats)
+```
+
+In order to get the protein sequences for the genes we're interested in we first need to know what the gene symbol is called for each of the species we're going to look at. Usually it is hgnc_symbol, but for mouse, use the mgi_symbol as it is much better annotated. Change the database you're looking at by changing the dataset variable to include the scientific name of your species of choice.
+
+```{r BioMarts, eval=T}
+
+findAttribute <- function(string, mart){
+  listAttributes(mart)[grepl(string,listAttributes(mart)[,1])|grepl(string,listAttributes(mart)[,2]),]
+}
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host="www.ensembl.org")
+findAttribute("symbol",mart)
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "mmusculus_gene_ensembl", host="www.ensembl.org")
+findAttribute("symbol",mart)
+
+#For Marmoset Dataset
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "cjacchus_gene_ensembl", host="www.ensembl.org")
+#For Pig Dataset
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "sscrofa_gene_ensembl", host="www.ensembl.org")
+```
+
+```{r LoadPrevious Data, include=F}
+load("~/code/GhostOfMT/Data/PeptideSeqs.RData")
+```
+
+
+Then we can get the peptide sequences for all genes by leaving out the filter and values field for our biomart requests (This will take a while, as you're retrieving a lot of data). Tell this block to run and go do some lab work.
+
+
+```{r retrievesequences, eval=FALSE}
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host="www.ensembl.org")
+#rnSymbol <- getBM(attributes = c("ensembl_gene_id","hgnc_symbol","peptide"),filters = c("hgnc_symbol"),values = c("PAX6","ASCL1") ,mart = mart) 
+AllSequencesHuman <- getBM(attributes = c("hgnc_symbol","peptide") ,mart = mart) 
+
+
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "mmusculus_gene_ensembl", host="www.ensembl.org")
+#rnSymbol <- getBM(attributes = c("ensembl_gene_id","mgi_symbol","peptide"),filters = c("mgi_symbol"),values =c("PAX6","ASCL1") ,mart = mart)
+AllSequencesMouse <- getBM(attributes = c("mgi_symbol","peptide") ,mart = mart) 
+```
+
+```{r Pax6Seq, eval=T}
+print(AllSequencesHuman[AllSequencesHuman$hgnc_symbol=="PAX6",])
+```
+
+You can see that there are multiple isoforms for a single gene.
+
+I imagine there is a much more efficient way to do what I am about to do, so I'm going to include the following little snippet. Maybe someday you'll figure it out :) The goal here was to create a map for the resolution of alignments where there are gaps.
+
+```{r LittleSnip, eval=T}
+#aMap <- rep(1.0/length(AA_STANDARD),length(AA_STANDARD))
+aMap <- paste0(AA_ALPHABET,"-")
+names(aMap) <- AA_ALPHABET
+aMap[(length(aMap)-3):length(aMap)] <- ""
+print(aMap)
+```
+
+Because there are many isoforms of many proteins, we want to align them to get as complete a peptide sequence as we can. We only actually need the first two residues of the polypeptide sequences, but here we're going to align the full protein sequences. Here you can see the multiple sequence alignment for PAX6:
+
+```{r SingleMSA, eval=T}
+msa(AAStringSet(AllSequencesHuman[AllSequencesHuman$hgnc_symbol=="PAX6",2]))
+```
+
+The forceConsensus function is going to take the multiple sequence alignments and pick the most common amino acid, even when it is outvoted by gaps in the consensus alignment. This is very inefficient, but it doesn't really matter. You can just run this overnight, and it'll be done long before morning.
+
+```{r GetConsensus, eval=FALSE}
 
 forceConsensus <- function(mat,badind){
   blanks <-  mat[badind,]
@@ -28,30 +100,6 @@ forceConsensus <- function(mat,badind){
   rownames(newM) <- rownames(mat[-badind,])
   newM
 }
-
-
-findAttribute <- function(string, mart){
-  listAttributes(mart)[grepl(string,listAttributes(mart)[,1])|grepl(string,listAttributes(mart)[,2]),]
-}
-
-findAttribute("symbol",mart)
-
-mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "hsapiens_gene_ensembl", host="www.ensembl.org")
-rnSymbol <- getBM(attributes = c("ensembl_gene_id","hgnc_symbol","peptide"),filters = c("hgnc_symbol"),values = c("PAX6","ASCL1") ,mart = mart) 
-AllSequencesHuman <- getBM(attributes = c("hgnc_symbol","peptide") ,mart = mart) 
-
-
-mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "mmusculus_gene_ensembl", host="www.ensembl.org")
-rnSymbol <- getBM(attributes = c("ensembl_gene_id","mgi_symbol","peptide"),filters = c("mgi_symbol"),values =c("PAX6","ASCL1") ,mart = mart)
-AllSequencesMouse <- getBM(attributes = c("mgi_symbol","peptide") ,mart = mart) 
-
-#aMap <- rep(1.0/length(AA_STANDARD),length(AA_STANDARD))
-aMap <- paste0(AA_ALPHABET,"-")
-names(aMap) <- AA_ALPHABET
-aMap[(length(aMap)-3):length(aMap)] <- ""
-
-consensusString(forceConsensus(consensusMatrix( AAStringSet( msa(AAStringSet(lapply(AllSequencesHuman$peptide[AllSequencesHuman$hgnc_symbol == g],AAString) )))),1))
-
 
 consensusSeqsHuman <- lapply(unique(AllSequencesHuman$hgnc),function(g){
   if(length(AllSequencesHuman$peptide[AllSequencesHuman$hgnc_symbol == g])>1){
@@ -72,64 +120,62 @@ consensusSeqsMouse <- lapply(unique(AllSequencesMouse$mgi),function(g){
   align
 })
 names(consensusSeqsMouse) <- toupper(unique(AllSequencesMouse$mgi))
+```
 
+Because that took forever, we can save our R environment like this, so we can pull them up whenever we need.
+
+```{r saveImage, eval=FALSE}
 save.image(file="~/Desktop/PeptideSeqs.RData")
+```
 
-substr(consensusSeqsHuman,2,2)
+Here we will load the expected half lifes from the table gleaned from the wikipedia page.
 
+```{r nEndRule, eval=T}
+#From biostrings package
 b <-  AMINO_ACID_CODE
 names(b) <- b
 names(b) <- names(AMINO_ACID_CODE)
-nEndRule <-  read.table("~/code/nEndRule.txt",stringsAsFactors = F)
+nEndRule <-  read.table("~/code/GhostOfMT/Data/nEndRule.txt",stringsAsFactors = F)
+#Need to translate between three letter AA codes and 1 letter codes for the peptide sequence
 for(aa in b[!b%in%nEndRule[,1]])nEndRule <-  rbind(nEndRule ,c(aa,NA))
 nEndRule[,2] <- as.numeric(gsub("h","",nEndRule[,2]))
 rownames(nEndRule) <- sapply(nEndRule[,1], function(aa) names(b)[which(aa==b)] )
+print(nEndRule)
+```
 
-hist(nEndRule[substr(consensusSeqsHuman,2,2),2])
-hist(nEndRule[substr(consensusSeqsMouse,2,2),2])
+Now let's get a substring representing the second amino acid of the peptide sequences and see how long we expect the half lives to be for mouse and human!
 
+```{r HalfLifeAllHistograms, eval=T}
+hist(nEndRule[substr(consensusSeqsHuman,2,2),2],main="Half Lives Human")
+hist(nEndRule[substr(consensusSeqsMouse,2,2),2], main= "Half Lives Mouse")
+print("Human Mean in hrs:")
 mean(nEndRule[substr(consensusSeqsHuman,2,2),2],na.rm=T)
+print("Mouse Mean in hrs:")
 mean(nEndRule[substr(consensusSeqsMouse,2,2),2],na.rm=T)
+```
 
-#Load in RNAseq to test for developmental genes only now
-pathToFileH <- "~/code/GhostOfMT/Data/GSE90053_H1_EC.txt"
-#NOTE THE PARAMETERS
-countsH <- read.csv2(file=pathToFileH,header = T,row.names = 1,sep = "\t")
-#countsH <- countsH[,-ncol(countsH)] #uncomment this line if the last column is gene name description text
-#It removes the last column of the data from the data set
-countsH <- as.matrix(countsH)
-storage.mode(countsH) <- "numeric"
-normCountsH <- round.log(GetNormalizedMat(countsH, MedianNorm(countsH)))
-splitListH <- strsplit(x = colnames(normCountsH),split = "_d")
-splitMatrixH <- sapply(splitListH, "[", 1:max(sapply(splitListH,length)) )
-tpsH <- as.numeric(splitMatrixH[2,])
-colnames(normCountsH) <- tpsH
+Pretty much exactly the same... This is for all the genes in the genome though. What if it is just specific to developmentally dynamic genes?!
 
-pathToFileM <- "~/code/GhostOfMT/Data/GSE90053_mEpi_EC.txt"
-#NOTE THE PARAMETERS
-countsM <- read.csv2(file=pathToFileM,header = T,row.names = 1,sep = "\t")
-#countsM <- countsM[,-ncol(countsM)] #uncomment this line if the last column is gene name description text
-#It removes the last column of the data from the data set
-countsM <- as.matrix(countsM)
-storage.mode(countsM) <- "numeric"
-#Make the genenames for mouse all uppercase.
-#It will be very annoying to compare mouse and human if they are left with different conventional capitalizations
-rownames(countsM) <- toupper(rownames(countsM))
-normCountsM <- round.log(GetNormalizedMat(countsM, MedianNorm(countsM)))
-splitListM <- strsplit(x = colnames(normCountsM),split = "_d")
-splitMatrixM <- sapply(splitListM, "[", 1:max(sapply(splitListM,length)) )
-tpsM <- as.numeric(splitMatrixM[2,])
-colnames(normCountsM) <- tpsM
+```{r DevelopmentalGenes, eval=T}
+source("~/code/GhostOfMT//Tutorials/LoadData.R")
 
-sum(rowMaxs(normCountsH)-rowMins(normCountsH) >5)
-sum(rowMaxs(normCountsM)-rowMins(normCountsM) >5)
+print("Number of genes with a log fold change >4 over the course of the time series")
+print("Human")
+sum(rowMaxs(normCountsH)-rowMins(normCountsH) >4)
+print("Mouse")
+sum(rowMaxs(normCountsM)-rowMins(normCountsM) >4)
 
-devM <-  rownames(normCountsM)[rowMaxs(normCountsM)-rowMins(normCountsM) >5]
-devH <- rownames(normCountsH)[rowMaxs(normCountsH)-rowMins(normCountsH) >5]
+devM <-  rownames(normCountsM)[rowMaxs(normCountsM)-rowMins(normCountsM) >4]
+devH <- rownames(normCountsH)[rowMaxs(normCountsH)-rowMins(normCountsH) >4]
 
+hist(nEndRule[substr(consensusSeqsHuman[devH],2,2),2],main = "Human Developmental Genes Half Life Hrs")
+hist(nEndRule[substr(consensusSeqsMouse[devM],2,2),2], main = "Mouse Developmental Genes Half Life Hrs")
+
+
+print("Human median half life")
 median(nEndRule[substr(consensusSeqsHuman[devH],2,2),2],na.rm=T)
+print("Mouse median half life")
 median(nEndRule[substr(consensusSeqsHuman[devM],2,2),2],na.rm=T)
+```
 
-mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "cjacchus_gene_ensembl", host="www.ensembl.org")
-
-mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "sscrofa_gene_ensembl", host="www.ensembl.org")
+The same. Mouse embryonic development is 3x as fast as human, so no point in doing statistics... Looks like we have a negative result. It was a fun idea though, right?
