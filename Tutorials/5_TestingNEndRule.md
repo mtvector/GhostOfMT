@@ -49,6 +49,8 @@ mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "cjacchus_gene_ensem
 mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "sscrofa_gene_ensembl", host="www.ensembl.org")
 ```
 
+### Getting All Peptide Sequences from BiomaRt
+
 Then we can get the peptide sequences for all genes by leaving out the filter and values field for our biomart requests (This will take a while, as you're retrieving a lot of data). Tell this block to run and go do some lab work.
 
 ``` r
@@ -159,6 +161,8 @@ print(aMap)
     ## "A-" "R-" "N-" "D-" "C-" "Q-" "E-" "G-" "H-" "I-" "L-" "K-" "M-" "F-" "P-" 
     ##    S    T    W    Y    V    U    O    B    J    Z    X    *    -    +    . 
     ## "S-" "T-" "W-" "Y-" "V-" "U-" "O-" "B-" "J-" "Z-" "X-"   ""   ""   ""   ""
+
+### Multiple Sequence Alignments
 
 Because there are many isoforms of many proteins, we want to align them to get as complete a peptide sequence as we can. We only actually need the first two residues of the polypeptide sequences, but here we're going to align the full protein sequences. Here you can see the multiple sequence alignment for PAX6:
 
@@ -280,6 +284,8 @@ print(nEndRule)
     ## X Xaa    NA
 
 Now let's get a substring representing the second amino acid of the peptide sequences and see how long we expect the half lives to be for mouse and human!
+
+### Results
 
 ``` r
 hist(nEndRule[substr(consensusSeqsHuman,2,2),2],main="Half Lives Human")
