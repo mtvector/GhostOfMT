@@ -28,6 +28,8 @@ library(ggplot2)
 library(reshape2)
 library(ggrepel)
 library(matrixStats)
+#for dealing with time series
+library(zoo)
 ```
 
 So, now we have the data we need:
@@ -265,19 +267,22 @@ scaleBoxHM <- function(x,y,tpx,tpy,n1,n2,g_list=rownames(x),min = 0, method = "s
     g3
  
   }
-  ggsave(filename = paste0("~/Desktop/ScaledBoxHeatmap",n1,n2,".pdf" ),plot=g3,width = 30,height = 30)
-  g3
 }
 ```
 
 Now we can call this function on the data we have:
 
 ``` r
-scaleBoxHM(hTPMs,mTPMs,tpsH,tpsM,"Human","Mouse",min = 1, method = "spearman")
+g <- scaleBoxHM(hTPMs,mTPMs,tpsH,tpsM,"Human","Mouse",min = 1, method = "spearman")
 ```
 
     ## [1] "Num Genes:"
     ## [1] 17355
+
+``` r
+ggsave(filename = paste0("~/Desktop/ScaledBoxHeatmap.pdf" ),plot=g,width = 30,height = 30)
+g
+```
 
 ![](4_FancyHeatmapsHowTo_files/figure-markdown_github/ScaleBoxOutput-1.png)
 
@@ -310,4 +315,137 @@ The overlay variables should all be vectors of the same lenghth. Diagonal is a b
 
 ### Alternating Color Expression Heatmaps
 
-These heatmaps are used to compare expression of a small number of genes over time. This is a hack, displaying a different color scheme between 0-1 and 1-2 (You artificially transform the expression values into these ranges).
+These heatmaps are used to compare expression of a small number of genes over time. This is a hack, displaying a different color scheme between 0-1 and 100-101 etc (You artificially transform the expression values into these ranges). This function can take as many time series as you want and generate a figure, beyond the two color alternating heatmap from Barry, Schmitz et al 2017.
+
+``` r
+alternatingColorGeneHM <- function(sets,tps,species,geneList,min0=F,colors=c("yellow","cyan","red","blue","green","pink"),sortMax=NULL ){
+  library(scales)
+  #which function to use to rescale genes 0-1
+  if(!min0){
+    range01 <- function(x){
+      z <- x/max(x,na.rm = T)
+      sapply( z, function(i) ifelse(is.nan(i),0,i) )
+      }
+  }else{
+    range01 <- function(x){ (x-min(x,na.rm = T))/(max(x,na.rm = T)-min(x,na.rm = T))}
+  }
+
+  mz <- lapply(geneList, function(gn){
+    if(gn %in% Reduce(intersect, lapply(sets,rownames))){
+      xs <- lapply(1:length(sets), function(i){
+        xi <- zoo(sets[[i]][gn,], tps[[i]])
+        xi <- merge(xi,zoo(NA, tps[[i]]))[,1]
+        xi
+        })
+      na.approx(Reduce(merge,xs))
+    }
+  })
+  
+  mzn <- geneList
+  mzn=mzn[!sapply(mz, is.null)] 
+  mz=mz[!sapply(mz, is.null)] 
+  if(!is.null(sortMax))mz <-  mz[order(sapply(mz,function(x) which.max(rescale(x[,sortMax]))))]
+  
+  mz=Reduce(cbind, mz )
+  colnames(mz) <- paste0(species ,rep(mzn,1,each=length(sets)))
+  mz=apply(mz,2,range01)
+  #mz=sweep(mz,MARGIN = 2,colMaxs(mz,na.rm = T),FUN = "/")
+  for(s in rev(species)){
+    mz <- cbind(c(seq(0,1,length.out = 11), rep(NA,nrow(mz)-11 )),mz)
+    colnames(mz)[1] <-  paste("scale", s)
+  }
+    
+  unified.tp <- Reduce(union,tps)
+  blocksize.vector.x <- diff(unified.tp)*(1/max(unified.tp))
+  blocksize.vector.x <- c(blocksize.vector.x[1],blocksize.vector.x,blocksize.vector.x[length(blocksize.vector.x)])
+  b.v.x <- sapply(2:length(blocksize.vector.x),function(i) blocksize.vector.x[i-1]/2 + blocksize.vector.x[i]/2 )
+  b.v.x <- b.v.x * (max(unified.tp)*sum(b.v.x)/sum(b.v.x))
+  tpx.adj <- unified.tp
+  tpx.n <<- tpx.adj
+  tpx.adj[2:(length(tpx.adj))] <- as.vector(sapply(2:(length(tpx.adj)),function(i){
+    q <- tpx.n[i-1]+ .5*b.v.x[i-1] + .5*b.v.x[i]
+    tpx.n[i] <<- q
+    q
+  } ))
+  
+  rownames(mz) <- tpx.adj
+  
+  for(i in seq(ncol(mz)- length(species),1,by = -length(species))){
+    df <- data.frame(rep(NA,nrow(mz)))
+    colnames(df) <- paste0(rep(" ",i),collapse = "")
+    mz <- cbind(mz[,1:i], df , mz[,(i+1):ncol(mz)] )
+  }
+  
+  a = melt(as.matrix(mz),na.rm = F)
+  groupVals <- sapply( a$Var2,function(i) which( sapply(species,function(s)grepl(s,i))))
+  groupVals[sapply(groupVals,length)==0] <- 0
+  a=cbind(a, "group"= unlist(groupVals))
+  a$Var2 <- factor(a$Var2, levels=unique(a$Var2[order(a$Var2,decreasing = T)]),exclude = NULL)
+  a$rescaleoffset <- a$value + 100*(a$group)
+  
+  scalerange <- range(a$value,na.rm = T)
+  gradientends <- scalerange + rep( seq(0, (length(sets)-1)*100, by=100), each=2)
+  colorends <- unlist(lapply(colors[1:length(sets)], function(co) c("black", co)))
+  
+  
+  g=ggplot(a, aes(Var1, Var2)) + 
+    ggtitle(paste( paste(species,collapse = ' vs ') ,"\n( Scaled Expression)"))+
+    geom_tile(aes(x = Var1,fill = rescaleoffset,width=rep(b.v.x ,nrow(a)/max(sapply(tps, length) )))) + 
+    scale_fill_gradientn(colours = colorends, values = rescale(gradientends),na.value = "grey55",guide = F,name="Expression",breaks=gradientends) + 
+    #scale_x_discrete("Days", expand = c(0.05, .05)) + 
+    scale_y_discrete("Gene", expand = c(.05, .05)) +
+    theme_bw(base_size = 9) +  
+    theme(legend.position = "right",
+          panel.background = element_rect(fill = "grey55", size = 2),
+          axis.ticks.y = element_blank(),
+          panel.grid.major = element_blank(),
+          #panel.grid.major.y = element_blank(),
+          panel.grid.minor = element_blank(),
+          axis.text.x = element_text(angle = 330, hjust = 0))
+  g
+}
+```
+
+With this function, we can create a magical alternating color heat map in one line!
+
+The parameters are as follows:
+
+**sets** are the normalized expression matrices wrapped in a list (using c() will result in string the data into one long vector of numbers, which is not what we want at all)
+
+**tps** is a list of the time point vectors
+
+**species** is a vector of the condition names
+
+**geneList** is a vector of gene names
+
+**min0** if false, expression is represented as a % of max. If True, the row is rescaled so that 0 is the min and 1 is the max
+
+**sortMax** NULL if you want to keep the genes in the order you enter them. If you want to sort by the time point at which the expression of the gene reaches its max, enter an integer corresponding to the data set you want to use to sort.
+
+``` r
+geneList <- c("PAX6", "DCX", "POU5F1","SOX2","POU3F2","ASCL1", "TUBB3","NEUROG2","NEUROD4","NEUROD6","FOXG1","GABARAP","NOTAGENE")
+g <-alternatingColorGeneHM(sets=list(hTPMs,mTPMs,hTPMs),tps=list(tpsH,tpsM,tpsH),
+                           species=c("Human","Mouse","DuplicateH"),
+                           geneList=geneList,min0=F,sortMax=1)
+
+#You can change the width and height to change the size of the PDF and relative text size that is saved
+ggsave(filename = paste0("~/Desktop/MulticolorAlternating.pdf" ),plot=g,width = 30,height = 30)
+g
+```
+
+![](4_FancyHeatmapsHowTo_files/figure-markdown_github/callingTwoColorHM-1.png)
+
+Hmmmmm, that looks okay, but maybe it would look better in all yellow?
+
+``` r
+g <- alternatingColorGeneHM(sets=list(hTPMs,mTPMs,hTPMs),tps=list(tpsH,tpsM,tpsH),
+                            species=c("Human","Mouse","DuplicateH"),
+                            geneList=geneList,colors = c("yellow","yellow","yellow"),min0=F,sortMax=1)
+
+ggsave(filename = paste0("~/Desktop/ILoveYellow.pdf" ),plot=g,width = 20,height = 20)
+g
+```
+
+![](4_FancyHeatmapsHowTo_files/figure-markdown_github/ILoveYellow-1.png)
+
+Definitely.

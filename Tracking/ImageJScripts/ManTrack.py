@@ -255,6 +255,7 @@ while imp.getNFrames()==frames:
 		#Enter 999 if you made a mistake
 		if number == 999:
 			clicked = newClicked
+			IJ.run("Select None")
 			continue
 		if number == sys.minint:
 			#IJ.saveAs(imp, "TIFF", str(myPath) + 'Working.tif' )
@@ -279,6 +280,7 @@ while imp.getNFrames()==frames:
 			csvfile.close()
 			csvfile = open(trackingFilename, 'a')
 			spamwriter = csv.writer(csvfile, delimiter=',')
+			IJ.run("Select None")
 			continue
 		else:
 			clickedFrames.append(imp.getFrame())
