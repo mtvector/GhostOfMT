@@ -8,6 +8,9 @@ library(knitr)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 # Plotting Favorite Genes Along a Multi-Condition Time Series
+
+If you want to get to the one line function to plot all the genes over time, separating conditions, you can skip to the last section. 
+
 ### Loading Gene Lists
 Lists of your favorite genes might come from any number of sources. You can see how to make one based upon GO term annotation in the QueryingGO tutorial. You can also enter them in a column in excel and save the file as a tab delimited text file.
 
@@ -220,10 +223,10 @@ dataMerged <- Reduce(rn.merge,list(hTPMs,mTPMs))
 ggg <- NULL
 
 ###GET RID OF THESE 3 LINES WHEN DOING REAL ANALYSIS
-#pretend that the 3rd through the 5th tps are replicates
-tpMerged <- tpMerged[c(1,2,3,3,3,4:length(tpMerged))]
-conditionsMerged <- conditionsMerged[c(1,2,3,3,3,4:length(conditionsMerged))]
-dataMerged <- dataMerged[,c(1,2,3,4,5,4:ncol(dataMerged))]
+#pretend that the 3rd through the 5th tps are replicates, and wild 4th tp
+tpMerged <- tpMerged[c(1,2,3,3,3,4,4,4,4:length(tpMerged))]
+conditionsMerged <- conditionsMerged[c(1,2,3,3,3,4,4,4,4:length(conditionsMerged))]
+dataMerged <- dataMerged[,c(1,2,3,4,5,9,1,18,4:ncol(dataMerged))]
 
 gene_list <- neuralList[neuralList%in%rownames(dataMerged)]
 

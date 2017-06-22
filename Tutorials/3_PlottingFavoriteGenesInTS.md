@@ -3,6 +3,8 @@ MTSchmitz
 Plotting Favorite Genes Along a Multi-Condition Time Series
 ===========================================================
 
+If you want to get to the one line function to plot all the genes over time, separating conditions, you can skip to the last section.
+
 ### Loading Gene Lists
 
 Lists of your favorite genes might come from any number of sources. You can see how to make one based upon GO term annotation in the QueryingGO tutorial. You can also enter them in a column in excel and save the file as a tab delimited text file.
@@ -220,7 +222,7 @@ legend <- g_legend(ggg+theme(legend.position="left",
 marrangeGrob(grobs= c(grid.draw(legend) ,plotlist) , nrow=4, ncol=4,top = NULL)
 ```
 
-![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-1.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-2.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-3.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-4.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-5.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-6.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-7.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-8.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogether-9.png)
+![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogether-1.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogether-2.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogether-3.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogether-4.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogether-5.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogether-6.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogether-7.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogether-8.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogether-9.png)
 
 ``` r
 #output this whole list of plots as a PDF on your desktop
@@ -235,8 +237,8 @@ marrangeGrob(grobs=plotlist , nrow=4, ncol=4,top = NULL)
 dev.off()
 ```
 
-    ## quartz_off_screen 
-    ##                 2
+    ## png 
+    ##   2
 
 We can also graph the gene expression over time, averaging replicates and showing standard error (There are no replicates in this time series, but we can pretend there are for one timepoint just to see error bars). Plotting takes a decent amount of resources, so brace yourself if it takes a few minutes of thinking
 
@@ -250,10 +252,10 @@ dataMerged <- Reduce(rn.merge,list(hTPMs,mTPMs))
 ggg <- NULL
 
 ###GET RID OF THESE 3 LINES WHEN DOING REAL ANALYSIS
-#pretend that the 3rd through the 5th tps are replicates
-tpMerged <- tpMerged[c(1,2,3,3,3,4:length(tpMerged))]
-conditionsMerged <- conditionsMerged[c(1,2,3,3,3,4:length(conditionsMerged))]
-dataMerged <- dataMerged[,c(1,2,3,4,5,4:ncol(dataMerged))]
+#pretend that the 3rd through the 5th tps are replicates, and wild 4th tp
+tpMerged <- tpMerged[c(1,2,3,3,3,4,4,4,4:length(tpMerged))]
+conditionsMerged <- conditionsMerged[c(1,2,3,3,3,4,4,4,4:length(conditionsMerged))]
+dataMerged <- dataMerged[,c(1,2,3,4,5,9,1,18,4:ncol(dataMerged))]
 
 gene_list <- neuralList[neuralList%in%rownames(dataMerged)]
 
@@ -316,7 +318,7 @@ legend <- g_legend(ggg+theme(legend.position="left",
 marrangeGrob(grobs=c(grid.draw(legend),plotlist) , nrow=4, ncol=4,top = NULL)
 ```
 
-![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-1.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-2.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-3.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-4.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-5.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-6.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-7.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-8.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github/plotTogetherMean-9.png)
+![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogetherMean-1.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogetherMean-2.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogetherMean-3.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogetherMean-4.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogetherMean-5.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogetherMean-6.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogetherMean-7.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogetherMean-8.png)![](3_PlottingFavoriteGenesInTS_files/figure-markdown_github-ascii_identifiers/plotTogetherMean-9.png)
 
 ``` r
 #output this whole list of plots as a PDF on your desktop
@@ -329,8 +331,8 @@ marrangeGrob(grobs=c(grid.draw(legend),plotlist) , nrow=4, ncol=4,top = NULL)
 dev.off()
 ```
 
-    ## quartz_off_screen 
-    ##                 2
+    ## png 
+    ##   2
 
 ### Into a Function
 
@@ -444,5 +446,5 @@ plotFavoriteGenes <- function(conditionsMerged, tpMerged, dataMerged,gene_list, 
 plotFavoriteGenes(conditionsMerged, tpMerged, dataMerged,gene_list, meanOfTPs=T,outFile="~/Desktop/ChosenMeanGenes.pdf")
 ```
 
-    ## quartz_off_screen 
-    ##                 2
+    ## png 
+    ##   2
