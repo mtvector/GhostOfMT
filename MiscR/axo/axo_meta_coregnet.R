@@ -1,0 +1,37 @@
+source("http://bioconductor.org/biocLite.R")
+#biocLite("CoRegNet")
+#biocLite("GEOquery")
+library(matrixStats)
+library(parallel)
+library(GEOquery)
+library(CoRegNet)
+library(EBSeq)
+set.seed(42)
+
+source("~/code/axo/LoadDatasets.R")
+
+options("mc.cores"=8)
+woundAmby002Net <-  hLICORN( numericalExpression =  cbind(exprsGSE35255[,GSE35255samplenames=="Aquatic"],exprsGSE37198[,GSE37198samplenames=="Flankwound"]),TFlist=as.vector(regulatorProbes),parallel="multicore", verbose=T)
+woundAmby002Netinfluence <- regulatorInfluence(woundAmby002Net,cbind(exprsGSE35255[,GSE35255samplenames=="Aquatic"],exprsGSE37198[,GSE37198samplenames=="Flankwound"]))
+write.table(coregnetToDataframe(woundAmby002Net),file = file.path(datapath, "woundAmby002Net.txt") )
+save.image(file = file.path(datapath, "hLICORN_networks_WBA.Rdata"))
+
+blastemaAmby002Net <-  hLICORN( numericalExpression =  exprsGSE67118[,GSE67118samplenames!="T0"],TFlist=as.vector(regulatorProbes),parallel="multicore", verbose=T)
+blastemaAmby002Netinfluence <- regulatorInfluence(blastemaAmby002Net,exprsGSE67118[,GSE67118samplenames!="T0"])
+write.table(coregnetToDataframe(blastemaAmby002Net),file = file.path(datapath, "blastemaAmby002Net.txt") )
+save.image(file = file.path(datapath, "hLICORN_networks_WBA.Rdata"))
+
+allAmby002Netinfluence <- regulatorInfluence(allAmby002Net,cbind(exprsGSE67118,exprsGSE35255,exprsGSE37198))
+#display(allAmby002Net,cbind(exprsGSE67118,exprsGSE35255,exprsGSE37198),allAmby002Netinfluence)
+write.table(coregnetToDataframe(allAmby002Net),file = file.path(datapath, "allAmby002Net.txt") )
+save.image(file = file.path(datapath, "hLICORN_networks_WBA.Rdata"))
+
+blastemaRNAseqNet <-  hLICORN( numericalExpression = NormECB ,TFlist=as.vector(intersect(fullRegulatorList,rownames(NormECB))),parallel="multicore", maxCoreg = 1131, minCoregSupport = 0.1,nGRN=100, verbose=T)
+blastemaRNAseqNetinfluence <- regulatorInfluence(blastemaRNAseqNet,NormECB)
+write.table(coregnetToDataframe(blastemaRNAseqNet),file = file.path(datapath, "blastemaRNAseqNet.txt") )
+save.image(file = file.path(datapath, "hLICORN_networks_WBA.Rdata"))
+
+embryoRNAseqNet <-  hLICORN( numericalExpression = NormECE ,TFlist=as.vector(intersect(fullRegulatorList,rownames(NormECE)) ),parallel="multicore", verbose=T)
+allAmby002Netinfluence <- regulatorInfluence(embryoRNAseqNet,NormECE)
+write.table(coregnetToDataframe(blastemaRNAseqNet),file = file.path(datapath, "embryoRNAseqNet.txt") )
+save.image(file = file.path(datapath, "hLICORN_networks_WBA.Rdata"))
