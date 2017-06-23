@@ -201,6 +201,7 @@ rgb = [colorsys.hsv_to_rgb(i ,1.,1.) for i in (np.array(nx.get_node_attributes(r
 rgbregress = [colorsys.hsv_to_rgb(i ,1.,1.) for i in np.array(regressDF.loc[:,'divs'])/ (float(max(regressDF.loc[:,'divs']))*1.3)]
 nx.write_gml(ref, os.path.expanduser(outDir+fn+'.gml'))
 nx.drawing.nx_pydot.write_dot(ref,os.path.expanduser(outDir+fn+'.dot'))
+outDF.to_csv(os.path.expanduser(outDir+fn+'.txt'))
 
 def graphviz_fixy(ref,yvals, prog='dot'):
     pos=nx.drawing.nx_pydot.graphviz_layout(ref, prog='dot')

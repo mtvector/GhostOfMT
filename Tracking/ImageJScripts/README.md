@@ -72,6 +72,8 @@ sudo pip install -I pyparsing==2.2.0
 
 sudo pip install -I numexpr==2.4.6
 
+Then install XQuartz on a mac https://www.xquartz.org/  (XQuartz-2.7.11.dmg)
+
 You'll also need to install Graphviz. You can find it here: http://www.graphviz.org/Download_macos.php . Select the snowleopard version graphviz-2.38.0.pkg . You'll want to install this last for some reason. No clue why.
 
 (You should have python 2.7 automatically installed, but you can make sure you have python installed by typing "whereis python" in the command line, and it should give you a path) If you don't have python installed, install python first. 
